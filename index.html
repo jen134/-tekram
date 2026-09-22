@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>تِكرَم | Tekram</title>
 
   <style>
     :root {
-      --green: #18352b;
+      --green: #24483a;
+      --green-dark: #18352b;
       --beige: #eadbc8;
       --orange: #d94e28;
       --yellow: #d99e30;
       --white: #ffffff;
       --light: #f7f3ed;
       --text: #18352b;
+      --muted: #6f756f;
+      --border: #e6ded3;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -28,10 +31,10 @@
     }
 
     body {
-      font-family: Arial, Tahoma, sans-serif;
-      background: var(--green);
-      color: var(--white);
-      line-height: 1.6;
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     a {
@@ -39,106 +42,147 @@
       color: inherit;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
-      width: 100%;
-      padding: 22px 6%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(36, 72, 58, 0.97);
+      backdrop-filter: blur(10px);
+      padding: 18px 6%;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .header-inner {
+      max-width: 1250px;
+      margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(24, 53, 43, 0.96);
-      backdrop-filter: blur(10px);
+      gap: 30px;
     }
 
+    /* WORDMARK LOGO */
+
     .logo {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
+      position: relative;
+      color: var(--beige);
+      font-size: 30px;
       font-weight: 900;
-      font-size: 25px;
+      letter-spacing: -1px;
       white-space: nowrap;
     }
 
-    .logo-svg {
-      width: 42px;
-      height: 42px;
-      display: block;
+    .logo-word {
+      display: inline-block;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .logo-word::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      right: 3px;
+      width: 34px;
+      height: 4px;
+      border-radius: 20px;
+      background: var(--orange);
+      transform: rotate(-3deg);
+    }
+
+    .logo-en {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-right: 9px;
+      opacity: 0.75;
+      direction: ltr;
     }
 
     nav {
       display: flex;
-      gap: 28px;
+      align-items: center;
+      gap: 30px;
+      color: white;
       font-size: 15px;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     nav a {
-      opacity: 0.85;
-      transition: 0.2s;
+      transition: 0.2s ease;
     }
 
     nav a:hover {
-      opacity: 1;
-      color: var(--yellow);
+      color: var(--beige);
     }
 
     .cart-btn {
       border: none;
       background: var(--orange);
       color: white;
-      padding: 11px 17px;
-      border-radius: 12px;
+      padding: 11px 18px;
+      border-radius: 14px;
+      font-family: inherit;
       font-size: 14px;
-      font-weight: bold;
+      font-weight: 700;
       cursor: pointer;
+      transition: 0.2s ease;
     }
 
-    /* HERO */
+    .cart-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero-section {
+      padding: 45px 6% 30px;
+    }
 
     .hero {
-      padding: 55px 6% 70px;
-    }
-
-    .hero-box {
-      background: var(--beige);
-      color: var(--green);
-      border-radius: 32px;
+      max-width: 1250px;
       min-height: 440px;
-      padding: 55px 6%;
+      margin: auto;
       position: relative;
       overflow: hidden;
+      border-radius: 34px;
+      background: var(--beige);
+      padding: 60px 6%;
       display: flex;
       align-items: center;
     }
 
     .hero-content {
-      max-width: 600px;
+      max-width: 620px;
       position: relative;
-      z-index: 3;
+      z-index: 5;
     }
 
     .hero-label {
       display: inline-block;
-      background: var(--orange);
+      background: var(--green);
       color: white;
       padding: 8px 15px;
       border-radius: 30px;
-      font-size: 14px;
-      font-weight: bold;
+      font-size: 13px;
+      font-weight: 700;
       margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 1.05;
-      letter-spacing: -2px;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.08;
       margin-bottom: 22px;
-      font-weight: 900;
+      color: var(--green-dark);
+      letter-spacing: -2px;
     }
 
     .hero h1 span {
@@ -146,137 +190,140 @@
     }
 
     .hero p {
-      max-width: 550px;
       font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 30px;
-      color: #30453c;
+      line-height: 1.9;
+      color: #536057;
+      max-width: 570px;
+      margin-bottom: 28px;
     }
 
-    .hero-button {
+    .hero-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       background: var(--green);
       color: white;
-      padding: 15px 23px;
-      border-radius: 14px;
-      font-weight: bold;
-      transition: 0.2s;
+      padding: 14px 24px;
+      border-radius: 15px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: 0.2s ease;
     }
 
-    .hero-button:hover {
+    .hero-btn:hover {
       transform: translateY(-2px);
+      background: var(--green-dark);
     }
 
-    /* HERO DECORATION */
+    /* HERO DECORATIONS */
 
-    .hero-circle {
+    .decor-circle-yellow {
       position: absolute;
-      width: 330px;
-      height: 330px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       background: var(--yellow);
       left: -70px;
-      bottom: -120px;
+      top: -70px;
       opacity: 0.9;
+    }
+
+    .decor-orange {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--orange);
+      left: 14%;
+      bottom: -45px;
     }
 
     .hero-card {
       position: absolute;
-      left: 9%;
-      top: 50%;
-      transform: translateY(-50%) rotate(-5deg);
-      width: 220px;
-      height: 260px;
+      left: 8%;
+      bottom: 55px;
+      width: 205px;
+      height: 145px;
+      border-radius: 25px;
       background: var(--green);
-      border-radius: 30px;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       color: white;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      padding: 24px;
+      transform: rotate(-5deg);
+      box-shadow: 0 18px 35px rgba(24,53,43,0.2);
+      z-index: 3;
     }
 
     .hero-card-icon {
-      font-size: 58px;
+      font-size: 34px;
+      margin-bottom: 7px;
     }
 
     .hero-card-title {
-      font-size: 28px;
+      font-size: 19px;
       font-weight: 900;
     }
 
     .hero-card-small {
-      font-size: 13px;
-      opacity: 0.7;
+      font-size: 11px;
+      opacity: 0.75;
+      margin-top: 3px;
     }
 
-    .hero-orange-circle {
+    .decor-white {
       position: absolute;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: var(--orange);
-      left: 38%;
-      top: 18%;
-    }
-
-    .hero-white-square {
-      position: absolute;
-      width: 55px;
-      height: 55px;
+      width: 95px;
+      height: 95px;
       background: white;
-      border-radius: 12px;
-      left: 31%;
-      bottom: 13%;
-      transform: rotate(12deg);
+      border-radius: 20px;
+      left: 28%;
+      top: 70px;
+      transform: rotate(15deg);
+      opacity: 0.65;
     }
 
-    .hero-yellow-dot {
+    .decor-dot {
       position: absolute;
-      width: 18px;
-      height: 18px;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
       background: var(--yellow);
-      left: 51%;
-      bottom: 25%;
+      left: 42%;
+      bottom: 70px;
     }
 
-    .scroll-hint {
-      margin-top: 18px;
-      text-align: center;
-      color: var(--beige);
-      font-size: 14px;
-      opacity: 0.8;
+    /* =========================
+       GENERAL SECTION
+    ========================= */
+
+    .section {
+      max-width: 1250px;
+      margin: auto;
+      padding: 60px 6%;
     }
 
-    /* SECTION */
-
-    section {
-      padding: 65px 6%;
-    }
-
-    .section-title {
+    .section-heading {
       display: flex;
       align-items: end;
       justify-content: space-between;
       gap: 20px;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
-    .section-title h2 {
-      font-size: 36px;
+    .section-title {
+      font-size: 32px;
+      color: var(--green-dark);
       font-weight: 900;
     }
 
-    .section-title p {
-      color: rgba(255,255,255,0.7);
-      font-size: 15px;
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
     }
 
-    /* CATEGORIES */
+    /* =========================
+       CATEGORIES
+    ========================= */
 
     .categories {
       display: grid;
@@ -285,80 +332,79 @@
     }
 
     .category {
-      background: var(--beige);
-      color: var(--green);
+      background: white;
+      border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 28px;
-      min-height: 150px;
-      position: relative;
-      overflow: hidden;
-      transition: 0.25s;
+      padding: 24px;
+      min-height: 145px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.25s ease;
+      cursor: pointer;
     }
 
     .category:hover {
       transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(24,53,43,0.08);
     }
 
-    .category-number {
-      position: absolute;
-      left: 20px;
-      top: 15px;
-      font-size: 50px;
-      font-weight: 900;
-      opacity: 0.08;
+    .category-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
     .category h3 {
-      font-size: 22px;
-      margin-bottom: 6px;
-      position: relative;
-      z-index: 2;
+      font-size: 18px;
+      margin-bottom: 3px;
+      color: var(--green-dark);
     }
 
     .category p {
-      font-size: 14px;
-      opacity: 0.7;
-      position: relative;
-      z-index: 2;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    /* PRODUCTS */
+    /* =========================
+       PRODUCTS
+    ========================= */
 
     .products-section {
-      background: var(--light);
-      color: var(--green);
-      border-radius: 35px 35px 0 0;
+      background: white;
+      padding-top: 65px;
+      padding-bottom: 70px;
     }
 
-    .products-section .section-title p {
-      color: #64736d;
+    .products-wrapper {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 6%;
     }
 
     .products {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .product-card {
       background: white;
+      border: 1px solid var(--border);
       border-radius: 22px;
       overflow: hidden;
-      border: 1px solid #eee6db;
-      transition: 0.25s;
-      display: flex;
-      flex-direction: column;
+      transition: 0.25s ease;
+      position: relative;
     }
 
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(24,53,43,0.12);
+      box-shadow: 0 15px 35px rgba(24,53,43,0.09);
     }
 
     .product-image {
       width: 100%;
       aspect-ratio: 1 / 1;
-      background: #f3eee7;
+      background: #f5f1ea;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -372,107 +418,179 @@
       display: block;
     }
 
-    .product-placeholder {
-      font-size: 52px;
-      opacity: 0.25;
+    .placeholder {
+      font-size: 65px;
     }
 
     .product-info {
       padding: 17px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      flex: 1;
     }
 
     .product-category {
-      font-size: 11px;
+      display: inline-block;
       color: var(--orange);
-      font-weight: bold;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 6px;
     }
 
     .product-name-ar {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 900;
-      color: var(--green);
+      color: var(--green-dark);
+      margin-bottom: 2px;
     }
 
     .product-name-en {
-      font-size: 13px;
-      color: #68736f;
+      font-size: 12px;
+      color: var(--muted);
       direction: ltr;
       text-align: right;
+      margin-bottom: 8px;
     }
 
     .product-weight {
       font-size: 12px;
-      color: #8b938f;
-      margin-top: 3px;
+      color: #7c817d;
+      margin-bottom: 12px;
     }
 
-    .product-price {
-      margin-top: auto;
-      padding-top: 12px;
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .price {
       font-size: 20px;
       font-weight: 900;
-      color: var(--orange);
+      color: var(--green);
       direction: ltr;
-      text-align: right;
     }
 
-    /* FOOTER */
+    .add-btn {
+      border: none;
+      background: var(--green);
+      color: white;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: 0.2s ease;
+    }
+
+    .add-btn:hover {
+      background: var(--orange);
+      transform: scale(1.05);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: var(--green);
       color: white;
-      padding: 40px 6%;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
+      padding: 42px 20px;
     }
 
     .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 22px;
+      font-size: 27px;
       font-weight: 900;
+      color: var(--beige);
+      display: inline-block;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .footer-logo::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 4px;
+      width: 30px;
+      height: 3px;
+      background: var(--orange);
+      border-radius: 10px;
+    }
+
+    .footer-en {
+      font-size: 9px;
+      letter-spacing: 2px;
+      opacity: 0.7;
+      margin-right: 7px;
+      direction: ltr;
     }
 
     footer p {
-      opacity: 0.65;
+      margin-top: 8px;
       font-size: 13px;
+      opacity: 0.8;
     }
 
-    /* MOBILE */
+    /* =========================
+       CART POPUP
+    ========================= */
+
+    .cart-message {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--green-dark);
+      color: white;
+      padding: 14px 20px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      transform: translateY(100px);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 2000;
+      font-size: 14px;
+    }
+
+    .cart-message.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 900px) {
 
       header {
-        padding: 17px 5%;
+        padding: 15px 5%;
+      }
+
+      .logo {
+        font-size: 26px;
       }
 
       nav {
         display: none;
       }
 
+      .header-inner {
+        justify-content: space-between;
+      }
+
+      .hero-section {
+        padding: 25px 4%;
+      }
+
       .hero {
-        padding: 25px 5% 45px;
-      }
-
-      .hero-box {
         min-height: 500px;
-        padding: 40px 25px;
-      }
-
-      .hero-content {
-        max-width: 100%;
+        padding: 45px 7%;
+        align-items: flex-start;
       }
 
       .hero h1 {
-        font-size: 48px;
+        font-size: 47px;
       }
 
       .hero p {
@@ -480,30 +598,15 @@
       }
 
       .hero-card {
-        width: 145px;
-        height: 175px;
-        left: 8%;
-        bottom: 20px;
-        top: auto;
-        transform: rotate(-5deg);
+        left: 9%;
+        bottom: 45px;
+        width: 180px;
+        height: 125px;
       }
 
-      .hero-card-icon {
-        font-size: 38px;
-      }
-
-      .hero-card-title {
-        font-size: 20px;
-      }
-
-      .hero-orange-circle {
+      .decor-white {
         left: 55%;
-        top: 10%;
-      }
-
-      .hero-white-square {
-        left: 62%;
-        bottom: 20%;
+        top: 55px;
       }
 
       .categories {
@@ -512,53 +615,60 @@
 
       .products {
         grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
+        gap: 15px;
       }
 
-      .product-info {
-        padding: 13px;
-      }
-
-      .product-name-ar {
-        font-size: 16px;
-      }
-
-      .product-name-en {
-        font-size: 11px;
-      }
-
-      .section-title h2 {
-        font-size: 29px;
+      .section,
+      .products-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
       }
     }
 
     @media (max-width: 500px) {
 
       .logo {
-        font-size: 21px;
+        font-size: 23px;
       }
 
-      .logo-svg {
-        width: 35px;
-        height: 35px;
+      .logo-en {
+        display: none;
       }
 
       .cart-btn {
-        padding: 9px 12px;
+        padding: 9px 13px;
         font-size: 12px;
       }
 
-      .hero-box {
-        min-height: 530px;
+      .hero {
+        min-height: 520px;
+        border-radius: 26px;
+        padding: 35px 7%;
       }
 
       .hero h1 {
-        font-size: 43px;
+        font-size: 39px;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 14px;
       }
 
       .hero-card {
-        left: 6%;
-        bottom: 18px;
+        left: 8%;
+        bottom: 32px;
+        width: 165px;
+        height: 115px;
+        padding: 18px;
+      }
+
+      .hero-card-icon {
+        font-size: 27px;
+      }
+
+      .hero-card-title {
+        font-size: 16px;
       }
 
       .categories {
@@ -566,32 +676,46 @@
       }
 
       .category {
-        padding: 20px;
+        padding: 18px;
         min-height: 135px;
       }
 
+      .category-icon {
+        font-size: 27px;
+      }
+
       .category h3 {
-        font-size: 18px;
+        font-size: 15px;
       }
 
       .category p {
-        font-size: 12px;
+        font-size: 11px;
       }
 
       .products {
-        gap: 10px;
-      }
-
-      .product-card {
-        border-radius: 17px;
+        gap: 12px;
       }
 
       .product-info {
-        padding: 11px;
+        padding: 13px;
       }
 
-      .product-price {
+      .product-name-ar {
+        font-size: 14px;
+      }
+
+      .product-name-en {
+        font-size: 10px;
+      }
+
+      .price {
         font-size: 17px;
+      }
+
+      .add-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
       }
     }
   </style>
@@ -599,40 +723,41 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header>
+    <div class="header-inner">
 
-    <a href="#" class="logo">
-      <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100" height="100" rx="28" fill="#D94E28"/>
-        <path d="M50 22L25 42V72C25 75.3137 27.6863 78 31 78H69C72.3137 78 75 75.3137 75 72V42L50 22Z" fill="#18352B"/>
-        <path d="M21 44L50 20L79 44" stroke="#D99E30" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M35 55C35 55 42 65 50 65C58 65 65 55 65 55" stroke="#EADBC8" stroke-width="6" stroke-linecap="round"/>
-      </svg>
-      <span>تِكرَم</span>
-    </a>
+      <a href="#" class="logo">
+        <span class="logo-word">تِكرَم</span>
+        <span class="logo-en">TEKRAM</span>
+      </a>
 
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#categories">الأقسام</a>
-      <a href="#products">المنتجات</a>
-    </nav>
+      <nav>
+        <a href="#">الرئيسية</a>
+        <a href="#categories">الأقسام</a>
+        <a href="#products">المنتجات</a>
+      </nav>
 
-    <button class="cart-btn">
-      🛒 السلة
-    </button>
+      <button class="cart-btn" onclick="showCart()">
+        🛒 السلة
+      </button>
 
+    </div>
   </header>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
-  <main id="home">
+  <main>
 
-    <section class="hero">
+    <section class="hero-section">
 
-      <div class="hero-box">
+      <div class="hero">
 
         <div class="hero-content">
 
@@ -641,7 +766,8 @@
           </div>
 
           <h1>
-            كل شي بتحبّه،<br>
+            كل شي بتحبّه،
+            <br>
             <span>بمكان واحد.</span>
           </h1>
 
@@ -650,16 +776,22 @@
             مختارة بعناية ومن بيتنا لبيتك.
           </p>
 
-          <a href="#products" class="hero-button">
-            تصفّح المنتجات ←
+          <a href="#products" class="hero-btn">
+            تصفّح المنتجات
+            <span>←</span>
           </a>
 
         </div>
 
 
-        <!-- DECORATIONS -->
+        <div class="decor-circle-yellow"></div>
 
-        <div class="hero-circle"></div>
+        <div class="decor-white"></div>
+
+        <div class="decor-dot"></div>
+
+        <div class="decor-orange"></div>
+
 
         <div class="hero-card">
 
@@ -667,407 +799,522 @@
             🛒
           </div>
 
-          <div>
-            <div class="hero-card-title">
-              تِكرَم
-            </div>
+          <div class="hero-card-title">
+            تِكرَم
+          </div>
 
-            <div class="hero-card-small">
-              من بيتنا لبيتك
-            </div>
+          <div class="hero-card-small">
+            من بيتنا لبيتك
           </div>
 
         </div>
 
-        <div class="hero-orange-circle"></div>
-        <div class="hero-white-square"></div>
-        <div class="hero-yellow-dot"></div>
-
-      </div>
-
-      <div class="scroll-hint">
-        اكتشف منتجاتنا ↓
       </div>
 
     </section>
 
 
-    <!-- CATEGORIES -->
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
 
-    <section id="categories">
+    <section class="section" id="categories">
 
-      <div class="section-title">
+      <div class="section-heading">
 
         <div>
-          <h2>الأقسام</h2>
-        </div>
+          <h2 class="section-title">
+            الأقسام
+          </h2>
 
-        <p>
-          كل اللي بتحتاجه بحياتك اليومية
-        </p>
+          <p class="section-subtitle">
+            كل احتياجاتك اليومية بمكان واحد
+          </p>
+        </div>
 
       </div>
 
 
       <div class="categories">
 
-        <a href="#products" class="category">
-          <div class="category-number">01</div>
-          <h3>ألبان وأجبان</h3>
-          <p>لبنة، جبنة وكل الطيبات</p>
-        </a>
+        <div class="category">
 
-        <a href="#products" class="category">
-          <div class="category-number">02</div>
-          <h3>مواد غذائية</h3>
-          <p>أساسيات المونة</p>
-        </a>
+          <div class="category-icon">
+            🧀
+          </div>
 
-        <a href="#products" class="category">
-          <div class="category-number">03</div>
-          <h3>سناكات</h3>
-          <p>للقعدة وبين الوجبات</p>
-        </a>
+          <div>
+            <h3>ألبان وأجبان</h3>
+            <p>لبنة، جبنة وكل الطيبات</p>
+          </div>
 
-        <a href="#products" class="category">
-          <div class="category-number">04</div>
-          <h3>مشروبات</h3>
-          <p>باردة ومنعشة</p>
-        </a>
+        </div>
 
-        <a href="#products" class="category">
-          <div class="category-number">05</div>
-          <h3>محارم</h3>
-          <p>للبيت كل يوم</p>
-        </a>
 
-        <a href="#products" class="category">
-          <div class="category-number">06</div>
-          <h3>مجمّدات</h3>
-          <p>وجبات سهلة لبعدين</p>
-        </a>
+        <div class="category">
+
+          <div class="category-icon">
+            🛒
+          </div>
+
+          <div>
+            <h3>مواد غذائية</h3>
+            <p>أساسيات المونة</p>
+          </div>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">
+            🍿
+          </div>
+
+          <div>
+            <h3>سناكات</h3>
+            <p>للقعدة وبين الوجبات</p>
+          </div>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">
+            🥤
+          </div>
+
+          <div>
+            <h3>مشروبات</h3>
+            <p>باردة ومنعشة</p>
+          </div>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">
+            🧻
+          </div>
+
+          <div>
+            <h3>محارم</h3>
+            <p>للبيت كل يوم</p>
+          </div>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">
+            🧊
+          </div>
+
+          <div>
+            <h3>مجمّدات</h3>
+            <p>وجبات سهلة لبعدين</p>
+          </div>
+
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- PRODUCTS -->
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
 
-    <section id="products" class="products-section">
+    <section class="products-section" id="products">
 
-      <div class="section-title">
+      <div class="products-wrapper">
 
-        <div>
-          <h2>منتجاتنا</h2>
+        <div class="section-heading">
+
+          <div>
+            <h2 class="section-title">
+              منتجاتنا
+            </h2>
+
+            <p class="section-subtitle">
+              اختيارات من تِكرَم
+            </p>
+          </div>
+
         </div>
 
-        <p>
-          منتجات مختارة من تِكرَم
-        </p>
 
-      </div>
+        <div class="products">
 
 
-      <div class="products">
+          <!-- PRODUCT 1 -->
 
+          <div class="product-card">
 
-        <!-- PRODUCT 1 -->
+            <div class="product-image">
 
-        <article class="product-card">
+              <img
+                src="najjar-coffee-no-cardamom-180g.JPG"
+                alt="قهوة نجار دون هال 180 غ"
+              >
 
-          <div class="product-image">
-            <img
-              src="najjar-coffee-no-cardamom-180g.JPG"
-              alt="قهوة نجار دون هال 180 غ"
-            >
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              مواد غذائية
             </div>
 
-            <div class="product-name-ar">
-              قهوة نجار دون هال
-            </div>
+            <div class="product-info">
 
-            <div class="product-name-en">
-              Najjar Coffee No Cardamom
-            </div>
+              <div class="product-category">
+                مواد غذائية
+              </div>
 
-            <div class="product-weight">
-              180 غ | 180 g
-            </div>
+              <div class="product-name-ar">
+                قهوة نجار دون هال
+              </div>
 
-            <div class="product-price">
-              $3.35
-            </div>
+              <div class="product-name-en">
+                Najjar Coffee No Cardamom
+              </div>
 
-          </div>
+              <div class="product-weight">
+                180 غ | 180 g
+              </div>
 
-        </article>
+              <div class="product-bottom">
 
+                <div class="price">
+                  $3.35
+                </div>
 
-        <!-- PRODUCT 2 -->
+                <button class="add-btn" onclick="showCart()">
+                  +
+                </button>
 
-        <article class="product-card">
+              </div>
 
-          <div class="product-image">
-            <div class="product-placeholder">
-              ☕
-            </div>
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              مواد غذائية
-            </div>
-
-            <div class="product-name-ar">
-              قهوة نجار مع هال
-            </div>
-
-            <div class="product-name-en">
-              Najjar Coffee with Cardamom
-            </div>
-
-            <div class="product-weight">
-              450 غ | 450 g
-            </div>
-
-            <div class="product-price">
-              $7.25
             </div>
 
           </div>
 
-        </article>
 
+          <!-- PRODUCT 2 -->
 
-        <!-- PRODUCT 3 -->
+          <div class="product-card">
 
-        <article class="product-card">
-
-          <div class="product-image">
-            <div class="product-placeholder">
-              ☕
-            </div>
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              مواد غذائية
+            <div class="product-image">
+              <div class="placeholder">
+                ☕
+              </div>
             </div>
 
-            <div class="product-name-ar">
-              قهوة نجار دون هال
-            </div>
+            <div class="product-info">
 
-            <div class="product-name-en">
-              Najjar Coffee No Cardamom
-            </div>
+              <div class="product-category">
+                مواد غذائية
+              </div>
 
-            <div class="product-weight">
-              450 غ | 450 g
-            </div>
+              <div class="product-name-ar">
+                قهوة نجار مع هال
+              </div>
 
-            <div class="product-price">
-              $6.10
-            </div>
+              <div class="product-name-en">
+                Najjar Coffee with Cardamom
+              </div>
 
-          </div>
+              <div class="product-weight">
+                450 غ | 450 g
+              </div>
 
-        </article>
+              <div class="product-bottom">
 
+                <div class="price">
+                  $7.25
+                </div>
 
-        <!-- PRODUCT 4 -->
+                <button class="add-btn" onclick="showCart()">
+                  +
+                </button>
 
-        <article class="product-card">
+              </div>
 
-          <div class="product-image">
-            <div class="product-placeholder">
-              ☕
-            </div>
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              مواد غذائية
-            </div>
-
-            <div class="product-name-ar">
-              قهوة نجار مع هال
-            </div>
-
-            <div class="product-name-en">
-              Najjar Coffee with Cardamom
-            </div>
-
-            <div class="product-weight">
-              180 غ | 180 g
-            </div>
-
-            <div class="product-price">
-              $3.55
             </div>
 
           </div>
 
-        </article>
 
+          <!-- PRODUCT 3 -->
 
-        <!-- PRODUCT 5 -->
+          <div class="product-card">
 
-        <article class="product-card">
-
-          <div class="product-image">
-            <div class="product-placeholder">
-              🧀
-            </div>
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              ألبان وأجبان
+            <div class="product-image">
+              <div class="placeholder">
+                ☕
+              </div>
             </div>
 
-            <div class="product-name-ar">
-              جبنة الغزال
-            </div>
+            <div class="product-info">
 
-            <div class="product-name-en">
-              Al Ghazal Cheese
-            </div>
+              <div class="product-category">
+                مواد غذائية
+              </div>
 
-            <div class="product-weight">
-              1.5 كغ | 1.5 kg
-            </div>
+              <div class="product-name-ar">
+                قهوة نجار دون هال
+              </div>
 
-            <div class="product-price">
-              $11.50
-            </div>
+              <div class="product-name-en">
+                Najjar Coffee No Cardamom
+              </div>
 
-          </div>
+              <div class="product-weight">
+                450 غ | 450 g
+              </div>
 
-        </article>
+              <div class="product-bottom">
 
+                <div class="price">
+                  $6.10
+                </div>
 
-        <!-- PRODUCT 6 -->
+                <button class="add-btn" onclick="showCart()">
+                  +
+                </button>
 
-        <article class="product-card">
+              </div>
 
-          <div class="product-image">
-            <div class="product-placeholder">
-              🧀
-            </div>
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              ألبان وأجبان
-            </div>
-
-            <div class="product-name-ar">
-              جبنة الغزال
-            </div>
-
-            <div class="product-name-en">
-              Al Ghazal Cheese
-            </div>
-
-            <div class="product-weight">
-              370 غ | 370 g
-            </div>
-
-            <div class="product-price">
-              $2.70
             </div>
 
           </div>
 
-        </article>
 
+          <!-- PRODUCT 4 -->
 
-        <!-- PRODUCT 7 -->
+          <div class="product-card">
 
-        <article class="product-card">
-
-          <div class="product-image">
-            <div class="product-placeholder">
-              🧀
-            </div>
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              ألبان وأجبان
+            <div class="product-image">
+              <div class="placeholder">
+                ☕
+              </div>
             </div>
 
-            <div class="product-name-ar">
-              جبنة المراعي
-            </div>
+            <div class="product-info">
 
-            <div class="product-name-en">
-              Almarai Cheese
-            </div>
+              <div class="product-category">
+                مواد غذائية
+              </div>
 
-            <div class="product-weight">
-              300 غ | 300 g
-            </div>
+              <div class="product-name-ar">
+                قهوة نجار مع هال
+              </div>
 
-            <div class="product-price">
-              $1.70
-            </div>
+              <div class="product-name-en">
+                Najjar Coffee with Cardamom
+              </div>
 
-          </div>
+              <div class="product-weight">
+                180 غ | 180 g
+              </div>
 
-        </article>
+              <div class="product-bottom">
 
+                <div class="price">
+                  $3.55
+                </div>
 
-        <!-- PRODUCT 8 -->
+                <button class="add-btn" onclick="showCart()">
+                  +
+                </button>
 
-        <article class="product-card">
+              </div>
 
-          <div class="product-image">
-            <div class="product-placeholder">
-              🥛
-            </div>
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              ألبان وأجبان
-            </div>
-
-            <div class="product-name-ar">
-              يوغرت تعنايل غريك
-            </div>
-
-            <div class="product-name-en">
-              Taanayel Greek Yogurt
-            </div>
-
-            <div class="product-weight">
-              كوب | 1 cup
-            </div>
-
-            <div class="product-price">
-              $1.25
             </div>
 
           </div>
 
-        </article>
 
+          <!-- PRODUCT 5 -->
+
+          <div class="product-card">
+
+            <div class="product-image">
+              <div class="placeholder">
+                🧀
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                ألبان وأجبان
+              </div>
+
+              <div class="product-name-ar">
+                جبنة الغزال
+              </div>
+
+              <div class="product-name-en">
+                Al Ghazal Cheese
+              </div>
+
+              <div class="product-weight">
+                1.5 كغ | 1.5 kg
+              </div>
+
+              <div class="product-bottom">
+
+                <div class="price">
+                  $11.50
+                </div>
+
+                <button class="add-btn" onclick="showCart()">
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PRODUCT 6 -->
+
+          <div class="product-card">
+
+            <div class="product-image">
+              <div class="placeholder">
+                🧀
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                ألبان وأجبان
+              </div>
+
+              <div class="product-name-ar">
+                جبنة الغزال
+              </div>
+
+              <div class="product-name-en">
+                Al Ghazal Cheese
+              </div>
+
+              <div class="product-weight">
+                370 غ | 370 g
+              </div>
+
+              <div class="product-bottom">
+
+                <div class="price">
+                  $2.70
+                </div>
+
+                <button class="add-btn" onclick="showCart()">
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PRODUCT 7 -->
+
+          <div class="product-card">
+
+            <div class="product-image">
+              <div class="placeholder">
+                🧀
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                ألبان وأجبان
+              </div>
+
+              <div class="product-name-ar">
+                جبنة المراعي
+              </div>
+
+              <div class="product-name-en">
+                Almarai Cheese
+              </div>
+
+              <div class="product-weight">
+                300 غ | 300 g
+              </div>
+
+              <div class="product-bottom">
+
+                <div class="price">
+                  $1.70
+                </div>
+
+                <button class="add-btn" onclick="showCart()">
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PRODUCT 8 -->
+
+          <div class="product-card">
+
+            <div class="product-image">
+              <div class="placeholder">
+                🥛
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                ألبان وأجبان
+              </div>
+
+              <div class="product-name-ar">
+                يوغرت تعنايل غريك
+              </div>
+
+              <div class="product-name-en">
+                Taanayel Greek Yogurt
+              </div>
+
+              <div class="product-weight">
+                كوب | 1 cup
+              </div>
+
+              <div class="product-bottom">
+
+                <div class="price">
+                  $1.25
+                </div>
+
+                <button class="add-btn" onclick="showCart()">
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
 
       </div>
 
@@ -1076,18 +1323,15 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
     <div class="footer-logo">
-      <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100" height="100" rx="28" fill="#D94E28"/>
-        <path d="M50 22L25 42V72C25 75.3137 27.6863 78 31 78H69C72.3137 78 75 75.3137 75 72V42L50 22Z" fill="#18352B"/>
-        <path d="M21 44L50 20L79 44" stroke="#D99E30" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M35 55C35 55 42 65 50 65C58 65 65 55 65 55" stroke="#EADBC8" stroke-width="6" stroke-linecap="round"/>
-      </svg>
-      <span>تِكرَم | Tekram</span>
+      تِكرَم
+      <span class="footer-en">TEKRAM</span>
     </div>
 
     <p>
@@ -1095,6 +1339,30 @@
     </p>
 
   </footer>
+
+
+  <!-- CART MESSAGE -->
+
+  <div class="cart-message" id="cartMessage">
+    تمت إضافة المنتج إلى السلة 🛒
+  </div>
+
+
+  <script>
+
+    function showCart() {
+
+      const message = document.getElementById("cartMessage");
+
+      message.classList.add("show");
+
+      setTimeout(function () {
+        message.classList.remove("show");
+      }, 1800);
+
+    }
+
+  </script>
 
 </body>
 </html>
