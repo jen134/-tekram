@@ -3,14 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Tekram | تِكرَم</title>
+
+  <style>
+    :root {
+      --green: #0f261e;
+      --beige: #eadbc8;
+      --orange: #d94e28;
+      --yellow: #d99e30;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--green);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo small {
+      display: block;
+      font-size: 14px;
+      margin-top: 3px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .cart-button {
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 24px;
+      font-size: 16px;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .hero-button {
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 24px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    @media (max-width: 700px) {
+      .header {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Tekram</h1>
-  <h2>تِكرَم</h2>
-  <p>كل شي بتحبّه، بمكان واحد.</p>
+  <header class="header">
+
+    <div class="logo">
+      Tekram
+      <small>تِكرَم</small>
+    </div>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#categories">الأقسام</a>
+      <a href="#products">المنتجات</a>
+    </nav>
+
+    <button class="cart-button">
+      🛒 السلة
+    </button>
+
+  </header>
+
+  <main id="home">
+
+    <section class="hero">
+
+      <h1>كل شي بتحبّه، بمكان واحد.</h1>
+
+      <p>
+        منتجاتك اليومية، مختارة بعناية ومن بيتنا لبيتك.
+      </p>
+
+      <button class="hero-button">
+        تصفّح المنتجات
+      </button>
+
+    </section>
+
+  </main>
 
 </body>
 </html>
