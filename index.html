@@ -68,6 +68,7 @@ h1 span{color:var(--o)}
 footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px}
 .footer-logo{color:var(--b);font-size:26px;font-weight:900}
 footer p{font-size:13px;opacity:.8}
+
 /* CART */
 .cart-overlay{display:none;position:fixed;inset:0;background:#0005;z-index:50}
 .cart-panel{
@@ -176,6 +177,7 @@ font-weight:bold;
 font-size:16px;
 cursor:pointer
 }
+
 /* CHECKOUT */
 .checkout-panel-content{
 padding:20px;
@@ -242,6 +244,7 @@ justify-content:space-between;
 font-weight:900;
 font-size:19px
 }
+
 @media(max-width:900px){
 nav{display:none}
 .categories{grid-template-columns:repeat(2,1fr)}
@@ -250,6 +253,7 @@ nav{display:none}
 .product-detail{grid-template-columns:1fr}
 .detail-image,.detail-image img{min-height:350px}
 }
+
 @media(max-width:500px){
 .hero-wrap{padding:25px 4%}
 .hero{padding:35px 7%;border-radius:25px}
@@ -268,235 +272,332 @@ h1{font-size:39px}
 }
 </style>
 </head>
+
 <body>
+
 <header>
 <div class="header">
 <a class="logo" href="#" onclick="showHome()">تِكرَم</a>
+
 <nav>
 <a href="#" onclick="showHome()">الرئيسية</a>
 <a href="#categories" onclick="showHome()">الأقسام</a>
 <a href="#products" onclick="showHome()">المنتجات</a>
 </nav>
+
 <button class="cart" onclick="openCart()">🛒 السلة</button>
 </div>
 </header>
+
 <main>
+
 <div id="home">
+
 <section class="hero-wrap">
 <div class="hero">
+
 <div class="hero-content">
+
 <div class="label">أهلاً بكم في تِكرَم</div>
+
 <h1>
 كل شي بتحبّه،<br>
 <span>بمكان واحد.</span>
 </h1>
+
 <p>
 منتجاتك اليومية، من القهوة والأجبان للسناكات والمشروبات،
 مختارة بعناية ومن بيتنا لبيتك.
 </p>
+
 <a class="hero-btn" href="#products">
 تصفّح المنتجات ←
 </a>
+
 </div>
+
 <div class="circle1"></div>
 <div class="circle2"></div>
+
 <div class="card">
 🛒<br>
 <b>تِكرَم</b><br>
 <small>من بيتنا لبيتك</small>
 </div>
+
 </div>
 </section>
+
 <section class="section" id="categories">
+
 <h2 class="title">الأقسام</h2>
 <p class="subtitle">كل احتياجاتك اليومية بمكان واحد</p>
+
 <div class="categories">
+
 <div class="category">
 🧀
 <h3>ألبان وأجبان</h3>
 <p>لبنة، جبنة وكل الطيبات</p>
 </div>
+
 <div class="category">
 🛒
 <h3>مواد غذائية</h3>
 <p>أساسيات المونة</p>
 </div>
+
 <div class="category">
 🍿
 <h3>سناكات</h3>
 <p>للقعدة وبين الوجبات</p>
 </div>
+
 <div class="category">
 🥤
 <h3>مشروبات</h3>
 <p>باردة ومنعشة</p>
 </div>
+
 <div class="category">
 🧻
 <h3>محارم</h3>
 <p>للبيت كل يوم</p>
 </div>
+
 <div class="category">
 🧊
 <h3>مجمّدات</h3>
 <p>وجبات سهلة لبعدين</p>
 </div>
+
 </div>
 </section>
+
 <section class="products-section" id="products">
+
 <div class="section">
+
 <h2 class="title">منتجاتنا</h2>
 <p class="subtitle">اختيارات من تِكرَم</p>
+
 <div class="products">
+
 <!-- نجار دون هال -->
 <div class="product" onclick="openCoffee('no')">
+
 <div class="product-img">
 <img src="najjar-coffee-no-cardamom-180g.JPG">
 </div>
+
 <div class="info">
+
 <div class="cat">مواد غذائية</div>
+
 <div class="name">
 قهوة نجار دون هال
 </div>
+
 <div class="en">
 Najjar Coffee No Cardamom
 </div>
+
 <div class="weight">
 180 غ / 450 غ
 </div>
+
 <div class="bottom">
+
 <div class="price">
 من $3.35
 </div>
+
 <button class="add">
 +
 </button>
+
 </div>
 </div>
 </div>
+
 <!-- نجار مع هال -->
 <div class="product" onclick="openCoffee('cardamom')">
+
 <div class="product-img">
 <img src="najjar-coffee-with-cardamom-180g.JPG">
 </div>
+
 <div class="info">
+
 <div class="cat">مواد غذائية</div>
+
 <div class="name">
 قهوة نجار مع هال
 </div>
+
 <div class="en">
 Najjar Coffee with Cardamom
 </div>
+
 <div class="weight">
 180 غ / 450 غ
 </div>
+
 <div class="bottom">
+
 <div class="price">
 من $3.55
 </div>
+
 <button class="add">
 +
 </button>
+
 </div>
 </div>
 </div>
+
 <!-- جبنة الغزال -->
 <div class="product" onclick="openCheese()">
+
 <div class="product-img">
 <div class="placeholder">🧀</div>
 </div>
+
 <div class="info">
+
 <div class="cat">ألبان وأجبان</div>
+
 <div class="name">
 جبنة الغزال
 </div>
+
 <div class="en">
 Al Ghazal Cheese
 </div>
+
 <div class="weight">
 370 غ / 1.5 كغ
 </div>
+
 <div class="bottom">
+
 <div class="price">
 من $2.70
 </div>
+
 <button class="add">
 +
 </button>
+
 </div>
 </div>
 </div>
+
 <!-- جبنة المراعي -->
 <div class="product" onclick="openAlmarai()">
+
 <div class="product-img">
 <div class="placeholder">🧀</div>
 </div>
+
 <div class="info">
+
 <div class="cat">ألبان وأجبان</div>
+
 <div class="name">
 جبنة المراعي
 </div>
+
 <div class="en">
 Almarai Cheese
 </div>
+
 <div class="weight">
 300 غ
 </div>
+
 <div class="bottom">
+
 <div class="price">
 $1.70
 </div>
+
 <button class="add">
 +
 </button>
+
 </div>
 </div>
 </div>
+
 <!-- غريك -->
 <div class="product" onclick="openGreek()">
+
 <div class="product-img">
 <div class="placeholder">🥛</div>
 </div>
+
 <div class="info">
+
 <div class="cat">ألبان وأجبان</div>
+
 <div class="name">
 يوغرت تعنايل غريك
 </div>
+
 <div class="en">
 Taanayel Greek Yogurt
 </div>
+
 <div class="weight">
 سادة / فريز / توت / دراق
 </div>
+
 <div class="bottom">
+
 <div class="price">
 $1.25
 </div>
+
 <button class="add">
 +
 </button>
+
 </div>
 </div>
 </div>
+
 </div>
 </div>
 </section>
+
 </div>
+
 <!-- PRODUCT PAGE -->
+
 <section class="product-page" id="productPage">
+
 <div class="product-detail">
+
 <div class="detail-image" id="detailImage"></div>
+
 <div class="detail-info">
+
 <div class="detail-cat" id="detailCat"></div>
 <div class="detail-name" id="detailName"></div>
 <div class="detail-en" id="detailEn"></div>
+
 <div class="sizes" id="sizes"></div>
+
 <div class="detail-weight" id="detailWeight"></div>
 <div class="detail-price" id="detailPrice"></div>
 <div class="detail-description" id="detailDescription"></div>
+
 <button class="back-btn" onclick="showHome()">
 ← العودة للمنتجات
 </button>
+
 <button
 id="addProductBtn"
 class="back-btn"
@@ -504,518 +605,889 @@ style="margin-top:12px;background:var(--o)"
 onclick="addSelectedToCart()">
 🛒 أضف للسلة
 </button>
+
 </div>
 </div>
 </section>
+
 </main>
+
 <!-- CART OVERLAY -->
-<div id="cartOverlay"
+
+<div
+id="cartOverlay"
 class="cart-overlay"
 onclick="closeCart()">
 </div>
+
 <!-- CART PANEL -->
+
 <div id="cartPanel" class="cart-panel">
+
 <div class="cart-head">
+
 <h2>🛒 السلة</h2>
+
 <button
 class="close-cart"
 onclick="closeCart()">
 ×
 </button>
+
 </div>
+
 <div id="cartItems" class="cart-items">
 </div>
+
 <div class="cart-footer">
+
 <div class="cart-total">
+
 <span>
 المجموع
 </span>
+
 <span id="cartTotal">
 $0.00
 </span>
+
 </div>
+
 <button
 class="checkout"
 onclick="openCheckout()">
 إتمام الطلب
 </button>
+
 </div>
 </div>
+
 <!-- CHECKOUT PANEL -->
+
 <div id="checkoutPanel" class="cart-panel">
+
 <div class="cart-head">
+
 <h2>
 📦 إتمام الطلب
 </h2>
+
 <button
 class="close-cart"
 onclick="closeCheckout()">
 ×
 </button>
+
 </div>
+
 <div class="checkout-panel-content">
+
 <div class="form-group">
+
 <label>
 الاسم
 </label>
+
 <input
 id="customerName"
 class="form-input"
 type="text"
 placeholder="اكتب اسمك">
+
 </div>
+
 <div class="form-group">
+
 <label>
 رقم الهاتف
 </label>
+
 <input
 id="customerPhone"
 class="form-input"
 type="tel"
 placeholder="مثال: 03 123 456"
 dir="ltr">
+
 </div>
+
 <div class="form-group">
+
 <label>
 المنطقة
 </label>
+
 <input
 id="customerArea"
 class="form-input"
 type="text"
 placeholder="مثال: صيدا">
+
 </div>
+
 <div class="form-group">
+
 <label>
 العنوان
 </label>
+
 <textarea
 id="customerAddress"
 class="form-input form-textarea"
 placeholder="اكتب العنوان بالتفصيل">
 </textarea>
+
 </div>
+
 <div class="form-group">
+
 <label>
 ملاحظات
 </label>
+
 <textarea
 id="customerNotes"
 class="form-input form-textarea"
 placeholder="ملاحظات إضافية (اختياري)">
 </textarea>
+
 </div>
+
 <div class="checkout-summary">
+
 <div class="summary-title">
 ملخص الطلب
 </div>
+
 <div id="checkoutSummary">
 </div>
+
 <div class="checkout-total">
+
 <span>
 المجموع
 </span>
+
 <span id="checkoutTotal">
 $0.00
 </span>
+
+</div>
+
 </div>
 </div>
-</div>
+
 <div class="cart-footer">
+
 <button
+id="confirmOrderBtn"
 class="checkout"
 onclick="confirmOrder()">
 تأكيد الطلب ✓
 </button>
+
 </div>
 </div>
+
 <footer>
+
 <div class="footer-logo">
 تِكرَم
 </div>
+
 <p>
 من بيتنا لبيتك 🤍
 </p>
+
 </footer>
+
 <script>
+
+const WEB3FORMS_ACCESS_KEY =
+"9edc6eae-83a6-4858-a452-12860503dcfa";
+
 const coffee={
+
 no:{
 name:"قهوة نجار دون هال",
 en:"Najjar Coffee No Cardamom",
+
 items:{
+
 180:{
 price:3.35,
 weight:"180 غ | 180 g",
 image:"najjar-coffee-no-cardamom-180g.JPG"
 },
+
 450:{
 price:6.10,
 weight:"450 غ | 450 g",
 icon:"☕"
 }
+
 }},
+
 cardamom:{
 name:"قهوة نجار مع هال",
 en:"Najjar Coffee with Cardamom",
+
 items:{
+
 180:{
 price:3.55,
 weight:"180 غ | 180 g",
 image:"najjar-coffee-with-cardamom-180g.JPG"
 },
+
 450:{
 price:7.25,
 weight:"450 غ | 450 g",
 icon:"☕"
 }
+
 }}
 };
+
 const cheese={
+
 name:"جبنة الغزال",
 en:"Al Ghazal Cheese",
+
 items:{
+
 370:{
 price:2.70,
 weight:"370 غ | 370 g",
 icon:"🧀"
 },
+
 1500:{
 price:11.50,
 weight:"1.5 كغ | 1.5 kg",
 icon:"🧀"
 }
+
 }
 };
+
 const greek={
+
 name:"يوغرت تعنايل غريك",
 en:"Taanayel Greek Yogurt",
+
 items:{
+
 plain:{
 name:"سادة",
 price:1.25,
 icon:"🥛"
 },
+
 strawberry:{
 name:"فريز",
 price:1.25,
 icon:"🍓"
 },
+
 berry:{
 name:"توت",
 price:1.25,
 icon:"🫐"
 },
+
 peach:{
 name:"دراق",
 price:1.25,
 icon:"🍑"
 }
+
 }
 };
+
 let selectedProduct=null;
 let cart=[];
+
+
 /* =========================
    PRODUCT PAGES
 ========================= */
+
 function openCoffee(type,size=180){
+
 let p=coffee[type];
 let v=p.items[size];
+
 selectedProduct={
 name:p.name,
 option:v.weight.split("|")[0].trim(),
 price:v.price
 };
+
 document.getElementById("home").style.display="none";
 document.getElementById("productPage").style.display="block";
+
 detailCat.textContent="مواد غذائية";
 detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.weight;
 detailPrice.textContent="$"+v.price.toFixed(2);
+
 detailDescription.textContent=
 p.name+"، "+v.weight.split("|")[0];
+
 sizes.innerHTML=[180,450].map(x=>
+
 `<button
 class="size ${x==size?"active":""}"
 onclick="openCoffee('${type}',${x})">
 ${x} غ
 </button>`
+
 ).join("");
+
 detailImage.innerHTML=v.image
+
 ?`<img src="${v.image}" alt="${p.name}">`
+
 :`<div class="detail-placeholder">${v.icon}</div>`;
+
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
+
 }
+
+
 function openCheese(size=370){
+
 let p=cheese;
 let v=p.items[size];
+
 selectedProduct={
 name:p.name,
 option:v.weight.split("|")[0].trim(),
 price:v.price
 };
+
 document.getElementById("home").style.display="none";
 document.getElementById("productPage").style.display="block";
+
 detailCat.textContent="ألبان وأجبان";
 detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.weight;
 detailPrice.textContent="$"+v.price.toFixed(2);
+
 detailDescription.textContent=
 p.name+"، "+v.weight.split("|")[0];
+
 sizes.innerHTML=[370,1500].map(x=>
+
 `<button
 class="size ${x==size?"active":""}"
 onclick="openCheese(${x})">
 ${x==1500?"1.5 كغ":"370 غ"}
 </button>`
+
 ).join("");
+
 detailImage.innerHTML=
 `<div class="detail-placeholder">
 ${v.icon}
 </div>`;
+
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
+
 }
+
+
 function openGreek(flavor="plain"){
+
 let p=greek;
 let v=p.items[flavor];
+
 selectedProduct={
 name:p.name,
 option:v.name,
 price:v.price
 };
+
 document.getElementById("home").style.display="none";
 document.getElementById("productPage").style.display="block";
+
 detailCat.textContent="ألبان وأجبان";
 detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.name;
 detailPrice.textContent="$"+v.price.toFixed(2);
+
 detailDescription.textContent=
 p.name+" - "+v.name;
+
 sizes.innerHTML=Object.keys(p.items).map(x=>
+
 `<button
 class="size ${x==flavor?"active":""}"
 onclick="openGreek('${x}')">
 ${p.items[x].name}
 </button>`
+
 ).join("");
+
 detailImage.innerHTML=
 `<div class="detail-placeholder">
 ${v.icon}
 </div>`;
+
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
+
 }
+
+
 function openAlmarai(){
+
 selectedProduct={
 name:"جبنة المراعي",
 option:"300 غ",
 price:1.70
 };
+
 document.getElementById("home").style.display="none";
 document.getElementById("productPage").style.display="block";
+
 detailCat.textContent="ألبان وأجبان";
 detailName.textContent="جبنة المراعي";
 detailEn.textContent="Almarai Cheese";
 detailWeight.textContent="300 غ | 300 g";
 detailPrice.textContent="$1.70";
+
 detailDescription.textContent=
 "جبنة المراعي، 300 غ";
+
 sizes.innerHTML="";
+
 detailImage.innerHTML=
 `<div class="detail-placeholder">🧀</div>`;
+
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
+
 }
+
+
 function showHome(){
+
 document.getElementById("productPage").style.display="none";
 document.getElementById("home").style.display="block";
+
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
+
 }
+
+
 /* =========================
    CART
 ========================= */
+
 function addSelectedToCart(){
+
 if(!selectedProduct)return;
+
 let existing=cart.find(item=>
 item.name===selectedProduct.name &&
 item.option===selectedProduct.option
 );
+
 if(existing){
+
 existing.qty++;
+
 }else{
+
 cart.push({
 name:selectedProduct.name,
 option:selectedProduct.option,
 price:selectedProduct.price,
 qty:1
 });
+
 }
+
 renderCart();
 openCart();
+
 }
+
+
 function renderCart(){
+
 let box=document.getElementById("cartItems");
+
 if(cart.length===0){
+
 box.innerHTML=`
+
 <div class="empty-cart">
 السلة فارغة 🛒
 </div>
+
 `;
+
 document.getElementById("cartTotal").textContent="$0.00";
+
 return;
 }
+
 box.innerHTML=cart.map((item,index)=>`
+
 <div class="cart-item">
+
 <div class="cart-item-top">
+
 <div>
+
 <div class="cart-item-name">
 ${item.name}
 </div>
+
 <div class="cart-item-option">
 ${item.option}
 </div>
+
 </div>
+
 <div class="cart-item-price">
 $${(item.price*item.qty).toFixed(2)}
 </div>
+
 </div>
+
 <div class="cart-controls">
+
 <button
 class="qty-btn"
 onclick="changeQty(${index},-1)">
 −
 </button>
+
 <strong>
 ${item.qty}
 </strong>
+
 <button
 class="qty-btn"
 onclick="changeQty(${index},1)">
 +
 </button>
+
 <button
 class="remove-btn"
 onclick="removeItem(${index})">
 حذف
 </button>
+
 </div>
+
 </div>
+
 `).join("");
+
 let total=cart.reduce(
 (sum,item)=>
 sum+(item.price*item.qty),
 0
 );
+
 document.getElementById("cartTotal").textContent=
 "$"+total.toFixed(2);
+
 }
+
+
 function changeQty(index,value){
+
 cart[index].qty+=value;
+
 if(cart[index].qty<=0){
 cart.splice(index,1);
 }
+
 renderCart();
+
 }
+
+
 function removeItem(index){
+
 cart.splice(index,1);
 renderCart();
+
 }
+
+
 function openCart(){
+
 document.getElementById("cartPanel").style.right="0";
 document.getElementById("cartOverlay").style.display="block";
+
 renderCart();
+
 }
+
+
 function closeCart(){
+
 document.getElementById("cartPanel").style.right="-420px";
 document.getElementById("cartOverlay").style.display="none";
+
 }
+
+
 /* =========================
    CHECKOUT
 ========================= */
+
 function openCheckout(){
+
 if(cart.length===0){
+
 alert("السلة فارغة");
 return;
+
 }
+
 closeCart();
+
 document.getElementById("checkoutPanel").style.right="0";
 document.getElementById("cartOverlay").style.display="block";
+
 renderCheckout();
+
 }
+
+
 function closeCheckout(){
+
 document.getElementById("checkoutPanel").style.right="-420px";
 document.getElementById("cartOverlay").style.display="none";
+
 }
+
+
 function renderCheckout(){
+
 let summary=
 document.getElementById("checkoutSummary");
+
 summary.innerHTML=cart.map(item=>`
+
 <div class="summary-item">
+
 <div>
+
 <div>
 ${item.name}
 </div>
+
 <div class="summary-option">
 ${item.option} × ${item.qty}
 </div>
+
 </div>
+
 <strong class="summary-price">
 $${(item.price*item.qty).toFixed(2)}
 </strong>
+
 </div>
+
 `).join("");
+
 let total=cart.reduce(
 (sum,item)=>
 sum+(item.price*item.qty),
 0
 );
+
 document.getElementById("checkoutTotal").textContent=
 "$"+total.toFixed(2);
+
 }
-function confirmOrder(){
+
+
+/* =========================
+   SEND ORDER TO EMAIL
+========================= */
+
+async function confirmOrder(){
+
 let name=
 document.getElementById("customerName").value.trim();
+
 let phone=
 document.getElementById("customerPhone").value.trim();
+
 let area=
 document.getElementById("customerArea").value.trim();
+
 let address=
 document.getElementById("customerAddress").value.trim();
+
+let notes=
+document.getElementById("customerNotes").value.trim();
+
 if(!name || !phone || !area || !address){
+
 alert(
 "يرجى تعبئة الاسم ورقم الهاتف والمنطقة والعنوان"
 );
+
 return;
+
 }
+
+if(cart.length===0){
+
+alert("السلة فارغة");
+
+return;
+
+}
+
+let total=cart.reduce(
+(sum,item)=>
+sum+(item.price*item.qty),
+0
+);
+
+let orderDetails=cart.map(item=>
+`• ${item.name} | ${item.option} | الكمية: ${item.qty} | $${(item.price*item.qty).toFixed(2)}`
+).join("\n");
+
+let message=
+"طلب جديد من موقع تِكرَم\n\n"+
+"بيانات الزبون:\n"+
+"الاسم: "+name+"\n"+
+"الهاتف: "+phone+"\n"+
+"المنطقة: "+area+"\n"+
+"العنوان: "+address+"\n"+
+"الملاحظات: "+(notes || "لا يوجد")+"\n\n"+
+"الطلب:\n"+
+orderDetails+"\n\n"+
+"المجموع: $"+total.toFixed(2);
+
+let button=document.getElementById("confirmOrderBtn");
+
+button.disabled=true;
+button.textContent="جاري إرسال الطلب...";
+
+try{
+
+let response=await fetch(
+"https://api.web3forms.com/submit",
+{
+method:"POST",
+
+headers:{
+"Content-Type":"application/json",
+"Accept":"application/json"
+},
+
+body:JSON.stringify({
+
+access_key:WEB3FORMS_ACCESS_KEY,
+
+subject:"🛒 طلب جديد من تِكرَم",
+
+from_name:"Tekram Website",
+
+name:name,
+
+phone:phone,
+
+area:area,
+
+address:address,
+
+notes:notes || "لا يوجد",
+
+order:orderDetails,
+
+total:"$"+total.toFixed(2),
+
+message:message
+
+})
+
+}
+);
+
+let result=await response.json();
+
+if(result.success){
+
 alert(
-"تم استلام طلبك بنجاح ❤️\n\n"+
+"تم إرسال طلبك بنجاح ❤️\n\n"+
 "شكراً لطلبك من تِكرَم."
 );
+
 cart=[];
+
 document.getElementById("customerName").value="";
 document.getElementById("customerPhone").value="";
 document.getElementById("customerArea").value="";
 document.getElementById("customerAddress").value="";
 document.getElementById("customerNotes").value="";
+
 closeCheckout();
+
 renderCart();
+
+}else{
+
+console.error(result);
+
+alert(
+"صار خطأ أثناء إرسال الطلب.\n\n"+
+"يرجى المحاولة مرة ثانية."
+);
+
 }
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"تعذر إرسال الطلب حالياً.\n\n"+
+"تأكدي من اتصال الإنترنت وحاولي مرة ثانية."
+);
+
+}finally{
+
+button.disabled=false;
+button.textContent="تأكيد الطلب ✓";
+
+}
+
+}
+
 renderCart();
+
 </script>
+
 </body>
 </html>
