@@ -3,85 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>تِكرَم | Tekram</title>
+<title>Tekram | تِكرَم</title>
 
 <style>
-:root{--g:#24483a;--gd:#18352b;--b:#eadbc8;--o:#d94e28;--y:#d99e30;--bg:#f7f3ed;--m:#707770;--bd:#e6ded3}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--gd);line-height:1.7}
-a{text-decoration:none;color:inherit}
-
-header{background:var(--g);padding:16px 6%;position:sticky;top:0;z-index:10}
-.header{max-width:1250px;margin:auto;display:flex;align-items:center;justify-content:space-between}
-.logo{color:var(--b);font-size:29px;font-weight:900}
-nav{display:flex;gap:28px;color:#fff;font-weight:bold;font-size:14px}
-.cart{border:0;background:var(--o);color:#fff;padding:10px 16px;border-radius:13px;font-weight:bold}
-
-.hero-wrap{padding:40px 6% 25px}
-.hero{max-width:1250px;min-height:430px;margin:auto;padding:60px 6%;background:var(--b);border-radius:32px;position:relative;overflow:hidden;display:flex;align-items:center}
-.hero-content{max-width:600px;z-index:2}
-.label{display:inline-block;background:var(--g);color:#fff;padding:7px 14px;border-radius:25px;font-size:13px;font-weight:bold;margin-bottom:18px}
-h1{font-size:clamp(42px,6vw,70px);line-height:1.1;margin-bottom:20px}
-h1 span{color:var(--o)}
-.hero p{max-width:560px;color:#59625b;font-size:17px;margin-bottom:25px}
-.hero-btn{display:inline-block;background:var(--g);color:#fff;padding:13px 22px;border-radius:14px;font-weight:bold}
-.card{position:absolute;left:8%;bottom:55px;background:var(--g);color:#fff;padding:22px;width:200px;height:135px;border-radius:23px;transform:rotate(-5deg)}
-.circle1,.circle2{position:absolute;border-radius:50%}
-.circle1{width:220px;height:220px;background:var(--y);left:-70px;top:-70px}
-.circle2{width:110px;height:110px;background:var(--o);left:14%;bottom:-45px}
-
-.section{max-width:1250px;margin:auto;padding:55px 6%}
-.title{font-size:31px;font-weight:900}
-.subtitle{color:var(--m);font-size:14px;margin-bottom:25px}
-
-.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.category{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:22px;min-height:135px}
-.category-icon{font-size:30px}.category h3{font-size:17px}.category p{font-size:12px;color:var(--m)}
-
-.products-section{background:#fff;padding:60px 0 70px}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.product{border:1px solid var(--bd);border-radius:20px;overflow:hidden;background:#fff;cursor:pointer}
-.product:hover{transform:translateY(-4px);box-shadow:0 10px 25px #18352b18}
-.product-img{aspect-ratio:1;background:#f5f1ea;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.product-img img{width:100%;height:100%;object-fit:cover}
-.placeholder{font-size:60px}
-.info{padding:15px}.cat{color:var(--o);font-size:11px;font-weight:bold}
-.name{font-size:16px;font-weight:900}.en,.weight{font-size:11px;color:var(--m)}
-.weight{margin:5px 0 10px}
-.bottom{display:flex;align-items:center;justify-content:space-between}
-.price{font-size:19px;font-weight:900;direction:ltr}
-.add{width:36px;height:36px;border:0;border-radius:11px;background:var(--g);color:#fff;font-size:20px}
-
-.product-page{display:none;min-height:75vh;padding:45px 6% 70px}
-.product-detail{max-width:1000px;margin:auto;background:#fff;border:1px solid var(--bd);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
-.detail-image{background:#f5f1ea;min-height:500px;display:flex;align-items:center;justify-content:center}
-.detail-image img{width:100%;height:100%;min-height:500px;object-fit:contain}
-.detail-placeholder{font-size:130px}
-.detail-info{padding:50px 40px;display:flex;flex-direction:column;justify-content:center}
-.detail-cat{color:var(--o);font-size:13px;font-weight:bold}
-.detail-name{font-size:36px;font-weight:900}.detail-en{color:var(--m);font-size:14px;margin-bottom:18px}
-.detail-weight{color:var(--m);margin-bottom:15px}.detail-price{font-size:32px;font-weight:900;direction:ltr;margin-bottom:20px}
-.detail-description{color:#59625b;font-size:14px;margin-bottom:25px}
-.sizes{display:flex;gap:10px;margin-bottom:25px}
-.size{border:1px solid var(--g);background:#fff;color:var(--g);padding:10px 18px;border-radius:12px;font-weight:bold;cursor:pointer}
-.size.active{background:var(--g);color:#fff}
-.back-btn{width:max-content;background:var(--g);color:#fff;padding:12px 20px;border-radius:13px;font-weight:bold;cursor:pointer;border:0}
-
-footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px}
-.footer-logo{color:var(--b);font-size:26px;font-weight:900}
-footer p{font-size:13px;opacity:.8}
-
-@media(max-width:900px){
-nav{display:none}.categories{grid-template-columns:repeat(2,1fr)}
-.products{grid-template-columns:repeat(2,1fr)}.hero{min-height:500px}
-.product-detail{grid-template-columns:1fr}.detail-image,.detail-image img{min-height:350px}
+:root{
+--g:#24483a;--gd:#18352b;--b:#eadbc8;--o:#d94e28;
+--y:#d99e30;--bg:#f7f3ed;--m:#707770;--bd:#e6ded3
 }
-@media(max-width:500px){
-.hero-wrap{padding:25px 4%}.hero{padding:35px 7%;border-radius:25px}
-h1{font-size:39px}.hero p{font-size:14px}.card{left:8%;bottom:30px;width:165px;height:110px}
-.categories{gap:12px}.category{padding:17px}.products{gap:12px}
-.info{padding:12px}.name{font-size:14px}.price{font-size:17px}
-.product-page{padding:25px 4% 50px}.detail-info{padding:30px 25px}.detail-name{font-size:28px}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#24332c}
+header{background:var(--g);color:white;padding:18px 6%;display:flex;
+justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:25px;font-weight:bold}
+nav a{color:white;text-decoration:none;margin:0 10px;font-size:14px}
+.cart{background:white;color:var(--g);border:0;border-radius:20px;padding:9px 15px;font-weight:bold}
+
+.hero{background:var(--g);color:white;padding:65px 6%;text-align:center}
+.hero h1{font-size:42px;margin:0 0 12px}
+.hero p{margin:0;font-size:17px;opacity:.9}
+
+section{padding:40px 6%}
+h2{text-align:center;margin-bottom:25px}
+
+.categories,.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cat,.card{background:white;border:1px solid var(--bd);border-radius:18px;padding:20px}
+.cat{text-align:center;font-size:18px}
+
+.card{cursor:pointer;transition:.2s}
+.card:hover{transform:translateY(-3px)}
+.pic{height:180px;background:#f4f0e9;border-radius:14px;
+display:flex;align-items:center;justify-content:center;font-size:70px;
+overflow:hidden;margin-bottom:15px}
+.pic img{width:100%;height:100%;object-fit:contain}
+.card h3{margin:5px 0;font-size:18px}
+.en{color:var(--m);font-size:13px}
+.price{font-weight:bold;color:var(--o);font-size:18px;margin-top:10px}
+
+.sizes{display:flex;gap:8px;margin-top:12px}
+.size{border:1px solid var(--bd);background:white;border-radius:9px;
+padding:7px 12px;cursor:pointer}
+.size.active{background:var(--g);color:white;border-color:var(--g)}
+
+#productPage{display:none;padding:40px 6%}
+.back{border:0;background:var(--g);color:white;padding:10px 18px;
+border-radius:10px;cursor:pointer;margin-bottom:25px}
+.detail{max-width:850px;margin:auto;background:white;border-radius:22px;
+padding:25px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.detail .pic{height:320px}
+.detail h1{margin-top:0}
+.detail-price{font-size:28px;color:var(--o);font-weight:bold;margin:15px 0}
+.detail-placeholder{font-size:100px}
+
+@media(max-width:700px){
+.categories,.products{grid-template-columns:1fr 1fr}
+.detail{grid-template-columns:1fr}
+.hero h1{font-size:32px}
 }
 </style>
 </head>
@@ -89,125 +65,135 @@ h1{font-size:39px}.hero p{font-size:14px}.card{left:8%;bottom:30px;width:165px;h
 <body>
 
 <header>
-<div class="header">
-<a class="logo" href="#" onclick="showHome()">تِكرَم</a>
+<div class="logo">تِكرَم | Tekram</div>
 <nav>
-<a href="#" onclick="showHome()">الرئيسية</a>
-<a href="#categories" onclick="showHome()">الأقسام</a>
-<a href="#products" onclick="showHome()">المنتجات</a>
+<a href="#home">الرئيسية</a>
+<a href="#categories">الأقسام</a>
+<a href="#products">المنتجات</a>
 </nav>
 <button class="cart">🛒 السلة</button>
-</div>
 </header>
-
-<main>
 
 <div id="home">
 
-<section class="hero-wrap">
 <div class="hero">
-<div class="hero-content">
-<div class="label">أهلاً بكم في تِكرَم</div>
-<h1>كل شي بتحبّه،<br><span>بمكان واحد.</span></h1>
-<p>منتجاتك اليومية، من القهوة والأجبان للسناكات والمشروبات، مختارة بعناية ومن بيتنا لبيتك.</p>
-<a class="hero-btn" href="#products">تصفّح المنتجات ←</a>
+<h1>كل ما تحتاجه، بكل بساطة</h1>
+<p>منتجاتك اليومية في مكان واحد</p>
 </div>
-<div class="circle1"></div><div class="circle2"></div>
-<div class="card">🛒<br><b>تِكرَم</b><br><small>من بيتنا لبيتك</small></div>
-</div>
-</section>
 
-<section class="section" id="categories">
-<h2 class="title">الأقسام</h2>
-<p class="subtitle">كل احتياجاتك اليومية بمكان واحد</p>
+<section id="categories">
+<h2>الأقسام</h2>
 <div class="categories">
-<div class="category">🧀<h3>ألبان وأجبان</h3><p>لبنة، جبنة وكل الطيبات</p></div>
-<div class="category">🛒<h3>مواد غذائية</h3><p>أساسيات المونة</p></div>
-<div class="category">🍿<h3>سناكات</h3><p>للقعدة وبين الوجبات</p></div>
-<div class="category">🥤<h3>مشروبات</h3><p>باردة ومنعشة</p></div>
-<div class="category">🧻<h3>محارم</h3><p>للبيت كل يوم</p></div>
-<div class="category">🧊<h3>مجمّدات</h3><p>وجبات سهلة لبعدين</p></div>
+<div class="cat">☕ مشروبات ساخنة</div>
+<div class="cat">🧀 ألبان وأجبان</div>
+<div class="cat">🥛 منتجات الألبان</div>
+<div class="cat">🍚 مواد غذائية</div>
+<div class="cat">🍪 سناكات</div>
+<div class="cat">🧻 منتجات منزلية</div>
 </div>
 </section>
 
-<section class="products-section" id="products">
-<div class="section">
-<h2 class="title">منتجاتنا</h2>
-<p class="subtitle">اختيارات من تِكرَم</p>
+<section id="products">
+<h2>المنتجات</h2>
 
 <div class="products">
 
-<!-- نجار دون هال -->
-<div class="product" onclick="openCoffee('no')">
-<div class="product-img"><img src="najjar-coffee-no-cardamom-180g.JPG"></div>
-<div class="info">
-<div class="cat">مواد غذائية</div>
-<div class="name">قهوة نجار دون هال</div>
-<div class="en">Najjar Coffee No Cardamom</div>
-<div class="weight">180 غ / 450 غ</div>
-<div class="bottom"><div class="price">من $3.35</div><button class="add">+</button></div>
+<!-- نجار بدون هال -->
+<div class="card" onclick="openCoffee('no')">
+<div class="pic">
+<img src="najjar-coffee-no-cardamom-180g.JPG" alt="قهوة نجار دون هال">
 </div>
+<h3>قهوة نجار دون هال</h3>
+<div class="en">Najjar Coffee No Cardamom</div>
+<div class="sizes">
+<button class="size">180 غ</button>
+<button class="size">450 غ</button>
+</div>
+<div class="price">من $3.35</div>
 </div>
 
 <!-- نجار مع هال -->
-<div class="product" onclick="openCoffee('cardamom')">
-<div class="product-img"><img src="najjar-coffee-with-cardamom-180g.JPG"></div>
-<div class="info">
-<div class="cat">مواد غذائية</div>
-<div class="name">قهوة نجار مع هال</div>
+<div class="card" onclick="openCoffee('cardamom')">
+<div class="pic">
+<img src="najjar-coffee-with-cardamom-180g.JPG" alt="قهوة نجار مع هال">
+</div>
+<h3>قهوة نجار مع هال</h3>
 <div class="en">Najjar Coffee with Cardamom</div>
-<div class="weight">180 غ / 450 غ</div>
-<div class="bottom"><div class="price">من $3.55</div><button class="add">+</button></div>
+<div class="sizes">
+<button class="size">180 غ</button>
+<button class="size">450 غ</button>
 </div>
-</div>
-
-<div class="product" onclick="openProduct(5)">
-<div class="product-img"><div class="placeholder">🧀</div></div>
-<div class="info"><div class="cat">ألبان وأجبان</div><div class="name">جبنة الغزال</div><div class="en">Al Ghazal Cheese</div><div class="weight">1.5 كغ</div><div class="bottom"><div class="price">$11.50</div><button class="add">+</button></div></div>
+<div class="price">من $3.55</div>
 </div>
 
-<div class="product" onclick="openProduct(6)">
-<div class="product-img"><div class="placeholder">🧀</div></div>
-<div class="info"><div class="cat">ألبان وأجبان</div><div class="name">جبنة الغزال</div><div class="en">Al Ghazal Cheese</div><div class="weight">370 غ</div><div class="bottom"><div class="price">$2.70</div><button class="add">+</button></div></div>
+<!-- جبنة الغزال 1.5 كغ -->
+<div class="card" onclick="openProduct(5)">
+<div class="pic">🧀</div>
+<h3>جبنة الغزال</h3>
+<div class="en">Al Ghazal Cheese</div>
+<div class="price">$11.50</div>
+<div class="en">1.5 كغ | 1.5 kg</div>
 </div>
 
-<div class="product" onclick="openProduct(7)">
-<div class="product-img"><div class="placeholder">🧀</div></div>
-<div class="info"><div class="cat">ألبان وأجبان</div><div class="name">جبنة المراعي</div><div class="en">Almarai Cheese</div><div class="weight">300 غ</div><div class="bottom"><div class="price">$1.70</div><button class="add">+</button></div></div>
+<!-- جبنة الغزال 370غ -->
+<div class="card" onclick="openProduct(6)">
+<div class="pic">🧀</div>
+<h3>جبنة الغزال</h3>
+<div class="en">Al Ghazal Cheese</div>
+<div class="price">$2.70</div>
+<div class="en">370 غ | 370 g</div>
 </div>
 
-<div class="product" onclick="openProduct(8)">
-<div class="product-img"><div class="placeholder">🥛</div></div>
-<div class="info"><div class="cat">ألبان وأجبان</div><div class="name">يوغرت تعنايل غريك</div><div class="en">Taanayel Greek Yogurt</div><div class="weight">كوب</div><div class="bottom"><div class="price">$1.25</div><button class="add">+</button></div></div>
+<!-- المراعي -->
+<div class="card" onclick="openProduct(7)">
+<div class="pic">🧀</div>
+<h3>جبنة المراعي</h3>
+<div class="en">Almarai Cheese</div>
+<div class="price">$1.70</div>
+<div class="en">300 غ | 300 g</div>
 </div>
 
+<!-- غريك يوغرت -->
+<div class="card" onclick="openGreek()">
+<div class="pic">🥛</div>
+<h3>يوغرت تعنايل غريك</h3>
+<div class="en">Taanayel Greek Yogurt</div>
+<div class="sizes">
+<button class="size">سادة</button>
+<button class="size">فريز</button>
+<button class="size">توت</button>
+<button class="size">دراق</button>
 </div>
+<div class="price">$1.25</div>
+</div>
+
 </div>
 </section>
 </div>
 
-<section class="product-page" id="productPage">
-<div class="product-detail">
-<div class="detail-image" id="detailImage"></div>
-<div class="detail-info">
-<div class="detail-cat" id="detailCat"></div>
-<div class="detail-name" id="detailName"></div>
-<div class="detail-en" id="detailEn"></div>
+<!-- صفحة المنتج -->
+<div id="productPage">
 
-<div class="sizes" id="sizes"></div>
+<button class="back" onclick="showHome()">← رجوع للمنتجات</button>
 
-<div class="detail-weight" id="detailWeight"></div>
+<div class="detail">
+
+<div class="pic" id="detailImage"></div>
+
+<div>
+<div class="en" id="detailCat"></div>
+<h1 id="detailName"></h1>
+<div class="en" id="detailEn"></div>
+
+<div id="sizes" class="sizes"></div>
+
 <div class="detail-price" id="detailPrice"></div>
-<div class="detail-description" id="detailDescription"></div>
+<p id="detailWeight"></p>
+<p id="detailDescription"></p>
+</div>
 
-<button class="back-btn" onclick="showHome()">← العودة للمنتجات</button>
 </div>
 </div>
-</section>
-
-</main>
-
-<footer><div class="footer-logo">تِكرَم</div><p>من بيتنا لبيتك 🤍</p></footer>
 
 <script>
 
@@ -216,29 +202,56 @@ no:{
 name:"قهوة نجار دون هال",
 en:"Najjar Coffee No Cardamom",
 items:{
-180:{price:"$3.35",weight:"180 غ | 180 g",image:"najjar-coffee-no-cardamom-180g.JPG"},
-450:{price:"$6.10",weight:"450 غ | 450 g",icon:"☕"}
+180:{
+price:"$3.35",
+weight:"180 غ | 180 g",
+image:"najjar-coffee-no-cardamom-180g.JPG"
+},
+450:{
+price:"$6.10",
+weight:"450 غ | 450 g",
+icon:"☕"
+}
 }},
 cardamom:{
 name:"قهوة نجار مع هال",
 en:"Najjar Coffee with Cardamom",
 items:{
-180:{price:"$3.55",weight:"180 غ | 180 g",image:"najjar-coffee-with-cardamom-180g.JPG"},
-450:{price:"$7.25",weight:"450 غ | 450 g",icon:"☕"}
+180:{
+price:"$3.55",
+weight:"180 غ | 180 g",
+image:"najjar-coffee-with-cardamom-180g.JPG"
+},
+450:{
+price:"$7.25",
+weight:"450 غ | 450 g",
+icon:"☕"
+}
 }}
 };
 
 const other={
 5:["جبنة الغزال","Al Ghazal Cheese","1.5 كغ","$11.50","🧀"],
 6:["جبنة الغزال","Al Ghazal Cheese","370 غ","$2.70","🧀"],
-7:["جبنة المراعي","Almarai Cheese","300 غ","$1.70","🧀"],
-8:["يوغرت تعنايل غريك","Taanayel Greek Yogurt","كوب","$1.25","🥛"]
+7:["جبنة المراعي","Almarai Cheese","300 غ","$1.70","🧀"]
+};
+
+const greek={
+name:"يوغرت تعنايل غريك",
+en:"Taanayel Greek Yogurt",
+items:{
+plain:["سادة","Plain","$1.25","🥛"],
+strawberry:["فريز","Strawberry","$1.25","🍓"],
+berry:["توت","Berry","$1.25","🫐"],
+peach:["دراق","Peach","$1.25","🍑"]
+}
 };
 
 function openCoffee(type,size=180){
 let p=coffee[type],v=p.items[size];
-document.getElementById("home").style.display="none";
-document.getElementById("productPage").style.display="block";
+
+home.style.display="none";
+productPage.style.display="block";
 
 detailCat.textContent="مواد غذائية";
 detailName.textContent=p.name;
@@ -248,7 +261,8 @@ detailPrice.textContent=v.price;
 detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
 
 sizes.innerHTML=[180,450].map(x=>
-`<button class="size ${x==size?"active":""}" onclick="openCoffee('${type}',${x})">${x} غ</button>`
+`<button class="size ${x==size?"active":""}"
+onclick="openCoffee('${type}',${x})">${x} غ</button>`
 ).join("");
 
 detailImage.innerHTML=v.image
@@ -258,10 +272,35 @@ detailImage.innerHTML=v.image
 window.scrollTo({top:0,behavior:"smooth"});
 }
 
+function openGreek(flavor="plain"){
+let p=greek,v=p.items[flavor];
+
+home.style.display="none";
+productPage.style.display="block";
+
+detailCat.textContent="ألبان وأجبان";
+detailName.textContent=p.name;
+detailEn.textContent=p.en;
+detailWeight.textContent=v[0];
+detailPrice.textContent=v[2];
+detailDescription.textContent=p.name+" - "+v[0];
+
+sizes.innerHTML=Object.keys(p.items).map(x=>
+`<button class="size ${x==flavor?"active":""}"
+onclick="openGreek('${x}')">${p.items[x][0]}</button>`
+).join("");
+
+detailImage.innerHTML=
+`<div class="detail-placeholder">${v[3]}</div>`;
+
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
 function openProduct(id){
 let p=other[id];
-document.getElementById("home").style.display="none";
-document.getElementById("productPage").style.display="block";
+
+home.style.display="none";
+productPage.style.display="block";
 
 detailCat.textContent="ألبان وأجبان";
 detailName.textContent=p[0];
@@ -269,17 +308,21 @@ detailEn.textContent=p[1];
 detailWeight.textContent=p[2];
 detailPrice.textContent=p[3];
 detailDescription.textContent=p[0]+"، "+p[2];
+
 sizes.innerHTML="";
-detailImage.innerHTML=`<div class="detail-placeholder">${p[4]}</div>`;
+detailImage.innerHTML=
+`<div class="detail-placeholder">${p[4]}</div>`;
+
 window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function showHome(){
-document.getElementById("productPage").style.display="none";
-document.getElementById("home").style.display="block";
+productPage.style.display="none";
+home.style.display="block";
 window.scrollTo({top:0,behavior:"smooth"});
 }
 
 </script>
+
 </body>
 </html>
