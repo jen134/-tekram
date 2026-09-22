@@ -11,7 +11,6 @@
       --green: #0f261e;
       --beige: #eadbc8;
       --orange: #d94e28;
-      --yellow: #d99e30;
       --white: #ffffff;
     }
 
@@ -105,8 +104,7 @@
       margin-bottom: 25px;
     }
 
-    .category-grid,
-    .product-grid {
+    .category-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
@@ -136,65 +134,121 @@
       font-size: 15px;
     }
 
+    /* PRODUCTS */
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
     .product-card {
       background: var(--beige);
       color: var(--green);
-      padding: 22px;
       border-radius: 18px;
-      min-height: 190px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      padding: 12px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 60%;
+      object-fit: contain;
+      background: white;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .product-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7px 4px 2px;
     }
 
     .product-category {
-      font-size: 13px;
-      opacity: 0.7;
-      margin-bottom: 15px;
+      font-size: 10px;
+      opacity: 0.65;
+      margin-bottom: 4px;
     }
 
-    .product-card h3 {
-      font-size: 20px;
-      margin-bottom: 7px;
+    .product-ar {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 2px;
     }
 
-    .product-card p {
-      font-size: 16px;
-      margin-bottom: 18px;
+    .product-en {
+      direction: ltr;
+      text-align: right;
+      font-size: 12px;
+      opacity: 0.75;
+      margin-bottom: 4px;
+    }
+
+    .product-weight {
+      font-size: 12px;
+      margin-bottom: 4px;
+      opacity: 0.8;
     }
 
     .product-price {
-      font-size: 22px;
+      font-size: 18px;
       font-weight: bold;
       color: var(--orange);
     }
 
-    @media (max-width: 700px) {
-      .header {
-        flex-wrap: wrap;
-        gap: 15px;
+    @media (max-width: 800px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      nav {
-        order: 3;
-        width: 100%;
-        justify-content: center;
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .hero h1 {
         font-size: 36px;
       }
-
-      .category-grid,
-      .product-grid {
-        grid-template-columns: 1fr 1fr;
-      }
     }
 
     @media (max-width: 450px) {
-      .category-grid,
       .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .category-grid {
         grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        padding: 8px;
+        border-radius: 14px;
+      }
+
+      .product-card img {
+        height: 56%;
+      }
+
+      .product-ar {
+        font-size: 13px;
+      }
+
+      .product-en {
+        font-size: 10px;
+      }
+
+      .product-weight {
+        font-size: 10px;
+      }
+
+      .product-price {
+        font-size: 16px;
       }
     }
   </style>
@@ -289,83 +343,248 @@
 
       <div class="product-grid">
 
+        <!-- 1 -->
         <div class="product-card">
-          <div>
-            <div class="product-category">مواد غذائية</div>
-            <h3>قهوة نجار مع هال</h3>
-            <p>450 غ</p>
+
+          <img
+            src="najjar-coffee-no-cardamom-180g.JPG"
+            alt="قهوة نجار دون هال 180 غ"
+          >
+
+          <div class="product-info">
+
+            <div class="product-category">
+              مواد غذائية
+            </div>
+
+            <div class="product-ar">
+              قهوة نجار دون هال
+            </div>
+
+            <div class="product-en">
+              Najjar Coffee No Cardamom
+            </div>
+
+            <div class="product-weight">
+              180 غ | 180 g
+            </div>
+
+            <div class="product-price">
+              $3.35
+            </div>
+
           </div>
-          <div class="product-price">$7.25</div>
+
         </div>
 
+
+        <!-- 2 -->
         <div class="product-card">
-          <div>
-            <div class="product-category">مواد غذائية</div>
-            <h3>قهوة نجار دون هال</h3>
-            <p>450 غ</p>
+
+          <div class="product-info">
+
+            <div class="product-category">
+              مواد غذائية
+            </div>
+
+            <div class="product-ar">
+              قهوة نجار مع هال
+            </div>
+
+            <div class="product-en">
+              Najjar Coffee with Cardamom
+            </div>
+
+            <div class="product-weight">
+              450 غ | 450 g
+            </div>
+
+            <div class="product-price">
+              $7.25
+            </div>
+
           </div>
-          <div class="product-price">$6.10</div>
+
         </div>
 
+
+        <!-- 3 -->
         <div class="product-card">
-  <img
-    src="najjar-coffee-no-cardamom-180g.JPG"
-    alt="قهوة نجار دون هال 180 غ"
-    style="width:100%; height:180px; object-fit:contain; background:white; border-radius:12px; margin-bottom:15px;"
-  >
 
-  <div>
-    <div class="product-category">مواد غذائية</div>
-    <h3>قهوة نجار دون هال</h3>
-    <p>180 غ</p>
-  </div>
+          <div class="product-info">
 
-  <div class="product-price">$3.35</div>
-</div>
+            <div class="product-category">
+              مواد غذائية
+            </div>
 
-        <div class="product-card">
-          <div>
-            <div class="product-category">مواد غذائية</div>
-            <h3>قهوة نجار مع هال</h3>
-            <p>180 غ</p>
+            <div class="product-ar">
+              قهوة نجار دون هال
+            </div>
+
+            <div class="product-en">
+              Najjar Coffee No Cardamom
+            </div>
+
+            <div class="product-weight">
+              450 غ | 450 g
+            </div>
+
+            <div class="product-price">
+              $6.10
+            </div>
+
           </div>
-          <div class="product-price">$3.55</div>
+
         </div>
 
+
+        <!-- 4 -->
         <div class="product-card">
-          <div>
-            <div class="product-category">ألبان وأجبان</div>
-            <h3>جبنة الغزال</h3>
-            <p>1.5 كغ</p>
+
+          <div class="product-info">
+
+            <div class="product-category">
+              مواد غذائية
+            </div>
+
+            <div class="product-ar">
+              قهوة نجار مع هال
+            </div>
+
+            <div class="product-en">
+              Najjar Coffee with Cardamom
+            </div>
+
+            <div class="product-weight">
+              180 غ | 180 g
+            </div>
+
+            <div class="product-price">
+              $3.55
+            </div>
+
           </div>
-          <div class="product-price">$11.50</div>
+
         </div>
 
+
+        <!-- 5 -->
         <div class="product-card">
-          <div>
-            <div class="product-category">ألبان وأجبان</div>
-            <h3>جبنة الغزال</h3>
-            <p>370 غ</p>
+
+          <div class="product-info">
+
+            <div class="product-category">
+              ألبان وأجبان
+            </div>
+
+            <div class="product-ar">
+              جبنة الغزال
+            </div>
+
+            <div class="product-en">
+              Al Ghazal Cheese
+            </div>
+
+            <div class="product-weight">
+              1.5 كغ | 1.5 kg
+            </div>
+
+            <div class="product-price">
+              $11.50
+            </div>
+
           </div>
-          <div class="product-price">$2.70</div>
+
         </div>
 
+
+        <!-- 6 -->
         <div class="product-card">
-          <div>
-            <div class="product-category">ألبان وأجبان</div>
-            <h3>جبنة المراعي</h3>
-            <p>300 غ</p>
+
+          <div class="product-info">
+
+            <div class="product-category">
+              ألبان وأجبان
+            </div>
+
+            <div class="product-ar">
+              جبنة الغزال
+            </div>
+
+            <div class="product-en">
+              Al Ghazal Cheese
+            </div>
+
+            <div class="product-weight">
+              370 غ | 370 g
+            </div>
+
+            <div class="product-price">
+              $2.70
+            </div>
+
           </div>
-          <div class="product-price">$1.70</div>
+
         </div>
 
+
+        <!-- 7 -->
         <div class="product-card">
-          <div>
-            <div class="product-category">ألبان وأجبان</div>
-            <h3>يوغرت تعنايل غريك</h3>
-            <p>كوب</p>
+
+          <div class="product-info">
+
+            <div class="product-category">
+              ألبان وأجبان
+            </div>
+
+            <div class="product-ar">
+              جبنة المراعي
+            </div>
+
+            <div class="product-en">
+              Almarai Cheese
+            </div>
+
+            <div class="product-weight">
+              300 غ | 300 g
+            </div>
+
+            <div class="product-price">
+              $1.70
+            </div>
+
           </div>
-          <div class="product-price">$1.25</div>
+
+        </div>
+
+
+        <!-- 8 -->
+        <div class="product-card">
+
+          <div class="product-info">
+
+            <div class="product-category">
+              ألبان وأجبان
+            </div>
+
+            <div class="product-ar">
+              يوغرت تعنايل غريك
+            </div>
+
+            <div class="product-en">
+              Taanayel Greek Yogurt
+            </div>
+
+            <div class="product-weight">
+              كوب | 1 cup
+            </div>
+
+            <div class="product-price">
+              $1.25
+            </div>
+
+          </div>
+
         </div>
 
       </div>
