@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -258,7 +259,14 @@ h1 span{
   border:1px solid var(--border);
   border-radius:20px;
   overflow:hidden;
-  background:white
+  background:white;
+  cursor:pointer;
+  transition:.2s
+}
+
+.product:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px #18352b18
 }
 
 .product-img{
@@ -283,35 +291,30 @@ h1 span{
 
 .info{
   padding:15px;
-  background:white;
-  display:block
+  background:white
 }
 
 .cat{
   color:var(--o);
   font-size:11px;
-  font-weight:bold;
-  margin-bottom:2px
+  font-weight:bold
 }
 
 .name{
   font-size:16px;
   font-weight:900;
-  color:var(--gd);
-  display:block
+  color:var(--gd)
 }
 
 .en{
   font-size:11px;
-  color:var(--muted);
-  display:block
+  color:var(--muted)
 }
 
 .weight{
   font-size:11px;
   color:#818681;
-  margin:5px 0 10px;
-  display:block
+  margin:5px 0 10px
 }
 
 .bottom{
@@ -323,8 +326,7 @@ h1 span{
 .price{
   font-size:19px;
   font-weight:900;
-  direction:ltr;
-  color:var(--gd)
+  direction:ltr
 }
 
 .add{
@@ -334,7 +336,104 @@ h1 span{
   border-radius:11px;
   background:var(--g);
   color:white;
-  font-size:20px
+  font-size:20px;
+  cursor:pointer
+}
+
+/* PRODUCT PAGE */
+
+.product-page{
+  display:none;
+  min-height:75vh;
+  padding:45px 6% 70px
+}
+
+.product-detail{
+  max-width:1000px;
+  margin:auto;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:28px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1fr
+}
+
+.detail-image{
+  background:#f5f1ea;
+  min-height:500px;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+
+.detail-image img{
+  width:100%;
+  height:100%;
+  min-height:500px;
+  object-fit:contain
+}
+
+.detail-placeholder{
+  font-size:130px
+}
+
+.detail-info{
+  padding:50px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center
+}
+
+.detail-cat{
+  color:var(--o);
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:8px
+}
+
+.detail-name{
+  font-size:36px;
+  font-weight:900;
+  margin-bottom:4px
+}
+
+.detail-en{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px
+}
+
+.detail-weight{
+  color:#707770;
+  margin-bottom:22px
+}
+
+.detail-price{
+  font-size:32px;
+  font-weight:900;
+  direction:ltr;
+  text-align:right;
+  margin-bottom:25px
+}
+
+.detail-description{
+  color:#59625b;
+  font-size:14px;
+  margin-bottom:30px
+}
+
+.back-btn{
+  display:inline-block;
+  width:max-content;
+  background:var(--g);
+  color:white;
+  padding:12px 20px;
+  border-radius:13px;
+  font-weight:bold;
+  cursor:pointer;
+  border:0;
+  font-family:inherit
 }
 
 /* FOOTER */
@@ -375,6 +474,18 @@ footer p{
 
   .hero{
     min-height:500px
+  }
+
+  .product-detail{
+    grid-template-columns:1fr
+  }
+
+  .detail-image{
+    min-height:350px
+  }
+
+  .detail-image img{
+    min-height:350px
   }
 }
 
@@ -431,6 +542,18 @@ footer p{
   .price{
     font-size:17px
   }
+
+  .product-page{
+    padding:25px 4% 50px
+  }
+
+  .detail-info{
+    padding:30px 25px
+  }
+
+  .detail-name{
+    font-size:28px
+  }
 }
 </style>
 </head>
@@ -438,16 +561,17 @@ footer p{
 <body>
 
 <header>
+
   <div class="header">
 
-    <a class="logo" href="#">
+    <a class="logo" href="#" onclick="showHome()">
       تِكرَم
     </a>
 
     <nav>
-      <a href="#">الرئيسية</a>
-      <a href="#categories">الأقسام</a>
-      <a href="#products">المنتجات</a>
+      <a href="#" onclick="showHome()">الرئيسية</a>
+      <a href="#categories" onclick="showHome()">الأقسام</a>
+      <a href="#products" onclick="showHome()">المنتجات</a>
     </nav>
 
     <button class="cart">
@@ -455,166 +579,503 @@ footer p{
     </button>
 
   </div>
+
 </header>
 
 
 <main>
 
-<!-- HERO -->
+<!-- HOME -->
 
-<section class="hero-wrap">
+<div id="home">
 
-  <div class="hero">
+  <!-- HERO -->
 
-    <div class="hero-content">
+  <section class="hero-wrap">
 
-      <div class="label">
-        أهلاً بكم في تِكرَم
+    <div class="hero">
+
+      <div class="hero-content">
+
+        <div class="label">
+          أهلاً بكم في تِكرَم
+        </div>
+
+        <h1>
+          كل شي بتحبّه،
+          <br>
+          <span>بمكان واحد.</span>
+        </h1>
+
+        <p>
+          منتجاتك اليومية، من القهوة والأجبان للسناكات والمشروبات،
+          مختارة بعناية ومن بيتنا لبيتك.
+        </p>
+
+        <a class="hero-btn" href="#products">
+          تصفّح المنتجات ←
+        </a>
+
       </div>
 
-      <h1>
-        كل شي بتحبّه،
-        <br>
-        <span>بمكان واحد.</span>
-      </h1>
+      <div class="circle1"></div>
+      <div class="circle2"></div>
 
-      <p>
-        منتجاتك اليومية، من القهوة والأجبان للسناكات والمشروبات،
-        مختارة بعناية ومن بيتنا لبيتك.
-      </p>
-
-      <a class="hero-btn" href="#products">
-        تصفّح المنتجات ←
-      </a>
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <div class="card-title">تِكرَم</div>
+        <small>من بيتنا لبيتك</small>
+      </div>
 
     </div>
 
-    <div class="circle1"></div>
-    <div class="circle2"></div>
-
-    <div class="card">
-      <div class="card-icon">🛒</div>
-      <div class="card-title">تِكرَم</div>
-      <small>من بيتنا لبيتك</small>
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 
-<!-- CATEGORIES -->
+  <!-- CATEGORIES -->
 
-<section class="section" id="categories">
-
-  <h2 class="title">
-    الأقسام
-  </h2>
-
-  <p class="subtitle">
-    كل احتياجاتك اليومية بمكان واحد
-  </p>
-
-  <div class="categories">
-
-    <div class="category">
-      <div class="category-icon">🧀</div>
-      <h3>ألبان وأجبان</h3>
-      <p>لبنة، جبنة وكل الطيبات</p>
-    </div>
-
-    <div class="category">
-      <div class="category-icon">🛒</div>
-      <h3>مواد غذائية</h3>
-      <p>أساسيات المونة</p>
-    </div>
-
-    <div class="category">
-      <div class="category-icon">🍿</div>
-      <h3>سناكات</h3>
-      <p>للقعدة وبين الوجبات</p>
-    </div>
-
-    <div class="category">
-      <div class="category-icon">🥤</div>
-      <h3>مشروبات</h3>
-      <p>باردة ومنعشة</p>
-    </div>
-
-    <div class="category">
-      <div class="category-icon">🧻</div>
-      <h3>محارم</h3>
-      <p>للبيت كل يوم</p>
-    </div>
-
-    <div class="category">
-      <div class="category-icon">🧊</div>
-      <h3>مجمّدات</h3>
-      <p>وجبات سهلة لبعدين</p>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section class="products-section" id="products">
-
-  <div class="section">
+  <section class="section" id="categories">
 
     <h2 class="title">
-      منتجاتنا
+      الأقسام
     </h2>
 
     <p class="subtitle">
-      اختيارات من تِكرَم
+      كل احتياجاتك اليومية بمكان واحد
     </p>
 
-    <div class="products">
+    <div class="categories">
+
+      <div class="category">
+        <div class="category-icon">🧀</div>
+        <h3>ألبان وأجبان</h3>
+        <p>لبنة، جبنة وكل الطيبات</p>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🛒</div>
+        <h3>مواد غذائية</h3>
+        <p>أساسيات المونة</p>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🍿</div>
+        <h3>سناكات</h3>
+        <p>للقعدة وبين الوجبات</p>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🥤</div>
+        <h3>مشروبات</h3>
+        <p>باردة ومنعشة</p>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🧻</div>
+        <h3>محارم</h3>
+        <p>للبيت كل يوم</p>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🧊</div>
+        <h3>مجمّدات</h3>
+        <p>وجبات سهلة لبعدين</p>
+      </div>
+
+    </div>
+
+  </section>
 
 
-      <!-- 1 -->
+  <!-- PRODUCTS -->
 
-      <div class="product">
+  <section class="products-section" id="products">
 
-        <div class="product-img">
+    <div class="section">
 
-          <img
-            src="najjar-coffee-no-cardamom-180g.JPG"
-            alt="قهوة نجار دون هال 180 غ"
-          >
+      <h2 class="title">
+        منتجاتنا
+      </h2>
+
+      <p class="subtitle">
+        اختيارات من تِكرَم
+      </p>
+
+      <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product" onclick="openProduct(1)">
+
+          <div class="product-img">
+
+            <img
+              src="najjar-coffee-no-cardamom-180g.JPG"
+              alt="قهوة نجار دون هال 180 غ"
+            >
+
+          </div>
+
+          <div class="info">
+
+            <div class="cat">
+              مواد غذائية
+            </div>
+
+            <div class="name">
+              قهوة نجار دون هال
+            </div>
+
+            <div class="en">
+              Najjar Coffee No Cardamom
+            </div>
+
+            <div class="weight">
+              180 غ | 180 g
+            </div>
+
+            <div class="bottom">
+
+              <div class="price">
+                $3.35
+              </div>
+
+              <button class="add" onclick="event.stopPropagation();openProduct(1)">
+                +
+              </button>
+
+            </div>
+
+          </div>
 
         </div>
 
-        <div class="info">
 
-          <div class="cat">
-            مواد غذائية
+        <!-- PRODUCT 2 -->
+
+        <div class="product" onclick="openProduct(2)">
+
+          <div class="product-img">
+
+            <img
+              src="najjar-coffee-with-cardamom-180g.JPG"
+              alt="قهوة نجار مع هال 180 غ"
+            >
+
           </div>
 
-          <div class="name">
-            قهوة نجار دون هال
-          </div>
+          <div class="info">
 
-          <div class="en">
-            Najjar Coffee No Cardamom
-          </div>
-
-          <div class="weight">
-            180 غ | 180 g
-          </div>
-
-          <div class="bottom">
-
-            <div class="price">
-              $3.35
+            <div class="cat">
+              مواد غذائية
             </div>
 
-            <button class="add">
-              +
-            </button>
+            <div class="name">
+              قهوة نجار مع هال
+            </div>
+
+            <div class="en">
+              Najjar Coffee with Cardamom
+            </div>
+
+            <div class="weight">
+              180 غ | 180 g
+            </div>
+
+            <div class="bottom">
+
+              <div class="price">
+                $3.55
+              </div>
+
+              <button class="add" onclick="event.stopPropagation();openProduct(2)">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product" onclick="openProduct(3)">
+
+          <div class="product-img">
+
+            <div class="placeholder">
+              ☕
+            </div>
+
+          </div>
+
+          <div class="info">
+
+            <div class="cat">
+              مواد غذائية
+            </div>
+
+            <div class="name">
+              قهوة نجار مع هال
+            </div>
+
+            <div class="en">
+              Najjar Coffee with Cardamom
+            </div>
+
+            <div class="weight">
+              450 غ | 450 g
+            </div>
+
+            <div class="bottom">
+
+              <div class="price">
+                $7.25
+              </div>
+
+              <button class="add" onclick="event.stopPropagation();openProduct(3)">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product" onclick="openProduct(4)">
+
+          <div class="product-img">
+
+            <div class="placeholder">
+              ☕
+            </div>
+
+          </div>
+
+          <div class="info">
+
+            <div class="cat">
+              مواد غذائية
+            </div>
+
+            <div class="name">
+              قهوة نجار دون هال
+            </div>
+
+            <div class="en">
+              Najjar Coffee No Cardamom
+            </div>
+
+            <div class="weight">
+              450 غ | 450 g
+            </div>
+
+            <div class="bottom">
+
+              <div class="price">
+                $6.10
+              </div>
+
+              <button class="add" onclick="event.stopPropagation();openProduct(4)">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product" onclick="openProduct(5)">
+
+          <div class="product-img">
+
+            <div class="placeholder">
+              🧀
+            </div>
+
+          </div>
+
+          <div class="info">
+
+            <div class="cat">
+              ألبان وأجبان
+            </div>
+
+            <div class="name">
+              جبنة الغزال
+            </div>
+
+            <div class="en">
+              Al Ghazal Cheese
+            </div>
+
+            <div class="weight">
+              1.5 كغ | 1.5 kg
+            </div>
+
+            <div class="bottom">
+
+              <div class="price">
+                $11.50
+              </div>
+
+              <button class="add" onclick="event.stopPropagation();openProduct(5)">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product" onclick="openProduct(6)">
+
+          <div class="product-img">
+
+            <div class="placeholder">
+              🧀
+            </div>
+
+          </div>
+
+          <div class="info">
+
+            <div class="cat">
+              ألبان وأجبان
+            </div>
+
+            <div class="name">
+              جبنة الغزال
+            </div>
+
+            <div class="en">
+              Al Ghazal Cheese
+            </div>
+
+            <div class="weight">
+              370 غ | 370 g
+            </div>
+
+            <div class="bottom">
+
+              <div class="price">
+                $2.70
+              </div>
+
+              <button class="add" onclick="event.stopPropagation();openProduct(6)">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+
+        <div class="product" onclick="openProduct(7)">
+
+          <div class="product-img">
+
+            <div class="placeholder">
+              🧀
+            </div>
+
+          </div>
+
+          <div class="info">
+
+            <div class="cat">
+              ألبان وأجبان
+            </div>
+
+            <div class="name">
+              جبنة المراعي
+            </div>
+
+            <div class="en">
+              Almarai Cheese
+            </div>
+
+            <div class="weight">
+              300 غ | 300 g
+            </div>
+
+            <div class="bottom">
+
+              <div class="price">
+                $1.70
+              </div>
+
+              <button class="add" onclick="event.stopPropagation();openProduct(7)">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+
+        <div class="product" onclick="openProduct(8)">
+
+          <div class="product-img">
+
+            <div class="placeholder">
+              🥛
+            </div>
+
+          </div>
+
+          <div class="info">
+
+            <div class="cat">
+              ألبان وأجبان
+            </div>
+
+            <div class="name">
+              يوغرت تعنايل غريك
+            </div>
+
+            <div class="en">
+              Taanayel Greek Yogurt
+            </div>
+
+            <div class="weight">
+              كوب | 1 cup
+            </div>
+
+            <div class="bottom">
+
+              <div class="price">
+                $1.25
+              </div>
+
+              <button class="add" onclick="event.stopPropagation();openProduct(8)">
+                +
+              </button>
+
+            </div>
 
           </div>
 
@@ -622,324 +1083,38 @@ footer p{
 
       </div>
 
+    </div>
 
-      <!-- 2 -->
+  </section>
 
-      <div class="product">
+</div>
 
-        <div class="product-img">
 
-          <img
-            src="najjar-coffee-with-cardamom-180g.JPG"
-            alt="قهوة نجار مع هال 180 غ"
-          >
+<!-- PRODUCT DETAILS -->
 
-        </div>
+<section class="product-page" id="productPage">
 
-        <div class="info">
+  <div class="product-detail">
 
-          <div class="cat">
-            مواد غذائية
-          </div>
+    <div class="detail-image" id="detailImage"></div>
 
-          <div class="name">
-            قهوة نجار مع هال
-          </div>
+    <div class="detail-info">
 
-          <div class="en">
-            Najjar Coffee with Cardamom
-          </div>
+      <div class="detail-cat" id="detailCat"></div>
 
-          <div class="weight">
-            180 غ | 180 g
-          </div>
+      <div class="detail-name" id="detailName"></div>
 
-          <div class="bottom">
+      <div class="detail-en" id="detailEn"></div>
 
-            <div class="price">
-              $3.55
-            </div>
+      <div class="detail-weight" id="detailWeight"></div>
 
-            <button class="add">
-              +
-            </button>
+      <div class="detail-price" id="detailPrice"></div>
 
-          </div>
+      <div class="detail-description" id="detailDescription"></div>
 
-        </div>
-
-      </div>
-
-
-      <!-- 3 -->
-
-      <div class="product">
-
-        <div class="product-img">
-          <div class="placeholder">
-            ☕
-          </div>
-        </div>
-
-        <div class="info">
-
-          <div class="cat">
-            مواد غذائية
-          </div>
-
-          <div class="name">
-            قهوة نجار مع هال
-          </div>
-
-          <div class="en">
-            Najjar Coffee with Cardamom
-          </div>
-
-          <div class="weight">
-            450 غ | 450 g
-          </div>
-
-          <div class="bottom">
-
-            <div class="price">
-              $7.25
-            </div>
-
-            <button class="add">
-              +
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- 4 -->
-
-      <div class="product">
-
-        <div class="product-img">
-          <div class="placeholder">
-            ☕
-          </div>
-        </div>
-
-        <div class="info">
-
-          <div class="cat">
-            مواد غذائية
-          </div>
-
-          <div class="name">
-            قهوة نجار دون هال
-          </div>
-
-          <div class="en">
-            Najjar Coffee No Cardamom
-          </div>
-
-          <div class="weight">
-            450 غ | 450 g
-          </div>
-
-          <div class="bottom">
-
-            <div class="price">
-              $6.10
-            </div>
-
-            <button class="add">
-              +
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- 5 -->
-
-      <div class="product">
-
-        <div class="product-img">
-          <div class="placeholder">
-            🧀
-          </div>
-        </div>
-
-        <div class="info">
-
-          <div class="cat">
-            ألبان وأجبان
-          </div>
-
-          <div class="name">
-            جبنة الغزال
-          </div>
-
-          <div class="en">
-            Al Ghazal Cheese
-          </div>
-
-          <div class="weight">
-            1.5 كغ | 1.5 kg
-          </div>
-
-          <div class="bottom">
-
-            <div class="price">
-              $11.50
-            </div>
-
-            <button class="add">
-              +
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- 6 -->
-
-      <div class="product">
-
-        <div class="product-img">
-          <div class="placeholder">
-            🧀
-          </div>
-        </div>
-
-        <div class="info">
-
-          <div class="cat">
-            ألبان وأجبان
-          </div>
-
-          <div class="name">
-            جبنة الغزال
-          </div>
-
-          <div class="en">
-            Al Ghazal Cheese
-          </div>
-
-          <div class="weight">
-            370 غ | 370 g
-          </div>
-
-          <div class="bottom">
-
-            <div class="price">
-              $2.70
-            </div>
-
-            <button class="add">
-              +
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- 7 -->
-
-      <div class="product">
-
-        <div class="product-img">
-          <div class="placeholder">
-            🧀
-          </div>
-        </div>
-
-        <div class="info">
-
-          <div class="cat">
-            ألبان وأجبان
-          </div>
-
-          <div class="name">
-            جبنة المراعي
-          </div>
-
-          <div class="en">
-            Almarai Cheese
-          </div>
-
-          <div class="weight">
-            300 غ | 300 g
-          </div>
-
-          <div class="bottom">
-
-            <div class="price">
-              $1.70
-            </div>
-
-            <button class="add">
-              +
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- 8 -->
-
-      <div class="product">
-
-        <div class="product-img">
-          <div class="placeholder">
-            🥛
-          </div>
-        </div>
-
-        <div class="info">
-
-          <div class="cat">
-            ألبان وأجبان
-          </div>
-
-          <div class="name">
-            يوغرت تعنايل غريك
-          </div>
-
-          <div class="en">
-            Taanayel Greek Yogurt
-          </div>
-
-          <div class="weight">
-            كوب | 1 cup
-          </div>
-
-          <div class="bottom">
-
-            <div class="price">
-              $1.25
-            </div>
-
-            <button class="add">
-              +
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
+      <button class="back-btn" onclick="showHome()">
+        ← العودة للمنتجات
+      </button>
 
     </div>
 
@@ -949,8 +1124,6 @@ footer p{
 
 </main>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -963,6 +1136,151 @@ footer p{
   </p>
 
 </footer>
+
+
+<script>
+
+const productsData = {
+
+  1:{
+    cat:"مواد غذائية",
+    name:"قهوة نجار دون هال",
+    en:"Najjar Coffee No Cardamom",
+    weight:"180 غ | 180 g",
+    price:"$3.35",
+    image:"najjar-coffee-no-cardamom-180g.JPG",
+    description:"قهوة نجار دون هال، 180 غ."
+  },
+
+  2:{
+    cat:"مواد غذائية",
+    name:"قهوة نجار مع هال",
+    en:"Najjar Coffee with Cardamom",
+    weight:"180 غ | 180 g",
+    price:"$3.55",
+    image:"najjar-coffee-with-cardamom-180g.JPG",
+    description:"قهوة نجار مع الهال، 180 غ."
+  },
+
+  3:{
+    cat:"مواد غذائية",
+    name:"قهوة نجار مع هال",
+    en:"Najjar Coffee with Cardamom",
+    weight:"450 غ | 450 g",
+    price:"$7.25",
+    icon:"☕",
+    description:"قهوة نجار مع الهال، 450 غ."
+  },
+
+  4:{
+    cat:"مواد غذائية",
+    name:"قهوة نجار دون هال",
+    en:"Najjar Coffee No Cardamom",
+    weight:"450 غ | 450 g",
+    price:"$6.10",
+    icon:"☕",
+    description:"قهوة نجار دون هال، 450 غ."
+  },
+
+  5:{
+    cat:"ألبان وأجبان",
+    name:"جبنة الغزال",
+    en:"Al Ghazal Cheese",
+    weight:"1.5 كغ | 1.5 kg",
+    price:"$11.50",
+    icon:"🧀",
+    description:"جبنة الغزال، 1.5 كغ."
+  },
+
+  6:{
+    cat:"ألبان وأجبان",
+    name:"جبنة الغزال",
+    en:"Al Ghazal Cheese",
+    weight:"370 غ | 370 g",
+    price:"$2.70",
+    icon:"🧀",
+    description:"جبنة الغزال، 370 غ."
+  },
+
+  7:{
+    cat:"ألبان وأجبان",
+    name:"جبنة المراعي",
+    en:"Almarai Cheese",
+    weight:"300 غ | 300 g",
+    price:"$1.70",
+    icon:"🧀",
+    description:"جبنة المراعي، 300 غ."
+  },
+
+  8:{
+    cat:"ألبان وأجبان",
+    name:"يوغرت تعنايل غريك",
+    en:"Taanayel Greek Yogurt",
+    weight:"كوب | 1 cup",
+    price:"$1.25",
+    icon:"🥛",
+    description:"يوغرت تعنايل غريك."
+  }
+
+};
+
+
+function openProduct(id){
+
+  const p = productsData[id];
+
+  document.getElementById("home").style.display="none";
+
+  document.getElementById("productPage").style.display="block";
+
+  document.getElementById("detailCat").textContent=p.cat;
+
+  document.getElementById("detailName").textContent=p.name;
+
+  document.getElementById("detailEn").textContent=p.en;
+
+  document.getElementById("detailWeight").textContent=p.weight;
+
+  document.getElementById("detailPrice").textContent=p.price;
+
+  document.getElementById("detailDescription").textContent=p.description;
+
+  const imageBox=document.getElementById("detailImage");
+
+  if(p.image){
+
+    imageBox.innerHTML=
+      '<img src="'+p.image+'" alt="'+p.name+'">';
+
+  }else{
+
+    imageBox.innerHTML=
+      '<div class="detail-placeholder">'+p.icon+'</div>';
+
+  }
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+function showHome(){
+
+  document.getElementById("productPage").style.display="none";
+
+  document.getElementById("home").style.display="block";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+</script>
 
 </body>
 </html>
