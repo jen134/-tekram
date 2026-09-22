@@ -4,19 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>تِكرَم | Tekram</title>
-
 <style>
 :root{--g:#24483a;--gd:#18352b;--b:#eadbc8;--o:#d94e28;--y:#d99e30;--bg:#f7f3ed;--m:#707770;--bd:#e6ded3}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--gd);line-height:1.7}
 a{text-decoration:none;color:inherit}
-
 header{background:var(--g);padding:16px 6%;position:sticky;top:0;z-index:10}
 .header{max-width:1250px;margin:auto;display:flex;align-items:center;justify-content:space-between}
 .logo{color:var(--b);font-size:29px;font-weight:900}
 nav{display:flex;gap:28px;color:#fff;font-weight:bold;font-size:14px}
 .cart{border:0;background:var(--o);color:#fff;padding:10px 16px;border-radius:13px;font-weight:bold;cursor:pointer}
-
 .hero-wrap{padding:40px 6% 25px}
 .hero{max-width:1250px;min-height:430px;margin:auto;padding:60px 6%;background:var(--b);border-radius:32px;position:relative;overflow:hidden;display:flex;align-items:center}
 .hero-content{max-width:600px;z-index:2}
@@ -29,17 +26,14 @@ h1 span{color:var(--o)}
 .circle1,.circle2{position:absolute;border-radius:50%}
 .circle1{width:220px;height:220px;background:var(--y);left:-70px;top:-70px}
 .circle2{width:110px;height:110px;background:var(--o);left:14%;bottom:-45px}
-
 .section{max-width:1250px;margin:auto;padding:55px 6%}
 .title{font-size:31px;font-weight:900}
 .subtitle{color:var(--m);font-size:14px;margin-bottom:25px}
-
 .categories{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
 .category{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:22px;min-height:135px}
 .category-icon{font-size:30px}
 .category h3{font-size:17px}
 .category p{font-size:12px;color:var(--m)}
-
 .products-section{background:#fff;padding:60px 0 70px}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .product{border:1px solid var(--bd);border-radius:20px;overflow:hidden;background:#fff;cursor:pointer}
@@ -55,7 +49,6 @@ h1 span{color:var(--o)}
 .bottom{display:flex;align-items:center;justify-content:space-between}
 .price{font-size:19px;font-weight:900;direction:ltr}
 .add{width:36px;height:36px;border:0;border-radius:11px;background:var(--g);color:#fff;font-size:20px}
-
 .product-page{display:none;min-height:75vh;padding:45px 6% 70px}
 .product-detail{max-width:1000px;margin:auto;background:#fff;border:1px solid var(--bd);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
 .detail-image{background:#f5f1ea;min-height:500px;display:flex;align-items:center;justify-content:center}
@@ -72,31 +65,183 @@ h1 span{color:var(--o)}
 .size{border:1px solid var(--g);background:#fff;color:var(--g);padding:10px 18px;border-radius:12px;font-weight:bold;cursor:pointer}
 .size.active{background:var(--g);color:#fff}
 .back-btn{width:max-content;background:var(--g);color:#fff;padding:12px 20px;border-radius:13px;font-weight:bold;cursor:pointer;border:0}
-
 footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px}
 .footer-logo{color:var(--b);font-size:26px;font-weight:900}
 footer p{font-size:13px;opacity:.8}
-
 /* CART */
 .cart-overlay{display:none;position:fixed;inset:0;background:#0005;z-index:50}
-.cart-panel{position:fixed;top:0;right:-420px;width:400px;max-width:92%;height:100vh;background:#fff;z-index:60;box-shadow:-10px 0 30px #18352b25;transition:.3s;display:flex;flex-direction:column}
-.cart-head{padding:22px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between}
+.cart-panel{
+position:fixed;
+top:0;
+right:-420px;
+width:400px;
+max-width:92%;
+height:100vh;
+background:#fff;
+z-index:60;
+box-shadow:-10px 0 30px #18352b25;
+transition:.3s;
+display:flex;
+flex-direction:column;
+}
+.cart-head{
+padding:22px;
+border-bottom:1px solid var(--bd);
+display:flex;
+align-items:center;
+justify-content:space-between
+}
 .cart-head h2{font-size:24px}
-.close-cart{border:0;background:var(--bg);width:38px;height:38px;border-radius:10px;font-size:22px;cursor:pointer}
-.cart-items{padding:20px;overflow:auto;flex:1}
-.empty-cart{text-align:center;color:var(--m);padding:50px 10px}
-.cart-item{border-bottom:1px solid var(--bd);padding:15px 0}
-.cart-item-top{display:flex;justify-content:space-between;gap:10px}
+.close-cart{
+border:0;
+background:var(--bg);
+width:38px;
+height:38px;
+border-radius:10px;
+font-size:22px;
+cursor:pointer
+}
+.cart-items{
+padding:20px;
+overflow:auto;
+flex:1
+}
+.empty-cart{
+text-align:center;
+color:var(--m);
+padding:50px 10px
+}
+.cart-item{
+border-bottom:1px solid var(--bd);
+padding:15px 0
+}
+.cart-item-top{
+display:flex;
+justify-content:space-between;
+gap:10px
+}
 .cart-item-name{font-weight:bold}
-.cart-item-option{font-size:12px;color:var(--m)}
-.cart-item-price{font-weight:bold;color:var(--o);direction:ltr}
-.cart-controls{display:flex;align-items:center;gap:10px;margin-top:10px}
-.qty-btn{border:0;background:var(--g);color:#fff;width:28px;height:28px;border-radius:8px;font-size:18px;cursor:pointer}
-.remove-btn{border:0;background:none;color:var(--o);font-size:12px;cursor:pointer;margin-right:auto}
-.cart-footer{border-top:1px solid var(--bd);padding:20px}
-.cart-total{display:flex;justify-content:space-between;font-size:20px;font-weight:900;margin-bottom:15px}
-.checkout{width:100%;border:0;background:var(--o);color:#fff;padding:13px;border-radius:13px;font-weight:bold;font-size:16px;cursor:pointer}
-
+.cart-item-option{
+font-size:12px;
+color:var(--m)
+}
+.cart-item-price{
+font-weight:bold;
+color:var(--o);
+direction:ltr
+}
+.cart-controls{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:10px
+}
+.qty-btn{
+border:0;
+background:var(--g);
+color:#fff;
+width:28px;
+height:28px;
+border-radius:8px;
+font-size:18px;
+cursor:pointer
+}
+.remove-btn{
+border:0;
+background:none;
+color:var(--o);
+font-size:12px;
+cursor:pointer;
+margin-right:auto
+}
+.cart-footer{
+border-top:1px solid var(--bd);
+padding:20px
+}
+.cart-total{
+display:flex;
+justify-content:space-between;
+font-size:20px;
+font-weight:900;
+margin-bottom:15px
+}
+.checkout{
+width:100%;
+border:0;
+background:var(--o);
+color:#fff;
+padding:13px;
+border-radius:13px;
+font-weight:bold;
+font-size:16px;
+cursor:pointer
+}
+/* CHECKOUT */
+.checkout-panel-content{
+padding:20px;
+overflow:auto;
+flex:1
+}
+.form-group{
+margin-bottom:15px
+}
+.form-group label{
+font-weight:bold;
+font-size:13px
+}
+.form-input{
+width:100%;
+padding:12px;
+border:1px solid var(--bd);
+border-radius:12px;
+margin-top:6px;
+font-family:inherit;
+font-size:14px;
+outline:none;
+background:#fff
+}
+.form-input:focus{
+border-color:var(--g)
+}
+.form-textarea{
+height:80px;
+resize:none
+}
+.checkout-summary{
+background:var(--bg);
+padding:15px;
+border-radius:15px;
+margin-top:5px
+}
+.summary-title{
+font-size:17px;
+font-weight:900;
+margin-bottom:12px
+}
+.summary-item{
+display:flex;
+justify-content:space-between;
+gap:10px;
+font-size:13px;
+margin-bottom:10px
+}
+.summary-option{
+color:var(--m);
+font-size:12px
+}
+.summary-price{
+direction:ltr;
+font-weight:bold
+}
+.checkout-total{
+border-top:1px solid var(--bd);
+margin-top:12px;
+padding-top:12px;
+display:flex;
+justify-content:space-between;
+font-weight:900;
+font-size:19px
+}
 @media(max-width:900px){
 nav{display:none}
 .categories{grid-template-columns:repeat(2,1fr)}
@@ -105,7 +250,6 @@ nav{display:none}
 .product-detail{grid-template-columns:1fr}
 .detail-image,.detail-image img{min-height:350px}
 }
-
 @media(max-width:500px){
 .hero-wrap{padding:25px 4%}
 .hero{padding:35px 7%;border-radius:25px}
@@ -124,238 +268,235 @@ h1{font-size:39px}
 }
 </style>
 </head>
-
 <body>
-
 <header>
 <div class="header">
 <a class="logo" href="#" onclick="showHome()">تِكرَم</a>
-
 <nav>
 <a href="#" onclick="showHome()">الرئيسية</a>
 <a href="#categories" onclick="showHome()">الأقسام</a>
 <a href="#products" onclick="showHome()">المنتجات</a>
 </nav>
-
 <button class="cart" onclick="openCart()">🛒 السلة</button>
 </div>
 </header>
-
 <main>
-
 <div id="home">
-
 <section class="hero-wrap">
 <div class="hero">
-
 <div class="hero-content">
 <div class="label">أهلاً بكم في تِكرَم</div>
-
-<h1>كل شي بتحبّه،<br><span>بمكان واحد.</span></h1>
-
+<h1>
+كل شي بتحبّه،<br>
+<span>بمكان واحد.</span>
+</h1>
 <p>
 منتجاتك اليومية، من القهوة والأجبان للسناكات والمشروبات،
 مختارة بعناية ومن بيتنا لبيتك.
 </p>
-
-<a class="hero-btn" href="#products">تصفّح المنتجات ←</a>
+<a class="hero-btn" href="#products">
+تصفّح المنتجات ←
+</a>
 </div>
-
 <div class="circle1"></div>
 <div class="circle2"></div>
-
 <div class="card">
 🛒<br>
 <b>تِكرَم</b><br>
 <small>من بيتنا لبيتك</small>
 </div>
-
 </div>
 </section>
-
 <section class="section" id="categories">
-
 <h2 class="title">الأقسام</h2>
 <p class="subtitle">كل احتياجاتك اليومية بمكان واحد</p>
-
 <div class="categories">
-
 <div class="category">
 🧀
 <h3>ألبان وأجبان</h3>
 <p>لبنة، جبنة وكل الطيبات</p>
 </div>
-
 <div class="category">
 🛒
 <h3>مواد غذائية</h3>
 <p>أساسيات المونة</p>
 </div>
-
 <div class="category">
 🍿
 <h3>سناكات</h3>
 <p>للقعدة وبين الوجبات</p>
 </div>
-
 <div class="category">
 🥤
 <h3>مشروبات</h3>
 <p>باردة ومنعشة</p>
 </div>
-
 <div class="category">
 🧻
 <h3>محارم</h3>
 <p>للبيت كل يوم</p>
 </div>
-
 <div class="category">
 🧊
 <h3>مجمّدات</h3>
 <p>وجبات سهلة لبعدين</p>
 </div>
-
 </div>
 </section>
-
 <section class="products-section" id="products">
-
 <div class="section">
-
 <h2 class="title">منتجاتنا</h2>
 <p class="subtitle">اختيارات من تِكرَم</p>
-
 <div class="products">
-
 <!-- نجار دون هال -->
 <div class="product" onclick="openCoffee('no')">
-
 <div class="product-img">
 <img src="najjar-coffee-no-cardamom-180g.JPG">
 </div>
-
 <div class="info">
 <div class="cat">مواد غذائية</div>
-<div class="name">قهوة نجار دون هال</div>
-<div class="en">Najjar Coffee No Cardamom</div>
-<div class="weight">180 غ / 450 غ</div>
-
+<div class="name">
+قهوة نجار دون هال
+</div>
+<div class="en">
+Najjar Coffee No Cardamom
+</div>
+<div class="weight">
+180 غ / 450 غ
+</div>
 <div class="bottom">
-<div class="price">من $3.35</div>
-<button class="add">+</button>
+<div class="price">
+من $3.35
+</div>
+<button class="add">
++
+</button>
 </div>
 </div>
 </div>
-
 <!-- نجار مع هال -->
 <div class="product" onclick="openCoffee('cardamom')">
-
 <div class="product-img">
 <img src="najjar-coffee-with-cardamom-180g.JPG">
 </div>
-
 <div class="info">
 <div class="cat">مواد غذائية</div>
-<div class="name">قهوة نجار مع هال</div>
-<div class="en">Najjar Coffee with Cardamom</div>
-<div class="weight">180 غ / 450 غ</div>
-
+<div class="name">
+قهوة نجار مع هال
+</div>
+<div class="en">
+Najjar Coffee with Cardamom
+</div>
+<div class="weight">
+180 غ / 450 غ
+</div>
 <div class="bottom">
-<div class="price">من $3.55</div>
-<button class="add">+</button>
+<div class="price">
+من $3.55
+</div>
+<button class="add">
++
+</button>
 </div>
 </div>
 </div>
-
 <!-- جبنة الغزال -->
 <div class="product" onclick="openCheese()">
-
 <div class="product-img">
 <div class="placeholder">🧀</div>
 </div>
-
 <div class="info">
 <div class="cat">ألبان وأجبان</div>
-<div class="name">جبنة الغزال</div>
-<div class="en">Al Ghazal Cheese</div>
-<div class="weight">370 غ / 1.5 كغ</div>
-
+<div class="name">
+جبنة الغزال
+</div>
+<div class="en">
+Al Ghazal Cheese
+</div>
+<div class="weight">
+370 غ / 1.5 كغ
+</div>
 <div class="bottom">
-<div class="price">من $2.70</div>
-<button class="add">+</button>
+<div class="price">
+من $2.70
+</div>
+<button class="add">
++
+</button>
 </div>
 </div>
 </div>
-
 <!-- جبنة المراعي -->
-<div class="product" onclick="openProduct()">
-
+<div class="product" onclick="openAlmarai()">
 <div class="product-img">
 <div class="placeholder">🧀</div>
 </div>
-
 <div class="info">
 <div class="cat">ألبان وأجبان</div>
-<div class="name">جبنة المراعي</div>
-<div class="en">Almarai Cheese</div>
-<div class="weight">300 غ</div>
-
+<div class="name">
+جبنة المراعي
+</div>
+<div class="en">
+Almarai Cheese
+</div>
+<div class="weight">
+300 غ
+</div>
 <div class="bottom">
-<div class="price">$1.70</div>
-<button class="add">+</button>
+<div class="price">
+$1.70
+</div>
+<button class="add">
++
+</button>
 </div>
 </div>
 </div>
-
-<!-- غريك يوغرت -->
+<!-- غريك -->
 <div class="product" onclick="openGreek()">
-
 <div class="product-img">
 <div class="placeholder">🥛</div>
 </div>
-
 <div class="info">
 <div class="cat">ألبان وأجبان</div>
-<div class="name">يوغرت تعنايل غريك</div>
-<div class="en">Taanayel Greek Yogurt</div>
-<div class="weight">سادة / فريز / توت / دراق</div>
-
+<div class="name">
+يوغرت تعنايل غريك
+</div>
+<div class="en">
+Taanayel Greek Yogurt
+</div>
+<div class="weight">
+سادة / فريز / توت / دراق
+</div>
 <div class="bottom">
-<div class="price">$1.25</div>
-<button class="add">+</button>
+<div class="price">
+$1.25
+</div>
+<button class="add">
++
+</button>
 </div>
 </div>
 </div>
-
 </div>
 </div>
 </section>
-
 </div>
-
 <!-- PRODUCT PAGE -->
-
 <section class="product-page" id="productPage">
-
 <div class="product-detail">
-
 <div class="detail-image" id="detailImage"></div>
-
 <div class="detail-info">
-
 <div class="detail-cat" id="detailCat"></div>
 <div class="detail-name" id="detailName"></div>
 <div class="detail-en" id="detailEn"></div>
-
 <div class="sizes" id="sizes"></div>
-
 <div class="detail-weight" id="detailWeight"></div>
 <div class="detail-price" id="detailPrice"></div>
 <div class="detail-description" id="detailDescription"></div>
-
-<button class="back-btn" onclick="showHome()">← العودة للمنتجات</button>
-
+<button class="back-btn" onclick="showHome()">
+← العودة للمنتجات
+</button>
 <button
 id="addProductBtn"
 class="back-btn"
@@ -363,231 +504,357 @@ style="margin-top:12px;background:var(--o)"
 onclick="addSelectedToCart()">
 🛒 أضف للسلة
 </button>
-
 </div>
 </div>
 </section>
-
 </main>
-
+<!-- CART OVERLAY -->
+<div id="cartOverlay"
+class="cart-overlay"
+onclick="closeCart()">
+</div>
 <!-- CART PANEL -->
-
-<div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
-
 <div id="cartPanel" class="cart-panel">
-
 <div class="cart-head">
 <h2>🛒 السلة</h2>
-<button class="close-cart" onclick="closeCart()">×</button>
+<button
+class="close-cart"
+onclick="closeCart()">
+×
+</button>
 </div>
-
-<div id="cartItems" class="cart-items"></div>
-
+<div id="cartItems" class="cart-items">
+</div>
 <div class="cart-footer">
-
 <div class="cart-total">
-<span>المجموع</span>
-<span id="cartTotal">$0.00</span>
+<span>
+المجموع
+</span>
+<span id="cartTotal">
+$0.00
+</span>
 </div>
-
-<button class="checkout">إتمام الطلب</button>
-
+<button
+class="checkout"
+onclick="openCheckout()">
+إتمام الطلب
+</button>
 </div>
-
 </div>
-
+<!-- CHECKOUT PANEL -->
+<div id="checkoutPanel" class="cart-panel">
+<div class="cart-head">
+<h2>
+📦 إتمام الطلب
+</h2>
+<button
+class="close-cart"
+onclick="closeCheckout()">
+×
+</button>
+</div>
+<div class="checkout-panel-content">
+<div class="form-group">
+<label>
+الاسم
+</label>
+<input
+id="customerName"
+class="form-input"
+type="text"
+placeholder="اكتب اسمك">
+</div>
+<div class="form-group">
+<label>
+رقم الهاتف
+</label>
+<input
+id="customerPhone"
+class="form-input"
+type="tel"
+placeholder="مثال: 03 123 456"
+dir="ltr">
+</div>
+<div class="form-group">
+<label>
+المنطقة
+</label>
+<input
+id="customerArea"
+class="form-input"
+type="text"
+placeholder="مثال: صيدا">
+</div>
+<div class="form-group">
+<label>
+العنوان
+</label>
+<textarea
+id="customerAddress"
+class="form-input form-textarea"
+placeholder="اكتب العنوان بالتفصيل">
+</textarea>
+</div>
+<div class="form-group">
+<label>
+ملاحظات
+</label>
+<textarea
+id="customerNotes"
+class="form-input form-textarea"
+placeholder="ملاحظات إضافية (اختياري)">
+</textarea>
+</div>
+<div class="checkout-summary">
+<div class="summary-title">
+ملخص الطلب
+</div>
+<div id="checkoutSummary">
+</div>
+<div class="checkout-total">
+<span>
+المجموع
+</span>
+<span id="checkoutTotal">
+$0.00
+</span>
+</div>
+</div>
+</div>
+<div class="cart-footer">
+<button
+class="checkout"
+onclick="confirmOrder()">
+تأكيد الطلب ✓
+</button>
+</div>
+</div>
 <footer>
-<div class="footer-logo">تِكرَم</div>
-<p>من بيتنا لبيتك 🤍</p>
+<div class="footer-logo">
+تِكرَم
+</div>
+<p>
+من بيتنا لبيتك 🤍
+</p>
 </footer>
-
 <script>
-
 const coffee={
 no:{
 name:"قهوة نجار دون هال",
 en:"Najjar Coffee No Cardamom",
 items:{
-180:{price:3.35,weight:"180 غ | 180 g",image:"najjar-coffee-no-cardamom-180g.JPG"},
-450:{price:6.10,weight:"450 غ | 450 g",icon:"☕"}
+180:{
+price:3.35,
+weight:"180 غ | 180 g",
+image:"najjar-coffee-no-cardamom-180g.JPG"
+},
+450:{
+price:6.10,
+weight:"450 غ | 450 g",
+icon:"☕"
+}
 }},
 cardamom:{
 name:"قهوة نجار مع هال",
 en:"Najjar Coffee with Cardamom",
 items:{
-180:{price:3.55,weight:"180 غ | 180 g",image:"najjar-coffee-with-cardamom-180g.JPG"},
-450:{price:7.25,weight:"450 غ | 450 g",icon:"☕"}
+180:{
+price:3.55,
+weight:"180 غ | 180 g",
+image:"najjar-coffee-with-cardamom-180g.JPG"
+},
+450:{
+price:7.25,
+weight:"450 غ | 450 g",
+icon:"☕"
+}
 }}
 };
-
 const cheese={
 name:"جبنة الغزال",
 en:"Al Ghazal Cheese",
 items:{
-370:{price:2.70,weight:"370 غ | 370 g",icon:"🧀"},
-1500:{price:11.50,weight:"1.5 كغ | 1.5 kg",icon:"🧀"}
+370:{
+price:2.70,
+weight:"370 غ | 370 g",
+icon:"🧀"
+},
+1500:{
+price:11.50,
+weight:"1.5 كغ | 1.5 kg",
+icon:"🧀"
+}
 }
 };
-
 const greek={
 name:"يوغرت تعنايل غريك",
 en:"Taanayel Greek Yogurt",
 items:{
-plain:{name:"سادة",price:1.25,icon:"🥛"},
-strawberry:{name:"فريز",price:1.25,icon:"🍓"},
-berry:{name:"توت",price:1.25,icon:"🫐"},
-peach:{name:"دراق",price:1.25,icon:"🍑"}
+plain:{
+name:"سادة",
+price:1.25,
+icon:"🥛"
+},
+strawberry:{
+name:"فريز",
+price:1.25,
+icon:"🍓"
+},
+berry:{
+name:"توت",
+price:1.25,
+icon:"🫐"
+},
+peach:{
+name:"دراق",
+price:1.25,
+icon:"🍑"
+}
 }
 };
-
 let selectedProduct=null;
 let cart=[];
-
-/* PRODUCT PAGES */
-
+/* =========================
+   PRODUCT PAGES
+========================= */
 function openCoffee(type,size=180){
-
-let p=coffee[type],v=p.items[size];
-
+let p=coffee[type];
+let v=p.items[size];
 selectedProduct={
 name:p.name,
 option:v.weight.split("|")[0].trim(),
 price:v.price
 };
-
 document.getElementById("home").style.display="none";
 document.getElementById("productPage").style.display="block";
-
 detailCat.textContent="مواد غذائية";
 detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.weight;
 detailPrice.textContent="$"+v.price.toFixed(2);
-detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
-
+detailDescription.textContent=
+p.name+"، "+v.weight.split("|")[0];
 sizes.innerHTML=[180,450].map(x=>
-`<button class="size ${x==size?"active":""}"
-onclick="openCoffee('${type}',${x})">${x} غ</button>`
+`<button
+class="size ${x==size?"active":""}"
+onclick="openCoffee('${type}',${x})">
+${x} غ
+</button>`
 ).join("");
-
 detailImage.innerHTML=v.image
 ?`<img src="${v.image}" alt="${p.name}">`
 :`<div class="detail-placeholder">${v.icon}</div>`;
-
-window.scrollTo({top:0,behavior:"smooth"});
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 }
-
 function openCheese(size=370){
-
-let p=cheese,v=p.items[size];
-
+let p=cheese;
+let v=p.items[size];
 selectedProduct={
 name:p.name,
 option:v.weight.split("|")[0].trim(),
 price:v.price
 };
-
 document.getElementById("home").style.display="none";
 document.getElementById("productPage").style.display="block";
-
 detailCat.textContent="ألبان وأجبان";
 detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.weight;
 detailPrice.textContent="$"+v.price.toFixed(2);
-detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
-
+detailDescription.textContent=
+p.name+"، "+v.weight.split("|")[0];
 sizes.innerHTML=[370,1500].map(x=>
-`<button class="size ${x==size?"active":""}"
+`<button
+class="size ${x==size?"active":""}"
 onclick="openCheese(${x})">
 ${x==1500?"1.5 كغ":"370 غ"}
 </button>`
 ).join("");
-
 detailImage.innerHTML=
-`<div class="detail-placeholder">${v.icon}</div>`;
-
-window.scrollTo({top:0,behavior:"smooth"});
+`<div class="detail-placeholder">
+${v.icon}
+</div>`;
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 }
-
 function openGreek(flavor="plain"){
-
-let p=greek,v=p.items[flavor];
-
+let p=greek;
+let v=p.items[flavor];
 selectedProduct={
 name:p.name,
 option:v.name,
 price:v.price
 };
-
 document.getElementById("home").style.display="none";
 document.getElementById("productPage").style.display="block";
-
 detailCat.textContent="ألبان وأجبان";
 detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.name;
 detailPrice.textContent="$"+v.price.toFixed(2);
-detailDescription.textContent=p.name+" - "+v.name;
-
+detailDescription.textContent=
+p.name+" - "+v.name;
 sizes.innerHTML=Object.keys(p.items).map(x=>
-`<button class="size ${x==flavor?"active":""}"
+`<button
+class="size ${x==flavor?"active":""}"
 onclick="openGreek('${x}')">
 ${p.items[x].name}
 </button>`
 ).join("");
-
 detailImage.innerHTML=
-`<div class="detail-placeholder">${v.icon}</div>`;
-
-window.scrollTo({top:0,behavior:"smooth"});
+`<div class="detail-placeholder">
+${v.icon}
+</div>`;
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 }
-
-function openProduct(){
-
+function openAlmarai(){
 selectedProduct={
 name:"جبنة المراعي",
 option:"300 غ",
 price:1.70
 };
-
 document.getElementById("home").style.display="none";
 document.getElementById("productPage").style.display="block";
-
 detailCat.textContent="ألبان وأجبان";
 detailName.textContent="جبنة المراعي";
 detailEn.textContent="Almarai Cheese";
 detailWeight.textContent="300 غ | 300 g";
 detailPrice.textContent="$1.70";
-detailDescription.textContent="جبنة المراعي، 300 غ";
-
+detailDescription.textContent=
+"جبنة المراعي، 300 غ";
 sizes.innerHTML="";
-
 detailImage.innerHTML=
 `<div class="detail-placeholder">🧀</div>`;
-
-window.scrollTo({top:0,behavior:"smooth"});
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 }
-
 function showHome(){
-
 document.getElementById("productPage").style.display="none";
 document.getElementById("home").style.display="block";
-
-window.scrollTo({top:0,behavior:"smooth"});
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 }
-
-/* CART */
-
+/* =========================
+   CART
+========================= */
 function addSelectedToCart(){
-
 if(!selectedProduct)return;
-
-let existing=cart.find(x=>
-x.name===selectedProduct.name &&
-x.option===selectedProduct.option
+let existing=cart.find(item=>
+item.name===selectedProduct.name &&
+item.option===selectedProduct.option
 );
-
 if(existing){
 existing.qty++;
 }else{
@@ -598,103 +865,157 @@ price:selectedProduct.price,
 qty:1
 });
 }
-
 renderCart();
 openCart();
 }
-
 function renderCart(){
-
 let box=document.getElementById("cartItems");
-
 if(cart.length===0){
-
-box.innerHTML=
-`<div class="empty-cart">
+box.innerHTML=`
+<div class="empty-cart">
 السلة فارغة 🛒
-</div>`;
-
+</div>
+`;
 document.getElementById("cartTotal").textContent="$0.00";
 return;
 }
-
-box.innerHTML=cart.map((item,i)=>`
-
+box.innerHTML=cart.map((item,index)=>`
 <div class="cart-item">
-
 <div class="cart-item-top">
-
 <div>
-<div class="cart-item-name">${item.name}</div>
-<div class="cart-item-option">${item.option}</div>
+<div class="cart-item-name">
+${item.name}
 </div>
-
+<div class="cart-item-option">
+${item.option}
+</div>
+</div>
 <div class="cart-item-price">
 $${(item.price*item.qty).toFixed(2)}
 </div>
-
 </div>
-
 <div class="cart-controls">
-
-<button class="qty-btn" onclick="changeQty(${i},-1)">−</button>
-
-<strong>${item.qty}</strong>
-
-<button class="qty-btn" onclick="changeQty(${i},1)">+</button>
-
-<button class="remove-btn" onclick="removeItem(${i})">
+<button
+class="qty-btn"
+onclick="changeQty(${index},-1)">
+−
+</button>
+<strong>
+${item.qty}
+</strong>
+<button
+class="qty-btn"
+onclick="changeQty(${index},1)">
++
+</button>
+<button
+class="remove-btn"
+onclick="removeItem(${index})">
 حذف
 </button>
-
 </div>
-
 </div>
-
 `).join("");
-
 let total=cart.reduce(
-(sum,item)=>sum+(item.price*item.qty),0
+(sum,item)=>
+sum+(item.price*item.qty),
+0
 );
-
 document.getElementById("cartTotal").textContent=
 "$"+total.toFixed(2);
 }
-
 function changeQty(index,value){
-
 cart[index].qty+=value;
-
 if(cart[index].qty<=0){
 cart.splice(index,1);
 }
-
 renderCart();
 }
-
 function removeItem(index){
-
 cart.splice(index,1);
 renderCart();
 }
-
 function openCart(){
-
 document.getElementById("cartPanel").style.right="0";
 document.getElementById("cartOverlay").style.display="block";
-
 renderCart();
 }
-
 function closeCart(){
-
 document.getElementById("cartPanel").style.right="-420px";
 document.getElementById("cartOverlay").style.display="none";
 }
-
+/* =========================
+   CHECKOUT
+========================= */
+function openCheckout(){
+if(cart.length===0){
+alert("السلة فارغة");
+return;
+}
+closeCart();
+document.getElementById("checkoutPanel").style.right="0";
+document.getElementById("cartOverlay").style.display="block";
+renderCheckout();
+}
+function closeCheckout(){
+document.getElementById("checkoutPanel").style.right="-420px";
+document.getElementById("cartOverlay").style.display="none";
+}
+function renderCheckout(){
+let summary=
+document.getElementById("checkoutSummary");
+summary.innerHTML=cart.map(item=>`
+<div class="summary-item">
+<div>
+<div>
+${item.name}
+</div>
+<div class="summary-option">
+${item.option} × ${item.qty}
+</div>
+</div>
+<strong class="summary-price">
+$${(item.price*item.qty).toFixed(2)}
+</strong>
+</div>
+`).join("");
+let total=cart.reduce(
+(sum,item)=>
+sum+(item.price*item.qty),
+0
+);
+document.getElementById("checkoutTotal").textContent=
+"$"+total.toFixed(2);
+}
+function confirmOrder(){
+let name=
+document.getElementById("customerName").value.trim();
+let phone=
+document.getElementById("customerPhone").value.trim();
+let area=
+document.getElementById("customerArea").value.trim();
+let address=
+document.getElementById("customerAddress").value.trim();
+if(!name || !phone || !area || !address){
+alert(
+"يرجى تعبئة الاسم ورقم الهاتف والمنطقة والعنوان"
+);
+return;
+}
+alert(
+"تم استلام طلبك بنجاح ❤️\n\n"+
+"شكراً لطلبك من تِكرَم."
+);
+cart=[];
+document.getElementById("customerName").value="";
+document.getElementById("customerPhone").value="";
+document.getElementById("customerArea").value="";
+document.getElementById("customerAddress").value="";
+document.getElementById("customerNotes").value="";
+closeCheckout();
 renderCart();
-
+}
+renderCart();
 </script>
-
 </body>
 </html>
