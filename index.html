@@ -92,6 +92,47 @@
       font-size: 16px;
     }
 
+    .categories {
+      max-width: 1100px;
+      margin: 20px auto 80px;
+      padding: 20px;
+    }
+
+    .categories h2 {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .category-card {
+      display: block;
+      background: var(--beige);
+      color: var(--green);
+      text-decoration: none;
+      padding: 25px;
+      border-radius: 18px;
+      min-height: 150px;
+    }
+
+    .category-card span {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .category-card h3 {
+      font-size: 22px;
+      margin: 20px 0 8px;
+    }
+
+    .category-card p {
+      font-size: 15px;
+    }
+
     @media (max-width: 700px) {
       .header {
         flex-wrap: wrap;
@@ -106,6 +147,10 @@
 
       .hero h1 {
         font-size: 36px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
   </style>
@@ -145,6 +190,52 @@
       <button class="hero-button">
         تصفّح المنتجات
       </button>
+
+    </section>
+
+    <section id="categories" class="categories">
+
+      <h2>الأقسام</h2>
+
+      <div class="category-grid">
+
+        <a href="#" class="category-card">
+          <span>01</span>
+          <h3>ألبان وأجبان</h3>
+          <p>لبنة، جبنة وكل الطيبات</p>
+        </a>
+
+        <a href="#" class="category-card">
+          <span>02</span>
+          <h3>مواد غذائية</h3>
+          <p>أساسيات المونة</p>
+        </a>
+
+        <a href="#" class="category-card">
+          <span>03</span>
+          <h3>سناكات</h3>
+          <p>للقعدة وبين الوجبات</p>
+        </a>
+
+        <a href="#" class="category-card">
+          <span>04</span>
+          <h3>مشروبات</h3>
+          <p>باردة ومنعشة</p>
+        </a>
+
+        <a href="#" class="category-card">
+          <span>05</span>
+          <h3>محارم</h3>
+          <p>للبيت كل يوم</p>
+        </a>
+
+        <a href="#" class="category-card">
+          <span>06</span>
+          <h3>مجمّدات</h3>
+          <p>وجبات سهلة لبعدين</p>
+        </a>
+
+      </div>
 
     </section>
 
