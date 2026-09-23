@@ -11,7 +11,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Tahoma,Arial,sans-serif;background:var(--c);color:var(--g);line-height:1.6}
-button,input,textarea{font-family:inherit}
+button,input,textarea,select{font-family:inherit}
 button{cursor:pointer}
 
 header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
@@ -124,7 +124,6 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .close{border:0;background:var(--c2);border-radius:10px;width:36px;height:36px;font-size:20px}
 .panel-body{flex:1;overflow:auto;padding:18px}
 
-/* السلة */
 .cart-item{padding:15px 0;border-bottom:1px solid var(--b)}
 .cart-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .cart-name{font-size:14px;font-weight:bold;line-height:1.4}
@@ -142,7 +141,7 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 
 .form{margin-bottom:12px}
 .form label{font-size:12px;font-weight:bold}
-.input{width:100%;border:1px solid var(--b);border-radius:10px;padding:10px;margin-top:4px;outline:0}
+.input{width:100%;border:1px solid var(--b);border-radius:10px;padding:10px;margin-top:4px;outline:0;background:white}
 .area{height:65px;resize:none}
 .summary{background:var(--c);padding:12px;border-radius:13px;margin-top:12px}
 .summary-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}
@@ -178,10 +177,7 @@ footer{background:var(--g);color:white;text-align:center;padding:40px 20px 110px
 <header>
 <div class="head">
 <div class="icons">
-<button class="icon cart-top" onclick="openCart()">
-🛒
-<b id="count" class="count">0</b>
-</button>
+<button class="icon cart-top" onclick="openCart()">🛒<b id="count" class="count">0</b></button>
 </div>
 
 <a class="logo" href="#" onclick="home();return false">
@@ -209,18 +205,13 @@ TEKRAM
 <div class="hero">
 <div class="hero-text">
 <div class="hero-small">✦ من حارتنا لبيتك</div>
-<h1>
-كل احتياجاتك اليومية<br>
-<span>بمكان واحد.</span>
-</h1>
+<h1>كل احتياجاتك اليومية<br><span>بمكان واحد.</span></h1>
 <p>منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.</p>
 <button onclick="scrollProducts()">تصفّح المنتجات ←</button>
 </div>
 
 <div class="basket">
-<i class="i1"></i>
-<i class="i2"></i>
-<i class="i3"></i>
+<i class="i1"></i><i class="i2"></i><i class="i3"></i>
 </div>
 </div>
 </section>
@@ -270,47 +261,21 @@ TEKRAM
 
 <div id="menuPanel" class="menu-panel">
 <div class="menu-head">
-<div class="menu-brand">
-TEKRAM
-<small>من بيتنا لبيتك</small>
-</div>
+<div class="menu-brand">TEKRAM<small>من بيتنا لبيتك</small></div>
 <button class="menu-close" onclick="closePanels()">×</button>
 </div>
 
 <div class="menu-body">
-
-<button class="menu-btn" onclick="menuHome()">
-<span class="menu-icon">🏠</span>
-<span>الرئيسية</span>
-</button>
-
-<button class="menu-btn" onclick="menuProducts()">
-<span class="menu-icon">🛍️</span>
-<span>المنتجات</span>
-</button>
-
-<button class="menu-btn" onclick="menuOffers()">
-<span class="menu-icon">🔥</span>
-<span>العروض</span>
-</button>
-
-<button class="menu-btn" onclick="menuFavorites()">
-<span class="menu-icon">❤️</span>
-<span>المفضلة</span>
-</button>
+<button class="menu-btn" onclick="menuHome()"><span class="menu-icon">🏠</span><span>الرئيسية</span></button>
+<button class="menu-btn" onclick="menuProducts()"><span class="menu-icon">🛍️</span><span>المنتجات</span></button>
+<button class="menu-btn" onclick="menuOffers()"><span class="menu-icon">🔥</span><span>العروض</span></button>
+<button class="menu-btn" onclick="menuFavorites()"><span class="menu-icon">❤️</span><span>المفضلة</span></button>
 
 <div class="menu-divider"></div>
 
-<button class="menu-btn" onclick="menuCart()">
-<span class="menu-icon">🛒</span>
-<span>سلة المشتريات</span>
-</button>
+<button class="menu-btn" onclick="menuCart()"><span class="menu-icon">🛒</span><span>سلة المشتريات</span></button>
 
-<div class="menu-note">
-تِكرَم 🤍<br>
-من بيتنا لبيتك
-</div>
-
+<div class="menu-note">تِكرَم 🤍<br>من بيتنا لبيتك</div>
 </div>
 </div>
 
@@ -351,7 +316,16 @@ TEKRAM
 
 <div class="form">
 <label>المنطقة</label>
-<input id="area" class="input" placeholder="مثال: صيدا">
+<select id="area" class="input">
+<option value="">اختر منطقة التوصيل</option>
+<option>صور</option>
+<option>المعشوق</option>
+<option>برج الشمالي</option>
+<option>المساكن</option>
+<option>الحوش</option>
+<option>العباسية</option>
+<option>البازورية</option>
+</select>
 </div>
 
 <div class="form">
@@ -760,7 +734,7 @@ async function sendOrder(){
 
 let n=$("name").value.trim();
 let ph=$("phone").value.trim();
-let ar=$("area").value.trim();
+let ar=$("area").value;
 let ad=$("address").value.trim();
 
 if(!n||!ph||!ar||!ad)
