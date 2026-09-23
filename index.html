@@ -18,72 +18,304 @@ footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px}.foote
 @media(max-width:500px){.hero-wrap{padding:25px 4%}.hero{padding:35px 7%;border-radius:25px}h1{font-size:39px}.hero p{font-size:14px}.card{left:8%;bottom:30px;width:165px;height:110px}.categories,.products{gap:12px}.category{padding:17px}.info{padding:12px}.name{font-size:14px}.price{font-size:17px}.product-page{padding:25px 4% 50px}.detail-info{padding:30px 25px}.detail-name{font-size:28px}}
 </style>
 </head>
+
 <body>
 
-<header><div class="header">
+<header>
+<div class="header">
 <a class="logo" href="#" onclick="showHome()">تِكرَم</a>
-<nav><a href="#" onclick="showHome()">الرئيسية</a><a href="#categories" onclick="showHome()">الأقسام</a><a href="#products" onclick="showHome()">المنتجات</a></nav>
+<nav>
+<a href="#" onclick="showHome()">الرئيسية</a>
+<a href="#categories" onclick="showHome()">الأقسام</a>
+<a href="#products" onclick="showHome()">المنتجات</a>
+</nav>
 <button class="cart" onclick="openCart()">🛒 السلة</button>
-</div></header>
+</div>
+</header>
 
-<main><div id="home">
+<main>
+<div id="home">
 
-<section class="hero-wrap"><div class="hero"><div class="hero-content">
+<section class="hero-wrap">
+<div class="hero">
+<div class="hero-content">
 <div class="label">أهلاً بكم في تِكرَم</div>
 <h1>كل شي بتحبّه،<br><span>بمكان واحد.</span></h1>
 <p>منتجاتك اليومية، من القهوة والأجبان للسناكات والمشروبات، مختارة بعناية ومن بيتنا لبيتك.</p>
 <a class="hero-btn" href="#products">تصفّح المنتجات ←</a>
-</div><div class="circle1"></div><div class="circle2"></div><div class="card">🛒<br><b>تِكرَم</b><br><small>من بيتنا لبيتك</small></div></div></section>
+</div>
+<div class="circle1"></div>
+<div class="circle2"></div>
+<div class="card">🛒<br><b>تِكرَم</b><br><small>من بيتنا لبيتك</small></div>
+</div>
+</section>
 
-<section class="section" id="categories"><h2 class="title">الأقسام</h2><p class="subtitle">كل احتياجاتك اليومية بمكان واحد</p><div class="categories">
+<section class="section" id="categories">
+<h2 class="title">الأقسام</h2>
+<p class="subtitle">كل احتياجاتك اليومية بمكان واحد</p>
+<div class="categories">
 <div class="category">🧀<h3>ألبان وأجبان</h3><p>لبنة، جبنة وكل الطيبات</p></div>
 <div class="category">🛒<h3>مواد غذائية</h3><p>أساسيات المونة</p></div>
 <div class="category">🍿<h3>سناكات</h3><p>للقعدة وبين الوجبات</p></div>
 <div class="category">🥤<h3>مشروبات</h3><p>باردة ومنعشة</p></div>
 <div class="category">🧻<h3>محارم</h3><p>للبيت كل يوم</p></div>
 <div class="category">🧊<h3>مجمّدات</h3><p>وجبات سهلة لبعدين</p></div>
-</div></section>
+</div>
+</section>
 
-<section class="products-section" id="products"><div class="section">
-<h2 class="title">منتجاتنا</h2><p class="subtitle">اختيارات من تِكرَم</p>
+<section class="products-section" id="products">
+<div class="section">
+<h2 class="title">منتجاتنا</h2>
+<p class="subtitle">اختيارات من تِكرَم</p>
+
 <div class="products">
 
-<div class="product" onclick="openCoffee('no')"><div class="product-img"><img src="./najjar-coffee-no-cardamom-180g.JPG"></div><div class="info"><div class="cat">مواد غذائية</div><div class="name">قهوة نجار دون هال</div><div class="en">Najjar Coffee No Cardamom</div><div class="weight">180 غ / 450 غ</div><div class="bottom"><div class="price">من $3.35</div><button class="add">+</button></div></div></div>
+<div class="product" onclick="openCoffee('no')">
+<div class="product-img"><img src="./najjar-coffee-no-cardamom-180g.JPG"></div>
+<div class="info">
+<div class="cat">مواد غذائية</div>
+<div class="name">قهوة نجار دون هال</div>
+<div class="en">Najjar Coffee No Cardamom</div>
+<div class="weight">180 غ / 450 غ</div>
+<div class="bottom"><div class="price">من $3.35</div><button class="add">+</button></div>
+</div>
+</div>
 
-<div class="product" onclick="openCoffee('cardamom')"><div class="product-img"><img src="./najjar-coffee-with-cardamom-180g.JPG"></div><div class="info"><div class="cat">مواد غذائية</div><div class="name">قهوة نجار مع هال</div><div class="en">Najjar Coffee with Cardamom</div><div class="weight">180 غ / 450 غ</div><div class="bottom"><div class="price">من $3.55</div><button class="add">+</button></div></div></div>
+<div class="product" onclick="openCoffee('cardamom')">
+<div class="product-img"><img src="./najjar-coffee-with-cardamom-180g.JPG"></div>
+<div class="info">
+<div class="cat">مواد غذائية</div>
+<div class="name">قهوة نجار مع هال</div>
+<div class="en">Najjar Coffee with Cardamom</div>
+<div class="weight">180 غ / 450 غ</div>
+<div class="bottom"><div class="price">من $3.55</div><button class="add">+</button></div>
+</div>
+</div>
 
-<div class="product" onclick="openCheese()"><div class="product-img"><div class="placeholder">🧀</div></div><div class="info"><div class="cat">ألبان وأجبان</div><div class="name">جبنة الغزال</div><div class="en">Al Ghazal Cheese</div><div class="weight">370 غ / 1.5 كغ</div><div class="bottom"><div class="price">من $2.70</div><button class="add">+</button></div></div></div>
+<div class="product" onclick="openCheese()">
+<div class="product-img"><div class="placeholder">🧀</div></div>
+<div class="info">
+<div class="cat">ألبان وأجبان</div>
+<div class="name">جبنة الغزال</div>
+<div class="en">Al Ghazal Cheese</div>
+<div class="weight">370 غ / 1.5 كغ</div>
+<div class="bottom"><div class="price">من $2.70</div><button class="add">+</button></div>
+</div>
+</div>
 
-<div class="product" onclick="openAlmarai()"><div class="product-img"><div class="placeholder">🧀</div></div><div class="info"><div class="cat">ألبان وأجبان</div><div class="name">جبنة المراعي</div><div class="en">Almarai Cheese</div><div class="weight">300 غ</div><div class="bottom"><div class="price">$1.70</div><button class="add">+</button></div></div></div>
+<div class="product" onclick="openAlmarai()">
+<div class="product-img"><div class="placeholder">🧀</div></div>
+<div class="info">
+<div class="cat">ألبان وأجبان</div>
+<div class="name">جبنة المراعي</div>
+<div class="en">Almarai Cheese</div>
+<div class="weight">300 غ</div>
+<div class="bottom"><div class="price">$1.70</div><button class="add">+</button></div>
+</div>
+</div>
 
-<div class="product" onclick="openGreek()"><div class="product-img"><div class="placeholder">🥛</div></div><div class="info"><div class="cat">ألبان وأجبان</div><div class="name">يوغرت تعنايل غريك</div><div class="en">Taanayel Greek Yogurt</div><div class="weight">سادة / فريز / توت / دراق</div><div class="bottom"><div class="price">$1.25</div><button class="add">+</button></div></div></div>
+<div class="product" onclick="openGreek()">
+<div class="product-img"><div class="placeholder">🥛</div></div>
+<div class="info">
+<div class="cat">ألبان وأجبان</div>
+<div class="name">يوغرت تعنايل غريك</div>
+<div class="en">Taanayel Greek Yogurt</div>
+<div class="weight">سادة / فريز / توت / دراق</div>
+<div class="bottom"><div class="price">$1.25</div><button class="add">+</button></div>
+</div>
+</div>
 
-<div class="product" onclick="openSimpleProduct('corn')"><div class="product-img"><img src="./la-bella-sweet-corn-340g.JPG"></div><div class="info"><div class="cat">مواد غذائية</div><div class="name">ذرة حلوة لا بيلا</div><div class="en">La Bella Sweet Corn</div><div class="weight">340 غ / 340 g</div><div class="bottom"><div class="price">$0.85</div><button class="add">+</button></div></div></div>
+<div class="product" onclick="openSimpleProduct('corn')">
+<div class="product-img"><img src="./la-bella-sweet-corn-340g.JPG"></div>
+<div class="info">
+<div class="cat">مواد غذائية</div>
+<div class="name">ذرة حلوة لا بيلا</div>
+<div class="en">La Bella Sweet Corn</div>
+<div class="weight">340 غ / 340 g</div>
+<div class="bottom"><div class="price">$0.85</div><button class="add">+</button></div>
+</div>
+</div>
 
-<div class="product" onclick="openRed()"><div class="product-img"><img src="./najjar-red-95g.JPG"></div><div class="info"><div class="cat">مواد غذائية</div><div class="name">نجار الأحمر</div><div class="en">Najjar Red</div><div class="weight">95 غ / 190 غ</div><div class="bottom"><div class="price">من $3.00</div><button class="add">+</button></div></div></div>
+<div class="product" onclick="openRed()">
+<div class="product-img"><img src="./najjar-red-95g.JPG"></div>
+<div class="info">
+<div class="cat">مواد غذائية</div>
+<div class="name">نجار الأحمر</div>
+<div class="en">Najjar Red</div>
+<div class="weight">95 غ / 190 غ</div>
+<div class="bottom"><div class="price">من $3.00</div><button class="add">+</button></div>
+</div>
+</div>
 
-<div class="product" onclick="openSimpleProduct('coffeemate')"><div class="product-img"><img src="./coffee-mate-450g.JPG"></div><div class="info"><div class="cat">مواد غذائية</div><div class="name">كريمر كوفي ميت</div><div class="en">Coffee Mate</div><div class="weight">450 غ / 450 g</div><div class="bottom"><div class="price">$2.50</div><button class="add">+</button></div></div></div>
+<div class="product" onclick="openSimpleProduct('coffeemate')">
+<div class="product-img"><img src="./coffee-mate-450g.JPG"></div>
+<div class="info">
+<div class="cat">مواد غذائية</div>
+<div class="name">كريمر كوفي ميت</div>
+<div class="en">Coffee Mate</div>
+<div class="weight">450 غ / 450 g</div>
+<div class="bottom"><div class="price">$2.50</div><button class="add">+</button></div>
+</div>
+</div>
 
-</div></div></section></div>
+<!-- Picon ×16 -->
+<div class="product" onclick="openSimpleProduct('picon16')">
+<div class="product-img"><img src="./Picon-cheese-*16.JPG"></div>
+<div class="info">
+<div class="cat">ألبان وأجبان</div>
+<div class="name">بيكون جبنة ×16</div>
+<div class="en">Picon Cheese ×16</div>
+<div class="weight">×16</div>
+<div class="bottom"><div class="price">$2.50</div><button class="add">+</button></div>
+</div>
+</div>
 
-<section class="product-page" id="productPage"><div class="product-detail">
+<!-- Picon ×24 -->
+<div class="product" onclick="openSimpleProduct('picon24')">
+<div class="product-img"><img src="./Picon-cheese-*24.JPG"></div>
+<div class="info">
+<div class="cat">ألبان وأجبان</div>
+<div class="name">بيكون جبنة ×24</div>
+<div class="en">Picon Cheese ×24</div>
+<div class="weight">×24</div>
+<div class="bottom"><div class="price">$3.00</div><button class="add">+</button></div>
+</div>
+</div>
+
+<!-- Picon Simply ×8 -->
+<div class="product" onclick="openSimpleProduct('piconSimply8')">
+<div class="product-img"><img src="./Picon-cheese-simply-*8.JPG"></div>
+<div class="info">
+<div class="cat">ألبان وأجبان</div>
+<div class="name">بيكون سِمبلي ×8</div>
+<div class="en">Picon Cheese Simply ×8</div>
+<div class="weight">×8</div>
+<div class="bottom"><div class="price">$0.90</div><button class="add">+</button></div>
+</div>
+</div>
+
+<!-- Trobika -->
+<div class="product" onclick="openSimpleProduct('trobika')">
+<div class="product-img"><img src="./Trobika-Cappuccino-20+2.JPG"></div>
+<div class="info">
+<div class="cat">مشروبات</div>
+<div class="name">تروبيكا كابتشينو</div>
+<div class="en">Trobika Cappuccino</div>
+<div class="weight">20 + 2</div>
+<div class="bottom"><div class="price">$4.55</div><button class="add">+</button></div>
+</div>
+</div>
+
+<!-- Nescafe -->
+<div class="product" onclick="openSimpleProduct('nescafe2in1')">
+<div class="product-img"><img src="./Nescafe-classic—2in1.JPG"></div>
+<div class="info">
+<div class="cat">مشروبات</div>
+<div class="name">نسكافيه كلاسيك 2 في 1</div>
+<div class="en">Nescafé Classic 2 in 1</div>
+<div class="weight">2 in 1</div>
+<div class="bottom"><div class="price">$5.25</div><button class="add">+</button></div>
+</div>
+</div>
+
+<!-- New Park Cooking Cream - ONE CARD -->
+<div class="product" onclick="openCream()">
+<div class="product-img"><img src="./New-park-cooking-cream -1liter.JPG"></div>
+<div class="info">
+<div class="cat">ألبان وأجبان</div>
+<div class="name">كريمة طبخ نيو بارك</div>
+<div class="en">New Park Cooking Cream</div>
+<div class="weight">160 مل / 1 لتر</div>
+<div class="bottom"><div class="price">من $1.00</div><button class="add">+</button></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+</div>
+
+<section class="product-page" id="productPage">
+<div class="product-detail">
+
 <div class="detail-image" id="detailImage"></div>
-<div class="detail-info"><div class="detail-cat" id="detailCat"></div><div class="detail-name" id="detailName"></div><div class="detail-en" id="detailEn"></div><div class="sizes" id="sizes"></div><div class="detail-weight" id="detailWeight"></div><div class="detail-price" id="detailPrice"></div><div class="detail-description" id="detailDescription"></div><button class="back-btn" onclick="showHome()">← العودة للمنتجات</button><button id="addProductBtn" class="back-btn" style="margin-top:12px;background:var(--o)" onclick="addSelectedToCart()">🛒 أضف للسلة</button></div>
-</div></section></main>
+
+<div class="detail-info">
+<div class="detail-cat" id="detailCat"></div>
+<div class="detail-name" id="detailName"></div>
+<div class="detail-en" id="detailEn"></div>
+<div class="sizes" id="sizes"></div>
+<div class="detail-weight" id="detailWeight"></div>
+<div class="detail-price" id="detailPrice"></div>
+<div class="detail-description" id="detailDescription"></div>
+
+<button class="back-btn" onclick="showHome()">← العودة للمنتجات</button>
+
+<button id="addProductBtn" class="back-btn" style="margin-top:12px;background:var(--o)" onclick="addSelectedToCart()">🛒 أضف للسلة</button>
+</div>
+
+</div>
+</section>
+</main>
 
 <div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
 
-<div id="cartPanel" class="cart-panel"><div class="cart-head"><h2>🛒 السلة</h2><button class="close-cart" onclick="closeCart()">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-footer"><div class="cart-total"><span>المجموع</span><span id="cartTotal">$0.00</span></div><button class="checkout" onclick="openCheckout()">إتمام الطلب</button></div></div>
+<div id="cartPanel" class="cart-panel">
+<div class="cart-head">
+<h2>🛒 السلة</h2>
+<button class="close-cart" onclick="closeCart()">×</button>
+</div>
 
-<div id="checkoutPanel" class="cart-panel"><div class="cart-head"><h2>📦 إتمام الطلب</h2><button class="close-cart" onclick="closeCheckout()">×</button></div><div class="checkout-panel-content">
-<div class="form-group"><label>الاسم</label><input id="customerName" class="form-input" placeholder="اكتب اسمك"></div>
-<div class="form-group"><label>رقم الهاتف</label><input id="customerPhone" class="form-input" type="tel" placeholder="مثال: 03 123 456" dir="ltr"></div>
-<div class="form-group"><label>المنطقة</label><input id="customerArea" class="form-input" placeholder="مثال: صيدا"></div>
-<div class="form-group"><label>العنوان</label><textarea id="customerAddress" class="form-input form-textarea" placeholder="اكتب العنوان بالتفصيل"></textarea></div>
-<div class="form-group"><label>ملاحظات</label><textarea id="customerNotes" class="form-input form-textarea" placeholder="ملاحظات إضافية (اختياري)"></textarea></div>
+<div id="cartItems" class="cart-items"></div>
+
+<div class="cart-footer">
+<div class="cart-total">
+<span>المجموع</span>
+<span id="cartTotal">$0.00</span>
+</div>
+<button class="checkout" onclick="openCheckout()">إتمام الطلب</button>
+</div>
+</div>
+
+<div id="checkoutPanel" class="cart-panel">
+
+<div class="cart-head">
+<h2>📦 إتمام الطلب</h2>
+<button class="close-cart" onclick="closeCheckout()">×</button>
+</div>
+
+<div class="checkout-panel-content">
+
+<div class="form-group">
+<label>الاسم</label>
+<input id="customerName" class="form-input" placeholder="اكتب اسمك">
+</div>
+
+<div class="form-group">
+<label>رقم الهاتف</label>
+<input id="customerPhone" class="form-input" type="tel" placeholder="مثال: 03 123 456" dir="ltr">
+</div>
+
+<div class="form-group">
+<label>المنطقة</label>
+<input id="customerArea" class="form-input" placeholder="مثال: صيدا">
+</div>
+
+<div class="form-group">
+<label>العنوان</label>
+<textarea id="customerAddress" class="form-input form-textarea" placeholder="اكتب العنوان بالتفصيل"></textarea>
+</div>
+
+<div class="form-group">
+<label>ملاحظات</label>
+<textarea id="customerNotes" class="form-input form-textarea" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+</div>
 
 <div class="checkout-summary">
+
 <div class="summary-title">ملخص الطلب</div>
+
 <div id="checkoutSummary"></div>
 
 <div class="summary-item" style="border-top:1px solid var(--bd);padding-top:12px;margin-top:12px;">
@@ -100,11 +332,20 @@ footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px}.foote
 <span>المجموع النهائي</span>
 <span id="checkoutTotal">$0.00</span>
 </div>
+
+</div>
 </div>
 
-</div><div class="cart-footer"><button id="confirmOrderBtn" class="checkout" onclick="confirmOrder()">تأكيد الطلب ✓</button></div></div>
+<div class="cart-footer">
+<button id="confirmOrderBtn" class="checkout" onclick="confirmOrder()">تأكيد الطلب ✓</button>
+</div>
 
-<footer><div class="footer-logo">تِكرَم</div><p>من بيتنا لبيتك 🤍</p></footer>
+</div>
+
+<footer>
+<div class="footer-logo">تِكرَم</div>
+<p>من بيتنا لبيتك 🤍</p>
+</footer>
 
 <script>
 const WEB3FORMS_ACCESS_KEY="9edc6eae-83a6-4858-a452-12860503dcfa";
@@ -112,24 +353,117 @@ const WEB3FORMS_ACCESS_KEY="9edc6eae-83a6-4858-a452-12860503dcfa";
 const DELIVERY_FEE=2;
 
 const coffee={
-no:{name:"قهوة نجار دون هال",en:"Najjar Coffee No Cardamom",items:{
+no:{
+name:"قهوة نجار دون هال",
+en:"Najjar Coffee No Cardamom",
+items:{
 180:{price:3.35,weight:"180 غ | 180 g",image:"./najjar-coffee-no-cardamom-180g.JPG"},
-450:{price:6.85,weight:"450 غ | 450 g",image:"./najjar-coffee-no-cardamom-450g.JPG"}}},
-cardamom:{name:"قهوة نجار مع هال",en:"Najjar Coffee with Cardamom",items:{
+450:{price:6.85,weight:"450 غ | 450 g",image:"./najjar-coffee-no-cardamom-450g.JPG"}
+}
+},
+cardamom:{
+name:"قهوة نجار مع هال",
+en:"Najjar Coffee with Cardamom",
+items:{
 180:{price:3.55,weight:"180 غ | 180 g",image:"./najjar-coffee-with-cardamom-180g.JPG"},
-450:{price:7.35,weight:"450 غ | 450 g",image:"./najjar-coffee-with-cardamom-450g.JPG"}}}};
+450:{price:7.35,weight:"450 غ | 450 g",image:"./najjar-coffee-with-cardamom-450g.JPG"}
+}
+}
+};
 
-const cheese={name:"جبنة الغزال",en:"Al Ghazal Cheese",items:{
+const cheese={
+name:"جبنة الغزال",
+en:"Al Ghazal Cheese",
+items:{
 370:{price:2.70,weight:"370 غ | 370 g",icon:"🧀"},
-1500:{price:11.50,weight:"1.5 كغ | 1.5 kg",icon:"🧀"}}};
+1500:{price:11.50,weight:"1.5 كغ | 1.5 kg",icon:"🧀"}
+}
+};
 
-const greek={name:"يوغرت تعنايل غريك",en:"Taanayel Greek Yogurt",items:{
-plain:{name:"سادة",price:1.25,icon:"🥛"},strawberry:{name:"فريز",price:1.25,icon:"🍓"},
-berry:{name:"توت",price:1.25,icon:"🫐"},peach:{name:"دراق",price:1.25,icon:"🍑"}}};
+const greek={
+name:"يوغرت تعنايل غريك",
+en:"Taanayel Greek Yogurt",
+items:{
+plain:{name:"سادة",price:1.25,icon:"🥛"},
+strawberry:{name:"فريز",price:1.25,icon:"🍓"},
+berry:{name:"توت",price:1.25,icon:"🫐"},
+peach:{name:"دراق",price:1.25,icon:"🍑"}
+}
+};
 
 const simpleProducts={
-corn:{name:"ذرة حلوة لا بيلا",en:"La Bella Sweet Corn",weight:"340 غ | 340 g",price:.85,image:"./la-bella-sweet-corn-340g.JPG",category:"مواد غذائية",description:"ذرة حلوة لا بيلا، 340 غ"},
-coffeemate:{name:"كريمر كوفي ميت",en:"Coffee Mate",weight:"450 غ | 450 g",price:2.5,image:"./coffee-mate-450g.JPG",category:"مواد غذائية",description:"كريمر كوفي ميت، 450 غ"}};
+
+corn:{
+name:"ذرة حلوة لا بيلا",
+en:"La Bella Sweet Corn",
+weight:"340 غ | 340 g",
+price:.85,
+image:"./la-bella-sweet-corn-340g.JPG",
+category:"مواد غذائية",
+description:"ذرة حلوة لا بيلا، 340 غ"
+},
+
+coffeemate:{
+name:"كريمر كوفي ميت",
+en:"Coffee Mate",
+weight:"450 غ | 450 g",
+price:2.5,
+image:"./coffee-mate-450g.JPG",
+category:"مواد غذائية",
+description:"كريمر كوفي ميت، 450 غ"
+},
+
+picon16:{
+name:"بيكون جبنة ×16",
+en:"Picon Cheese ×16",
+weight:"×16",
+price:2.5,
+image:"./Picon-cheese-*16.JPG",
+category:"ألبان وأجبان",
+description:"Picon Cheese ×16"
+},
+
+picon24:{
+name:"بيكون جبنة ×24",
+en:"Picon Cheese ×24",
+weight:"×24",
+price:3,
+image:"./Picon-cheese-*24.JPG",
+category:"ألبان وأجبان",
+description:"Picon Cheese ×24"
+},
+
+piconSimply8:{
+name:"بيكون سِمبلي ×8",
+en:"Picon Cheese Simply ×8",
+weight:"×8",
+price:.9,
+image:"./Picon-cheese-simply-*8.JPG",
+category:"ألبان وأجبان",
+description:"Picon Cheese Simply ×8"
+},
+
+trobika:{
+name:"تروبيكا كابتشينو",
+en:"Trobika Cappuccino 20+2",
+weight:"20 + 2",
+price:4.55,
+image:"./Trobika-Cappuccino-20+2.JPG",
+category:"مشروبات",
+description:"Trobika Cappuccino 20+2"
+},
+
+nescafe2in1:{
+name:"نسكافيه كلاسيك 2 في 1",
+en:"Nescafé Classic 2 in 1",
+weight:"2 in 1",
+price:5.25,
+image:"./Nescafe-classic—2in1.JPG",
+category:"مشروبات",
+description:"Nescafé Classic 2 in 1"
+}
+
+};
 
 const red={
 name:"نجار الأحمر",
@@ -137,18 +471,48 @@ en:"Najjar Red",
 items:{
 95:{price:3,weight:"95 غ | 95 g",image:"./najjar-red-95g.JPG"},
 190:{price:4.9,weight:"190 غ | 190 g",image:"./najjar-red-190g.JPG"}
-}};
+}
+};
+
+const cookingCream={
+name:"كريمة طبخ نيو بارك",
+en:"New Park Cooking Cream",
+items:{
+160:{price:1,weight:"160 مل | 160 ml",image:"./New-park-cooking-cream -160ml.JPG"},
+1000:{price:3,weight:"1 لتر | 1 Liter",image:"./New-park-cooking-cream -1liter.JPG"}
+}
+};
 
 let selectedProduct=null,cart=[];
 
 function openCoffee(type,size=180){
-let p=coffee[type],v=p.items[size];selectedProduct={name:p.name,option:v.weight.split("|")[0].trim(),price:v.price};
-openPage();detailCat.textContent="مواد غذائية";detailName.textContent=p.name;detailEn.textContent=p.en;detailWeight.textContent=v.weight;detailPrice.textContent="$"+v.price.toFixed(2);detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
-sizes.innerHTML=[180,450].map(x=>`<button class="size ${x==size?"active":""}" onclick="openCoffee('${type}',${x})">${x} غ</button>`).join("");
+
+let p=coffee[type],v=p.items[size];
+
+selectedProduct={
+name:p.name,
+option:v.weight.split("|")[0].trim(),
+price:v.price
+};
+
+openPage();
+
+detailCat.textContent="مواد غذائية";
+detailName.textContent=p.name;
+detailEn.textContent=p.en;
+detailWeight.textContent=v.weight;
+detailPrice.textContent="$"+v.price.toFixed(2);
+detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
+
+sizes.innerHTML=[180,450].map(x=>`
+<button class="size ${x==size?"active":""}" onclick="openCoffee('${type}',${x})">${x} غ</button>
+`).join("");
+
 detailImage.innerHTML=`<img src="${v.image}" alt="${p.name}">`;
 }
 
 function openRed(size=95){
+
 let p=red,v=p.items[size];
 
 selectedProduct={
@@ -173,123 +537,407 @@ sizes.innerHTML=[95,190].map(x=>`
 detailImage.innerHTML=`<img src="${v.image}" alt="${p.en}">`;
 }
 
+function openCream(size=160){
+
+let p=cookingCream,v=p.items[size];
+
+selectedProduct={
+name:p.name,
+option:v.weight.split("|")[0].trim(),
+price:v.price
+};
+
+openPage();
+
+detailCat.textContent="ألبان وأجبان";
+detailName.textContent=p.name;
+detailEn.textContent=p.en;
+detailWeight.textContent=v.weight;
+detailPrice.textContent="$"+v.price.toFixed(2);
+detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
+
+sizes.innerHTML=[160,1000].map(x=>`
+<button class="size ${x==size?"active":""}" onclick="openCream(${x})">
+${x==1000?"1 لتر":"160 مل"}
+</button>
+`).join("");
+
+detailImage.innerHTML=`<img src="${v.image}" alt="${p.en}">`;
+}
+
 function openCheese(size=370){
-let p=cheese,v=p.items[size];selectedProduct={name:p.name,option:v.weight.split("|")[0].trim(),price:v.price};openPage();
-detailCat.textContent="ألبان وأجبان";detailName.textContent=p.name;detailEn.textContent=p.en;detailWeight.textContent=v.weight;detailPrice.textContent="$"+v.price.toFixed(2);detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
-sizes.innerHTML=[370,1500].map(x=>`<button class="size ${x==size?"active":""}" onclick="openCheese(${x})">${x==1500?"1.5 كغ":"370 غ"}</button>`).join("");detailImage.innerHTML=`<div class="detail-placeholder">${v.icon}</div>`;
+
+let p=cheese,v=p.items[size];
+
+selectedProduct={
+name:p.name,
+option:v.weight.split("|")[0].trim(),
+price:v.price
+};
+
+openPage();
+
+detailCat.textContent="ألبان وأجبان";
+detailName.textContent=p.name;
+detailEn.textContent=p.en;
+detailWeight.textContent=v.weight;
+detailPrice.textContent="$"+v.price.toFixed(2);
+detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
+
+sizes.innerHTML=[370,1500].map(x=>`
+<button class="size ${x==size?"active":""}" onclick="openCheese(${x})">
+${x==1500?"1.5 كغ":"370 غ"}
+</button>
+`).join("");
+
+detailImage.innerHTML=`<div class="detail-placeholder">${v.icon}</div>`;
 }
 
 function openGreek(flavor="plain"){
-let p=greek,v=p.items[flavor];selectedProduct={name:p.name,option:v.name,price:v.price};openPage();
-detailCat.textContent="ألبان وأجبان";detailName.textContent=p.name;detailEn.textContent=p.en;detailWeight.textContent=v.name;detailPrice.textContent="$"+v.price.toFixed(2);detailDescription.textContent=p.name+" - "+v.name;
-sizes.innerHTML=Object.keys(p.items).map(x=>`<button class="size ${x==flavor?"active":""}" onclick="openGreek('${x}')">${p.items[x].name}</button>`).join("");detailImage.innerHTML=`<div class="detail-placeholder">${v.icon}</div>`;
+
+let p=greek,v=p.items[flavor];
+
+selectedProduct={
+name:p.name,
+option:v.name,
+price:v.price
+};
+
+openPage();
+
+detailCat.textContent="ألبان وأجبان";
+detailName.textContent=p.name;
+detailEn.textContent=p.en;
+detailWeight.textContent=v.name;
+detailPrice.textContent="$"+v.price.toFixed(2);
+detailDescription.textContent=p.name+" - "+v.name;
+
+sizes.innerHTML=Object.keys(p.items).map(x=>`
+<button class="size ${x==flavor?"active":""}" onclick="openGreek('${x}')">
+${p.items[x].name}
+</button>
+`).join("");
+
+detailImage.innerHTML=`<div class="detail-placeholder">${v.icon}</div>`;
 }
 
 function openAlmarai(){
-selectedProduct={name:"جبنة المراعي",option:"300 غ",price:1.7};openPage();detailCat.textContent="ألبان وأجبان";detailName.textContent="جبنة المراعي";detailEn.textContent="Almarai Cheese";detailWeight.textContent="300 غ | 300 g";detailPrice.textContent="$1.70";detailDescription.textContent="جبنة المراعي، 300 غ";sizes.innerHTML="";detailImage.innerHTML=`<div class="detail-placeholder">🧀</div>`;
+
+selectedProduct={
+name:"جبنة المراعي",
+option:"300 غ",
+price:1.7
+};
+
+openPage();
+
+detailCat.textContent="ألبان وأجبان";
+detailName.textContent="جبنة المراعي";
+detailEn.textContent="Almarai Cheese";
+detailWeight.textContent="300 غ | 300 g";
+detailPrice.textContent="$1.70";
+detailDescription.textContent="جبنة المراعي، 300 غ";
+sizes.innerHTML="";
+detailImage.innerHTML=`<div class="detail-placeholder">🧀</div>`;
 }
 
 function openSimpleProduct(id){
-let p=simpleProducts[id];selectedProduct={name:p.name,option:p.weight.split("|")[0].trim(),price:p.price};openPage();
-detailCat.textContent=p.category;detailName.textContent=p.name;detailEn.textContent=p.en;detailWeight.textContent=p.weight;detailPrice.textContent="$"+p.price.toFixed(2);detailDescription.textContent=p.description;sizes.innerHTML="";detailImage.innerHTML=`<img src="${p.image}" alt="${p.en}">`;
+
+let p=simpleProducts[id];
+
+selectedProduct={
+name:p.name,
+option:p.weight.split("|")[0].trim(),
+price:p.price
+};
+
+openPage();
+
+detailCat.textContent=p.category;
+detailName.textContent=p.name;
+detailEn.textContent=p.en;
+detailWeight.textContent=p.weight;
+detailPrice.textContent="$"+p.price.toFixed(2);
+detailDescription.textContent=p.description;
+sizes.innerHTML="";
+detailImage.innerHTML=`<img src="${p.image}" alt="${p.en}">`;
 }
 
-function openPage(){home.style.display="none";productPage.style.display="block";window.scrollTo({top:0,behavior:"smooth"})}
-function showHome(){productPage.style.display="none";home.style.display="block";window.scrollTo({top:0,behavior:"smooth"})}
+function openPage(){
+
+home.style.display="none";
+productPage.style.display="block";
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function showHome(){
+
+productPage.style.display="none";
+home.style.display="block";
+window.scrollTo({top:0,behavior:"smooth"});
+}
 
 function addSelectedToCart(){
-if(!selectedProduct)return;let e=cart.find(x=>x.name==selectedProduct.name&&x.option==selectedProduct.option);
-e?e.qty++:cart.push({...selectedProduct,qty:1});renderCart();openCart();
+
+if(!selectedProduct)return;
+
+let e=cart.find(x=>
+x.name==selectedProduct.name &&
+x.option==selectedProduct.option
+);
+
+e?e.qty++:cart.push({...selectedProduct,qty:1});
+
+renderCart();
+openCart();
 }
 
 function renderCart(){
-if(!cart.length){cartItems.innerHTML='<div class="empty-cart">السلة فارغة 🛒</div>';cartTotal.textContent="$0.00";return}
-cartItems.innerHTML=cart.map((x,i)=>`<div class="cart-item"><div class="cart-item-top"><div><div class="cart-item-name">${x.name}</div><div class="cart-item-option">${x.option}</div></div><div class="cart-item-price">$${(x.price*x.qty).toFixed(2)}</div></div><div class="cart-controls"><button class="qty-btn" onclick="changeQty(${i},-1)">−</button><strong>${x.qty}</strong><button class="qty-btn" onclick="changeQty(${i},1)">+</button><button class="remove-btn" onclick="removeItem(${i})">حذف</button></div></div>`).join("");
-cartTotal.textContent="$"+cart.reduce((s,x)=>s+x.price*x.qty,0).toFixed(2);
+
+if(!cart.length){
+
+cartItems.innerHTML='<div class="empty-cart">السلة فارغة 🛒</div>';
+cartTotal.textContent="$0.00";
+
+return;
 }
 
-function changeQty(i,v){cart[i].qty+=v;if(cart[i].qty<=0)cart.splice(i,1);renderCart()}
-function removeItem(i){cart.splice(i,1);renderCart()}
-function openCart(){cartPanel.style.right="0";cartOverlay.style.display="block";renderCart()}
-function closeCart(){cartPanel.style.right="-420px";cartOverlay.style.display="none"}
+cartItems.innerHTML=cart.map((x,i)=>`
+
+<div class="cart-item">
+
+<div class="cart-item-top">
+
+<div>
+<div class="cart-item-name">${x.name}</div>
+<div class="cart-item-option">${x.option}</div>
+</div>
+
+<div class="cart-item-price">$${(x.price*x.qty).toFixed(2)}</div>
+
+</div>
+
+<div class="cart-controls">
+
+<button class="qty-btn" onclick="changeQty(${i},-1)">−</button>
+
+<strong>${x.qty}</strong>
+
+<button class="qty-btn" onclick="changeQty(${i},1)">+</button>
+
+<button class="remove-btn" onclick="removeItem(${i})">حذف</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+cartTotal.textContent="$"+
+cart.reduce((s,x)=>s+x.price*x.qty,0).toFixed(2);
+}
+
+function changeQty(i,v){
+
+cart[i].qty+=v;
+
+if(cart[i].qty<=0)
+cart.splice(i,1);
+
+renderCart();
+}
+
+function removeItem(i){
+
+cart.splice(i,1);
+renderCart();
+}
+
+function openCart(){
+
+cartPanel.style.right="0";
+cartOverlay.style.display="block";
+renderCart();
+}
+
+function closeCart(){
+
+cartPanel.style.right="-420px";
+cartOverlay.style.display="none";
+}
 
 function openCheckout(){
-if(!cart.length)return alert("السلة فارغة");closeCart();checkoutPanel.style.right="0";cartOverlay.style.display="block";renderCheckout();
+
+if(!cart.length)
+return alert("السلة فارغة");
+
+closeCart();
+
+checkoutPanel.style.right="0";
+cartOverlay.style.display="block";
+
+renderCheckout();
 }
-function closeCheckout(){checkoutPanel.style.right="-420px";cartOverlay.style.display="none"}
+
+function closeCheckout(){
+
+checkoutPanel.style.right="-420px";
+cartOverlay.style.display="none";
+}
 
 function renderCheckout(){
+
 let subtotal=cart.reduce((s,x)=>s+x.price*x.qty,0);
 let finalTotal=subtotal+DELIVERY_FEE;
 
-checkoutSummary.innerHTML=cart.map(x=>`<div class="summary-item"><div>${x.name}<div class="summary-option">${x.option} × ${x.qty}</div></div><strong class="summary-price">$${(x.price*x.qty).toFixed(2)}</strong></div>`).join("");
+checkoutSummary.innerHTML=cart.map(x=>`
+
+<div class="summary-item">
+
+<div>
+${x.name}
+
+<div class="summary-option">
+${x.option} × ${x.qty}
+</div>
+
+</div>
+
+<strong class="summary-price">
+$${(x.price*x.qty).toFixed(2)}
+</strong>
+
+</div>
+
+`).join("");
 
 checkoutSubtotal.textContent="$"+subtotal.toFixed(2);
 checkoutTotal.textContent="$"+finalTotal.toFixed(2);
 }
 
 async function confirmOrder(){
-let name=customerName.value.trim(),phone=customerPhone.value.trim(),area=customerArea.value.trim(),address=customerAddress.value.trim(),notes=customerNotes.value.trim();
 
-if(!name||!phone||!area||!address)return alert("يرجى تعبئة الاسم ورقم الهاتف والمنطقة والعنوان");
-if(!cart.length)return alert("السلة فارغة");
+let name=customerName.value.trim();
+let phone=customerPhone.value.trim();
+let area=customerArea.value.trim();
+let address=customerAddress.value.trim();
+let notes=customerNotes.value.trim();
+
+if(!name||!phone||!area||!address)
+return alert("يرجى تعبئة الاسم ورقم الهاتف والمنطقة والعنوان");
+
+if(!cart.length)
+return alert("السلة فارغة");
 
 let subtotal=cart.reduce((s,x)=>s+x.price*x.qty,0);
 let delivery=DELIVERY_FEE;
 let total=subtotal+delivery;
 
-let order=cart.map(x=>`• ${x.name} | ${x.option} | الكمية: ${x.qty} | $${(x.price*x.qty).toFixed(2)}`).join("\n");
+let order=cart.map(x=>
+`• ${x.name} | ${x.option} | الكمية: ${x.qty} | $${(x.price*x.qty).toFixed(2)}`
+).join("\n");
 
-let message="طلب جديد من موقع تِكرَم\n\nبيانات الزبون:\nالاسم: "+name+"\nالهاتف: "+phone+"\nالمنطقة: "+area+"\nالعنوان: "+address+"\nالملاحظات: "+(notes||"لا يوجد")+"\n\nالطلب:\n"+order+"\n\nالمجموع الفرعي: $"+subtotal.toFixed(2)+"\nالتوصيل: $"+delivery.toFixed(2)+"\nالمجموع النهائي: $"+total.toFixed(2);
+let message=
+"طلب جديد من موقع تِكرَم\n\n"+
+"بيانات الزبون:\n"+
+"الاسم: "+name+"\n"+
+"الهاتف: "+phone+"\n"+
+"المنطقة: "+area+"\n"+
+"العنوان: "+address+"\n"+
+"الملاحظات: "+(notes||"لا يوجد")+
+"\n\nالطلب:\n"+
+order+
+"\n\nالمجموع الفرعي: $"+subtotal.toFixed(2)+
+"\nالتوصيل: $"+delivery.toFixed(2)+
+"\nالمجموع النهائي: $"+total.toFixed(2);
 
 let b=confirmOrderBtn;
+
 b.disabled=true;
 b.textContent="جاري إرسال الطلب...";
 
 try{
-let r=await fetch("https://api.web3forms.com/submit",{
+
+let r=await fetch(
+"https://api.web3forms.com/submit",
+{
 method:"POST",
-headers:{"Content-Type":"application/json","Accept":"application/json"},
+headers:{
+"Content-Type":"application/json",
+"Accept":"application/json"
+},
 body:JSON.stringify({
+
 access_key:WEB3FORMS_ACCESS_KEY,
+
 subject:"🛒 طلب جديد من تِكرَم",
+
 from_name:"Tekram Website",
+
 name,
 phone,
 area,
 address,
 notes:notes||"لا يوجد",
+
 order,
+
 subtotal:"$"+subtotal.toFixed(2),
+
 delivery:"$"+delivery.toFixed(2),
+
 total:"$"+total.toFixed(2),
+
 message
+
 })
-});
+}
+);
 
 let result=await r.json();
 
 if(result.success){
-alert("تم إرسال طلبك بنجاح ❤️\n\nشكراً لطلبك من تِكرَم.");
+
+alert(
+"تم إرسال طلبك بنجاح ❤️\n\nشكراً لطلبك من تِكرَم."
+);
+
 cart=[];
-customerName.value=customerPhone.value=customerArea.value=customerAddress.value=customerNotes.value="";
+
+customerName.value=
+customerPhone.value=
+customerArea.value=
+customerAddress.value=
+customerNotes.value="";
+
 closeCheckout();
+
 renderCart();
-}
-else{
-alert("صار خطأ أثناء إرسال الطلب.\n\nيرجى المحاولة مرة ثانية.");
+
+}else{
+
+alert(
+"صار خطأ أثناء إرسال الطلب.\n\nيرجى المحاولة مرة ثانية."
+);
+
 }
 
 }catch(e){
-alert("تعذر إرسال الطلب حالياً.\n\nتأكدي من اتصال الإنترنت وحاولي مرة ثانية.");
-}
-finally{
+
+alert(
+"تعذر إرسال الطلب حالياً.\n\nتأكدي من اتصال الإنترنت وحاولي مرة ثانية."
+);
+
+}finally{
+
 b.disabled=false;
 b.textContent="تأكيد الطلب ✓";
+
 }
 }
 
 renderCart();
 </script>
+
 </body>
 </html>
