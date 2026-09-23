@@ -4,288 +4,1773 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>تِكرَم | Tekram</title>
+
 <style>
-:root{--g:#24483a;--gd:#18352b;--b:#eadbc8;--o:#d94e28;--y:#d99e30;--bg:#f7f3ed;--m:#707770;--bd:#e6ded3}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--gd);line-height:1.7}a{text-decoration:none;color:inherit}
-header{background:var(--g);padding:16px 6%;position:sticky;top:0;z-index:10}.header{max-width:1250px;margin:auto;display:flex;align-items:center;justify-content:space-between}.logo{color:var(--b);font-size:29px;font-weight:900}nav{display:flex;gap:28px;color:#fff;font-weight:bold;font-size:14px}.cart,.checkout{border:0;background:var(--o);color:#fff;padding:10px 16px;border-radius:13px;font-weight:bold;cursor:pointer}
-.hero-wrap{padding:40px 6% 25px}.hero{max-width:1250px;min-height:430px;margin:auto;padding:60px 6%;background:var(--b);border-radius:32px;position:relative;overflow:hidden;display:flex;align-items:center}.hero-content{max-width:600px;z-index:2}.label{display:inline-block;background:var(--g);color:#fff;padding:7px 14px;border-radius:25px;font-size:13px;font-weight:bold;margin-bottom:18px}h1{font-size:clamp(42px,6vw,70px);line-height:1.1;margin-bottom:20px}h1 span{color:var(--o)}.hero p{max-width:560px;color:#59625b;font-size:17px;margin-bottom:25px}.hero-btn{display:inline-block;background:var(--g);color:#fff;padding:13px 22px;border-radius:14px;font-weight:bold}.card{position:absolute;left:8%;bottom:55px;background:var(--g);color:#fff;padding:22px;width:200px;height:135px;border-radius:23px;transform:rotate(-5deg)}.circle1,.circle2{position:absolute;border-radius:50%}.circle1{width:220px;height:220px;background:var(--y);left:-70px;top:-70px}.circle2{width:110px;height:110px;background:var(--o);left:14%;bottom:-45px}
-.section{max-width:1250px;margin:auto;padding:55px 6%}.title{font-size:31px;font-weight:900}.subtitle{color:var(--m);font-size:14px;margin-bottom:25px}.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.category{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:22px;min-height:135px}.category-icon{font-size:30px}.category h3{font-size:17px}.category p{font-size:12px;color:var(--m)}
-.products-section{background:#fff;padding:60px 0 70px}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.product{border:1px solid var(--bd);border-radius:20px;overflow:hidden;background:#fff;cursor:pointer}.product:hover{transform:translateY(-4px);box-shadow:0 10px 25px #18352b18}.product-img{aspect-ratio:1;background:#f5f1ea;display:flex;align-items:center;justify-content:center;overflow:hidden}.product-img img{width:100%;height:100%;object-fit:cover}.placeholder{font-size:60px}.info{padding:15px}.cat{color:var(--o);font-size:11px;font-weight:bold}.name{font-size:16px;font-weight:900}.en,.weight{font-size:11px;color:var(--m)}.weight{margin:5px 0 10px}.bottom{display:flex;align-items:center;justify-content:space-between}.price{font-size:19px;font-weight:900;direction:ltr}.add{width:36px;height:36px;border:0;border-radius:11px;background:var(--g);color:#fff;font-size:20px}
-.product-page{display:none;min-height:75vh;padding:45px 6% 70px}.product-detail{max-width:1000px;margin:auto;background:#fff;border:1px solid var(--bd);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}.detail-image{background:#f5f1ea;min-height:500px;display:flex;align-items:center;justify-content:center}.detail-image img{width:100%;height:100%;min-height:500px;object-fit:contain}.detail-placeholder{font-size:130px}.detail-info{padding:50px 40px;display:flex;flex-direction:column;justify-content:center}.detail-cat{color:var(--o);font-size:13px;font-weight:bold}.detail-name{font-size:36px;font-weight:900}.detail-en{color:var(--m);font-size:14px;margin-bottom:18px}.detail-weight{color:var(--m);margin-bottom:15px}.detail-price{font-size:32px;font-weight:900;direction:ltr;margin-bottom:20px}.detail-description{color:#59625b;font-size:14px;margin-bottom:25px}.sizes{display:flex;gap:10px;margin-bottom:25px;flex-wrap:wrap}.size{border:1px solid var(--g);background:#fff;color:var(--g);padding:10px 18px;border-radius:12px;font-weight:bold;cursor:pointer}.size.active{background:var(--g);color:#fff}.back-btn{width:max-content;background:var(--g);color:#fff;padding:12px 20px;border-radius:13px;font-weight:bold;cursor:pointer;border:0}
-footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px}.footer-logo{color:var(--b);font-size:26px;font-weight:900}footer p{font-size:13px;opacity:.8}
-.cart-overlay{display:none;position:fixed;inset:0;background:#0005;z-index:50}.cart-panel{position:fixed;top:0;right:-420px;width:400px;max-width:92%;height:100vh;background:#fff;z-index:60;box-shadow:-10px 0 30px #18352b25;transition:.3s;display:flex;flex-direction:column}.cart-head{padding:22px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between}.cart-head h2{font-size:24px}.close-cart{border:0;background:var(--bg);width:38px;height:38px;border-radius:10px;font-size:22px;cursor:pointer}.cart-items,.checkout-panel-content{padding:20px;overflow:auto;flex:1}.empty-cart{text-align:center;color:var(--m);padding:50px 10px}.cart-item{border-bottom:1px solid var(--bd);padding:15px 0}.cart-item-top{display:flex;justify-content:space-between;gap:10px}.cart-item-name{font-weight:bold}.cart-item-option,.summary-option{font-size:12px;color:var(--m)}.cart-item-price,.summary-price{font-weight:bold;color:var(--o);direction:ltr}.cart-controls{display:flex;align-items:center;gap:10px;margin-top:10px}.qty-btn{border:0;background:var(--g);color:#fff;width:28px;height:28px;border-radius:8px;font-size:18px;cursor:pointer}.remove-btn{border:0;background:none;color:var(--o);font-size:12px;cursor:pointer;margin-right:auto}.cart-footer{border-top:1px solid var(--bd);padding:20px}.cart-total,.checkout-total{display:flex;justify-content:space-between;font-size:20px;font-weight:900;margin-bottom:15px}.checkout{width:100%;padding:13px;font-size:16px}.form-group{margin-bottom:15px}.form-group label{font-weight:bold;font-size:13px}.form-input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:12px;margin-top:6px;font-family:inherit;font-size:14px;outline:none}.form-textarea{height:80px;resize:none}.checkout-summary{background:var(--bg);padding:15px;border-radius:15px}.summary-title{font-size:17px;font-weight:900;margin-bottom:12px}.summary-item{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-bottom:10px}.checkout-total{border-top:1px solid var(--bd);margin-top:12px;padding-top:12px;font-size:19px}
-@media(max-width:900px){nav{display:none}.categories{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}.hero{min-height:500px}.product-detail{grid-template-columns:1fr}.detail-image,.detail-image img{min-height:350px}}
-@media(max-width:500px){.hero-wrap{padding:25px 4%}.hero{padding:35px 7%;border-radius:25px}h1{font-size:39px}.hero p{font-size:14px}.card{left:8%;bottom:30px;width:165px;height:110px}.categories,.products{gap:12px}.category{padding:17px}.info{padding:12px}.name{font-size:14px}.price{font-size:17px}.product-page{padding:25px 4% 50px}.detail-info{padding:30px 25px}.detail-name{font-size:28px}}
+:root{
+  --green:#183d30;
+  --green2:#244f3e;
+  --cream:#f7f0e4;
+  --cream2:#eee4d3;
+  --orange:#df5035;
+  --gold:#e5aa45;
+  --text:#183d30;
+  --muted:#77786f;
+  --white:#fffdf8;
+  --border:#e5dac8;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.6;
+}
+
+button,
+input,
+textarea{
+  font-family:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  background:var(--green);
+  padding:18px 5%;
+  position:sticky;
+  top:0;
+  z-index:100;
+  overflow:hidden;
+}
+
+header:before{
+  content:"";
+  position:absolute;
+  width:330px;
+  height:330px;
+  border-radius:50%;
+  border:45px solid #244d3d;
+  top:-210px;
+  right:-80px;
+  opacity:.65;
+}
+
+.header{
+  max-width:1250px;
+  margin:auto;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  color:#fffdf7;
+  text-align:center;
+  font-family:Georgia,serif;
+  font-size:28px;
+  font-weight:900;
+  line-height:1;
+}
+
+.logo small{
+  display:block;
+  color:var(--gold);
+  font-family:Tahoma,Arial,sans-serif;
+  font-size:12px;
+  margin-top:5px;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.icon-btn{
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:50%;
+  background:#fffdf7;
+  color:var(--green);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+}
+
+.cart-top{
+  position:relative;
+}
+
+.cart-count{
+  position:absolute;
+  top:-4px;
+  right:-3px;
+  min-width:20px;
+  height:20px;
+  padding:0 5px;
+  border-radius:20px;
+  background:var(--orange);
+  color:#fff;
+  font-size:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+/* ================= SEARCH ================= */
+
+.search-wrap{
+  max-width:1250px;
+  margin:0 auto;
+  padding:0 5% 20px;
+  background:var(--green);
+}
+
+.search{
+  background:#fffdf7;
+  border-radius:30px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  padding:0 20px;
+  gap:10px;
+}
+
+.search span{
+  font-size:20px;
+}
+
+.search input{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  font-size:15px;
+  color:var(--text);
+}
+
+/* ================= HERO ================= */
+
+.hero-wrap{
+  padding:25px 5% 10px;
+}
+
+.hero{
+  max-width:1250px;
+  min-height:350px;
+  margin:auto;
+  border-radius:30px;
+  overflow:hidden;
+  position:relative;
+  background:var(--green);
+  color:#fff;
+  display:flex;
+  align-items:center;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  border:55px solid #234a3a;
+  top:-250px;
+  right:-110px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:270px;
+  height:270px;
+  border-radius:50%;
+  background:#5a4a34;
+  left:-90px;
+  bottom:-170px;
+  opacity:.6;
+}
+
+.hero-content{
+  position:relative;
+  z-index:3;
+  padding:45px 6%;
+  max-width:600px;
+}
+
+.hero-small{
+  color:var(--gold);
+  font-weight:bold;
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,64px);
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:#f4b04b;
+}
+
+.hero p{
+  color:#eee9df;
+  max-width:470px;
+  font-size:15px;
+  margin-bottom:24px;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--orange);
+  color:white;
+  border:0;
+  padding:13px 22px;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+.hero-products{
+  position:absolute;
+  z-index:2;
+  left:5%;
+  bottom:-5px;
+  width:43%;
+  max-width:470px;
+  height:260px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.basket{
+  width:290px;
+  height:170px;
+  border-radius:25px 25px 60px 60px;
+  background:#35634e;
+  border:8px solid #2c5644;
+  transform:perspective(500px) rotateX(-8deg);
+  position:relative;
+}
+
+.basket:before,
+.basket:after{
+  content:"";
+  position:absolute;
+  top:-65px;
+  width:105px;
+  height:110px;
+  border:9px solid #315d4a;
+  border-bottom:0;
+  border-radius:70px 70px 0 0;
+}
+
+.basket:before{
+  left:35px;
+}
+
+.basket:after{
+  right:35px;
+}
+
+.basket-item{
+  position:absolute;
+  width:75px;
+  height:85px;
+  border-radius:12px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  color:#222;
+  box-shadow:0 8px 15px #0003;
+}
+
+.item1{
+  top:-65px;
+  left:35px;
+  background:#d93627;
+}
+
+.item2{
+  top:-80px;
+  right:35px;
+  background:#e8a936;
+}
+
+.item3{
+  top:-105px;
+  left:105px;
+  background:#f4eee2;
+}
+
+.item4{
+  top:-30px;
+  left:105px;
+  background:#173d2f;
+  color:#fff;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+  max-width:1250px;
+  margin:auto;
+  padding:40px 5%;
+}
+
+.section-heading{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:22px;
+}
+
+.section-heading h2{
+  font-size:32px;
+  font-weight:900;
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.heading-line{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:12px;
+}
+
+.heading-line:before{
+  content:"";
+  width:50px;
+  height:3px;
+  background:var(--green);
+  border-radius:10px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products-section{
+  padding-bottom:110px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.product{
+  background:rgba(255,253,248,.9);
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  transition:.2s;
+  cursor:pointer;
+  box-shadow:0 3px 10px #183d3010;
+}
+
+.product:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px #183d3020;
+}
+
+.product-img{
+  margin:10px;
+  aspect-ratio:1;
+  border-radius:16px;
+  background:#eee5d6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.product-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.placeholder{
+  font-size:70px;
+}
+
+.product-info{
+  padding:8px 14px 15px;
+}
+
+.badge{
+  display:inline-block;
+  background:#f3c97d;
+  color:#5c3f17;
+  padding:3px 10px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+
+.badge.red{
+  background:#f4b09f;
+  color:#8d2c1c;
+}
+
+.product-name{
+  font-size:15px;
+  font-weight:900;
+  line-height:1.45;
+}
+
+.product-en{
+  font-size:11px;
+  color:#70736c;
+  direction:ltr;
+  text-align:right;
+  margin-top:3px;
+}
+
+.product-weight{
+  color:#444b45;
+  font-size:11px;
+  margin-top:5px;
+}
+
+.product-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:12px;
+}
+
+.product-price{
+  font-size:21px;
+  font-weight:900;
+  direction:ltr;
+}
+
+.product-add{
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:50%;
+  background:var(--green);
+  color:white;
+  font-size:20px;
+}
+
+/* ================= PRODUCT PAGE ================= */
+
+.product-page{
+  display:none;
+  padding:35px 5% 100px;
+}
+
+.product-detail{
+  max-width:1000px;
+  margin:auto;
+  background:#fffdf8;
+  border:1px solid var(--border);
+  border-radius:28px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.detail-image{
+  min-height:500px;
+  background:#eee5d6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.detail-image img{
+  width:100%;
+  height:100%;
+  min-height:500px;
+  object-fit:contain;
+}
+
+.detail-placeholder{
+  font-size:140px;
+}
+
+.detail-info{
+  padding:50px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.detail-cat{
+  color:var(--orange);
+  font-weight:bold;
+  font-size:13px;
+}
+
+.detail-name{
+  font-size:34px;
+  font-weight:900;
+  line-height:1.3;
+}
+
+.detail-en{
+  color:var(--muted);
+  direction:ltr;
+  text-align:right;
+  margin-bottom:20px;
+  font-size:13px;
+}
+
+.detail-weight{
+  color:var(--muted);
+  margin:15px 0;
+}
+
+.detail-price{
+  font-size:32px;
+  font-weight:900;
+  direction:ltr;
+  margin-bottom:15px;
+}
+
+.detail-description{
+  color:#59625b;
+  font-size:14px;
+  margin-bottom:22px;
+}
+
+.sizes{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+
+.size{
+  border:1px solid var(--green);
+  background:#fffdf8;
+  color:var(--green);
+  padding:9px 16px;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+.size.active{
+  background:var(--green);
+  color:white;
+}
+
+.detail-btn{
+  width:100%;
+  border:0;
+  background:var(--orange);
+  color:#fff;
+  padding:14px;
+  border-radius:15px;
+  font-weight:bold;
+  font-size:16px;
+  margin-top:10px;
+}
+
+.back-btn{
+  border:0;
+  background:var(--green);
+  color:white;
+  padding:12px 18px;
+  border-radius:14px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+/* ================= BOTTOM NAV ================= */
+
+.bottom-nav{
+  position:fixed;
+  z-index:40;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(850px,92%);
+  background:#fffdf8ee;
+  backdrop-filter:blur(12px);
+  border:1px solid #dfd5c5;
+  border-radius:30px;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-around;
+  box-shadow:0 10px 35px #183d3020;
+}
+
+.bottom-nav button{
+  border:0;
+  background:none;
+  color:#77786f;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2px;
+  font-weight:bold;
+  font-size:11px;
+}
+
+.bottom-nav button span{
+  font-size:23px;
+}
+
+.bottom-nav button.active{
+  color:var(--orange);
+}
+
+/* ================= CART ================= */
+
+.cart-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0006;
+  z-index:200;
+}
+
+.cart-panel{
+  position:fixed;
+  z-index:210;
+  top:0;
+  right:-440px;
+  width:410px;
+  max-width:94%;
+  height:100vh;
+  background:#fffdf8;
+  transition:.3s;
+  display:flex;
+  flex-direction:column;
+  box-shadow:-10px 0 35px #0002;
+}
+
+.cart-head{
+  padding:20px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.cart-head h2{
+  font-size:23px;
+}
+
+.close-cart{
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:12px;
+  background:var(--cream2);
+  font-size:22px;
+}
+
+.cart-items,
+.checkout-content{
+  flex:1;
+  overflow:auto;
+  padding:20px;
+}
+
+.empty-cart{
+  text-align:center;
+  color:var(--muted);
+  padding:60px 10px;
+}
+
+.cart-item{
+  border-bottom:1px solid var(--border);
+  padding:15px 0;
+}
+
+.cart-item-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.cart-item-name{
+  font-weight:bold;
+}
+
+.cart-item-option{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.cart-item-price{
+  color:var(--orange);
+  font-weight:bold;
+  direction:ltr;
+}
+
+.cart-controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+}
+
+.qty-btn{
+  width:29px;
+  height:29px;
+  border:0;
+  border-radius:9px;
+  background:var(--green);
+  color:white;
+  font-size:18px;
+}
+
+.remove-btn{
+  border:0;
+  background:none;
+  color:var(--orange);
+  margin-right:auto;
+  font-size:12px;
+}
+
+.cart-footer{
+  padding:18px;
+  border-top:1px solid var(--border);
+}
+
+.cart-total{
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:13px;
+}
+
+.checkout{
+  width:100%;
+  border:0;
+  background:var(--orange);
+  color:white;
+  padding:14px;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:bold;
+}
+
+/* ================= CHECKOUT ================= */
+
+.form-group{
+  margin-bottom:14px;
+}
+
+.form-group label{
+  display:block;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.form-input{
+  width:100%;
+  border:1px solid var(--border);
+  background:#fff;
+  padding:11px;
+  border-radius:12px;
+  margin-top:5px;
+  outline:none;
+}
+
+.form-textarea{
+  height:75px;
+  resize:none;
+}
+
+.checkout-summary{
+  background:var(--cream);
+  padding:15px;
+  border-radius:16px;
+  margin-top:10px;
+}
+
+.summary-title{
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.summary-item{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.summary-option{
+  color:var(--muted);
+  font-size:11px;
+}
+
+.summary-price{
+  color:var(--orange);
+  direction:ltr;
+}
+
+.checkout-total{
+  border-top:1px solid var(--border);
+  padding-top:12px;
+  margin-top:12px;
+  display:flex;
+  justify-content:space-between;
+  font-size:19px;
+  font-weight:900;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:var(--green);
+  color:white;
+  text-align:center;
+  padding:45px 20px 110px;
+}
+
+.footer-logo{
+  font-family:Georgia,serif;
+  font-size:28px;
+  font-weight:bold;
+  color:var(--gold);
+}
+
+footer p{
+  opacity:.8;
+  font-size:13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+
+  .products{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .hero-products{
+    opacity:.65;
+    left:0;
+    width:48%;
+  }
+
+}
+
+@media(max-width:700px){
+
+  header{
+    padding:14px 5%;
+  }
+
+  .logo{
+    font-size:23px;
+  }
+
+  .logo small{
+    font-size:9px;
+  }
+
+  .icon-btn{
+    width:43px;
+    height:43px;
+  }
+
+  .hero{
+    min-height:390px;
+  }
+
+  .hero-content{
+    padding:35px 7%;
+    max-width:100%;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .hero-products{
+    display:none;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:11px;
+  }
+
+  .product-info{
+    padding:7px 10px 12px;
+  }
+
+  .product-name{
+    font-size:13px;
+  }
+
+  .product-en{
+    font-size:9px;
+  }
+
+  .product-price{
+    font-size:17px;
+  }
+
+  .product-add{
+    width:34px;
+    height:34px;
+  }
+
+  .section{
+    padding:30px 5%;
+  }
+
+  .section-heading h2{
+    font-size:27px;
+  }
+
+  .product-detail{
+    grid-template-columns:1fr;
+  }
+
+  .detail-image,
+  .detail-image img{
+    min-height:330px;
+  }
+
+  .detail-info{
+    padding:30px 23px;
+  }
+
+}
+
+@media(max-width:430px){
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:13px;
+  }
+
+  .section-heading h2{
+    font-size:25px;
+  }
+
+  .bottom-nav{
+    width:94%;
+    padding:8px 10px;
+  }
+
+  .bottom-nav button span{
+    font-size:20px;
+  }
+
+}
 </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
+
 <div class="header">
-<a class="logo" href="#" onclick="showHome()">تِكرَم</a>
-<nav>
-<a href="#" onclick="showHome()">الرئيسية</a>
-<a href="#categories" onclick="showHome()">الأقسام</a>
-<a href="#products" onclick="showHome()">المنتجات</a>
-</nav>
-<button class="cart" onclick="openCart()">🛒 السلة</button>
+
+<div class="header-actions">
+
+<button class="icon-btn cart-top" onclick="openCart()">
+🛒
+<span id="cartCount" class="cart-count">0</span>
+</button>
+
 </div>
+
+<a href="#" class="logo" onclick="showHome()">
+TEKRAM
+<small>من بيتنا لبيتك</small>
+</a>
+
+<div class="header-actions">
+
+<button class="icon-btn" onclick="focusSearch()">⌕</button>
+
+<button class="icon-btn" onclick="scrollToProducts()">☰</button>
+
+</div>
+
+</div>
+
 </header>
 
+<!-- ================= SEARCH ================= -->
+
+<div class="search-wrap">
+
+<div class="search">
+
+<span>⌕</span>
+
+<input
+id="searchInput"
+type="search"
+placeholder="إبحث عن منتج..."
+oninput="filterProducts()">
+
+</div>
+
+</div>
+
 <main>
+
 <div id="home">
 
+<!-- ================= HERO ================= -->
+
 <section class="hero-wrap">
+
 <div class="hero">
+
 <div class="hero-content">
-<div class="label">أهلاً بكم في تِكرَم</div>
-<h1>كل شي بتحبّه،<br><span>بمكان واحد.</span></h1>
-<p>منتجاتك اليومية، من القهوة والأجبان للسناكات والمشروبات، مختارة بعناية ومن بيتنا لبيتك.</p>
-<a class="hero-btn" href="#products">تصفّح المنتجات ←</a>
+
+<div class="hero-small">✦ من حارتنا لبيتك</div>
+
+<h1>
+كل احتياجاتك اليومية
+<br>
+<span>بمكان واحد.</span>
+</h1>
+
+<p>
+منتجات مختارة بعناية من بيتنا لبيتك،
+بأسعار واضحة وتوصيل قريب.
+</p>
+
+<button class="hero-btn" onclick="scrollToProducts()">
+تصفّح المنتجات ←
+</button>
+
 </div>
-<div class="circle1"></div>
-<div class="circle2"></div>
-<div class="card">🛒<br><b>تِكرَم</b><br><small>من بيتنا لبيتك</small></div>
+
+<div class="hero-products">
+
+<div class="basket">
+
+<div class="basket-item item1">PICON</div>
+<div class="basket-item item2">☕</div>
+<div class="basket-item item3">NEW<br>PARK</div>
+<div class="basket-item item4">NESCAFÉ</div>
+
 </div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section" id="categories">
-<h2 class="title">الأقسام</h2>
-<p class="subtitle">كل احتياجاتك اليومية بمكان واحد</p>
-<div class="categories">
-<div class="category">🧀<h3>ألبان وأجبان</h3><p>لبنة، جبنة وكل الطيبات</p></div>
-<div class="category">🛒<h3>مواد غذائية</h3><p>أساسيات المونة</p></div>
-<div class="category">🍿<h3>سناكات</h3><p>للقعدة وبين الوجبات</p></div>
-<div class="category">🥤<h3>مشروبات</h3><p>باردة ومنعشة</p></div>
-<div class="category">🧻<h3>محارم</h3><p>للبيت كل يوم</p></div>
-<div class="category">🧊<h3>مجمّدات</h3><p>وجبات سهلة لبعدين</p></div>
+<!-- ================= PRODUCTS ================= -->
+
+<section class="section products-section" id="products">
+
+<div class="section-heading">
+
+<div>
+<div class="heading-line"></div>
+<h2>منتجاتنا</h2>
+<p>اختيارات من تِكرَم</p>
 </div>
+
+</div>
+
+<div class="products" id="productsGrid">
+
+<!-- NAJJAR NO CARDAMOM -->
+
+<div class="product searchable" data-search="قهوة نجار دون هال najjar coffee no cardamom" onclick="openCoffee('no')">
+
+<div class="product-img">
+<img src="./najjar-coffee-no-cardamom-180g.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge">مشروبات</span>
+
+<div class="product-name">
+قهوة نجار دون هال
+</div>
+
+<div class="product-en">
+Najjar Coffee No Cardamom
+</div>
+
+<div class="product-weight">
+180 غ / 450 غ
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+من $3.35
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NAJJAR CARDAMOM -->
+
+<div class="product searchable" data-search="قهوة نجار مع هال najjar coffee cardamom" onclick="openCoffee('cardamom')">
+
+<div class="product-img">
+<img src="./najjar-coffee-with-cardamom-180g.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge">مشروبات</span>
+
+<div class="product-name">
+قهوة نجار مع هال
+</div>
+
+<div class="product-en">
+Najjar Coffee with Cardamom
+</div>
+
+<div class="product-weight">
+180 غ / 450 غ
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+من $3.55
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- AL GHAZAL -->
+
+<div class="product searchable" data-search="جبنة الغزال al ghazal cheese" onclick="openCheese()">
+
+<div class="product-img">
+<div class="placeholder">🧀</div>
+</div>
+
+<div class="product-info">
+
+<span class="badge">ألبان وأجبان</span>
+
+<div class="product-name">
+جبنة الغزال
+</div>
+
+<div class="product-en">
+Al Ghazal Cheese
+</div>
+
+<div class="product-weight">
+370 غ / 1.5 كغ
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+من $2.70
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ALMARAI -->
+
+<div class="product searchable" data-search="جبنة المراعي almarai cheese" onclick="openAlmarai()">
+
+<div class="product-img">
+<div class="placeholder">🧀</div>
+</div>
+
+<div class="product-info">
+
+<span class="badge">ألبان وأجبان</span>
+
+<div class="product-name">
+جبنة المراعي
+</div>
+
+<div class="product-en">
+Almarai Cheese
+</div>
+
+<div class="product-weight">
+300 غ
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$1.70
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- GREEK -->
+
+<div class="product searchable" data-search="يوغرت تعنايل غريك greek yogurt" onclick="openGreek()">
+
+<div class="product-img">
+<div class="placeholder">🥛</div>
+</div>
+
+<div class="product-info">
+
+<span class="badge">ألبان وأجبان</span>
+
+<div class="product-name">
+يوغرت تعنايل غريك
+</div>
+
+<div class="product-en">
+Taanayel Greek Yogurt
+</div>
+
+<div class="product-weight">
+سادة / فريز / توت / دراق
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$1.25
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CORN -->
+
+<div class="product searchable" data-search="ذرة حلوة لا بيلا la bella sweet corn" onclick="openSimpleProduct('corn')">
+
+<div class="product-img">
+<img src="./la-bella-sweet-corn-340g.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge">مواد غذائية</span>
+
+<div class="product-name">
+ذرة حلوة لا بيلا
+</div>
+
+<div class="product-en">
+La Bella Sweet Corn
+</div>
+
+<div class="product-weight">
+340 غ
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$0.85
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NAJJAR RED -->
+
+<div class="product searchable" data-search="نجار الأحمر najjar red" onclick="openRed()">
+
+<div class="product-img">
+<img src="./najjar-red-95g.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge">مواد غذائية</span>
+
+<div class="product-name">
+نجار الأحمر
+</div>
+
+<div class="product-en">
+Najjar Red
+</div>
+
+<div class="product-weight">
+95 غ / 190 غ
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+من $3.00
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- COFFEE MATE -->
+
+<div class="product searchable" data-search="كريمر كوفي ميت coffee mate" onclick="openSimpleProduct('coffeemate')">
+
+<div class="product-img">
+<img src="./coffee-mate-450g.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge">مشروبات</span>
+
+<div class="product-name">
+كريمر كوفي ميت
+</div>
+
+<div class="product-en">
+Coffee Mate
+</div>
+
+<div class="product-weight">
+450 غ
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$2.50
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PICON 16 -->
+
+<div class="product searchable" data-search="picon cheese 16 بيكون جبنة" onclick="openSimpleProduct('picon16')">
+
+<div class="product-img">
+<img src="./Picon-cheese-*16.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge">ألبان وأجبان</span>
+
+<div class="product-name">
+بيكون جبنة ×16
+</div>
+
+<div class="product-en">
+Picon Cheese ×16
+</div>
+
+<div class="product-weight">
+×16
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$2.50
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PICON 24 -->
+
+<div class="product searchable" data-search="picon cheese 24 بيكون جبنة" onclick="openSimpleProduct('picon24')">
+
+<div class="product-img">
+<img src="./Picon-cheese-*24.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge">ألبان وأجبان</span>
+
+<div class="product-name">
+بيكون جبنة ×24
+</div>
+
+<div class="product-en">
+Picon Cheese ×24
+</div>
+
+<div class="product-weight">
+×24
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$3.00
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PICON SIMPLY -->
+
+<div class="product searchable" data-search="picon simply 8 بيكون سمبلي" onclick="openSimpleProduct('piconSimply8')">
+
+<div class="product-img">
+<img src="./Picon-cheese-simply-*8.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge">ألبان وأجبان</span>
+
+<div class="product-name">
+بيكون سِمبلي ×8
+</div>
+
+<div class="product-en">
+Picon Cheese Simply ×8
+</div>
+
+<div class="product-weight">
+×8
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$0.90
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TROBIKA -->
+
+<div class="product searchable" data-search="trobika cappuccino تروبيكا كابتشينو" onclick="openSimpleProduct('trobika')">
+
+<div class="product-img">
+<img src="./Trobika-Cappuccino-20+2.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge red">مشروبات</span>
+
+<div class="product-name">
+تروبيكا كابتشينو
+</div>
+
+<div class="product-en">
+Trobika Cappuccino
+</div>
+
+<div class="product-weight">
+20 + 2
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$4.55
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NESCAFE -->
+
+<div class="product searchable" data-search="nescafe classic 2 in 1 نسكافيه كلاسيك" onclick="openSimpleProduct('nescafe2in1')">
+
+<div class="product-img">
+<img src="./Nescafe-classic—2in1.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge red">مشروبات</span>
+
+<div class="product-name">
+نسكافيه كلاسيك 2 في 1
+</div>
+
+<div class="product-en">
+Nescafé Classic 2 in 1
+</div>
+
+<div class="product-weight">
+2 in 1
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$5.25
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NEW PARK CREAM -->
+
+<div class="product searchable" data-search="new park cooking cream كريمة طبخ نيو بارك" onclick="openCream()">
+
+<div class="product-img">
+<img src="./New-park-cooking-cream -1liter.JPG">
+</div>
+
+<div class="product-info">
+
+<span class="badge">ألبان وأجبان</span>
+
+<div class="product-name">
+كريمة طبخ نيو بارك
+</div>
+
+<div class="product-en">
+New Park Cooking Cream
+</div>
+
+<div class="product-weight">
+160 مل / 1 لتر
+</div>
+
+<div class="product-bottom">
+
+<div class="product-price">
+من $1.00
+</div>
+
+<button class="product-add">🛒</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="products-section" id="products">
-<div class="section">
-<h2 class="title">منتجاتنا</h2>
-<p class="subtitle">اختيارات من تِكرَم</p>
-
-<div class="products">
-
-<div class="product" onclick="openCoffee('no')">
-<div class="product-img"><img src="./najjar-coffee-no-cardamom-180g.JPG"></div>
-<div class="info">
-<div class="cat">مواد غذائية</div>
-<div class="name">قهوة نجار دون هال</div>
-<div class="en">Najjar Coffee No Cardamom</div>
-<div class="weight">180 غ / 450 غ</div>
-<div class="bottom"><div class="price">من $3.35</div><button class="add">+</button></div>
-</div>
 </div>
 
-<div class="product" onclick="openCoffee('cardamom')">
-<div class="product-img"><img src="./najjar-coffee-with-cardamom-180g.JPG"></div>
-<div class="info">
-<div class="cat">مواد غذائية</div>
-<div class="name">قهوة نجار مع هال</div>
-<div class="en">Najjar Coffee with Cardamom</div>
-<div class="weight">180 غ / 450 غ</div>
-<div class="bottom"><div class="price">من $3.55</div><button class="add">+</button></div>
-</div>
-</div>
 
-<div class="product" onclick="openCheese()">
-<div class="product-img"><div class="placeholder">🧀</div></div>
-<div class="info">
-<div class="cat">ألبان وأجبان</div>
-<div class="name">جبنة الغزال</div>
-<div class="en">Al Ghazal Cheese</div>
-<div class="weight">370 غ / 1.5 كغ</div>
-<div class="bottom"><div class="price">من $2.70</div><button class="add">+</button></div>
-</div>
-</div>
-
-<div class="product" onclick="openAlmarai()">
-<div class="product-img"><div class="placeholder">🧀</div></div>
-<div class="info">
-<div class="cat">ألبان وأجبان</div>
-<div class="name">جبنة المراعي</div>
-<div class="en">Almarai Cheese</div>
-<div class="weight">300 غ</div>
-<div class="bottom"><div class="price">$1.70</div><button class="add">+</button></div>
-</div>
-</div>
-
-<div class="product" onclick="openGreek()">
-<div class="product-img"><div class="placeholder">🥛</div></div>
-<div class="info">
-<div class="cat">ألبان وأجبان</div>
-<div class="name">يوغرت تعنايل غريك</div>
-<div class="en">Taanayel Greek Yogurt</div>
-<div class="weight">سادة / فريز / توت / دراق</div>
-<div class="bottom"><div class="price">$1.25</div><button class="add">+</button></div>
-</div>
-</div>
-
-<div class="product" onclick="openSimpleProduct('corn')">
-<div class="product-img"><img src="./la-bella-sweet-corn-340g.JPG"></div>
-<div class="info">
-<div class="cat">مواد غذائية</div>
-<div class="name">ذرة حلوة لا بيلا</div>
-<div class="en">La Bella Sweet Corn</div>
-<div class="weight">340 غ / 340 g</div>
-<div class="bottom"><div class="price">$0.85</div><button class="add">+</button></div>
-</div>
-</div>
-
-<div class="product" onclick="openRed()">
-<div class="product-img"><img src="./najjar-red-95g.JPG"></div>
-<div class="info">
-<div class="cat">مواد غذائية</div>
-<div class="name">نجار الأحمر</div>
-<div class="en">Najjar Red</div>
-<div class="weight">95 غ / 190 غ</div>
-<div class="bottom"><div class="price">من $3.00</div><button class="add">+</button></div>
-</div>
-</div>
-
-<div class="product" onclick="openSimpleProduct('coffeemate')">
-<div class="product-img"><img src="./coffee-mate-450g.JPG"></div>
-<div class="info">
-<div class="cat">مواد غذائية</div>
-<div class="name">كريمر كوفي ميت</div>
-<div class="en">Coffee Mate</div>
-<div class="weight">450 غ / 450 g</div>
-<div class="bottom"><div class="price">$2.50</div><button class="add">+</button></div>
-</div>
-</div>
-
-<!-- Picon ×16 -->
-<div class="product" onclick="openSimpleProduct('picon16')">
-<div class="product-img"><img src="./Picon-cheese-*16.JPG"></div>
-<div class="info">
-<div class="cat">ألبان وأجبان</div>
-<div class="name">بيكون جبنة ×16</div>
-<div class="en">Picon Cheese ×16</div>
-<div class="weight">×16</div>
-<div class="bottom"><div class="price">$2.50</div><button class="add">+</button></div>
-</div>
-</div>
-
-<!-- Picon ×24 -->
-<div class="product" onclick="openSimpleProduct('picon24')">
-<div class="product-img"><img src="./Picon-cheese-*24.JPG"></div>
-<div class="info">
-<div class="cat">ألبان وأجبان</div>
-<div class="name">بيكون جبنة ×24</div>
-<div class="en">Picon Cheese ×24</div>
-<div class="weight">×24</div>
-<div class="bottom"><div class="price">$3.00</div><button class="add">+</button></div>
-</div>
-</div>
-
-<!-- Picon Simply ×8 -->
-<div class="product" onclick="openSimpleProduct('piconSimply8')">
-<div class="product-img"><img src="./Picon-cheese-simply-*8.JPG"></div>
-<div class="info">
-<div class="cat">ألبان وأجبان</div>
-<div class="name">بيكون سِمبلي ×8</div>
-<div class="en">Picon Cheese Simply ×8</div>
-<div class="weight">×8</div>
-<div class="bottom"><div class="price">$0.90</div><button class="add">+</button></div>
-</div>
-</div>
-
-<!-- Trobika -->
-<div class="product" onclick="openSimpleProduct('trobika')">
-<div class="product-img"><img src="./Trobika-Cappuccino-20+2.JPG"></div>
-<div class="info">
-<div class="cat">مشروبات</div>
-<div class="name">تروبيكا كابتشينو</div>
-<div class="en">Trobika Cappuccino</div>
-<div class="weight">20 + 2</div>
-<div class="bottom"><div class="price">$4.55</div><button class="add">+</button></div>
-</div>
-</div>
-
-<!-- Nescafe -->
-<div class="product" onclick="openSimpleProduct('nescafe2in1')">
-<div class="product-img"><img src="./Nescafe-classic—2in1.JPG"></div>
-<div class="info">
-<div class="cat">مشروبات</div>
-<div class="name">نسكافيه كلاسيك 2 في 1</div>
-<div class="en">Nescafé Classic 2 in 1</div>
-<div class="weight">2 in 1</div>
-<div class="bottom"><div class="price">$5.25</div><button class="add">+</button></div>
-</div>
-</div>
-
-<!-- New Park Cooking Cream - ONE CARD -->
-<div class="product" onclick="openCream()">
-<div class="product-img"><img src="./New-park-cooking-cream -1liter.JPG"></div>
-<div class="info">
-<div class="cat">ألبان وأجبان</div>
-<div class="name">كريمة طبخ نيو بارك</div>
-<div class="en">New Park Cooking Cream</div>
-<div class="weight">160 مل / 1 لتر</div>
-<div class="bottom"><div class="price">من $1.00</div><button class="add">+</button></div>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-</div>
+<!-- ================= PRODUCT DETAIL ================= -->
 
 <section class="product-page" id="productPage">
+
 <div class="product-detail">
 
 <div class="detail-image" id="detailImage"></div>
 
 <div class="detail-info">
+
 <div class="detail-cat" id="detailCat"></div>
+
 <div class="detail-name" id="detailName"></div>
+
 <div class="detail-en" id="detailEn"></div>
+
 <div class="sizes" id="sizes"></div>
+
 <div class="detail-weight" id="detailWeight"></div>
+
 <div class="detail-price" id="detailPrice"></div>
+
 <div class="detail-description" id="detailDescription"></div>
 
-<button class="back-btn" onclick="showHome()">← العودة للمنتجات</button>
+<button
+class="detail-btn"
+onclick="addSelectedToCart()">
+🛒 أضف للسلة
+</button>
 
-<button id="addProductBtn" class="back-btn" style="margin-top:12px;background:var(--o)" onclick="addSelectedToCart()">🛒 أضف للسلة</button>
+<button
+class="back-btn"
+onclick="showHome()">
+← العودة للمنتجات
+</button>
+
 </div>
 
 </div>
+
 </section>
+
 </main>
+
+
+<!-- ================= CART ================= -->
 
 <div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
 
 <div id="cartPanel" class="cart-panel">
+
 <div class="cart-head">
+
 <h2>🛒 السلة</h2>
+
 <button class="close-cart" onclick="closeCart()">×</button>
+
 </div>
 
 <div id="cartItems" class="cart-items"></div>
 
 <div class="cart-footer">
+
 <div class="cart-total">
+
 <span>المجموع</span>
+
 <span id="cartTotal">$0.00</span>
+
 </div>
-<button class="checkout" onclick="openCheckout()">إتمام الطلب</button>
+
+<button class="checkout" onclick="openCheckout()">
+إتمام الطلب
+</button>
+
 </div>
+
 </div>
+
+
+<!-- ================= CHECKOUT ================= -->
 
 <div id="checkoutPanel" class="cart-panel">
 
 <div class="cart-head">
+
 <h2>📦 إتمام الطلب</h2>
+
 <button class="close-cart" onclick="closeCheckout()">×</button>
+
 </div>
 
-<div class="checkout-panel-content">
+<div class="checkout-content">
 
 <div class="form-group">
 <label>الاسم</label>
@@ -294,7 +1779,7 @@ footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px}.foote
 
 <div class="form-group">
 <label>رقم الهاتف</label>
-<input id="customerPhone" class="form-input" type="tel" placeholder="مثال: 03 123 456" dir="ltr">
+<input id="customerPhone" class="form-input" type="tel" placeholder="03 123 456" dir="ltr">
 </div>
 
 <div class="form-group">
@@ -314,84 +1799,264 @@ footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px}.foote
 
 <div class="checkout-summary">
 
-<div class="summary-title">ملخص الطلب</div>
+<div class="summary-title">
+ملخص الطلب
+</div>
 
 <div id="checkoutSummary"></div>
 
-<div class="summary-item" style="border-top:1px solid var(--bd);padding-top:12px;margin-top:12px;">
-<div><strong>المجموع الفرعي</strong></div>
-<strong id="checkoutSubtotal" class="summary-price">$0.00</strong>
+<div class="summary-item" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px">
+
+<strong>المجموع الفرعي</strong>
+
+<strong id="checkoutSubtotal" class="summary-price">
+$0.00
+</strong>
+
 </div>
 
 <div class="summary-item">
-<div><strong>التوصيل</strong></div>
-<strong class="summary-price">$2.00</strong>
+
+<strong>التوصيل</strong>
+
+<strong class="summary-price">
+$2.00
+</strong>
+
 </div>
 
 <div class="checkout-total">
+
 <span>المجموع النهائي</span>
-<span id="checkoutTotal">$0.00</span>
+
+<span id="checkoutTotal">
+$0.00
+</span>
+
 </div>
 
 </div>
+
 </div>
 
 <div class="cart-footer">
-<button id="confirmOrderBtn" class="checkout" onclick="confirmOrder()">تأكيد الطلب ✓</button>
+
+<button
+id="confirmOrderBtn"
+class="checkout"
+onclick="confirmOrder()">
+تأكيد الطلب ✓
+</button>
+
 </div>
 
 </div>
+
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<div class="bottom-nav">
+
+<button class="active" onclick="showHome()">
+<span>⌂</span>
+الرئيسية
+</button>
+
+<button onclick="scrollToProducts()">
+<span>▦</span>
+الأقسام
+</button>
+
+<button onclick="scrollToProducts()">
+<span>♡</span>
+المفضلة
+</button>
+
+<button onclick="openCart()">
+<span>🛒</span>
+السلة
+</button>
+
+</div>
+
 
 <footer>
-<div class="footer-logo">تِكرَم</div>
-<p>من بيتنا لبيتك 🤍</p>
+
+<div class="footer-logo">
+تِكرَم
+</div>
+
+<p>
+من بيتنا لبيتك 🤍
+</p>
+
 </footer>
 
+
 <script>
-const WEB3FORMS_ACCESS_KEY="9edc6eae-83a6-4858-a452-12860503dcfa";
 
-const DELIVERY_FEE=2;
+/* ================= DATA ================= */
 
-const coffee={
+const WEB3FORMS_ACCESS_KEY =
+"9edc6eae-83a6-4858-a452-12860503dcfa";
+
+const DELIVERY_FEE = 2;
+
+
+const coffee = {
+
 no:{
 name:"قهوة نجار دون هال",
 en:"Najjar Coffee No Cardamom",
 items:{
-180:{price:3.35,weight:"180 غ | 180 g",image:"./najjar-coffee-no-cardamom-180g.JPG"},
-450:{price:6.85,weight:"450 غ | 450 g",image:"./najjar-coffee-no-cardamom-450g.JPG"}
+
+180:{
+price:3.35,
+weight:"180 غ | 180 g",
+image:"./najjar-coffee-no-cardamom-180g.JPG"
+},
+
+450:{
+price:6.85,
+weight:"450 غ | 450 g",
+image:"./najjar-coffee-no-cardamom-450g.JPG"
+}
+
 }
 },
+
 cardamom:{
 name:"قهوة نجار مع هال",
 en:"Najjar Coffee with Cardamom",
 items:{
-180:{price:3.55,weight:"180 غ | 180 g",image:"./najjar-coffee-with-cardamom-180g.JPG"},
-450:{price:7.35,weight:"450 غ | 450 g",image:"./najjar-coffee-with-cardamom-450g.JPG"}
+
+180:{
+price:3.55,
+weight:"180 غ | 180 g",
+image:"./najjar-coffee-with-cardamom-180g.JPG"
+},
+
+450:{
+price:7.35,
+weight:"450 غ | 450 g",
+image:"./najjar-coffee-with-cardamom-450g.JPG"
+}
+
 }
 }
+
 };
 
-const cheese={
+
+const cheese = {
+
 name:"جبنة الغزال",
 en:"Al Ghazal Cheese",
+
 items:{
-370:{price:2.70,weight:"370 غ | 370 g",icon:"🧀"},
-1500:{price:11.50,weight:"1.5 كغ | 1.5 kg",icon:"🧀"}
+
+370:{
+price:2.70,
+weight:"370 غ | 370 g",
+icon:"🧀"
+},
+
+1500:{
+price:11.50,
+weight:"1.5 كغ | 1.5 kg",
+icon:"🧀"
 }
+
+}
+
 };
 
-const greek={
+
+const greek = {
+
 name:"يوغرت تعنايل غريك",
 en:"Taanayel Greek Yogurt",
+
 items:{
-plain:{name:"سادة",price:1.25,icon:"🥛"},
-strawberry:{name:"فريز",price:1.25,icon:"🍓"},
-berry:{name:"توت",price:1.25,icon:"🫐"},
-peach:{name:"دراق",price:1.25,icon:"🍑"}
+
+plain:{
+name:"سادة",
+price:1.25,
+icon:"🥛"
+},
+
+strawberry:{
+name:"فريز",
+price:1.25,
+icon:"🍓"
+},
+
+berry:{
+name:"توت",
+price:1.25,
+icon:"🫐"
+},
+
+peach:{
+name:"دراق",
+price:1.25,
+icon:"🍑"
 }
+
+}
+
 };
 
-const simpleProducts={
+
+const red = {
+
+name:"نجار الأحمر",
+en:"Najjar Red",
+
+items:{
+
+95:{
+price:3,
+weight:"95 غ | 95 g",
+image:"./najjar-red-95g.JPG"
+},
+
+190:{
+price:4.9,
+weight:"190 غ | 190 g",
+image:"./najjar-red-190g.JPG"
+}
+
+}
+
+};
+
+
+const cookingCream = {
+
+name:"كريمة طبخ نيو بارك",
+en:"New Park Cooking Cream",
+
+items:{
+
+160:{
+price:1,
+weight:"160 مل | 160 ml",
+image:"./New-park-cooking-cream -160ml.JPG"
+},
+
+1000:{
+price:3,
+weight:"1 لتر | 1 Liter",
+image:"./New-park-cooking-cream -1liter.JPG"
+}
+
+}
+
+};
+
+
+const simpleProducts = {
 
 corn:{
 name:"ذرة حلوة لا بيلا",
@@ -407,9 +2072,9 @@ coffeemate:{
 name:"كريمر كوفي ميت",
 en:"Coffee Mate",
 weight:"450 غ | 450 g",
-price:2.5,
+price:2.50,
 image:"./coffee-mate-450g.JPG",
-category:"مواد غذائية",
+category:"مشروبات",
 description:"كريمر كوفي ميت، 450 غ"
 },
 
@@ -417,7 +2082,7 @@ picon16:{
 name:"بيكون جبنة ×16",
 en:"Picon Cheese ×16",
 weight:"×16",
-price:2.5,
+price:2.50,
 image:"./Picon-cheese-*16.JPG",
 category:"ألبان وأجبان",
 description:"Picon Cheese ×16"
@@ -437,7 +2102,7 @@ piconSimply8:{
 name:"بيكون سِمبلي ×8",
 en:"Picon Cheese Simply ×8",
 weight:"×8",
-price:.9,
+price:.90,
 image:"./Picon-cheese-simply-*8.JPG",
 category:"ألبان وأجبان",
 description:"Picon Cheese Simply ×8"
@@ -465,29 +2130,20 @@ description:"Nescafé Classic 2 in 1"
 
 };
 
-const red={
-name:"نجار الأحمر",
-en:"Najjar Red",
-items:{
-95:{price:3,weight:"95 غ | 95 g",image:"./najjar-red-95g.JPG"},
-190:{price:4.9,weight:"190 غ | 190 g",image:"./najjar-red-190g.JPG"}
-}
-};
 
-const cookingCream={
-name:"كريمة طبخ نيو بارك",
-en:"New Park Cooking Cream",
-items:{
-160:{price:1,weight:"160 مل | 160 ml",image:"./New-park-cooking-cream -160ml.JPG"},
-1000:{price:3,weight:"1 لتر | 1 Liter",image:"./New-park-cooking-cream -1liter.JPG"}
-}
-};
+/* ================= STATE ================= */
 
-let selectedProduct=null,cart=[];
+let selectedProduct = null;
+
+let cart = [];
+
+
+/* ================= PRODUCT FUNCTIONS ================= */
 
 function openCoffee(type,size=180){
 
-let p=coffee[type],v=p.items[size];
+let p=coffee[type];
+let v=p.items[size];
 
 selectedProduct={
 name:p.name,
@@ -497,23 +2153,34 @@ price:v.price
 
 openPage();
 
-detailCat.textContent="مواد غذائية";
+detailCat.textContent="مشروبات";
 detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.weight;
 detailPrice.textContent="$"+v.price.toFixed(2);
-detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
+detailDescription.textContent=
+p.name+"، "+v.weight.split("|")[0];
 
 sizes.innerHTML=[180,450].map(x=>`
-<button class="size ${x==size?"active":""}" onclick="openCoffee('${type}',${x})">${x} غ</button>
+
+<button
+class="size ${x==size?"active":""}"
+onclick="openCoffee('${type}',${x})">
+${x} غ
+</button>
+
 `).join("");
 
-detailImage.innerHTML=`<img src="${v.image}" alt="${p.name}">`;
+detailImage.innerHTML=
+`<img src="${v.image}" alt="${p.en}">`;
+
 }
+
 
 function openRed(size=95){
 
-let p=red,v=p.items[size];
+let p=red;
+let v=p.items[size];
 
 selectedProduct={
 name:p.name,
@@ -528,18 +2195,29 @@ detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.weight;
 detailPrice.textContent="$"+v.price.toFixed(2);
-detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
+detailDescription.textContent=
+p.name+"، "+v.weight.split("|")[0];
 
 sizes.innerHTML=[95,190].map(x=>`
-<button class="size ${x==size?"active":""}" onclick="openRed(${x})">${x} غ</button>
+
+<button
+class="size ${x==size?"active":""}"
+onclick="openRed(${x})">
+${x} غ
+</button>
+
 `).join("");
 
-detailImage.innerHTML=`<img src="${v.image}" alt="${p.en}">`;
+detailImage.innerHTML=
+`<img src="${v.image}" alt="${p.en}">`;
+
 }
+
 
 function openCream(size=160){
 
-let p=cookingCream,v=p.items[size];
+let p=cookingCream;
+let v=p.items[size];
 
 selectedProduct={
 name:p.name,
@@ -554,20 +2232,31 @@ detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.weight;
 detailPrice.textContent="$"+v.price.toFixed(2);
-detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
+detailDescription.textContent=
+p.name+"، "+v.weight.split("|")[0];
 
 sizes.innerHTML=[160,1000].map(x=>`
-<button class="size ${x==size?"active":""}" onclick="openCream(${x})">
+
+<button
+class="size ${x==size?"active":""}"
+onclick="openCream(${x})">
+
 ${x==1000?"1 لتر":"160 مل"}
+
 </button>
+
 `).join("");
 
-detailImage.innerHTML=`<img src="${v.image}" alt="${p.en}">`;
+detailImage.innerHTML=
+`<img src="${v.image}" alt="${p.en}">`;
+
 }
+
 
 function openCheese(size=370){
 
-let p=cheese,v=p.items[size];
+let p=cheese;
+let v=p.items[size];
 
 selectedProduct={
 name:p.name,
@@ -582,20 +2271,31 @@ detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.weight;
 detailPrice.textContent="$"+v.price.toFixed(2);
-detailDescription.textContent=p.name+"، "+v.weight.split("|")[0];
+detailDescription.textContent=
+p.name+"، "+v.weight.split("|")[0];
 
 sizes.innerHTML=[370,1500].map(x=>`
-<button class="size ${x==size?"active":""}" onclick="openCheese(${x})">
+
+<button
+class="size ${x==size?"active":""}"
+onclick="openCheese(${x})">
+
 ${x==1500?"1.5 كغ":"370 غ"}
+
 </button>
+
 `).join("");
 
-detailImage.innerHTML=`<div class="detail-placeholder">${v.icon}</div>`;
+detailImage.innerHTML=
+`<div class="detail-placeholder">${v.icon}</div>`;
+
 }
+
 
 function openGreek(flavor="plain"){
 
-let p=greek,v=p.items[flavor];
+let p=greek;
+let v=p.items[flavor];
 
 selectedProduct={
 name:p.name,
@@ -610,23 +2310,34 @@ detailName.textContent=p.name;
 detailEn.textContent=p.en;
 detailWeight.textContent=v.name;
 detailPrice.textContent="$"+v.price.toFixed(2);
-detailDescription.textContent=p.name+" - "+v.name;
+detailDescription.textContent=
+p.name+" - "+v.name;
 
-sizes.innerHTML=Object.keys(p.items).map(x=>`
-<button class="size ${x==flavor?"active":""}" onclick="openGreek('${x}')">
+sizes.innerHTML=
+Object.keys(p.items).map(x=>`
+
+<button
+class="size ${x==flavor?"active":""}"
+onclick="openGreek('${x}')">
+
 ${p.items[x].name}
+
 </button>
+
 `).join("");
 
-detailImage.innerHTML=`<div class="detail-placeholder">${v.icon}</div>`;
+detailImage.innerHTML=
+`<div class="detail-placeholder">${v.icon}</div>`;
+
 }
+
 
 function openAlmarai(){
 
 selectedProduct={
 name:"جبنة المراعي",
 option:"300 غ",
-price:1.7
+price:1.70
 };
 
 openPage();
@@ -637,9 +2348,14 @@ detailEn.textContent="Almarai Cheese";
 detailWeight.textContent="300 غ | 300 g";
 detailPrice.textContent="$1.70";
 detailDescription.textContent="جبنة المراعي، 300 غ";
+
 sizes.innerHTML="";
-detailImage.innerHTML=`<div class="detail-placeholder">🧀</div>`;
+
+detailImage.innerHTML=
+`<div class="detail-placeholder">🧀</div>`;
+
 }
+
 
 function openSimpleProduct(id){
 
@@ -659,47 +2375,89 @@ detailEn.textContent=p.en;
 detailWeight.textContent=p.weight;
 detailPrice.textContent="$"+p.price.toFixed(2);
 detailDescription.textContent=p.description;
+
 sizes.innerHTML="";
-detailImage.innerHTML=`<img src="${p.image}" alt="${p.en}">`;
+
+detailImage.innerHTML=
+`<img src="${p.image}" alt="${p.en}">`;
+
 }
+
+
+/* ================= PAGES ================= */
 
 function openPage(){
 
 home.style.display="none";
+
 productPage.style.display="block";
-window.scrollTo({top:0,behavior:"smooth"});
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
+
 
 function showHome(){
 
 productPage.style.display="none";
+
 home.style.display="block";
-window.scrollTo({top:0,behavior:"smooth"});
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
+
+
+/* ================= CART ================= */
 
 function addSelectedToCart(){
 
 if(!selectedProduct)return;
 
-let e=cart.find(x=>
-x.name==selectedProduct.name &&
-x.option==selectedProduct.option
+let existing=cart.find(x=>
+x.name===selectedProduct.name &&
+x.option===selectedProduct.option
 );
 
-e?e.qty++:cart.push({...selectedProduct,qty:1});
+if(existing){
+
+existing.qty++;
+
+}else{
+
+cart.push({
+...selectedProduct,
+qty:1
+});
+
+}
 
 renderCart();
+
 openCart();
+
 }
+
 
 function renderCart(){
 
 if(!cart.length){
 
-cartItems.innerHTML='<div class="empty-cart">السلة فارغة 🛒</div>';
+cartItems.innerHTML=
+`<div class="empty-cart">السلة فارغة 🛒</div>`;
+
 cartTotal.textContent="$0.00";
 
+cartCount.textContent="0";
+
 return;
+
 }
 
 cartItems.innerHTML=cart.map((x,i)=>`
@@ -709,23 +2467,41 @@ cartItems.innerHTML=cart.map((x,i)=>`
 <div class="cart-item-top">
 
 <div>
-<div class="cart-item-name">${x.name}</div>
-<div class="cart-item-option">${x.option}</div>
+
+<div class="cart-item-name">
+${x.name}
 </div>
 
-<div class="cart-item-price">$${(x.price*x.qty).toFixed(2)}</div>
+<div class="cart-item-option">
+${x.option}
+</div>
+
+</div>
+
+<div class="cart-item-price">
+$${(x.price*x.qty).toFixed(2)}
+</div>
 
 </div>
 
 <div class="cart-controls">
 
-<button class="qty-btn" onclick="changeQty(${i},-1)">−</button>
+<button class="qty-btn"
+onclick="changeQty(${i},-1)">
+−
+</button>
 
 <strong>${x.qty}</strong>
 
-<button class="qty-btn" onclick="changeQty(${i},1)">+</button>
+<button class="qty-btn"
+onclick="changeQty(${i},1)">
++
+</button>
 
-<button class="remove-btn" onclick="removeItem(${i})">حذف</button>
+<button class="remove-btn"
+onclick="removeItem(${i})">
+حذف
+</button>
 
 </div>
 
@@ -733,68 +2509,113 @@ cartItems.innerHTML=cart.map((x,i)=>`
 
 `).join("");
 
-cartTotal.textContent="$"+
-cart.reduce((s,x)=>s+x.price*x.qty,0).toFixed(2);
+let total=cart.reduce(
+(s,x)=>s+x.price*x.qty,
+0
+);
+
+let count=cart.reduce(
+(s,x)=>s+x.qty,
+0
+);
+
+cartTotal.textContent="$"+total.toFixed(2);
+
+cartCount.textContent=count;
+
 }
+
 
 function changeQty(i,v){
 
 cart[i].qty+=v;
 
-if(cart[i].qty<=0)
+if(cart[i].qty<=0){
 cart.splice(i,1);
+}
 
 renderCart();
+
 }
+
 
 function removeItem(i){
 
 cart.splice(i,1);
+
 renderCart();
+
 }
+
 
 function openCart(){
 
 cartPanel.style.right="0";
+
 cartOverlay.style.display="block";
+
 renderCart();
+
 }
+
 
 function closeCart(){
 
-cartPanel.style.right="-420px";
+cartPanel.style.right="-440px";
+
 cartOverlay.style.display="none";
+
 }
+
+
+/* ================= CHECKOUT ================= */
 
 function openCheckout(){
 
-if(!cart.length)
-return alert("السلة فارغة");
+if(!cart.length){
+
+alert("السلة فارغة");
+
+return;
+
+}
 
 closeCart();
 
 checkoutPanel.style.right="0";
+
 cartOverlay.style.display="block";
 
 renderCheckout();
+
 }
+
 
 function closeCheckout(){
 
-checkoutPanel.style.right="-420px";
+checkoutPanel.style.right="-440px";
+
 cartOverlay.style.display="none";
+
 }
+
 
 function renderCheckout(){
 
-let subtotal=cart.reduce((s,x)=>s+x.price*x.qty,0);
+let subtotal=cart.reduce(
+(s,x)=>s+x.price*x.qty,
+0
+);
+
 let finalTotal=subtotal+DELIVERY_FEE;
 
-checkoutSummary.innerHTML=cart.map(x=>`
+checkoutSummary.innerHTML=
+cart.map(x=>`
 
 <div class="summary-item">
 
 <div>
+
 ${x.name}
 
 <div class="summary-option">
@@ -811,26 +2632,57 @@ $${(x.price*x.qty).toFixed(2)}
 
 `).join("");
 
-checkoutSubtotal.textContent="$"+subtotal.toFixed(2);
-checkoutTotal.textContent="$"+finalTotal.toFixed(2);
+checkoutSubtotal.textContent=
+"$"+subtotal.toFixed(2);
+
+checkoutTotal.textContent=
+"$"+finalTotal.toFixed(2);
+
 }
+
 
 async function confirmOrder(){
 
-let name=customerName.value.trim();
-let phone=customerPhone.value.trim();
-let area=customerArea.value.trim();
-let address=customerAddress.value.trim();
-let notes=customerNotes.value.trim();
+let name=
+customerName.value.trim();
 
-if(!name||!phone||!area||!address)
-return alert("يرجى تعبئة الاسم ورقم الهاتف والمنطقة والعنوان");
+let phone=
+customerPhone.value.trim();
 
-if(!cart.length)
-return alert("السلة فارغة");
+let area=
+customerArea.value.trim();
 
-let subtotal=cart.reduce((s,x)=>s+x.price*x.qty,0);
+let address=
+customerAddress.value.trim();
+
+let notes=
+customerNotes.value.trim();
+
+if(!name||!phone||!area||!address){
+
+alert(
+"يرجى تعبئة الاسم ورقم الهاتف والمنطقة والعنوان"
+);
+
+return;
+
+}
+
+if(!cart.length){
+
+alert("السلة فارغة");
+
+return;
+
+}
+
+let subtotal=cart.reduce(
+(s,x)=>s+x.price*x.qty,
+0
+);
+
 let delivery=DELIVERY_FEE;
+
 let total=subtotal+delivery;
 
 let order=cart.map(x=>
@@ -851,14 +2703,16 @@ order+
 "\nالتوصيل: $"+delivery.toFixed(2)+
 "\nالمجموع النهائي: $"+total.toFixed(2);
 
-let b=confirmOrderBtn;
+let btn=confirmOrderBtn;
 
-b.disabled=true;
-b.textContent="جاري إرسال الطلب...";
+btn.disabled=true;
+
+btn.textContent=
+"جاري إرسال الطلب...";
 
 try{
 
-let r=await fetch(
+let response=await fetch(
 "https://api.web3forms.com/submit",
 {
 method:"POST",
@@ -868,25 +2722,33 @@ headers:{
 },
 body:JSON.stringify({
 
-access_key:WEB3FORMS_ACCESS_KEY,
+access_key:
+WEB3FORMS_ACCESS_KEY,
 
-subject:"🛒 طلب جديد من تِكرَم",
+subject:
+"🛒 طلب جديد من تِكرَم",
 
-from_name:"Tekram Website",
+from_name:
+"Tekram Website",
 
 name,
 phone,
 area,
 address,
-notes:notes||"لا يوجد",
+
+notes:
+notes||"لا يوجد",
 
 order,
 
-subtotal:"$"+subtotal.toFixed(2),
+subtotal:
+"$"+subtotal.toFixed(2),
 
-delivery:"$"+delivery.toFixed(2),
+delivery:
+"$"+delivery.toFixed(2),
 
-total:"$"+total.toFixed(2),
+total:
+"$"+total.toFixed(2),
 
 message
 
@@ -894,7 +2756,8 @@ message
 }
 );
 
-let result=await r.json();
+let result=
+await response.json();
 
 if(result.success){
 
@@ -904,10 +2767,10 @@ alert(
 
 cart=[];
 
-customerName.value=
-customerPhone.value=
-customerArea.value=
-customerAddress.value=
+customerName.value="";
+customerPhone.value="";
+customerArea.value="";
+customerAddress.value="";
 customerNotes.value="";
 
 closeCheckout();
@@ -922,7 +2785,7 @@ alert(
 
 }
 
-}catch(e){
+}catch(error){
 
 alert(
 "تعذر إرسال الطلب حالياً.\n\nتأكدي من اتصال الإنترنت وحاولي مرة ثانية."
@@ -930,13 +2793,71 @@ alert(
 
 }finally{
 
-b.disabled=false;
-b.textContent="تأكيد الطلب ✓";
+btn.disabled=false;
+
+btn.textContent=
+"تأكيد الطلب ✓";
 
 }
+
 }
+
+
+/* ================= SEARCH ================= */
+
+function focusSearch(){
+
+searchInput.focus();
+
+}
+
+
+function filterProducts(){
+
+let query=
+searchInput.value
+.trim()
+.toLowerCase();
+
+document
+.querySelectorAll(".searchable")
+.forEach(product=>{
+
+let text=
+product.dataset.search
+.toLowerCase();
+
+product.style.display=
+!query||text.includes(query)
+?"block"
+:"none";
+
+});
+
+}
+
+
+function scrollToProducts(){
+
+showHome();
+
+setTimeout(()=>{
+
+document
+.getElementById("products")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+},100);
+
+}
+
+
+/* ================= START ================= */
 
 renderCart();
+
 </script>
 
 </body>
