@@ -135,9 +135,11 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .final{border-top:1px solid var(--b);padding-top:10px;font-weight:bold;font-size:17px}
 footer{background:var(--g);color:white;text-align:center;padding:40px 20px 110px}
 .footer-logo{font:28px Georgia;color:var(--gold)}
+
 @media(max-width:900px){
 .grid,.offer-grid{grid-template-columns:repeat(3,1fr)}
 }
+
 @media(max-width:650px){
 .hero{min-height:370px}
 .hero-text{padding:35px 7%}
@@ -156,21 +158,28 @@ footer{background:var(--g);color:white;text-align:center;padding:40px 20px 110px
 }
 </style>
 </head>
+
 <body>
 
 <header>
 <div class="head">
+
 <div class="icons">
-<button class="icon cart-top" onclick="openCart()">🛒<b id="count" class="count">0</b></button>
+<button class="icon cart-top" onclick="openCart()">
+🛒<b id="count" class="count">0</b>
+</button>
 </div>
+
 <a class="logo" href="#" onclick="home();return false">
 TEKRAM
 <small>من بيتنا لبيتك</small>
 </a>
+
 <div class="icons">
 <button class="icon" onclick="focusSearch()">⌕</button>
 <button class="icon" onclick="openMenu()">☰</button>
 </div>
+
 </div>
 </header>
 
@@ -185,73 +194,106 @@ TEKRAM
 
 <section class="hero-wrap">
 <div class="hero">
+
 <div class="hero-text">
+
 <div class="hero-small">✦ من حارتنا لبيتك</div>
+
 <h1>
 كل احتياجاتك اليومية<br>
 <span>بمكان واحد.</span>
 </h1>
-<p>منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.</p>
+
+<p>
+منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.
+</p>
+
 تصفّح المنتجات ←
+
 </div>
+
 <div class="basket">
 <i class="i1"></i>
 <i class="i2"></i>
 <i class="i3"></i>
 </div>
+
 </div>
 </section>
 
 <section id="offersSection">
+
 <div class="offer-title">
+
 <div>
 <div class="line"></div>
 <h2>🔥 عروض تِكرَم</h2>
 </div>
+
 <span>وفّر أكتر مع تِكرَم</span>
+
 </div>
+
 <div id="offerGrid" class="offer-grid"></div>
+
 </section>
 
 <section class="section" id="products">
+
 <div class="title">
 <div class="line"></div>
 <h2 id="title">منتجاتنا</h2>
 <p id="sub">اختيارات من تِكرَم</p>
 </div>
+
 <div id="cats" class="categories"></div>
+
 <div id="grid" class="grid"></div>
+
 </section>
 
 </main>
 
 <section id="productPage">
+
 <div class="detail">
+
 <div id="dimg" class="detail-img"></div>
+
 <div class="detail-info">
+
 <div id="dcat" class="detail-cat"></div>
 <div id="dname" class="detail-name"></div>
 <div id="den" class="detail-en"></div>
+
 <div id="options" class="options"></div>
+
 <div id="dweight"></div>
 <div id="doldprice" class="detail-old-price"></div>
 <div id="dprice" class="detail-price"></div>
 <div id="ddesc" class="detail-desc"></div>
+
 🛒 أضف للسلة
 ← العودة
+
 </div>
 </div>
+
 </section>
 
 <div id="overlay" class="overlay" onclick="closePanels()"></div>
 
 <div id="menuPanel" class="menu-panel">
+
 <div class="menu-head">
+
 <div class="menu-brand">
 TEKRAM
 <small>من بيتنا لبيتك</small>
 </div>
+
 ×
+
 </div>
 
 <div class="menu-body">
@@ -292,21 +334,30 @@ TEKRAM
 </div>
 
 <div id="cartPanel" class="panel">
+
 <div class="panel-head">
 <h2>🛒 السلة</h2>
 <button class="close" onclick="closePanels()">×</button>
 </div>
+
 <div id="cartBody" class="panel-body"></div>
+
 <div class="panel-foot">
+
 <div class="total">
 <span>المجموع</span>
 <span id="total">$0.00</span>
 </div>
-<button class="checkout" onclick="checkout()">إتمام الطلب</button>
+
+<button class="checkout" onclick="checkout()">
+إتمام الطلب
+</button>
+
 </div>
 </div>
 
 <div id="checkoutPanel" class="panel">
+
 <div class="panel-head">
 <h2>📦 إتمام الطلب</h2>
 <button class="close" onclick="closePanels()">×</button>
@@ -326,6 +377,7 @@ TEKRAM
 
 <div class="form">
 <label>المنطقة</label>
+
 <select id="area" class="input">
 <option value="">اختر منطقة التوصيل</option>
 <option>صور</option>
@@ -336,6 +388,7 @@ TEKRAM
 <option>العباسية</option>
 <option>البازورية</option>
 </select>
+
 </div>
 
 <div class="form">
@@ -353,27 +406,35 @@ TEKRAM
 </div>
 
 <div class="panel-foot">
-<button id="send" class="checkout" onclick="sendOrder()">تأكيد الطلب ✓</button>
+<button id="send" class="checkout" onclick="sendOrder()">
+تأكيد الطلب ✓
+</button>
 </div>
+
 </div>
 
 <div class="bottom-nav">
+
 <button onclick="home()" class="active">
 <span>⌂</span>
 الرئيسية
 </button>
+
 <button onclick="categoriesPage()">
 <span>▦</span>
 الأقسام
 </button>
+
 <button onclick="favoritesPage()">
 <span>♡</span>
 المفضلة
 </button>
+
 <button onclick="openCart()">
 <span>🛒</span>
 السلة
 </button>
+
 </div>
 
 <footer>
@@ -382,6 +443,7 @@ TEKRAM
 </footer>
 
 <script>
+
 const KEY="9edc6eae-83a6-4858-a452-12860503dcfa";
 const DELIVERY=2;
 
@@ -395,6 +457,7 @@ const cats=[
 ];
 
 const products=[
+
 {
 id:"coffee-no",
 cat:"مشروبات",
@@ -646,94 +709,50 @@ img:"./Zain-WHITE -SUGAR-900g.JPG"
 /* NEW PRODUCTS */
 
 {
-id:"oxi-apple",
+id:"oxi",
 cat:"مواد تنظيف",
-name:"أوكسي سائل جلي تفاح",
-en:"Oxi Dishwashing Liquid Apple",
+name:"أوكسي سائل جلي",
+en:"Oxi Dishwashing Liquid",
 price:1.30,
-weight:"600 مل",
-img:"./Oxi-dishwashing-liquid-apple-600ml.JPG"
+weight:"تفاح / ليمون",
+img:"./Oxi-dishwashing-liquid-apple-600ml.JPG",
+options:[
+["تفاح",1.30,"./Oxi-dishwashing-liquid-apple-600ml.JPG"],
+["ليمون",1.30,"./Oxi-dishwashing-liquid-lemon-600ml.JPG"]
+]
 },
 
 {
-id:"oxi-lemon",
+id:"silkwave",
 cat:"مواد تنظيف",
-name:"أوكسي سائل جلي ليمون",
-en:"Oxi Dishwashing Liquid Lemon",
-price:1.30,
-weight:"600 مل",
-img:"./Oxi-dishwashing-liquid-lemon-600ml.JPG"
-},
-
-{
-id:"silkwave-blue",
-cat:"مواد تنظيف",
-name:"سيلك ويف معطر غسيل أزرق",
-en:"Silkwave Fabric Softener Blue",
+name:"سيلك ويف معطر غسيل",
+en:"Silkwave Fabric Softener",
 price:1.30,
 weight:"1 لتر",
-img:"./Silkwave-fabric-softener-blue-1liter.JPG"
+img:"./Silkwave-fabric-softener-blue-1liter.JPG",
+options:[
+["أزرق",1.30,"./Silkwave-fabric-softener-blue-1liter.JPG"],
+["أخضر",1.30,"./Silkwave-fabric-softener-green-1liter.JPG"],
+["زهري",1.30,"./Silkwave-fabric-softener-pink-1liter.JPG"],
+["أبيض",1.30,"./Silkwave-fabric-softener-white-1liter.JPG"],
+["أصفر",1.30,"./Silkwave-fabric-softener-yellow-1liter.JPG"]
+]
 },
 
 {
-id:"silkwave-green",
+id:"sunsilk",
 cat:"مواد تنظيف",
-name:"سيلك ويف معطر غسيل أخضر",
-en:"Silkwave Fabric Softener Green",
-price:1.30,
-weight:"1 لتر",
-img:"./Silkwave-fabric-softener-green-1liter.JPG"
-},
-
-{
-id:"silkwave-pink",
-cat:"مواد تنظيف",
-name:"سيلك ويف معطر غسيل زهري",
-en:"Silkwave Fabric Softener Pink",
-price:1.30,
-weight:"1 لتر",
-img:"./Silkwave-fabric-softener-pink-1liter.JPG"
-},
-
-{
-id:"silkwave-white",
-cat:"مواد تنظيف",
-name:"سيلك ويف معطر غسيل أبيض",
-en:"Silkwave Fabric Softener White",
-price:1.30,
-weight:"1 لتر",
-img:"./Silkwave-fabric-softener-white-1liter.JPG"
-},
-
-{
-id:"silkwave-yellow",
-cat:"مواد تنظيف",
-name:"سيلك ويف معطر غسيل أصفر",
-en:"Silkwave Fabric Softener Yellow",
-price:1.30,
-weight:"1 لتر",
-img:"./Silkwave-fabric-softener-yellow-1liter.JPG"
-},
-
-{
-id:"sunsilk-pink",
-cat:"مواد تنظيف",
-name:"صانسيلك شامبو زهري",
-en:"Sunsilk Shampoo Pink",
+name:"صانسيلك شامبو",
+en:"Sunsilk Shampoo",
 price:3.20,
 weight:"600 مل",
-img:"./Sunsilk-shampoo-pink-600ml.JPG"
-},
-
-{
-id:"sunsilk-yellow",
-cat:"مواد تنظيف",
-name:"صانسيلك شامبو أصفر",
-en:"Sunsilk Shampoo Yellow",
-price:3.20,
-weight:"600 مل",
-img:"./Sunsilk-shampoo-yellow-600ml.JPG"
+img:"./Sunsilk-shampoo-pink-600ml.JPG",
+options:[
+["زهري",3.20,"./Sunsilk-shampoo-pink-600ml.JPG"],
+["أصفر",3.20,"./Sunsilk-shampoo-yellow-600ml.JPG"]
+]
 }
+
 ];
 
 let cart=JSON.parse(localStorage.getItem("tekramCart")||"[]");
@@ -760,7 +779,9 @@ document.querySelectorAll(".bottom-nav button")
 
 function categoriesHTML(){
 $("cats").innerHTML=cats.map(x=>`
-<button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">${x}</button>
+<button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">
+${x}
+</button>
 `).join("");
 }
 
@@ -769,36 +790,56 @@ return Math.round((1-b/a)*100);
 }
 
 function priceHTML(p){
+
 if(p.oldPrice)
 return `
 <span class="old-price">$${p.oldPrice.toFixed(2)}</span>
 <span class="new-price">$${p.price.toFixed(2)}</span>
 <span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>
 `;
+
 return `<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`;
 }
 
 function card(p){
+
 let favorite=fav.includes(p.id);
+
 return `
 <div class="card" onclick="detail('${p.id}')">
+
 <button class="fav ${favorite?"on":""}" onclick="toggleFav(event,'${p.id}')">
 ${favorite?"♥":"♡"}
 </button>
+
 <div class="pic">
+
 ${p.img
 ?`<img src="${p.img}" alt="${p.name}">`
 :p.icon||"🛒"}
+
 </div>
+
 <div class="info">
+
 <span class="badge">${p.cat}</span>
-${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}
+
+${p.oldPrice
+?`<span class="offer-badge">🔥 عرض</span>`
+:""}
+
 <div class="name">${p.name}</div>
 <div class="en">${p.en}</div>
 <div class="weight">${p.weight}</div>
+
 <div class="bottom">
+
 <div>${priceHTML(p)}</div>
-<button class="add" onclick="quick(event,'${p.id}')">+</button>
+
+<button class="add" onclick="quick(event,'${p.id}')">
++
+</button>
+
 </div>
 </div>
 </div>
@@ -806,21 +847,34 @@ ${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}
 }
 
 function offerCard(p){
+
 return `
 <div class="offer-card" onclick="detail('${p.id}')">
+
 <div class="offer-label">🔥 عرض</div>
+
 <div class="pic">
+
 ${p.img
 ?`<img src="${p.img}" alt="${p.name}">`
 :p.icon||"🛒"}
+
 </div>
+
 <div class="info">
+
 <div class="name">${p.name}</div>
 <div class="en">${p.en}</div>
 <div class="weight">${p.weight}</div>
+
 <div class="bottom">
+
 <div>${priceHTML(p)}</div>
-<button class="add" onclick="quick(event,'${p.id}')">+</button>
+
+<button class="add" onclick="quick(event,'${p.id}')">
++
+</button>
+
 </div>
 </div>
 </div>
@@ -828,16 +882,20 @@ ${p.img
 }
 
 function renderOffers(){
+
 let offers=products.filter(p=>p.oldPrice);
+
 if(!offers.length){
 $("offersSection").style.display="none";
 return;
 }
+
 $("offersSection").style.display="block";
 $("offerGrid").innerHTML=offers.map(offerCard).join("");
 }
 
 function render(){
+
 let q=$("search").value.trim().toLowerCase();
 
 let list=products.filter(p=>
@@ -852,8 +910,9 @@ q?"نتائج البحث":
 category==="الكل"?"منتجاتنا":category;
 
 $("sub").textContent=
-onlyFav?"المنتجات التي حفظتها ❤️":
-"اختيارات من تِكرَم";
+onlyFav
+?"المنتجات التي حفظتها ❤️"
+:"اختيارات من تِكرَم";
 
 $("grid").innerHTML=
 list.length
@@ -881,16 +940,20 @@ setTimeout(scrollProducts,50);
 }
 
 function favoritesPage(){
+
 category="الكل";
 onlyFav=true;
+
 $("productPage").style.display="none";
 $("homePage").style.display="block";
+
 render();
 nav(2);
 scrollProducts();
 }
 
 function toggleFav(e,id){
+
 e.stopPropagation();
 
 fav=fav.includes(id)
@@ -902,6 +965,7 @@ render();
 }
 
 function quick(e,id){
+
 e.stopPropagation();
 
 let p=products.find(x=>x.id===id);
@@ -920,6 +984,7 @@ openCart();
 }
 
 function detail(id,opt=0){
+
 let p=products.find(x=>x.id===id);
 
 selected={
@@ -967,6 +1032,7 @@ window.scrollTo(0,0);
 }
 
 function add(x){
+
 let old=cart.find(i=>
 i.name===x.name&&i.option===x.option
 );
@@ -985,10 +1051,12 @@ openCart();
 }
 
 function updateCart(){
+
 $("count").textContent=
 cart.reduce((a,x)=>a+x.qty,0);
 
 if(!cart.length){
+
 $("cartBody").innerHTML=`
 <div class="cart-empty">
 <span>🛒</span>
@@ -1003,26 +1071,42 @@ return;
 
 $("cartBody").innerHTML=
 cart.map((x,i)=>`
+
 <div class="cart-item">
+
 <div class="cart-row">
+
 <div>
 <div class="cart-name">${x.name}</div>
 <span class="cart-option">${x.option}</span>
 </div>
+
 <b class="cart-price">
 $${(x.price*x.qty).toFixed(2)}
 </b>
+
 </div>
 
 <div class="controls">
-<button class="qty" onclick="qty(${i},-1)">−</button>
+
+<button class="qty" onclick="qty(${i},-1)">
+−
+</button>
+
 <b class="qty-number">${x.qty}</b>
-<button class="qty" onclick="qty(${i},1)">+</button>
+
+<button class="qty" onclick="qty(${i},1)">
++
+</button>
+
 <button class="remove" onclick="removeItem(${i})">
 حذف
 </button>
+
 </div>
+
 </div>
+
 `).join("");
 
 let t=cart.reduce((a,x)=>a+x.price*x.qty,0);
@@ -1031,6 +1115,7 @@ $("total").textContent="$"+t.toFixed(2);
 }
 
 function qty(i,n){
+
 cart[i].qty+=n;
 
 if(cart[i].qty<1)
@@ -1041,19 +1126,25 @@ updateCart();
 }
 
 function removeItem(i){
+
 cart.splice(i,1);
+
 save();
 updateCart();
 }
 
 function openCart(){
+
 closePanels();
+
 $("cartPanel").style.right="0";
 $("overlay").style.display="block";
+
 nav(3);
 }
 
 function checkout(){
+
 if(!cart.length)
 return alert("السلة فارغة");
 
@@ -1065,16 +1156,22 @@ $("overlay").style.display="block";
 let s=cart.reduce((a,x)=>a+x.price*x.qty,0);
 
 $("summary").innerHTML=
+
 cart.map(x=>`
 <div class="summary-row">
+
 <span>
 ${x.name}<br>
 <small>${x.option} × ${x.qty}</small>
 </span>
+
 <b>$${(x.price*x.qty).toFixed(2)}</b>
+
 </div>
 `).join("")
+
 +
+
 `
 <div class="summary-row">
 <b>المجموع الفرعي</b>
@@ -1094,6 +1191,7 @@ ${x.name}<br>
 }
 
 function closePanels(){
+
 $("cartPanel").style.right="-430px";
 $("checkoutPanel").style.right="-430px";
 $("menuPanel").style.left="-430px";
@@ -1101,42 +1199,52 @@ $("overlay").style.display="none";
 }
 
 function openMenu(){
+
 closePanels();
+
 $("menuPanel").style.left="0";
 $("overlay").style.display="block";
 }
 
 function menuHome(){
+
 closePanels();
 home();
 }
 
 function menuProducts(){
+
 closePanels();
 home();
+
 setTimeout(scrollProducts,100);
 }
 
 function menuOffers(){
+
 closePanels();
 home();
 
 setTimeout(()=>{
+
 let section=$("offersSection");
 
 if(section.style.display!=="none")
 section.scrollIntoView({behavior:"smooth"});
 else
 alert("ما في عروض مضافة حاليًا 🔥");
+
 },100);
 }
 
 function menuFavorites(){
+
 closePanels();
 favoritesPage();
 }
 
 function menuCart(){
+
 closePanels();
 openCart();
 }
@@ -1171,6 +1279,7 @@ headers:{
 "Accept":"application/json"
 },
 body:JSON.stringify({
+
 access_key:KEY,
 subject:"🛒 طلب جديد من تِكرَم",
 name:n,
@@ -1182,6 +1291,7 @@ order,
 subtotal:"$"+sub.toFixed(2),
 delivery:"$"+DELIVERY.toFixed(2),
 total:"$"+(sub+DELIVERY).toFixed(2)
+
 })
 }
 );
@@ -1193,6 +1303,7 @@ if(data.success){
 alert("تم إرسال طلبك بنجاح ❤️");
 
 cart=[];
+
 save();
 updateCart();
 closePanels();
@@ -1220,6 +1331,7 @@ $("send").textContent="تأكيد الطلب ✓";
 }
 
 function home(){
+
 $("productPage").style.display="none";
 $("homePage").style.display="block";
 
@@ -1231,6 +1343,7 @@ nav(0);
 }
 
 function scrollProducts(){
+
 $("products").scrollIntoView({
 behavior:"smooth"
 });
@@ -1238,6 +1351,7 @@ behavior:"smooth"
 
 categoriesHTML();
 render();
+
 </script>
 
 </body>
