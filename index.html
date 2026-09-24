@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>تِكرَم | Tekram</title>
-
 <style>
 :root{
 --g:#183d30;--g2:#244f3e;--c:#f7f0e4;--c2:#eee4d3;
@@ -14,7 +13,6 @@
 body{font-family:Tahoma,Arial,sans-serif;background:var(--c);color:var(--g);line-height:1.6}
 button,input,textarea,select{font-family:inherit}
 button{cursor:pointer}
-
 header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .head{max-width:1250px;margin:auto;display:flex;justify-content:space-between;align-items:center}
 .logo{font:900 28px Georgia;color:white;text-align:center}
@@ -23,11 +21,9 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .icon{width:45px;height:45px;border:0;border-radius:50%;background:var(--w);color:var(--g);font-size:20px}
 .cart-top{position:relative}
 .count{position:absolute;top:-4px;right:-3px;background:var(--o);color:white;border-radius:20px;padding:1px 6px;font-size:10px}
-
 .search-wrap{background:var(--g);padding:0 5% 20px}
 .search{max-width:1250px;margin:auto;background:var(--w);height:50px;border-radius:30px;display:flex;align-items:center;padding:0 18px;gap:8px}
 .search input{width:100%;border:0;outline:0;background:none;font-size:14px}
-
 .hero-wrap,.section{padding:25px 5%}
 .hero{max-width:1250px;margin:auto;min-height:350px;background:var(--g);border-radius:30px;color:white;position:relative;overflow:hidden;display:flex;align-items:center}
 .hero:before{content:"";position:absolute;width:400px;height:400px;border:50px solid #244a3a;border-radius:50%;right:-100px;top:-240px}
@@ -42,7 +38,6 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .i1{background:#d93627!important;left:25px;top:-50px}
 .i2{background:#e8a936!important;right:25px;top:-65px}
 .i3{left:105px;top:-80px}
-
 .section{max-width:1250px;margin:auto;padding-bottom:120px}
 .title{margin-bottom:20px}
 .line{width:45px;height:3px;background:var(--g);margin-bottom:10px}
@@ -51,7 +46,6 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .categories{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
 .categories button{border:1px solid var(--b);background:var(--w);color:var(--g);padding:8px 14px;border-radius:20px;font-size:11px;font-weight:bold}
 .categories .active{background:var(--g);color:white}
-
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .card{position:relative;background:#fffdf8;border:1px solid var(--b);border-radius:20px;overflow:hidden;cursor:pointer;transition:.2s}
 .card:hover{transform:translateY(-4px)}
@@ -72,7 +66,6 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .fav{position:absolute;top:15px;left:15px;z-index:3;width:34px;height:34px;border:0;border-radius:50%;background:#fffdf8ee;color:var(--g);font-size:19px;box-shadow:0 2px 8px #0002}
 .fav.on{color:var(--o)}
 .empty{grid-column:1/-1;text-align:center;padding:50px;color:var(--m)}
-
 #offersSection{display:none;max-width:1250px;margin:auto;padding:0 5% 20px}
 .offer-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}
 .offer-title h2{font-size:26px}
@@ -82,7 +75,6 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .offer-card .pic{margin:9px}
 .offer-card .info{padding:7px 12px 15px}
 .offer-card .offer-label{position:absolute;top:15px;right:15px;background:var(--o);color:white;padding:5px 10px;border-radius:20px;font-size:10px;font-weight:bold;z-index:2}
-
 #productPage{display:none;padding:30px 5% 120px}
 .detail{max-width:1000px;margin:auto;background:var(--w);border-radius:25px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
 .detail-img{min-height:430px;background:#eee5d6;display:flex;align-items:center;justify-content:center;font-size:130px}
@@ -100,15 +92,12 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .detail-add,.back{border:0;padding:13px;border-radius:13px;font-weight:bold;font-size:15px}
 .detail-add{background:var(--o);color:white}
 .back{background:var(--g);color:white;margin-top:8px}
-
 .bottom-nav{position:fixed;z-index:50;bottom:14px;left:50%;transform:translateX(-50%);width:min(850px,94%);background:#fffdf8ee;backdrop-filter:blur(10px);border:1px solid var(--b);border-radius:30px;padding:8px 15px;display:flex;justify-content:space-around;box-shadow:0 8px 30px #0002}
 .bottom-nav button{border:0;background:none;color:var(--m);font-size:10px;font-weight:bold}
 .bottom-nav span{display:block;font-size:21px}
 .bottom-nav .active{color:var(--o)}
-
 .overlay{display:none;position:fixed;inset:0;background:#0006;z-index:100}
 .panel{position:fixed;z-index:101;right:-430px;top:0;width:410px;max-width:94%;height:100vh;background:var(--w);transition:.3s;display:flex;flex-direction:column}
-
 .menu-panel{position:fixed;z-index:101;left:-430px;top:0;width:360px;max-width:90%;height:100vh;background:var(--w);transition:.3s;display:flex;flex-direction:column;box-shadow:8px 0 30px #0002}
 .menu-head{padding:22px 18px;background:var(--g);color:white;display:flex;align-items:center;justify-content:space-between}
 .menu-brand{font:900 25px Georgia}
@@ -120,11 +109,9 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .menu-icon{width:36px;height:36px;border-radius:11px;background:var(--c2);display:flex;align-items:center;justify-content:center;font-size:19px}
 .menu-divider{height:1px;background:var(--b);margin:10px 5px}
 .menu-note{padding:15px;margin-top:10px;background:var(--c);border-radius:15px;font-size:11px;color:var(--m);text-align:center}
-
 .panel-head{padding:18px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between}
 .close{border:0;background:var(--c2);border-radius:10px;width:36px;height:36px;font-size:20px}
 .panel-body{flex:1;overflow:auto;padding:18px}
-
 .cart-item{padding:15px 0;border-bottom:1px solid var(--b)}
 .cart-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .cart-name{font-size:14px;font-weight:bold;line-height:1.4}
@@ -139,7 +126,6 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .panel-foot{padding:17px;border-top:1px solid var(--b);background:var(--w)}
 .total{display:flex;justify-content:space-between;font-size:19px;font-weight:bold;margin-bottom:12px}
 .checkout{width:100%;border:0;background:var(--o);color:white;padding:13px;border-radius:13px;font-weight:bold}
-
 .form{margin-bottom:12px}
 .form label{font-size:12px;font-weight:bold}
 .input{width:100%;border:1px solid var(--b);border-radius:10px;padding:10px;margin-top:4px;outline:0;background:white}
@@ -147,14 +133,11 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .summary{background:var(--c);padding:12px;border-radius:13px;margin-top:12px}
 .summary-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}
 .final{border-top:1px solid var(--b);padding-top:10px;font-weight:bold;font-size:17px}
-
 footer{background:var(--g);color:white;text-align:center;padding:40px 20px 110px}
 .footer-logo{font:28px Georgia;color:var(--gold)}
-
 @media(max-width:900px){
 .grid,.offer-grid{grid-template-columns:repeat(3,1fr)}
 }
-
 @media(max-width:650px){
 .hero{min-height:370px}
 .hero-text{padding:35px 7%}
@@ -173,65 +156,50 @@ footer{background:var(--g);color:white;text-align:center;padding:40px 20px 110px
 }
 </style>
 </head>
-
 <body>
-
 <header>
 <div class="head">
-
 <div class="icons">
 <button class="icon cart-top" onclick="openCart()">🛒<b id="count" class="count">0</b></button>
 </div>
-
 <a class="logo" href="#" onclick="home();return false">
 TEKRAM
 <small>من بيتنا لبيتك</small>
 </a>
-
 <div class="icons">
 <button class="icon" onclick="focusSearch()">⌕</button>
 <button class="icon" onclick="openMenu()">☰</button>
 </div>
-
 </div>
 </header>
-
 <div class="search-wrap">
 <div class="search">
 <span>⌕</span>
 <input id="search" placeholder="إبحث عن منتج..." oninput="render()">
 </div>
 </div>
-
 <main id="homePage">
-
 <section class="hero-wrap">
 <div class="hero">
-
 <div class="hero-text">
 <div class="hero-small">✦ من حارتنا لبيتك</div>
-
 <h1>
 كل احتياجاتك اليومية<br>
 <span>بمكان واحد.</span>
 </h1>
-
 <p>منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.</p>
 
-<button onclick="scrollProducts()">تصفّح المنتجات ←</button>
-</div>
+تصفّح المنتجات ←
 
+</div>
 <div class="basket">
 <i class="i1"></i>
 <i class="i2"></i>
 <i class="i3"></i>
 </div>
-
 </div>
 </section>
-
 <section id="offersSection">
-
 <div class="offer-title">
 <div>
 <div class="line"></div>
@@ -239,147 +207,108 @@ TEKRAM
 </div>
 <span>وفّر أكتر مع تِكرَم</span>
 </div>
-
 <div id="offerGrid" class="offer-grid"></div>
-
 </section>
-
 <section class="section" id="products">
-
 <div class="title">
 <div class="line"></div>
 <h2 id="title">منتجاتنا</h2>
 <p id="sub">اختيارات من تِكرَم</p>
 </div>
-
 <div id="cats" class="categories"></div>
-
 <div id="grid" class="grid"></div>
-
 </section>
-
 </main>
-
 <section id="productPage">
-
 <div class="detail">
-
 <div id="dimg" class="detail-img"></div>
-
 <div class="detail-info">
-
 <div id="dcat" class="detail-cat"></div>
 <div id="dname" class="detail-name"></div>
 <div id="den" class="detail-en"></div>
-
 <div id="options" class="options"></div>
-
 <div id="dweight"></div>
 <div id="doldprice" class="detail-old-price"></div>
 <div id="dprice" class="detail-price"></div>
 <div id="ddesc" class="detail-desc"></div>
 
-<button class="detail-add" onclick="addSelected()">🛒 أضف للسلة</button>
-<button class="back" onclick="home()">← العودة</button>
+🛒 أضف للسلة
+← العودة
 
 </div>
 </div>
-
 </section>
-
 <div id="overlay" class="overlay" onclick="closePanels()"></div>
-
 <div id="menuPanel" class="menu-panel">
-
 <div class="menu-head">
 <div class="menu-brand">
 TEKRAM
 <small>من بيتنا لبيتك</small>
 </div>
 
-<button class="menu-close" onclick="closePanels()">×</button>
+×
+
 </div>
-
 <div class="menu-body">
-
 <button class="menu-btn" onclick="menuHome()">
 <span class="menu-icon">🏠</span>
 <span>الرئيسية</span>
 </button>
-
 <button class="menu-btn" onclick="menuProducts()">
 <span class="menu-icon">🛍️</span>
 <span>المنتجات</span>
 </button>
-
 <button class="menu-btn" onclick="menuOffers()">
 <span class="menu-icon">🔥</span>
 <span>العروض</span>
 </button>
-
 <button class="menu-btn" onclick="menuFavorites()">
 <span class="menu-icon">❤️</span>
 <span>المفضلة</span>
 </button>
-
 <button class="menu-btn" onclick="menuCart()">
 <span class="menu-icon">🛒</span>
 <span>سلة المشتريات</span>
 </button>
-
 <div class="menu-divider"></div>
-
 <div class="menu-note">
 تِكرَم 🤍<br>
 من بيتنا لبيتك
 </div>
-
 </div>
 </div>
-
 <div id="cartPanel" class="panel">
-
 <div class="panel-head">
 <h2>🛒 السلة</h2>
 <button class="close" onclick="closePanels()">×</button>
 </div>
-
 <div id="cartBody" class="panel-body"></div>
-
 <div class="panel-foot">
-
 <div class="total">
 <span>المجموع</span>
 <span id="total">$0.00</span>
 </div>
 
-<button class="checkout" onclick="checkout()">إتمام الطلب</button>
+إتمام الطلب
 
 </div>
 </div>
-
 <div id="checkoutPanel" class="panel">
-
 <div class="panel-head">
 <h2>📦 إتمام الطلب</h2>
 <button class="close" onclick="closePanels()">×</button>
 </div>
-
 <div class="panel-body">
-
 <div class="form">
 <label>الاسم</label>
 <input id="name" class="input" placeholder="اكتب اسمك">
 </div>
-
 <div class="form">
 <label>رقم الهاتف</label>
 <input id="phone" class="input" placeholder="03 123 456">
 </div>
-
 <div class="form">
 <label>المنطقة</label>
-
 <select id="area" class="input">
 <option value="">اختر منطقة التوصيل</option>
 <option>صور</option>
@@ -390,63 +319,46 @@ TEKRAM
 <option>العباسية</option>
 <option>البازورية</option>
 </select>
-
 </div>
-
 <div class="form">
 <label>العنوان</label>
 <textarea id="address" class="input area" placeholder="اكتب العنوان"></textarea>
 </div>
-
 <div class="form">
 <label>ملاحظات</label>
 <textarea id="notes" class="input area" placeholder="اختياري"></textarea>
 </div>
-
 <div id="summary" class="summary"></div>
-
 </div>
-
 <div class="panel-foot">
 <button id="send" class="checkout" onclick="sendOrder()">تأكيد الطلب ✓</button>
 </div>
-
 </div>
-
 <div class="bottom-nav">
-
 <button onclick="home()" class="active">
 <span>⌂</span>
 الرئيسية
 </button>
-
 <button onclick="categoriesPage()">
 <span>▦</span>
 الأقسام
 </button>
-
 <button onclick="favoritesPage()">
 <span>♡</span>
 المفضلة
 </button>
-
 <button onclick="openCart()">
 <span>🛒</span>
 السلة
 </button>
-
 </div>
-
 <footer>
 <div class="footer-logo">تِكرَم</div>
 <p>من بيتنا لبيتك 🤍</p>
 </footer>
-
 <script>
-
 const KEY="9edc6eae-83a6-4858-a452-12860503dcfa";
 const DELIVERY=2;
-
 const cats=[
 "الكل",
 "مشروبات",
@@ -455,9 +367,7 @@ const cats=[
 "مواد تنظيف",
 "بلاستيك"
 ];
-
 const products=[
-
 {
 id:"coffee-no",
 cat:"مشروبات",
@@ -471,7 +381,6 @@ options:[
 ["450 غ",6.85,"./najjar-coffee-no-cardamom-450g.JPG"]
 ]
 },
-
 {
 id:"coffee-card",
 cat:"مشروبات",
@@ -485,7 +394,6 @@ options:[
 ["450 غ",7.35,"./najjar-coffee-with-cardamom-450g.JPG"]
 ]
 },
-
 {
 id:"coffeemate",
 cat:"مشروبات",
@@ -499,7 +407,6 @@ options:[
 ["1 كغ",6.00,"./Coffee-mate-1kg.JPG"]
 ]
 },
-
 {
 id:"ghazal",
 cat:"ألبان وأجبان",
@@ -513,7 +420,6 @@ options:[
 ["1.5 كغ",11.50,""]
 ]
 },
-
 {
 id:"almarai",
 cat:"ألبان وأجبان",
@@ -523,7 +429,6 @@ price:1.70,
 weight:"300 غ",
 icon:"🧀"
 },
-
 {
 id:"greek",
 cat:"ألبان وأجبان",
@@ -539,7 +444,6 @@ options:[
 ["دراق",1.25,"🍑"]
 ]
 },
-
 {
 id:"corn",
 cat:"مواد غذائية",
@@ -549,11 +453,10 @@ price:.85,
 weight:"340 غ",
 img:"./la-bella-sweet-corn-340g.JPG"
 },
-
 {
 id:"red",
 cat:"مشروبات",
-name:"نجار الأحمر",
+name:"نجار نسكافيه الأحمر",
 en:"Najjar Red",
 price:3,
 weight:"95 غ / 190 غ",
@@ -563,7 +466,6 @@ options:[
 ["190 غ",4.90,"./najjar-red-190g.JPG"]
 ]
 },
-
 {
 id:"picon",
 cat:"ألبان وأجبان",
@@ -577,7 +479,6 @@ options:[
 ["×24",3,"./Picon-cheese-*24.JPG"]
 ]
 },
-
 {
 id:"picon8",
 cat:"ألبان وأجبان",
@@ -587,7 +488,6 @@ price:.90,
 weight:"×8",
 img:"./Picon-cheese-simply-*8.JPG"
 },
-
 {
 id:"trobika",
 cat:"مشروبات",
@@ -597,7 +497,6 @@ price:4.55,
 weight:"20 + 2",
 img:"./Trobika-Cappuccino-20+2.JPG"
 },
-
 {
 id:"nescafe",
 cat:"مشروبات",
@@ -607,7 +506,6 @@ price:5.25,
 weight:"2 in 1",
 img:"./Nescafe-classic—2in1.JPG"
 },
-
 {
 id:"cream",
 cat:"ألبان وأجبان",
@@ -621,7 +519,6 @@ options:[
 ["1 لتر",3,"./New-park-cooking-cream -1liter.JPG"]
 ]
 },
-
 {
 id:"dollys-pomegranate",
 cat:"مواد غذائية",
@@ -631,7 +528,6 @@ price:2.25,
 weight:"420 غ",
 img:"./Dollys-pomegranate-Molasses-420g.JPG"
 },
-
 {
 id:"dollys-ketchup",
 cat:"مواد غذائية",
@@ -645,7 +541,6 @@ options:[
 ["4 كغ",7.70,"./Dollys-tomato-ketchup-4kg.JPG"]
 ]
 },
-
 {
 id:"labella-mushrooms",
 cat:"مواد غذائية",
@@ -655,17 +550,15 @@ price:1.25,
 weight:"300 غ",
 img:"./La-bella-whole-Mushrooms-300g.JPG"
 },
-
 {
 id:"larose-rice",
 cat:"مواد غذائية",
-name:"أرز لا روز الأحمر المصري",
+name:"الوردة رز مصري",
 en:"La Rose Rouge Egyptian Rice",
 price:1.85,
 weight:"900 غ",
 img:"./La-Rose-rouge-EGYPTIAN-RICE-900g.JPG"
 },
-
 {
 id:"nutella",
 cat:"مواد غذائية",
@@ -675,27 +568,24 @@ price:7.50,
 weight:"750 غ",
 img:"./Nutella-750g.JPG"
 },
-
 {
 id:"uno-choco",
 cat:"مواد غذائية",
-name:"يو نو شوكو سبريد",
+name:"اونو شوكو سبريد",
 en:"Uno Choco Spread",
 price:2.00,
 weight:"350 غ",
 img:"./Uno-choco-spread-350g.JPG"
 },
-
 {
 id:"yamam-paste",
 cat:"مواد غذائية",
-name:"رب بندورة يمام",
+name:"رب بندورة يمامة",
 en:"Yamam Tomato Paste",
 price:3.65,
 weight:"1325 غ",
 img:"./Yamam-tomato-Paste-1325g.JPG"
 },
-
 {
 id:"zain-sugar",
 cat:"مواد غذائية",
@@ -704,164 +594,193 @@ en:"Zain White Sugar",
 price:.80,
 weight:"900 غ",
 img:"./Zain-WHITE -SUGAR-900g.JPG"
+},
+/* NEW PRODUCTS */
+{
+id:"oxi-apple",
+cat:"مواد تنظيف",
+name:"أوكسي تفاح",
+en:"Oxi Dishwashing Liquid Apple",
+price:1.30,
+weight:"600 مل"
+},
+{
+id:"oxi-lemon",
+cat:"مواد تنظيف",
+name:"أوكسي ليمون",
+en:"Oxi Dishwashing Liquid Lemon",
+price:1.30,
+weight:"600 مل"
+},
+{
+id:"silkwave-blue",
+cat:"مواد تنظيف",
+name:"سيلك ويف أزرق",
+en:"Silkwave Fabric Softener Blue",
+price:1.30,
+weight:"1 لتر"
+},
+{
+id:"silkwave-green",
+cat:"مواد تنظيف",
+name:"سيلك ويف أخضر",
+en:"Silkwave Fabric Softener Green",
+price:1.30,
+weight:"1 لتر"
+},
+{
+id:"silkwave-pink",
+cat:"مواد تنظيف",
+name:"سيلك ويف زهري",
+en:"Silkwave Fabric Softener Pink",
+price:1.30,
+weight:"1 لتر"
+},
+{
+id:"silkwave-white",
+cat:"مواد تنظيف",
+name:"سيلك ويف أبيض",
+en:"Silkwave Fabric Softener White",
+price:1.30,
+weight:"1 لتر"
+},
+{
+id:"silkwave-yellow",
+cat:"مواد تنظيف",
+name:"سيلك ويف أصفر",
+en:"Silkwave Fabric Softener Yellow",
+price:1.30,
+weight:"1 لتر"
+},
+{
+id:"sunsilk-pink",
+cat:"مواد تنظيف",
+name:"صانسيلك زهري",
+en:"Sunsilk Shampoo Pink",
+price:3.20,
+weight:"600 مل"
+},
+{
+id:"sunsilk-yellow",
+cat:"مواد تنظيف",
+name:"صانسيلك أصفر",
+en:"Sunsilk Shampoo Yellow",
+price:3.20,
+weight:"600 مل"
 }
-
 ];
-
 let cart=JSON.parse(localStorage.getItem("tekramCart")||"[]");
 let fav=JSON.parse(localStorage.getItem("tekramFavorites")||"[]");
 let category="الكل";
 let onlyFav=false;
 let selected=null;
-
 const $=id=>document.getElementById(id);
-
 function save(){
 localStorage.setItem("tekramCart",JSON.stringify(cart));
 localStorage.setItem("tekramFavorites",JSON.stringify(fav));
 }
-
 function focusSearch(){
 $("search").focus();
 }
-
 function nav(n){
 document.querySelectorAll(".bottom-nav button")
 .forEach((x,i)=>x.classList.toggle("active",i===n));
 }
-
 function categoriesHTML(){
 $("cats").innerHTML=cats.map(x=>`
 <button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">${x}</button>
 `).join("");
 }
-
 function discountPercent(a,b){
 return Math.round((1-b/a)*100);
 }
-
 function priceHTML(p){
-
 if(p.oldPrice)
 return `
 <span class="old-price">$${p.oldPrice.toFixed(2)}</span>
 <span class="new-price">$${p.price.toFixed(2)}</span>
 <span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>
 `;
-
 return `<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`;
 }
-
 function card(p){
-
 let favorite=fav.includes(p.id);
-
 return `
 <div class="card" onclick="detail('${p.id}')">
-
 <button class="fav ${favorite?"on":""}" onclick="toggleFav(event,'${p.id}')">
 ${favorite?"♥":"♡"}
 </button>
-
 <div class="pic">
 ${p.img
 ?`<img src="${p.img}" alt="${p.name}">`
 :p.icon||"🛒"}
 </div>
-
 <div class="info">
-
 <span class="badge">${p.cat}</span>
-
 ${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}
-
 <div class="name">${p.name}</div>
 <div class="en">${p.en}</div>
 <div class="weight">${p.weight}</div>
-
 <div class="bottom">
-
 <div>${priceHTML(p)}</div>
-
 <button class="add" onclick="quick(event,'${p.id}')">+</button>
-
 </div>
 </div>
 </div>
 `;
 }
-
 function offerCard(p){
-
 return `
 <div class="offer-card" onclick="detail('${p.id}')">
-
 <div class="offer-label">🔥 عرض</div>
-
 <div class="pic">
 ${p.img
 ?`<img src="${p.img}" alt="${p.name}">`
 :p.icon||"🛒"}
 </div>
-
 <div class="info">
-
 <div class="name">${p.name}</div>
 <div class="en">${p.en}</div>
 <div class="weight">${p.weight}</div>
-
 <div class="bottom">
 <div>${priceHTML(p)}</div>
 <button class="add" onclick="quick(event,'${p.id}')">+</button>
 </div>
-
 </div>
 </div>
 `;
 }
-
 function renderOffers(){
-
 let offers=products.filter(p=>p.oldPrice);
-
 if(!offers.length){
 $("offersSection").style.display="none";
 return;
 }
-
 $("offersSection").style.display="block";
 $("offerGrid").innerHTML=offers.map(offerCard).join("");
 }
-
 function render(){
-
 let q=$("search").value.trim().toLowerCase();
-
 let list=products.filter(p=>
 (!onlyFav||fav.includes(p.id))&&
 (category==="الكل"||p.cat===category)&&
 (!q||(p.name+" "+p.en).toLowerCase().includes(q))
 );
-
 $("title").textContent=
 onlyFav?"المفضلة":
 q?"نتائج البحث":
 category==="الكل"?"منتجاتنا":category;
-
 $("sub").textContent=
 onlyFav?"المنتجات التي حفظتها ❤️":
 "اختيارات من تِكرَم";
-
 $("grid").innerHTML=
 list.length
 ?list.map(card).join("")
 :`<div class="empty">ما لقينا منتجات مطابقة ❤️</div>`;
-
 categoriesHTML();
 renderOffers();
 updateCart();
 }
-
 function choose(x){
 category=x;
 onlyFav=false;
@@ -869,69 +788,50 @@ render();
 scrollProducts();
 nav(1);
 }
-
 function categoriesPage(){
 closePanels();
 home();
 nav(1);
 setTimeout(scrollProducts,50);
 }
-
 function favoritesPage(){
-
 category="الكل";
 onlyFav=true;
-
 $("productPage").style.display="none";
 $("homePage").style.display="block";
-
 render();
 nav(2);
 scrollProducts();
 }
-
 function toggleFav(e,id){
-
 e.stopPropagation();
-
 fav=fav.includes(id)
 ?fav.filter(x=>x!==id)
 :[...fav,id];
-
 save();
 render();
 }
-
 function quick(e,id){
-
 e.stopPropagation();
-
 let p=products.find(x=>x.id===id);
-
 let o=p.options
 ?p.options[0]
 :[p.weight,p.price,p.img||p.icon||""];
-
 add({
 name:p.name,
 option:o[0],
 price:o[1]
 });
-
 openCart();
 }
-
 function detail(id,opt=0){
-
 let p=products.find(x=>x.id===id);
-
 selected={
 name:p.name,
 option:p.options?p.options[opt][0]:p.weight,
 price:p.options?p.options[opt][1]:p.price,
 oldPrice:p.oldPrice||null
 };
-
 $("dcat").textContent=p.cat;
 $("dname").textContent=p.name;
 $("den").textContent=p.en;
@@ -941,19 +841,15 @@ $("doldprice").textContent=
 selected.oldPrice
 ?"$"+selected.oldPrice.toFixed(2)
 :"";
-
 $("ddesc").textContent=p.name+", "+selected.option;
-
 let image=p.options
 ?p.options[opt][2]
 :p.img;
-
 $("dimg").innerHTML=image
 ?`<img src="${image}" alt="${p.name}">`
 :p.options
 ?`<span style="font-size:100px">${p.options[opt][2]}</span>`
 :`<span>${p.icon||"🛒"}</span>`;
-
 $("options").innerHTML=p.options
 ?p.options.map((o,i)=>`
 <button class="option ${i===opt?"sel":""}" onclick="detail('${p.id}',${i})">
@@ -961,39 +857,28 @@ ${o[0]}
 </button>
 `).join("")
 :"";
-
 $("homePage").style.display="none";
 $("productPage").style.display="block";
-
 window.scrollTo(0,0);
 }
-
 function add(x){
-
 let old=cart.find(i=>
 i.name===x.name&&i.option===x.option
 );
-
 old
 ?old.qty++
 :cart.push({...x,qty:1});
-
 save();
 updateCart();
 }
-
 function addSelected(){
 add(selected);
 openCart();
 }
-
 function updateCart(){
-
 $("count").textContent=
 cart.reduce((a,x)=>a+x.qty,0);
-
 if(!cart.length){
-
 $("cartBody").innerHTML=`
 <div class="cart-empty">
 <span>🛒</span>
@@ -1001,208 +886,138 @@ $("cartBody").innerHTML=`
 <small>أضف منتجاتك المفضلة من تِكرَم 🤍</small>
 </div>
 `;
-
 $("total").textContent="$0.00";
 return;
 }
-
 $("cartBody").innerHTML=
 cart.map((x,i)=>`
-
 <div class="cart-item">
-
 <div class="cart-row">
-
 <div>
 <div class="cart-name">${x.name}</div>
 <span class="cart-option">${x.option}</span>
 </div>
-
 <b class="cart-price">
 $${(x.price*x.qty).toFixed(2)}
 </b>
-
 </div>
-
 <div class="controls">
-
 <button class="qty" onclick="qty(${i},-1)">−</button>
-
 <b class="qty-number">${x.qty}</b>
-
 <button class="qty" onclick="qty(${i},1)">+</button>
-
 <button class="remove" onclick="removeItem(${i})">
 حذف
 </button>
-
 </div>
-
 </div>
-
 `).join("");
-
 let t=cart.reduce((a,x)=>a+x.price*x.qty,0);
-
 $("total").textContent="$"+t.toFixed(2);
 }
-
 function qty(i,n){
-
 cart[i].qty+=n;
-
 if(cart[i].qty<1)
 cart.splice(i,1);
-
 save();
 updateCart();
 }
-
 function removeItem(i){
-
 cart.splice(i,1);
-
 save();
 updateCart();
 }
-
 function openCart(){
-
 closePanels();
-
 $("cartPanel").style.right="0";
 $("overlay").style.display="block";
-
 nav(3);
 }
-
 function checkout(){
-
 if(!cart.length)
 return alert("السلة فارغة");
-
 closePanels();
-
 $("checkoutPanel").style.right="0";
 $("overlay").style.display="block";
-
 let s=cart.reduce((a,x)=>a+x.price*x.qty,0);
-
 $("summary").innerHTML=
-
 cart.map(x=>`
 <div class="summary-row">
-
 <span>
 ${x.name}<br>
 <small>${x.option} × ${x.qty}</small>
 </span>
-
 <b>$${(x.price*x.qty).toFixed(2)}</b>
-
 </div>
 `).join("")
-
 +
-
 `
 <div class="summary-row">
 <b>المجموع الفرعي</b>
 <b>$${s.toFixed(2)}</b>
 </div>
-
 <div class="summary-row">
 <b>التوصيل</b>
 <b>$${DELIVERY.toFixed(2)}</b>
 </div>
-
 <div class="summary-row final">
 <b>المجموع النهائي</b>
 <b>$${(s+DELIVERY).toFixed(2)}</b>
 </div>
 `;
 }
-
 function closePanels(){
-
 $("cartPanel").style.right="-430px";
 $("checkoutPanel").style.right="-430px";
 $("menuPanel").style.left="-430px";
 $("overlay").style.display="none";
 }
-
 function openMenu(){
-
 closePanels();
-
 $("menuPanel").style.left="0";
 $("overlay").style.display="block";
 }
-
 function menuHome(){
-
 closePanels();
 home();
 }
-
 function menuProducts(){
-
 closePanels();
 home();
-
 setTimeout(scrollProducts,100);
 }
-
 function menuOffers(){
-
 closePanels();
 home();
-
 setTimeout(()=>{
-
 let section=$("offersSection");
-
 if(section.style.display!=="none")
 section.scrollIntoView({behavior:"smooth"});
 else
 alert("ما في عروض مضافة حاليًا 🔥");
-
 },100);
 }
-
 function menuFavorites(){
-
 closePanels();
 favoritesPage();
 }
-
 function menuCart(){
-
 closePanels();
 openCart();
 }
-
 async function sendOrder(){
-
 let n=$("name").value.trim();
 let ph=$("phone").value.trim();
 let ar=$("area").value;
 let ad=$("address").value.trim();
-
 if(!n||!ph||!ar||!ad)
 return alert("يرجى تعبئة الاسم والهاتف والمنطقة والعنوان");
-
 let sub=cart.reduce((a,x)=>a+x.price*x.qty,0);
-
 let order=cart.map(x=>
 `• ${x.name} | ${x.option} | ×${x.qty} | $${(x.price*x.qty).toFixed(2)}`
 ).join("\n");
-
 $("send").disabled=true;
 $("send").textContent="جاري الإرسال...";
-
 try{
-
 let r=await fetch(
 "https://api.web3forms.com/submit",
 {
@@ -1212,87 +1027,56 @@ headers:{
 "Accept":"application/json"
 },
 body:JSON.stringify({
-
 access_key:KEY,
-
 subject:"🛒 طلب جديد من تِكرَم",
-
 name:n,
 phone:ph,
 area:ar,
 address:ad,
 notes:$("notes").value,
-
 order,
-
 subtotal:"$"+sub.toFixed(2),
-
 delivery:"$"+DELIVERY.toFixed(2),
-
 total:"$"+(sub+DELIVERY).toFixed(2)
-
 })
 }
 );
-
 let data=await r.json();
-
 if(data.success){
-
 alert("تم إرسال طلبك بنجاح ❤️");
-
 cart=[];
-
 save();
 updateCart();
 closePanels();
-
 $("name").value="";
 $("phone").value="";
 $("area").value="";
 $("address").value="";
 $("notes").value="";
-
 }else{
-
 alert("تعذر إرسال الطلب.");
-
 }
-
 }catch(e){
-
 alert("تعذر إرسال الطلب حالياً.");
-
 }
-
 $("send").disabled=false;
 $("send").textContent="تأكيد الطلب ✓";
 }
-
 function home(){
-
 $("productPage").style.display="none";
 $("homePage").style.display="block";
-
 category="الكل";
 onlyFav=false;
-
 render();
 nav(0);
 }
-
 function scrollProducts(){
-
 $("products").scrollIntoView({
 behavior:"smooth"
 });
-
 }
-
 categoriesHTML();
 render();
-
 </script>
-
 </body>
 </html>
