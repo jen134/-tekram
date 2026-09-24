@@ -135,11 +135,9 @@ header{background:var(--g);padding:15px 5%;position:sticky;top:0;z-index:20}
 .final{border-top:1px solid var(--b);padding-top:10px;font-weight:bold;font-size:17px}
 footer{background:var(--g);color:white;text-align:center;padding:40px 20px 110px}
 .footer-logo{font:28px Georgia;color:var(--gold)}
-
 @media(max-width:900px){
 .grid,.offer-grid{grid-template-columns:repeat(3,1fr)}
 }
-
 @media(max-width:650px){
 .hero{min-height:370px}
 .hero-text{padding:35px 7%}
@@ -158,231 +156,161 @@ footer{background:var(--g);color:white;text-align:center;padding:40px 20px 110px
 }
 </style>
 </head>
-
 <body>
-
 <header>
 <div class="head">
-
 <div class="icons">
 <button class="icon cart-top" onclick="openCart()">
 🛒<b id="count" class="count">0</b>
 </button>
 </div>
-
 <a class="logo" href="#" onclick="home();return false">
 TEKRAM
 <small>من بيتنا لبيتك</small>
 </a>
-
 <div class="icons">
 <button class="icon" onclick="focusSearch()">⌕</button>
 <button class="icon" onclick="openMenu()">☰</button>
 </div>
-
 </div>
 </header>
-
 <div class="search-wrap">
 <div class="search">
 <span>⌕</span>
 <input id="search" placeholder="إبحث عن منتج..." oninput="render()">
 </div>
 </div>
-
 <main id="homePage">
-
 <section class="hero-wrap">
 <div class="hero">
-
 <div class="hero-text">
-
 <div class="hero-small">✦ من حارتنا لبيتك</div>
-
 <h1>
 كل احتياجاتك اليومية<br>
 <span>بمكان واحد.</span>
 </h1>
-
 <p>
 منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.
 </p>
-
 تصفّح المنتجات ←
-
 </div>
-
 <div class="basket">
 <i class="i1"></i>
 <i class="i2"></i>
 <i class="i3"></i>
 </div>
-
 </div>
 </section>
-
 <section id="offersSection">
-
 <div class="offer-title">
-
 <div>
 <div class="line"></div>
 <h2>🔥 عروض تِكرَم</h2>
 </div>
-
 <span>وفّر أكتر مع تِكرَم</span>
-
 </div>
-
 <div id="offerGrid" class="offer-grid"></div>
-
 </section>
-
 <section class="section" id="products">
-
 <div class="title">
 <div class="line"></div>
 <h2 id="title">منتجاتنا</h2>
 <p id="sub">اختيارات من تِكرَم</p>
 </div>
-
 <div id="cats" class="categories"></div>
-
 <div id="grid" class="grid"></div>
-
 </section>
-
 </main>
-
 <section id="productPage">
-
 <div class="detail">
-
 <div id="dimg" class="detail-img"></div>
-
 <div class="detail-info">
-
 <div id="dcat" class="detail-cat"></div>
 <div id="dname" class="detail-name"></div>
 <div id="den" class="detail-en"></div>
-
 <div id="options" class="options"></div>
-
 <div id="dweight"></div>
 <div id="doldprice" class="detail-old-price"></div>
 <div id="dprice" class="detail-price"></div>
 <div id="ddesc" class="detail-desc"></div>
-
 <button class="detail-add" onclick="addSelected()">
 🛒 أضف للسلة
 </button>
-
 <button class="back" onclick="home()">
 ← العودة
 </button>
-
 </div>
 </div>
-
 </section>
-
 <div id="overlay" class="overlay" onclick="closePanels()"></div>
-
 <div id="menuPanel" class="menu-panel">
-
 <div class="menu-head">
-
 <div class="menu-brand">
 TEKRAM
 <small>من بيتنا لبيتك</small>
 </div>
-
 ×
-
 </div>
-
 <div class="menu-body">
-
 <button class="menu-btn" onclick="menuHome()">
 <span class="menu-icon">🏠</span>
 <span>الرئيسية</span>
 </button>
-
 <button class="menu-btn" onclick="menuProducts()">
 <span class="menu-icon">🛍️</span>
 <span>المنتجات</span>
 </button>
-
 <button class="menu-btn" onclick="menuOffers()">
 <span class="menu-icon">🔥</span>
 <span>العروض</span>
 </button>
-
 <button class="menu-btn" onclick="menuFavorites()">
 <span class="menu-icon">❤️</span>
 <span>المفضلة</span>
 </button>
-
 <button class="menu-btn" onclick="menuCart()">
 <span class="menu-icon">🛒</span>
 <span>سلة المشتريات</span>
 </button>
-
 <div class="menu-divider"></div>
-
 <div class="menu-note">
 تِكرَم 🤍<br>
 من بيتنا لبيتك
 </div>
-
 </div>
 </div>
-
 <div id="cartPanel" class="panel">
-
 <div class="panel-head">
 <h2>🛒 السلة</h2>
 <button class="close" onclick="closePanels()">×</button>
 </div>
-
 <div id="cartBody" class="panel-body"></div>
-
 <div class="panel-foot">
-
 <div class="total">
 <span>المجموع</span>
 <span id="total">$0.00</span>
 </div>
-
 <button class="checkout" onclick="checkout()">
 إتمام الطلب
 </button>
-
 </div>
 </div>
-
 <div id="checkoutPanel" class="panel">
-
 <div class="panel-head">
 <h2>📦 إتمام الطلب</h2>
 <button class="close" onclick="closePanels()">×</button>
 </div>
-
 <div class="panel-body">
-
 <div class="form">
 <label>الاسم</label>
 <input id="name" class="input" placeholder="اكتب اسمك">
 </div>
-
 <div class="form">
 <label>رقم الهاتف</label>
 <input id="phone" class="input" placeholder="03 123 456">
 </div>
-
 <div class="form">
 <label>المنطقة</label>
-
 <select id="area" class="input">
 <option value="">اختر منطقة التوصيل</option>
 <option>صور</option>
@@ -393,65 +321,48 @@ TEKRAM
 <option>العباسية</option>
 <option>البازورية</option>
 </select>
-
 </div>
-
 <div class="form">
 <label>العنوان</label>
 <textarea id="address" class="input area" placeholder="اكتب العنوان"></textarea>
 </div>
-
 <div class="form">
 <label>ملاحظات</label>
 <textarea id="notes" class="input area" placeholder="اختياري"></textarea>
 </div>
-
 <div id="summary" class="summary"></div>
-
 </div>
-
 <div class="panel-foot">
 <button id="send" class="checkout" onclick="sendOrder()">
 تأكيد الطلب ✓
 </button>
 </div>
-
 </div>
-
 <div class="bottom-nav">
-
 <button onclick="home()" class="active">
 <span>⌂</span>
 الرئيسية
 </button>
-
 <button onclick="categoriesPage()">
 <span>▦</span>
 الأقسام
 </button>
-
 <button onclick="favoritesPage()">
 <span>♡</span>
 المفضلة
 </button>
-
 <button onclick="openCart()">
 <span>🛒</span>
 السلة
 </button>
-
 </div>
-
 <footer>
 <div class="footer-logo">تِكرَم</div>
 <p>من بيتنا لبيتك 🤍</p>
 </footer>
-
 <script>
-
 const KEY="9edc6eae-83a6-4858-a452-12860503dcfa";
 const DELIVERY=2;
-
 const cats=[
 "الكل",
 "مشروبات",
@@ -460,9 +371,7 @@ const cats=[
 "مواد تنظيف",
 "بلاستيك"
 ];
-
 const products=[
-
 {
 id:"coffee-no",
 cat:"مشروبات",
@@ -476,7 +385,6 @@ options:[
 ["450 غ",6.85,"./najjar-coffee-no-cardamom-450g.JPG"]
 ]
 },
-
 {
 id:"coffee-card",
 cat:"مشروبات",
@@ -490,7 +398,6 @@ options:[
 ["450 غ",7.35,"./najjar-coffee-with-cardamom-450g.JPG"]
 ]
 },
-
 {
 id:"coffeemate",
 cat:"مشروبات",
@@ -504,7 +411,6 @@ options:[
 ["1 كغ",6.00,"./Coffee-mate-1kg.JPG"]
 ]
 },
-
 {
 id:"ghazal",
 cat:"ألبان وأجبان",
@@ -518,7 +424,6 @@ options:[
 ["1.5 كغ",11.50,""]
 ]
 },
-
 {
 id:"almarai",
 cat:"ألبان وأجبان",
@@ -528,7 +433,6 @@ price:1.70,
 weight:"300 غ",
 icon:"🧀"
 },
-
 {
 id:"greek",
 cat:"ألبان وأجبان",
@@ -544,7 +448,6 @@ options:[
 ["دراق",1.25,"🍑"]
 ]
 },
-
 {
 id:"corn",
 cat:"مواد غذائية",
@@ -554,7 +457,6 @@ price:.85,
 weight:"340 غ",
 img:"./la-bella-sweet-corn-340g.JPG"
 },
-
 {
 id:"red",
 cat:"مشروبات",
@@ -568,7 +470,6 @@ options:[
 ["190 غ",4.90,"./najjar-red-190g.JPG"]
 ]
 },
-
 {
 id:"picon",
 cat:"ألبان وأجبان",
@@ -582,7 +483,6 @@ options:[
 ["×24",3,"./Picon-cheese-*24.JPG"]
 ]
 },
-
 {
 id:"picon8",
 cat:"ألبان وأجبان",
@@ -592,7 +492,6 @@ price:.90,
 weight:"×8",
 img:"./Picon-cheese-simply-*8.JPG"
 },
-
 {
 id:"trobika",
 cat:"مشروبات",
@@ -602,7 +501,6 @@ price:4.55,
 weight:"20 + 2",
 img:"./Trobika-Cappuccino-20+2.JPG"
 },
-
 {
 id:"nescafe",
 cat:"مشروبات",
@@ -612,7 +510,6 @@ price:5.25,
 weight:"2 in 1",
 img:"./Nescafe-classic—2in1.JPG"
 },
-
 {
 id:"cream",
 cat:"ألبان وأجبان",
@@ -626,7 +523,6 @@ options:[
 ["1 لتر",3,"./New-park-cooking-cream -1liter.JPG"]
 ]
 },
-
 {
 id:"dollys-pomegranate",
 cat:"مواد غذائية",
@@ -636,7 +532,6 @@ price:2.25,
 weight:"420 غ",
 img:"./Dollys-pomegranate-Molasses-420g.JPG"
 },
-
 {
 id:"dollys-ketchup",
 cat:"مواد غذائية",
@@ -650,7 +545,6 @@ options:[
 ["4 كغ",7.70,"./Dollys-tomato-ketchup-4kg.JPG"]
 ]
 },
-
 {
 id:"labella-mushrooms",
 cat:"مواد غذائية",
@@ -660,7 +554,6 @@ price:1.25,
 weight:"300 غ",
 img:"./La-bella-whole-Mushrooms-300g.JPG"
 },
-
 {
 id:"larose-rice",
 cat:"مواد غذائية",
@@ -670,7 +563,6 @@ price:1.85,
 weight:"900 غ",
 img:"./La-Rose-rouge-EGYPTIAN-RICE-900g.JPG"
 },
-
 {
 id:"nutella",
 cat:"مواد غذائية",
@@ -680,7 +572,6 @@ price:7.50,
 weight:"750 غ",
 img:"./Nutella-750g.JPG"
 },
-
 {
 id:"uno-choco",
 cat:"مواد غذائية",
@@ -690,7 +581,6 @@ price:2.00,
 weight:"350 غ",
 img:"./Uno-choco-spread-350g.JPG"
 },
-
 {
 id:"yamama-paste",
 cat:"مواد غذائية",
@@ -700,7 +590,6 @@ price:3.65,
 weight:"1325 غ",
 img:"./Yamama-tomato-Paste-1325g.JPG"
 },
-
 {
 id:"zain-sugar",
 cat:"مواد غذائية",
@@ -710,9 +599,6 @@ price:.80,
 weight:"900 غ",
 img:"./Zain-WHITE -SUGAR-900g.JPG"
 },
-
-/* NEW PRODUCTS */
-
 {
 id:"oxi",
 cat:"مواد تنظيف",
@@ -726,7 +612,6 @@ options:[
 ["ليمون",1.30,"./Oxi-dishwashing-liquid-lemon-600ml.JPG"]
 ]
 },
-
 {
 id:"silkwave",
 cat:"مواد تنظيف",
@@ -743,7 +628,6 @@ options:[
 ["أصفر",1.30,"./Silkwave-fabric-softener-yellow-1liter.JPG"]
 ]
 },
-
 {
 id:"sunsilk",
 cat:"مواد تنظيف",
@@ -756,32 +640,120 @@ options:[
 ["زهري",3.20,"./Sunsilk-shampoo-pink-600ml.JPG"],
 ["أصفر",3.20,"./Sunsilk-shampoo-yellow-600ml.JPG"]
 ]
+},
+/* NEW PRODUCTS */
+{
+id:"my-tomato",
+cat:"مواد غذائية",
+name:"ماي توماتو مربى البندورة",
+en:"My Tomato",
+price:1.00,
+weight:"400 غ / 800 غ",
+img:"./My-tomato-400g.JPG",
+options:[
+["400 غ",1.00,"./My-tomato-400g.JPG"],
+["800 غ",1.90,"./My-tomato-800g.JPG"]
+]
+},
+{
+id:"noura-shampoo-18",
+cat:"مواد تنظيف",
+name:"شامبو نورا",
+en:"Noura Shampoo",
+price:3.10,
+weight:"زهري / أزرق - 1.8 لتر",
+img:"./Noura-shampoo-pink-1.8liter.JPG",
+options:[
+["زهري - 1.8 لتر",3.10,"./Noura-shampoo-pink-1.8liter.JPG"],
+["أزرق - 1.8 لتر",3.10,"./Noura-shampoo-blue-1.8liter.JPG"]
+]
+},
+{
+id:"spartan-flash",
+cat:"مواد تنظيف",
+name:"سبارتان فلاش",
+en:"Spartan Flash",
+price:2.70,
+weight:"1 لتر",
+img:"./Spartan-flash-1liter.JPG"
+},
+{
+id:"dimex-javel",
+cat:"مواد تنظيف",
+name:"دايمكس جافيل",
+en:"Dimex Javel",
+price:.75,
+weight:"1 لتر",
+img:"./Dimex-javel-1liter.JPG"
+},
+{
+id:"carmel-javel",
+cat:"مواد تنظيف",
+name:"كارمل جافيل",
+en:"Carmel Javel",
+price:.85,
+weight:"1 لتر",
+img:"./Carmel-javel-1liter.JPG"
+},
+{
+id:"clorox",
+cat:"مواد تنظيف",
+name:"كلور جافيل كلوروكس",
+en:"Clorox",
+price:1.30,
+weight:"1 لتر",
+img:"./Clorox-1liter.JPG"
+},
+{
+id:"odex",
+cat:"مواد تنظيف",
+name:"أوديكس",
+en:"Odex",
+price:1.50,
+weight:"1 لتر",
+img:"./Odex-1liter.JPG"
+},
+{
+id:"carmel-cleaner",
+cat:"مواد تنظيف",
+name:"كارمل معطر ارض",
+en:"Carmel",
+price:1.20,
+weight:"ليمون / صنوبر / عود - 800 مل",
+img:"./Carmel-lemon-800ml.JPG",
+options:[
+["ليمون - 800 مل",1.20,"./Carmel-lemon-800ml.JPG"],
+["صنوبر - 800 مل",1.20,"./Carmel-pine-800ml.JPG"],
+["عود - 800 مل",1.20,"./Carmel-oud-800ml.JPG"]
+]
+},
+{
+id:"noura-shampoo-yellow",
+cat:"مواد تنظيف",
+name:"شامبو نورا",
+en:"Noura Shampoo",
+price:2.40,
+weight:"1.25 لتر",
+img:"./Noura-shampoo-yellow-1.25liter.JPG"
 }
-
 ];
-
 let cart=JSON.parse(localStorage.getItem("tekramCart")||"[]");
 let fav=JSON.parse(localStorage.getItem("tekramFavorites")||"[]");
 let category="الكل";
 let onlyFav=false;
 let selected=null;
-
 const $=id=>document.getElementById(id);
-
 function save(){
 localStorage.setItem("tekramCart",JSON.stringify(cart));
 localStorage.setItem("tekramFavorites",JSON.stringify(fav));
 }
-
 function focusSearch(){
 $("search").focus();
 }
-
 function nav(n){
 document.querySelectorAll(".bottom-nav button")
 .forEach((x,i)=>x.classList.toggle("active",i===n));
 }
-
 function categoriesHTML(){
 $("cats").innerHTML=cats.map(x=>`
 <button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">
@@ -789,146 +761,103 @@ ${x}
 </button>
 `).join("");
 }
-
 function discountPercent(a,b){
 return Math.round((1-b/a)*100);
 }
-
 function priceHTML(p){
-
 if(p.oldPrice)
 return `
 <span class="old-price">$${p.oldPrice.toFixed(2)}</span>
 <span class="new-price">$${p.price.toFixed(2)}</span>
 <span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>
 `;
-
 return `<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`;
 }
-
 function card(p){
-
 let favorite=fav.includes(p.id);
-
 return `
 <div class="card" onclick="detail('${p.id}')">
-
 <button class="fav ${favorite?"on":""}" onclick="toggleFav(event,'${p.id}')">
 ${favorite?"♥":"♡"}
 </button>
-
 <div class="pic">
-
 ${p.img
 ?`<img src="${p.img}" alt="${p.name}">`
 :p.icon||"🛒"}
-
 </div>
-
 <div class="info">
-
 <span class="badge">${p.cat}</span>
-
 ${p.oldPrice
 ?`<span class="offer-badge">🔥 عرض</span>`
 :""}
-
 <div class="name">${p.name}</div>
 <div class="en">${p.en}</div>
 <div class="weight">${p.weight}</div>
-
 <div class="bottom">
-
 <div>${priceHTML(p)}</div>
-
 <button class="add" onclick="quick(event,'${p.id}')">
 +
 </button>
-
 </div>
 </div>
 </div>
 `;
 }
-
 function offerCard(p){
-
 return `
 <div class="offer-card" onclick="detail('${p.id}')">
-
 <div class="offer-label">🔥 عرض</div>
-
 <div class="pic">
-
 ${p.img
 ?`<img src="${p.img}" alt="${p.name}">`
 :p.icon||"🛒"}
-
 </div>
-
 <div class="info">
-
 <div class="name">${p.name}</div>
 <div class="en">${p.en}</div>
 <div class="weight">${p.weight}</div>
-
 <div class="bottom">
-
 <div>${priceHTML(p)}</div>
-
 <button class="add" onclick="quick(event,'${p.id}')">
 +
 </button>
-
 </div>
 </div>
 </div>
 `;
 }
-
 function renderOffers(){
-
 let offers=products.filter(p=>p.oldPrice);
-
 if(!offers.length){
 $("offersSection").style.display="none";
 return;
 }
-
 $("offersSection").style.display="block";
 $("offerGrid").innerHTML=offers.map(offerCard).join("");
 }
-
 function render(){
-
 let q=$("search").value.trim().toLowerCase();
-
 let list=products.filter(p=>
 (!onlyFav||fav.includes(p.id))&&
 (category==="الكل"||p.cat===category)&&
 (!q||(p.name+" "+p.en).toLowerCase().includes(q))
 );
-
 $("title").textContent=
 onlyFav?"المفضلة":
 q?"نتائج البحث":
 category==="الكل"?"منتجاتنا":category;
-
 $("sub").textContent=
 onlyFav
 ?"المنتجات التي حفظتها ❤️"
 :"اختيارات من تِكرَم";
-
 $("grid").innerHTML=
 list.length
 ?list.map(card).join("")
 :`<div class="empty">ما لقينا منتجات مطابقة ❤️</div>`;
-
 categoriesHTML();
 renderOffers();
 updateCart();
 }
-
 function choose(x){
 category=x;
 onlyFav=false;
@@ -936,92 +865,68 @@ render();
 scrollProducts();
 nav(1);
 }
-
 function categoriesPage(){
 closePanels();
 home();
 nav(1);
 setTimeout(scrollProducts,50);
 }
-
 function favoritesPage(){
-
 category="الكل";
 onlyFav=true;
-
 $("productPage").style.display="none";
 $("homePage").style.display="block";
-
 render();
 nav(2);
 scrollProducts();
 }
-
 function toggleFav(e,id){
-
 e.stopPropagation();
-
 fav=fav.includes(id)
 ?fav.filter(x=>x!==id)
 :[...fav,id];
-
 save();
 render();
 }
-
 function quick(e,id){
-
 e.stopPropagation();
-
 let p=products.find(x=>x.id===id);
-
 let o=p.options
 ?p.options[0]
 :[p.weight,p.price,p.img||p.icon||""];
-
 add({
 name:p.name,
 option:o[0],
 price:o[1]
 });
-
 openCart();
 }
-
 function detail(id,opt=0){
-
 let p=products.find(x=>x.id===id);
-
 selected={
 name:p.name,
 option:p.options?p.options[opt][0]:p.weight,
 price:p.options?p.options[opt][1]:p.price,
 oldPrice:p.oldPrice||null
 };
-
 $("dcat").textContent=p.cat;
 $("dname").textContent=p.name;
 $("den").textContent=p.en;
 $("dweight").textContent=selected.option;
 $("dprice").textContent="$"+selected.price.toFixed(2);
-
 $("doldprice").textContent=
 selected.oldPrice
 ?"$"+selected.oldPrice.toFixed(2)
 :"";
-
 $("ddesc").textContent=p.name+", "+selected.option;
-
 let image=p.options
 ?p.options[opt][2]
 :p.img;
-
 $("dimg").innerHTML=image
 ?`<img src="${image}" alt="${p.name}">`
 :p.options
 ?`<span style="font-size:100px">${p.options[opt][2]}</span>`
 :`<span>${p.icon||"🛒"}</span>`;
-
 $("options").innerHTML=p.options
 ?p.options.map((o,i)=>`
 <button class="option ${i===opt?"sel":""}" onclick="detail('${p.id}',${i})">
@@ -1029,39 +934,28 @@ ${o[0]}
 </button>
 `).join("")
 :"";
-
 $("homePage").style.display="none";
 $("productPage").style.display="block";
-
 window.scrollTo(0,0);
 }
-
 function add(x){
-
 let old=cart.find(i=>
 i.name===x.name&&i.option===x.option
 );
-
 old
 ?old.qty++
 :cart.push({...x,qty:1});
-
 save();
 updateCart();
 }
-
 function addSelected(){
 add(selected);
 openCart();
 }
-
 function updateCart(){
-
 $("count").textContent=
 cart.reduce((a,x)=>a+x.qty,0);
-
 if(!cart.length){
-
 $("cartBody").innerHTML=`
 <div class="cart-empty">
 <span>🛒</span>
@@ -1069,212 +963,142 @@ $("cartBody").innerHTML=`
 <small>أضف منتجاتك المفضلة من تِكرَم 🤍</small>
 </div>
 `;
-
 $("total").textContent="$0.00";
 return;
 }
-
 $("cartBody").innerHTML=
 cart.map((x,i)=>`
-
 <div class="cart-item">
-
 <div class="cart-row">
-
 <div>
 <div class="cart-name">${x.name}</div>
 <span class="cart-option">${x.option}</span>
 </div>
-
 <b class="cart-price">
 $${(x.price*x.qty).toFixed(2)}
 </b>
-
 </div>
-
 <div class="controls">
-
 <button class="qty" onclick="qty(${i},-1)">
 −
 </button>
-
 <b class="qty-number">${x.qty}</b>
-
 <button class="qty" onclick="qty(${i},1)">
 +
 </button>
-
 <button class="remove" onclick="removeItem(${i})">
 حذف
 </button>
-
 </div>
-
 </div>
-
 `).join("");
-
 let t=cart.reduce((a,x)=>a+x.price*x.qty,0);
-
 $("total").textContent="$"+t.toFixed(2);
 }
-
 function qty(i,n){
-
 cart[i].qty+=n;
-
 if(cart[i].qty<1)
 cart.splice(i,1);
-
 save();
 updateCart();
 }
-
 function removeItem(i){
-
 cart.splice(i,1);
-
 save();
 updateCart();
 }
-
 function openCart(){
-
 closePanels();
-
 $("cartPanel").style.right="0";
 $("overlay").style.display="block";
-
 nav(3);
 }
-
 function checkout(){
-
 if(!cart.length)
 return alert("السلة فارغة");
-
 closePanels();
-
 $("checkoutPanel").style.right="0";
 $("overlay").style.display="block";
-
 let s=cart.reduce((a,x)=>a+x.price*x.qty,0);
-
 $("summary").innerHTML=
-
 cart.map(x=>`
 <div class="summary-row">
-
 <span>
 ${x.name}<br>
 <small>${x.option} × ${x.qty}</small>
 </span>
-
 <b>$${(x.price*x.qty).toFixed(2)}</b>
-
 </div>
 `).join("")
-
 +
-
 `
 <div class="summary-row">
 <b>المجموع الفرعي</b>
 <b>$${s.toFixed(2)}</b>
 </div>
-
 <div class="summary-row">
 <b>التوصيل</b>
 <b>$${DELIVERY.toFixed(2)}</b>
 </div>
-
 <div class="summary-row final">
 <b>المجموع النهائي</b>
 <b>$${(s+DELIVERY).toFixed(2)}</b>
 </div>
 `;
 }
-
 function closePanels(){
-
 $("cartPanel").style.right="-430px";
 $("checkoutPanel").style.right="-430px";
 $("menuPanel").style.left="-430px";
 $("overlay").style.display="none";
 }
-
 function openMenu(){
-
 closePanels();
-
 $("menuPanel").style.left="0";
 $("overlay").style.display="block";
 }
-
 function menuHome(){
-
 closePanels();
 home();
 }
-
 function menuProducts(){
-
 closePanels();
 home();
-
 setTimeout(scrollProducts,100);
 }
-
 function menuOffers(){
-
 closePanels();
 home();
-
 setTimeout(()=>{
-
 let section=$("offersSection");
-
 if(section.style.display!=="none")
 section.scrollIntoView({behavior:"smooth"});
 else
 alert("ما في عروض مضافة حاليًا 🔥");
-
 },100);
 }
-
 function menuFavorites(){
-
 closePanels();
 favoritesPage();
 }
-
 function menuCart(){
-
 closePanels();
 openCart();
 }
-
 async function sendOrder(){
-
 let n=$("name").value.trim();
 let ph=$("phone").value.trim();
 let ar=$("area").value;
 let ad=$("address").value.trim();
-
 if(!n||!ph||!ar||!ad)
 return alert("يرجى تعبئة الاسم والهاتف والمنطقة والعنوان");
-
 let sub=cart.reduce((a,x)=>a+x.price*x.qty,0);
-
 let order=cart.map(x=>
 `• ${x.name} | ${x.option} | ×${x.qty} | $${(x.price*x.qty).toFixed(2)}`
 ).join("\n");
-
 $("send").disabled=true;
 $("send").textContent="جاري الإرسال...";
-
 try{
-
 let r=await fetch(
 "https://api.web3forms.com/submit",
 {
@@ -1284,7 +1108,6 @@ headers:{
 "Accept":"application/json"
 },
 body:JSON.stringify({
-
 access_key:KEY,
 subject:"🛒 طلب جديد من تِكرَم",
 name:n,
@@ -1296,68 +1119,45 @@ order,
 subtotal:"$"+sub.toFixed(2),
 delivery:"$"+DELIVERY.toFixed(2),
 total:"$"+(sub+DELIVERY).toFixed(2)
-
 })
 }
 );
-
 let data=await r.json();
-
 if(data.success){
-
 alert("تم إرسال طلبك بنجاح ❤️");
-
 cart=[];
-
 save();
 updateCart();
 closePanels();
-
 $("name").value="";
 $("phone").value="";
 $("area").value="";
 $("address").value="";
 $("notes").value="";
-
 }else{
-
 alert("تعذر إرسال الطلب.");
-
 }
-
 }catch(e){
-
 alert("تعذر إرسال الطلب حالياً.");
-
 }
-
 $("send").disabled=false;
 $("send").textContent="تأكيد الطلب ✓";
 }
-
 function home(){
-
 $("productPage").style.display="none";
 $("homePage").style.display="block";
-
 category="الكل";
 onlyFav=false;
-
 render();
 nav(0);
 }
-
 function scrollProducts(){
-
 $("products").scrollIntoView({
 behavior:"smooth"
 });
 }
-
 categoriesHTML();
 render();
-
 </script>
-
 </body>
 </html>
