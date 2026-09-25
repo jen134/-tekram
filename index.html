@@ -155,19 +155,15 @@ top:-270px;
 opacity:.8;
 }
 
-/* 🌿 غصن الزيتون */
 .hero:after{
-content:"🌿";
+content:"";
 position:absolute;
-left:2%;
-bottom:-25px;
-font-size:145px;
-line-height:1;
-transform:rotate(-18deg);
-opacity:.8;
-z-index:1;
-pointer-events:none;
-filter:saturate(.55);
+width:220px;
+height:220px;
+border:35px solid #2a5642;
+border-radius:50%;
+left:-120px;
+bottom:-150px;
 }
 
 .hero-text{
@@ -177,6 +173,7 @@ position:relative;
 z-index:2;
 }
 
+/* OLIVE BRANCH */
 .hero-text:after{
 content:"";
 position:absolute;
@@ -192,14 +189,6 @@ background-size:contain;
 background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 140'%3E%3Cpath d='M18 118 C65 105 92 76 116 48 C139 22 170 13 218 20' fill='none' stroke='%23d8c39b' stroke-width='4' stroke-linecap='round'/%3E%3Cg fill='%23d8c39b'%3E%3Cellipse cx='55' cy='91' rx='7' ry='18' transform='rotate(-48 55 91)'/%3E%3Cellipse cx='73' cy='77' rx='7' ry='18' transform='rotate(45 73 77)'/%3E%3Cellipse cx='89' cy='62' rx='7' ry='18' transform='rotate(-45 89 62)'/%3E%3Cellipse cx='107' cy='47' rx='7' ry='18' transform='rotate(42 107 47)'/%3E%3Cellipse cx='126' cy='33' rx='7' ry='18' transform='rotate(-38 126 33)'/%3E%3Cellipse cx='146' cy='25' rx='7' ry='18' transform='rotate(38 146 25)'/%3E%3Cellipse cx='166' cy='20' rx='7' ry='18' transform='rotate(-35 166 20)'/%3E%3Cellipse cx='73' cy='101' rx='7' ry='18' transform='rotate(48 73 101)'/%3E%3Cellipse cx='96' cy='83' rx='7' ry='18' transform='rotate(50 96 83)'/%3E%3Cellipse cx='119' cy='62' rx='7' ry='18' transform='rotate(48 119 62)'/%3E%3Cellipse cx='142' cy='43' rx='7' ry='18' transform='rotate(45 142 43)'/%3E%3Cellipse cx='167' cy='30' rx='7' ry='18' transform='rotate(42 167 30)'/%3E%3C/g%3E%3Cg fill='%23a9894b'%3E%3Cellipse cx='48' cy='101' rx='5' ry='7' transform='rotate(-25 48 101)'/%3E%3Cellipse cx='82' cy='86' rx='5' ry='7' transform='rotate(20 82 86)'/%3E%3Cellipse cx='112' cy='57' rx='5' ry='7' transform='rotate(-20 112 57)'/%3E%3Cellipse cx='151' cy='31' rx='5' ry='7' transform='rotate(15 151 31)'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-@media(max-width:650px){
-.hero-text:after{
-width:145px;
-height:90px;
-left:5px;
-bottom:-2px;
-}
-}
 .hero-small{
 color:var(--gold);
 font-weight:bold;
@@ -259,9 +248,22 @@ background:#fff;
 box-shadow:0 6px 12px #0003;
 }
 
-.i1{background:#d93627!important;left:25px;top:-50px}
-.i2{background:#e8a936!important;right:25px;top:-65px}
-.i3{left:105px;top:-80px}
+.i1{
+background:#d93627!important;
+left:25px;
+top:-50px;
+}
+
+.i2{
+background:#e8a936!important;
+right:25px;
+top:-65px;
+}
+
+.i3{
+left:105px;
+top:-80px;
+}
 
 /* SECTIONS */
 .section{
@@ -672,7 +674,7 @@ font-size:21px;
 color:var(--o);
 }
 
-/* OVERLAYS / PANELS */
+/* OVERLAYS */
 .overlay{
 display:none;
 position:fixed;
@@ -857,7 +859,7 @@ color:var(--m);
 text-align:center;
 }
 
-/* CART / CHECKOUT */
+/* CART */
 .panel-head{
 padding:18px;
 border-bottom:1px solid var(--b);
@@ -1087,12 +1089,13 @@ font-size:39px;
 font-size:13px;
 }
 
-/* 🌿 غصن الزيتون على الموبايل */
-.hero:after{
-left:-8px;
-bottom:-18px;
-font-size:105px;
-transform:rotate(-15deg);
+/* OLIVE BRANCH MOBILE */
+.hero-text:after{
+width:145px;
+height:90px;
+left:5px;
+bottom:-2px;
+opacity:.7;
 }
 
 .basket{
@@ -1188,7 +1191,9 @@ alt="تِكرَم | Tekram"
 class="site-logo">
 
 <div class="icons">
-<button class="icon cart-top" onclick="openCart()">🛒<b id="count" class="count">0</b></button>
+<button class="icon cart-top" onclick="openCart()">
+🛒<b id="count" class="count">0</b>
+</button>
 </div>
 
 <div class="icons">
@@ -1202,7 +1207,9 @@ class="site-logo">
 <div class="search-wrap">
 <div class="search">
 <span>⌕</span>
-<input id="search" placeholder="إبحث عن منتج..." oninput="render()">
+<input id="search"
+placeholder="إبحث عن منتج..."
+oninput="render">
 </div>
 </div>
 
@@ -1213,7 +1220,9 @@ class="site-logo">
 
 <div class="hero-text">
 
-<div class="hero-small">✦ من بيتنا لبيتك</div>
+<div class="hero-small">
+✦ من بيتنا لبيتك
+</div>
 
 <h1>
 كل احتياجاتك اليومية<br>
@@ -1224,7 +1233,9 @@ class="site-logo">
 منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.
 </p>
 
-<button onclick="scrollProducts()">تصفح المنتجات</button>
+<button onclick="scrollProducts()">
+تصفح المنتجات
+</button>
 
 </div>
 
@@ -1287,17 +1298,23 @@ class="site-logo">
 <div id="dprice" class="detail-price"></div>
 <div id="ddesc" class="detail-desc"></div>
 
-<button class="detail-add" onclick="addSelected()">🛒 أضف للسلة</button>
-<button class="back" onclick="home()">← العودة</button>
+<button class="detail-add" onclick="addSelected()">
+🛒 أضف للسلة
+</button>
+
+<button class="back" onclick="home()">
+← العودة
+</button>
 
 </div>
 </div>
-
 </section>
 
 <div id="overlay" class="overlay" onclick="closePanels()"></div>
 
-<div id="optionModal" class="option-modal" onclick="if(event.target===this)closeOptionPicker()">
+<div id="optionModal"
+class="option-modal"
+onclick="if(event.target===this)closeOptionPicker()">
 
 <div class="option-box">
 
@@ -1309,7 +1326,6 @@ class="site-logo">
 <div id="optionChoices" class="option-choices"></div>
 
 </div>
-
 </div>
 
 <div id="menuPanel" class="menu-panel">
@@ -1328,23 +1344,28 @@ TEKRAM
 <div class="menu-body">
 
 <button class="menu-btn" onclick="menuHome()">
-<span class="menu-icon">🏠</span>الرئيسية
+<span class="menu-icon">🏠</span>
+الرئيسية
 </button>
 
 <button class="menu-btn" onclick="menuProducts()">
-<span class="menu-icon">🛍️</span>المنتجات
+<span class="menu-icon">🛍️</span>
+المنتجات
 </button>
 
 <button class="menu-btn" onclick="menuOffers()">
-<span class="menu-icon">🔥</span>العروض
+<span class="menu-icon">🔥</span>
+العروض
 </button>
 
 <button class="menu-btn" onclick="menuFavorites()">
-<span class="menu-icon">❤️</span>المفضلة
+<span class="menu-icon">❤️</span>
+المفضلة
 </button>
 
 <button class="menu-btn" onclick="menuCart()">
-<span class="menu-icon">🛒</span>سلة المشتريات
+<span class="menu-icon">🛒</span>
+سلة المشتريات
 </button>
 
 <div class="menu-divider"></div>
@@ -1373,7 +1394,9 @@ TEKRAM
 <span id="total">$0.00</span>
 </div>
 
-<button class="checkout" onclick="checkout()">إتمام الطلب</button>
+<button class="checkout" onclick="checkout()">
+إتمام الطلب
+</button>
 
 </div>
 </div>
@@ -1415,12 +1438,16 @@ TEKRAM
 
 <div class="form">
 <label>العنوان</label>
-<textarea id="address" class="input area" placeholder="اكتب العنوان"></textarea>
+<textarea id="address"
+class="input area"
+placeholder="اكتب العنوان"></textarea>
 </div>
 
 <div class="form">
 <label>ملاحظات</label>
-<textarea id="notes" class="input area" placeholder="اختياري"></textarea>
+<textarea id="notes"
+class="input area"
+placeholder="اختياري"></textarea>
 </div>
 
 <div id="summary" class="summary"></div>
@@ -1428,7 +1455,9 @@ TEKRAM
 </div>
 
 <div class="panel-foot">
-<button id="send" class="checkout" onclick="sendOrder()">تأكيد الطلب ✓</button>
+<button id="send" class="checkout" onclick="sendOrder()">
+تأكيد الطلب ✓
+</button>
 </div>
 
 </div>
@@ -1436,19 +1465,23 @@ TEKRAM
 <div class="bottom-nav">
 
 <button onclick="home()" class="active">
-<span>⌂</span>الرئيسية
+<span>⌂</span>
+الرئيسية
 </button>
 
 <button onclick="categoriesPage()">
-<span>▦</span>الأقسام
+<span>▦</span>
+الأقسام
 </button>
 
 <button onclick="favoritesPage()">
-<span>♡</span>المفضلة
+<span>♡</span>
+المفضلة
 </button>
 
 <button onclick="openCart()">
-<span>🛒</span>السلة
+<span>🛒</span>
+السلة
 </button>
 
 </div>
@@ -1456,6 +1489,7 @@ TEKRAM
 <footer>
 
 <div class="footer-logo">تِكرَم</div>
+
 <p>من بيتنا لبيتك 🤍</p>
 
 </footer>
@@ -1628,32 +1662,35 @@ const $=id=>document.getElementById(id);
 
 function save(){
 localStorage.setItem("tekramCart",JSON.stringify(cart));
-localStorage.setItem("tekramFavorites",JSON.stringify(fav))
+localStorage.setItem("tekramFavorites",JSON.stringify(fav));
 }
 
 function focusSearch(){
-$("search").focus()
+$("search").focus();
 }
 
 function nav(n){
 document.querySelectorAll(".bottom-nav button")
-.forEach((x,i)=>x.classList.toggle("active",i===n))
+.forEach((x,i)=>x.classList.toggle("active",i===n));
 }
 
 function categoriesHTML(){
 $("cats").innerHTML=cats.map(x=>
-`<button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">${x}</button>`
-).join("")
+`<button class="${x===category&&!onlyFav?"active":""}"
+onclick="choose('${x}')">${x}</button>`
+).join("");
 }
 
 function discountPercent(a,b){
-return Math.round((1-b/a)*100)
+return Math.round((1-b/a)*100);
 }
 
 function priceHTML(p){
 return p.oldPrice
-?`<span class="old-price">$${p.oldPrice.toFixed(2)}</span><span class="new-price">$${p.price.toFixed(2)}</span><span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>`
-:`<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`
+?`<span class="old-price">$${p.oldPrice.toFixed(2)}</span>
+<span class="new-price">$${p.price.toFixed(2)}</span>
+<span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>`
+:`<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`;
 }
 
 function card(p){
@@ -1662,19 +1699,24 @@ let f=fav.includes(p.id);
 
 return `<div class="card" onclick="detail('${p.id}')">
 
-<button class="fav ${f?"on":""}" onclick="toggleFav(event,'${p.id}')">
+<button class="fav ${f?"on":""}"
+onclick="toggleFav(event,'${p.id}')">
 ${f?"♥":"♡"}
 </button>
 
 <div class="pic">
-${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
+${p.img
+?`<img src="${p.img}" alt="${p.name}">`
+:p.icon||"🛒"}
 </div>
 
 <div class="info">
 
 <span class="badge">${p.cat}</span>
 
-${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}
+${p.oldPrice
+?`<span class="offer-badge">🔥 عرض</span>`
+:""}
 
 <div class="name">${p.name}</div>
 <div class="en">${p.en}</div>
@@ -1684,21 +1726,27 @@ ${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}
 
 <div>${priceHTML(p)}</div>
 
-<button class="add" onclick="quick(event,'${p.id}')">+</button>
+<button class="add"
+onclick="quick(event,'${p.id}')">
++
+</button>
 
 </div>
 </div>
-</div>`
+</div>`;
 }
 
 function offerCard(p){
 
-return `<div class="offer-card" onclick="detail('${p.id}')">
+return `<div class="offer-card"
+onclick="detail('${p.id}')">
 
 <div class="offer-label">🔥 عرض</div>
 
 <div class="pic">
-${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
+${p.img
+?`<img src="${p.img}" alt="${p.name}">`
+:p.icon||"🛒"}
 </div>
 
 <div class="info">
@@ -1708,12 +1756,17 @@ ${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
 <div class="weight">${p.weight}</div>
 
 <div class="bottom">
+
 <div>${priceHTML(p)}</div>
-<button class="add" onclick="quick(event,'${p.id}')">+</button>
-</div>
+
+<button class="add"
+onclick="quick(event,'${p.id}')">
++
+</button>
 
 </div>
-</div>`
+</div>
+</div>`;
 }
 
 function renderOffers(){
@@ -1723,7 +1776,7 @@ let o=products.filter(p=>p.oldPrice);
 $("offersSection").style.display=o.length?"block":"none";
 
 if(o.length)
-$("offerGrid").innerHTML=o.map(offerCard).join("")
+$("offerGrid").innerHTML=o.map(offerCard).join("");
 }
 
 function render(){
@@ -1737,9 +1790,13 @@ let list=products.filter(p=>
 );
 
 $("title").textContent=
-onlyFav?"المفضلة":
-q?"نتائج البحث":
-category==="الكل"?"منتجاتنا":category;
+onlyFav
+?"المفضلة"
+:q
+?"نتائج البحث"
+:category==="الكل"
+?"منتجاتنا"
+:category;
 
 $("sub").textContent=
 onlyFav
@@ -1752,7 +1809,7 @@ $("grid").innerHTML=list.length
 
 categoriesHTML();
 renderOffers();
-updateCart()
+updateCart();
 }
 
 function choose(x){
@@ -1760,14 +1817,14 @@ category=x;
 onlyFav=false;
 render();
 scrollProducts();
-nav(1)
+nav(1);
 }
 
 function categoriesPage(){
 closePanels();
 home();
 nav(1);
-setTimeout(scrollProducts,50)
+setTimeout(scrollProducts,50);
 }
 
 function favoritesPage(){
@@ -1777,17 +1834,19 @@ $("productPage").style.display="none";
 $("homePage").style.display="block";
 render();
 nav(2);
-scrollProducts()
+scrollProducts();
 }
 
 function toggleFav(e,id){
+
 e.stopPropagation();
+
 fav=fav.includes(id)
 ?fav.filter(x=>x!==id)
 :[...fav,id];
 
 save();
-render()
+render();
 }
 
 function quick(e,id){
@@ -1805,10 +1864,10 @@ price:p.price
 });
 
 openCart();
-return
+return;
 }
 
-openOptionPicker(p)
+openOptionPicker(p);
 }
 
 function openOptionPicker(p){
@@ -1816,13 +1875,14 @@ function openOptionPicker(p){
 $("optionTitle").textContent=p.name;
 
 $("optionChoices").innerHTML=p.options.map((o,i)=>
-`<button class="pick-option" onclick="pickOption('${p.id}',${i})">
+`<button class="pick-option"
+onclick="pickOption('${p.id}',${i})">
 ${o[0]}
 <small>$${o[1].toFixed(2)}</small>
 </button>`
 ).join("");
 
-$("optionModal").style.display="flex"
+$("optionModal").style.display="flex";
 }
 
 function pickOption(id,i){
@@ -1837,21 +1897,22 @@ price:o[1]
 });
 
 closeOptionPicker();
-openCart()
+openCart();
 }
 
 function closeOptionPicker(){
-$("optionModal").style.display="none"
+$("optionModal").style.display="none";
 }
 
 function detail(id,opt=0){
 
 let p=products.find(x=>x.id===id),
-o=p.options?p.options[opt]:[p.weight,p.price,p.img||p.icon||""];
+o=p.options
+?p.options[opt]
+:[p.weight,p.price,p.img||p.icon||""];
 
-if(tekramBackPosition===null){
+if(tekramBackPosition===null)
 tekramBackPosition=window.scrollY;
-}
 
 selected={
 name:p.name,
@@ -1863,9 +1924,16 @@ oldPrice:p.oldPrice||null
 $("dcat").textContent=p.cat;
 $("dname").textContent=p.name;
 $("den").textContent=p.en;
+
 $("dweight").textContent=o[0];
+
 $("dprice").textContent="$"+o[1].toFixed(2);
-$("doldprice").textContent=p.oldPrice?"$"+p.oldPrice.toFixed(2):"";
+
+$("doldprice").textContent=
+p.oldPrice
+?"$"+p.oldPrice.toFixed(2)
+:"";
+
 $("ddesc").textContent=p.name+", "+o[0];
 
 $("dimg").innerHTML=
@@ -1875,14 +1943,17 @@ typeof o[2]==="string"&&o[2].startsWith(".")
 
 $("options").innerHTML=p.options
 ?p.options.map((x,i)=>
-`<button class="option ${i===opt?"sel":""}" onclick="detail('${p.id}',${i})">${x[0]}</button>`
+`<button class="option ${i===opt?"sel":""}"
+onclick="detail('${p.id}',${i})">
+${x[0]}
+</button>`
 ).join("")
 :"";
 
 $("homePage").style.display="none";
 $("productPage").style.display="block";
 
-window.scrollTo(0,0)
+window.scrollTo(0,0);
 }
 
 function add(x){
@@ -1896,12 +1967,12 @@ o
 :cart.push({...x,qty:1});
 
 save();
-updateCart()
+updateCart();
 }
 
 function addSelected(){
 add(selected);
-openCart()
+openCart();
 }
 
 function updateCart(){
@@ -1919,10 +1990,12 @@ $("cartBody").innerHTML=
 </div>`;
 
 $("total").textContent="$0.00";
-return
+
+return;
 }
 
-$("cartBody").innerHTML=cart.map((x,i)=>
+$("cartBody").innerHTML=
+cart.map((x,i)=>
 `<div class="cart-item">
 
 <div class="cart-row">
@@ -1940,13 +2013,22 @@ $${(x.price*x.qty).toFixed(2)}
 
 <div class="controls">
 
-<button class="qty" onclick="qty(${i},-1)">−</button>
+<button class="qty"
+onclick="qty(${i},-1)">
+−
+</button>
 
-<b class="qty-number">${x.qty}</b>
+<b class="qty-number">
+${x.qty}
+</b>
 
-<button class="qty" onclick="qty(${i},1)">+</button>
+<button class="qty"
+onclick="qty(${i},1)">
++
+</button>
 
-<button class="remove" onclick="removeItem(${i})">
+<button class="remove"
+onclick="removeItem(${i})">
 حذف
 </button>
 
@@ -1955,7 +2037,7 @@ $${(x.price*x.qty).toFixed(2)}
 ).join("");
 
 $("total").textContent="$"+
-cart.reduce((a,x)=>a+x.price*x.qty,0).toFixed(2)
+cart.reduce((a,x)=>a+x.price*x.qty,0).toFixed(2);
 }
 
 function qty(i,n){
@@ -1966,14 +2048,15 @@ if(cart[i].qty<1)
 cart.splice(i,1);
 
 save();
-updateCart()
+updateCart();
 }
 
 function removeItem(i){
 
 cart.splice(i,1);
+
 save();
-updateCart()
+updateCart();
 }
 
 function openCart(){
@@ -1983,7 +2066,7 @@ closePanels();
 $("cartPanel").style.right="0";
 $("overlay").style.display="block";
 
-nav(3)
+nav(3);
 }
 
 function checkout(){
@@ -2008,10 +2091,14 @@ ${x.name}<br>
 <small>${x.option} × ${x.qty}</small>
 </span>
 
-<b>$${(x.price*x.qty).toFixed(2)}</b>
+<b>
+$${(x.price*x.qty).toFixed(2)}
+</b>
 
 </div>`
-).join("")+
+).join("")
+
++
 
 `<div class="summary-row">
 <b>المجموع الفرعي</b>
@@ -2026,7 +2113,7 @@ ${x.name}<br>
 <div class="summary-row final">
 <b>المجموع النهائي</b>
 <b>$${(s+DELIVERY).toFixed(2)}</b>
-</div>`
+</div>`;
 }
 
 function closePanels(){
@@ -2034,7 +2121,7 @@ function closePanels(){
 $("cartPanel").style.right="-430px";
 $("checkoutPanel").style.right="-430px";
 $("menuPanel").style.left="-430px";
-$("overlay").style.display="none"
+$("overlay").style.display="none";
 }
 
 function openMenu(){
@@ -2042,12 +2129,12 @@ function openMenu(){
 closePanels();
 
 $("menuPanel").style.left="0";
-$("overlay").style.display="block"
+$("overlay").style.display="block";
 }
 
 function menuHome(){
 closePanels();
-home()
+home();
 }
 
 function menuProducts(){
@@ -2055,7 +2142,7 @@ function menuProducts(){
 closePanels();
 home();
 
-setTimeout(scrollProducts,100)
+setTimeout(scrollProducts,100);
 }
 
 function menuOffers(){
@@ -2069,21 +2156,21 @@ let s=$("offersSection");
 
 s.style.display!=="none"
 ?s.scrollIntoView({behavior:"smooth"})
-:alert("ما في عروض مضافة حاليًا 🔥")
+:alert("ما في عروض مضافة حاليًا 🔥");
 
-},100)
+},100);
 }
 
 function menuFavorites(){
 
 closePanels();
-favoritesPage()
+favoritesPage();
 }
 
 function menuCart(){
 
 closePanels();
-openCart()
+openCart();
 }
 
 async function sendOrder(){
@@ -2107,8 +2194,9 @@ $("send").textContent="جاري الإرسال...";
 
 try{
 
-let r=await fetch("https://api.web3forms.com/submit",{
-
+let r=await fetch(
+"https://api.web3forms.com/submit",
+{
 method:"POST",
 
 headers:{
@@ -2120,18 +2208,20 @@ body:JSON.stringify({
 
 access_key:KEY,
 subject:"🛒 طلب جديد من تِكرَم",
+
 name:n,
 phone:ph,
 area:ar,
 address:ad,
 notes:$("notes").value,
+
 order,
+
 subtotal:"$"+sub.toFixed(2),
 delivery:"$"+DELIVERY.toFixed(2),
 total:"$"+(sub+DELIVERY).toFixed(2)
 
 })
-
 });
 
 let data=await r.json();
@@ -2154,18 +2244,18 @@ $("notes").value="";
 
 }else{
 
-alert("تعذر إرسال الطلب.")
+alert("تعذر إرسال الطلب.");
 
 }
 
 }catch(e){
 
-alert("تعذر إرسال الطلب حالياً.")
+alert("تعذر إرسال الطلب حالياً.");
 
 }
 
 $("send").disabled=false;
-$("send").textContent="تأكيد الطلب ✓"
+$("send").textContent="تأكيد الطلب ✓";
 }
 
 function home(){
@@ -2205,11 +2295,9 @@ behavior:"smooth"
 }
 
 function scrollProducts(){
-
 $("products").scrollIntoView({
 behavior:"smooth"
-})
-
+});
 }
 
 categoriesHTML();
