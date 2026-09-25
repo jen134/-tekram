@@ -25,6 +25,7 @@ line-height:1.6
 }
 button,input,textarea,select{font-family:inherit}
 button{cursor:pointer}
+
 header{
 background:var(--g);
 position:sticky;
@@ -103,287 +104,194 @@ outline:0;
 background:none;
 font-size:14px
 }
+
 /* ================= HERO ================= */
+
 .hero-wrap{
 padding:30px 5%
 }
+
 .hero{
 max-width:1250px;
 margin:auto;
-min-height:480px;
-background:
-radial-gradient(circle at 20% 20%,#fff9ed 0,#f7f0e4 35%,#eee4d3 100%);
-border-radius:34px;
-color:var(--g);
+min-height:475px;
 position:relative;
 overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:space-between;
+border-radius:34px;
+background:
+linear-gradient(115deg,#f1e6d5 0%,#faf5ec 48%,#f4eadb 100%);
 border:1px solid #e5dac8;
-box-shadow:0 18px 45px #183d3012
+box-shadow:0 18px 45px #183d3012;
+display:flex;
+align-items:center
 }
-/* soft decorative circles */
+
+/* decorative circles */
 .hero:before{
 content:"";
 position:absolute;
-width:480px;
-height:480px;
+width:520px;
+height:520px;
 border:1px solid #244f3e18;
 border-radius:50%;
-right:-190px;
-top:-230px
+right:-210px;
+top:-285px
 }
 .hero:after{
 content:"";
 position:absolute;
-width:260px;
-height:260px;
+width:320px;
+height:320px;
 border:1px solid #df503520;
 border-radius:50%;
-left:-100px;
-bottom:-150px
+left:-145px;
+bottom:-190px
 }
-/* olive branch */
-.olive-branch{
+
+/* large olive branch */
+.olive-art{
 position:absolute;
-right:42%;
-top:32px;
-width:300px;
-height:125px;
+left:2%;
+bottom:-5px;
+width:58%;
+max-width:650px;
+height:430px;
 z-index:1;
-opacity:.95;
-transform:rotate(-5deg)
+pointer-events:none
 }
-.olive-branch svg{
+
+.olive-art svg{
 width:100%;
 height:100%;
 overflow:visible
 }
-.hero-text{
-padding:45px 6%;
-max-width:650px;
+
+/* little olive leaves decoration */
+.olive-leaf{
+fill:#527b61
+}
+.olive-branch-line{
+stroke:#244f3e;
+stroke-linecap:round;
+fill:none
+}
+.olive-fruit{
+fill:#9a7940
+}
+
+/* hero content */
+.hero-content{
 position:relative;
-z-index:3
+z-index:4;
+width:54%;
+padding:55px 7% 55px 4%;
+margin-right:auto;
+text-align:right
 }
-.hero-small{
-color:var(--o);
+
+.hero-kicker{
+display:flex;
+align-items:center;
+gap:9px;
+font-size:13px;
 font-weight:bold;
-font-size:14px;
-margin-bottom:7px
+color:var(--o);
+margin-bottom:15px
 }
-.hero-small span{
-color:var(--g);
-font-weight:normal
+
+.hero-kicker:before{
+content:"";
+width:28px;
+height:2px;
+background:var(--o);
+display:block
 }
+
 .hero h1{
-font-size:clamp(38px,5.5vw,62px);
+font-family:Georgia,Tahoma,serif;
+font-size:clamp(42px,5.5vw,68px);
 line-height:1.12;
-margin:8px 0 18px;
 color:var(--g);
-font-family:Georgia,Tahoma,serif
+margin-bottom:20px;
+letter-spacing:-1px
 }
+
 .hero h1 span{
 color:var(--o)
 }
+
 .hero p{
+font-size:15px;
+line-height:2;
 color:#59625b;
-margin-bottom:25px;
-font-size:14px;
-max-width:500px
+max-width:500px;
+margin-bottom:27px
 }
-.hero button{
+
+.hero-btn{
+display:inline-flex;
+align-items:center;
+gap:9px;
 border:0;
-background:var(--o);
+background:var(--g);
 color:#fff;
 padding:14px 25px;
 border-radius:25px;
 font-weight:bold;
-box-shadow:0 8px 20px #df503530
+box-shadow:0 9px 22px #183d3030;
+transition:.2s
 }
+
+.hero-btn:hover{
+background:var(--g2);
+transform:translateY(-2px)
+}
+
 .hero-note{
 display:flex;
 align-items:center;
 gap:8px;
-margin-top:18px;
+margin-top:20px;
 font-size:11px;
-color:#77786f
+color:var(--m)
 }
+
 .hero-note b{
 color:var(--g)
 }
-/* laptop */
-.laptop{
+
+/* small brand seal */
+.hero-seal{
 position:absolute;
-left:5%;
-bottom:35px;
-width:430px;
-z-index:3
-}
-.laptop-screen{
-background:#1c2f28;
-border:10px solid #26352f;
-border-bottom-width:14px;
-border-radius:14px 14px 7px 7px;
-height:265px;
-box-shadow:0 18px 35px #183d3030;
-overflow:hidden
-}
-.laptop-camera{
-width:5px;
-height:5px;
-background:#b7b7b0;
+right:6%;
+bottom:42px;
+width:90px;
+height:90px;
+border:1px solid #244f3e55;
 border-radius:50%;
-position:absolute;
-top:7px;
-left:50%;
-transform:translateX(-50%);
-z-index:3
-}
-.mini-site{
-height:100%;
-background:#f7f0e4;
-position:relative;
-overflow:hidden;
-font-family:Tahoma,Arial,sans-serif
-}
-.mini-header{
-height:35px;
-background:#183d30;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 12px;
-color:#fff
-}
-.mini-logo{
-font-family:Georgia,serif;
-font-size:13px;
-font-weight:bold
-}
-.mini-icons{
-font-size:9px;
-letter-spacing:3px
-}
-.mini-search{
-height:20px;
-background:#fff;
-border-radius:15px;
-margin:7px 14px;
-color:#aaa;
-font-size:7px;
-padding:4px 8px
-}
-.mini-hero{
-margin:6px 12px;
-height:100px;
-border-radius:12px;
-background:linear-gradient(135deg,#f8f0e3,#e9dfce);
-position:relative;
-overflow:hidden;
-display:flex;
-align-items:center;
-padding:12px
-}
-.mini-copy{
-width:52%;
-z-index:2
-}
-.mini-copy small{
-font-size:5px;
-color:#df5035
-}
-.mini-copy strong{
-display:block;
-font-family:Georgia,serif;
-font-size:14px;
-line-height:1.15;
-color:#183d30;
-margin:4px 0
-}
-.mini-copy em{
-font-style:normal;
-color:#df5035
-}
-.mini-button{
-display:inline-block;
-background:#df5035;
-color:white;
-font-size:5px;
-padding:4px 8px;
-border-radius:8px
-}
-.mini-olive{
-position:absolute;
-right:54%;
-top:4px;
-width:85px;
-height:55px;
-opacity:.7
-}
-.mini-laptop-products{
-position:absolute;
-right:4px;
-bottom:5px;
-width:43%;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:4px
-}
-.mini-product{
-background:#fffdf8;
-border-radius:5px;
-height:42px;
-padding:4px;
-text-align:center;
-font-size:5px
-}
-.mini-product-img{
-height:24px;
-background:#eee5d6;
-border-radius:4px;
-margin-bottom:2px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:13px
-}
-.laptop-base{
-height:17px;
-background:linear-gradient(#c6c4bc,#99978f);
-border-radius:0 0 12px 12px;
-margin:0 -25px;
-box-shadow:0 8px 15px #0002
-}
-.laptop-base:after{
-content:"";
-display:block;
-width:110px;
-height:4px;
-background:#77756f;
-border-radius:10px;
-margin:5px auto
-}
-.hero-stamp{
-position:absolute;
-left:37%;
-bottom:38px;
-width:76px;
-height:76px;
-border:1px solid #244f3e45;
-border-radius:50%;
+z-index:3;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 font-family:Georgia,serif;
-font-size:10px;
+font-size:11px;
+line-height:1.35;
 color:var(--g);
-transform:rotate(-10deg);
-z-index:4;
-background:#f7f0e4d9
+background:#f7f0e4cc;
+transform:rotate(-8deg)
 }
+
+.hero-seal:before{
+content:"";
+position:absolute;
+inset:6px;
+border:1px dashed #244f3e55;
+border-radius:50%
+}
+
 /* ================= SECTIONS ================= */
+
 .section{
 max-width:1250px;
 margin:auto;
@@ -433,9 +341,7 @@ border-radius:20px;
 overflow:hidden;
 cursor:pointer
 }
-.card:hover{
-transform:translateY(-4px)
-}
+.card:hover{transform:translateY(-4px)}
 .pic{
 margin:9px;
 aspect-ratio:1;
@@ -452,9 +358,7 @@ width:100%;
 height:100%;
 object-fit:contain
 }
-.info{
-padding:7px 12px 14px
-}
+.info{padding:7px 12px 14px}
 .badge,.offer-badge{
 display:inline-block;
 padding:3px 8px;
@@ -575,7 +479,9 @@ font-size:10px;
 font-weight:bold;
 z-index:2
 }
+
 /* PRODUCT PAGE */
+
 #productPage{
 display:none;
 padding:30px 5% 120px
@@ -673,7 +579,9 @@ background:var(--g);
 color:#fff;
 margin-top:8px
 }
+
 /* NAV */
+
 .bottom-nav{
 position:fixed;
 z-index:50;
@@ -702,6 +610,7 @@ display:block;
 font-size:21px
 }
 .bottom-nav .active{color:var(--o)}
+
 .overlay{
 display:none;
 position:fixed;
@@ -730,7 +639,9 @@ width:360px;
 max-width:90%;
 box-shadow:8px 0 30px #0002
 }
+
 /* OPTION MODAL */
+
 .option-modal{
 display:none;
 position:fixed;
@@ -794,7 +705,9 @@ margin-top:2px
 background:var(--g);
 color:#fff
 }
+
 /* MENU */
+
 .menu-head{
 padding:22px 18px;
 background:var(--g);
@@ -859,7 +772,9 @@ font-size:11px;
 color:var(--m);
 text-align:center
 }
+
 /* PANELS */
+
 .panel-head{
 padding:18px;
 border-bottom:1px solid var(--b);
@@ -1007,295 +922,295 @@ padding:40px 20px 110px
 font:28px Georgia;
 color:var(--gold)
 }
+
 /* MOBILE */
+
 @media(max-width:900px){
 .grid,.offer-grid{
 grid-template-columns:repeat(3,1fr)
 }
-.laptop{
-width:360px;
-left:2%
+.hero{
+min-height:500px
 }
-.olive-branch{
-right:35%
+.olive-art{
+width:62%;
+height:380px;
+left:-4%
+}
+.hero-content{
+width:58%;
+padding-right:5%;
+}
+.hero-seal{
+right:5%;
+bottom:30px
 }
 }
+
 @media(max-width:650px){
+
 .site-logo{max-height:85px}
+
 .icons{top:8px}
+
 .icon{
 width:40px;
 height:40px
 }
+
 .hero-wrap{
 padding:18px 4%
 }
+
 .hero{
-min-height:600px;
+min-height:590px;
 display:block;
-padding-top:20px
+padding:0;
+border-radius:28px
 }
-.hero-text{
-padding:45px 7% 0;
-max-width:100%;
-text-align:center
+
+.hero-content{
+width:100%;
+padding:70px 8% 0;
+text-align:center;
+margin:0
 }
-.hero-small{
-font-size:12px
+
+.hero-kicker{
+justify-content:center;
+font-size:11px
 }
-.hero h1{
-font-size:39px;
-margin-top:8px
-}
-.hero p{
-font-size:13px;
-margin:0 auto 22px
-}
-.hero-note{
-justify-content:center
-}
-.olive-branch{
-top:20px;
-right:50%;
-transform:translateX(50%) rotate(-5deg);
-width:250px;
-height:100px;
-opacity:.55
-}
-.laptop{
-width:310px;
-left:50%;
-transform:translateX(-50%);
-bottom:35px
-}
-.laptop-screen{
-height:190px;
-border-width:7px
-}
-.mini-header{
-height:25px
-}
-.mini-logo{
-font-size:9px
-}
-.mini-icons{
-font-size:6px
-}
-.mini-search{
-height:13px;
-margin:5px 8px;
-font-size:5px;
-padding:2px 5px
-}
-.mini-hero{
-height:73px;
-margin:4px 8px;
-padding:7px
-}
-.mini-copy strong{
-font-size:10px
-}
-.mini-copy small,
-.mini-button{
-font-size:4px
-}
-.mini-product{
-height:31px
-}
-.mini-product-img{
-height:17px;
-font-size:9px
-}
-.hero-stamp{
+
+.hero-kicker:before{
 display:none
 }
+
+.hero h1{
+font-size:42px;
+line-height:1.15;
+margin-bottom:15px
+}
+
+.hero p{
+font-size:13px;
+line-height:1.9;
+margin:0 auto 22px
+}
+
+.hero-btn{
+padding:13px 23px
+}
+
+.hero-note{
+justify-content:center;
+font-size:10px
+}
+
+.olive-art{
+width:125%;
+height:310px;
+left:-18%;
+bottom:-65px;
+opacity:.82
+}
+
+.hero-seal{
+width:72px;
+height:72px;
+font-size:9px;
+right:7%;
+bottom:28px
+}
+
 .grid,.offer-grid{
 grid-template-columns:repeat(2,1fr);
 gap:10px
 }
+
 .name{font-size:12px}
+
 .price,.new-price{
 font-size:16px
 }
+
 .add{
 width:32px;
 height:32px
 }
+
 .detail{
 grid-template-columns:1fr
 }
+
 .detail-img,.detail-img img{
 min-height:300px
 }
+
 .detail-info{
 padding:25px
 }
+
 .detail-name{
 font-size:28px
 }
+
 .menu-panel{
 width:330px
 }
 }
 </style>
 </head>
+
 <body>
+
 <header>
 <div class="head">
 <a class="logo-home" href="#" onclick="home();return false"></a>
-<img src="./tekram-logo.JPG"
-alt="تِكرَم | Tekram"
-class="site-logo">
+<img src="./tekram-logo.JPG" alt="تِكرَم | Tekram" class="site-logo">
+
 <div class="icons">
 <button class="icon cart-top" onclick="openCart()">
 🛒<b id="count" class="count">0</b>
 </button>
 </div>
+
 <div class="icons">
 <button class="icon" onclick="focusSearch()">⌕</button>
 <button class="icon" onclick="openMenu()">☰</button>
 </div>
 </div>
 </header>
+
 <div class="search-wrap">
 <div class="search">
 <span>⌕</span>
 <input id="search" placeholder="إبحث عن منتج..." oninput="render()">
 </div>
 </div>
+
 <main id="homePage">
-<!-- HERO الجديد -->
+
+<!-- ================= HERO ================= -->
+
 <section class="hero-wrap">
 <div class="hero">
-<!-- غصن الزيتون -->
-<div class="olive-branch">
-<svg viewBox="0 0 300 125" fill="none">
-<path d="M18 105C65 78 105 60 160 49C211 39 252 27 284 7"
-stroke="#244f3e"
-stroke-width="3"
-stroke-linecap="round"/>
-<path d="M72 76C63 61 52 52 38 48"
-stroke="#244f3e"
-stroke-width="2"
-stroke-linecap="round"/>
-<path d="M91 67C87 48 78 37 64 29"
-stroke="#244f3e"
-stroke-width="2"
-stroke-linecap="round"/>
-<path d="M116 59C116 40 110 28 99 17"
-stroke="#244f3e"
-stroke-width="2"
-stroke-linecap="round"/>
-<path d="M145 51C149 33 148 23 141 11"
-stroke="#244f3e"
-stroke-width="2"
-stroke-linecap="round"/>
-<path d="M177 43C184 29 189 20 187 8"
-stroke="#244f3e"
-stroke-width="2"
-stroke-linecap="round"/>
-<path d="M208 34C219 24 225 16 227 5"
-stroke="#244f3e"
-stroke-width="2"
-stroke-linecap="round"/>
-<ellipse cx="50" cy="45" rx="15" ry="5" transform="rotate(25 50 45)" fill="#527b61"/>
-<ellipse cx="73" cy="30" rx="15" ry="5" transform="rotate(38 73 30)" fill="#527b61"/>
-<ellipse cx="99" cy="17" rx="14" ry="5" transform="rotate(35 99 17)" fill="#527b61"/>
-<ellipse cx="141" cy="11" rx="14" ry="5" transform="rotate(70 141 11)" fill="#527b61"/>
-<ellipse cx="188" cy="9" rx="14" ry="5" transform="rotate(65 188 9)" fill="#527b61"/>
-<ellipse cx="227" cy="5" rx="14" ry="5" transform="rotate(60 227 5)" fill="#527b61"/>
-<ellipse cx="62" cy="72" rx="15" ry="5" transform="rotate(-25 62 72)" fill="#527b61"/>
-<ellipse cx="89" cy="63" rx="15" ry="5" transform="rotate(-30 89 63)" fill="#527b61"/>
-<ellipse cx="119" cy="56" rx="15" ry="5" transform="rotate(-35 119 56)" fill="#527b61"/>
-<ellipse cx="150" cy="49" rx="15" ry="5" transform="rotate(-30 150 49)" fill="#527b61"/>
-<ellipse cx="180" cy="41" rx="15" ry="5" transform="rotate(-30 180 41)" fill="#527b61"/>
-<ellipse cx="211" cy="32" rx="15" ry="5" transform="rotate(-30 211 32)" fill="#527b61"/>
-<circle cx="108" cy="60" r="4" fill="#b18b45"/>
-<circle cx="164" cy="46" r="4" fill="#b18b45"/>
-<circle cx="235" cy="28" r="4" fill="#b18b45"/>
+
+<!-- غصن الزيتون الكبير -->
+<div class="olive-art">
+<svg viewBox="0 0 650 430" fill="none">
+
+<!-- main branches -->
+<path class="olive-branch-line"
+d="M15 400 C120 315 190 265 295 225 C400 185 505 130 625 30"
+stroke-width="5"/>
+
+<path class="olive-branch-line"
+d="M155 315 C130 270 105 235 62 215"
+stroke-width="3"/>
+
+<path class="olive-branch-line"
+d="M205 282 C190 230 170 190 130 155"
+stroke-width="3"/>
+
+<path class="olive-branch-line"
+d="M265 245 C260 195 245 150 215 112"
+stroke-width="3"/>
+
+<path class="olive-branch-line"
+d="M335 215 C345 165 345 120 325 78"
+stroke-width="3"/>
+
+<path class="olive-branch-line"
+d="M405 180 C425 135 435 98 425 58"
+stroke-width="3"/>
+
+<path class="olive-branch-line"
+d="M480 140 C510 105 525 70 525 35"
+stroke-width="3"/>
+
+<!-- upper leaves -->
+<ellipse class="olive-leaf" cx="63" cy="214" rx="34" ry="11" transform="rotate(28 63 214)"/>
+<ellipse class="olive-leaf" cx="91" cy="238" rx="34" ry="11" transform="rotate(-25 91 238)"/>
+
+<ellipse class="olive-leaf" cx="130" cy="155" rx="34" ry="11" transform="rotate(35 130 155)"/>
+<ellipse class="olive-leaf" cx="157" cy="190" rx="34" ry="11" transform="rotate(-28 157 190)"/>
+
+<ellipse class="olive-leaf" cx="215" cy="112" rx="34" ry="11" transform="rotate(42 215 112)"/>
+<ellipse class="olive-leaf" cx="240" cy="153" rx="34" ry="11" transform="rotate(-25 240 153)"/>
+
+<ellipse class="olive-leaf" cx="325" cy="78" rx="34" ry="11" transform="rotate(55 325 78)"/>
+<ellipse class="olive-leaf" cx="345" cy="120" rx="34" ry="11" transform="rotate(-20 345 120)"/>
+
+<ellipse class="olive-leaf" cx="425" cy="58" rx="34" ry="11" transform="rotate(58 425 58)"/>
+<ellipse class="olive-leaf" cx="435" cy="98" rx="34" ry="11" transform="rotate(-20 435 98)"/>
+
+<ellipse class="olive-leaf" cx="525" cy="35" rx="34" ry="11" transform="rotate(55 525 35)"/>
+<ellipse class="olive-leaf" cx="510" cy="78" rx="34" ry="11" transform="rotate(-25 510 78)"/>
+
+<!-- lower leaves -->
+<ellipse class="olive-leaf" cx="120" cy="332" rx="35" ry="11" transform="rotate(-25 120 332)"/>
+<ellipse class="olive-leaf" cx="170" cy="295" rx="35" ry="11" transform="rotate(25 170 295)"/>
+
+<ellipse class="olive-leaf" cx="215" cy="270" rx="35" ry="11" transform="rotate(-28 215 270)"/>
+<ellipse class="olive-leaf" cx="275" cy="235" rx="35" ry="11" transform="rotate(25 275 235)"/>
+
+<ellipse class="olive-leaf" cx="315" cy="220" rx="35" ry="11" transform="rotate(-25 315 220)"/>
+<ellipse class="olive-leaf" cx="375" cy="190" rx="35" ry="11" transform="rotate(25 375 190)"/>
+
+<ellipse class="olive-leaf" cx="405" cy="175" rx="35" ry="11" transform="rotate(-25 405 175)"/>
+<ellipse class="olive-leaf" cx="470" cy="145" rx="35" ry="11" transform="rotate(25 470 145)"/>
+
+<!-- olives -->
+<circle class="olive-fruit" cx="105" cy="305" r="8"/>
+<circle class="olive-fruit" cx="185" cy="265" r="8"/>
+<circle class="olive-fruit" cx="290" cy="215" r="8"/>
+<circle class="olive-fruit" cx="390" cy="168" r="8"/>
+<circle class="olive-fruit" cx="500" cy="105" r="8"/>
+
 </svg>
 </div>
-<div class="hero-text">
-<div class="hero-small">
-✦ من بيتنا لبيتك <span>•</span> تِكرَم
+
+<!-- content -->
+<div class="hero-content">
+
+<div class="hero-kicker">
+من بيتنا لبيتك
 </div>
+
 <h1>
 كل شي بتحبّه<br>
 <span>بمكان واحد.</span>
 </h1>
+
 <p>
 منتجاتك اليومية، مختارة بعناية وبأسعار واضحة،
 من تِكرَم لبيتك.
 </p>
-<button onclick="scrollProducts()">
+
+<button class="hero-btn" onclick="scrollProducts()">
 تصفّح المنتجات
+<span>←</span>
 </button>
+
 <div class="hero-note">
 <span>🌿</span>
 <b>اختيارات يومية</b>
 <span>من تِكرَم</span>
 </div>
+
 </div>
-<!-- LAPTOP -->
-<div class="laptop">
-<div class="laptop-screen">
-<div class="laptop-camera"></div>
-<div class="mini-site">
-<div class="mini-header">
-<div class="mini-logo">تِكرَم</div>
-<div class="mini-icons">⌕　🛒　☰</div>
-</div>
-<div class="mini-search">
-إبحث عن منتج...
-</div>
-<div class="mini-hero">
-<div class="mini-copy">
-<small>✦ من بيتنا لبيتك</small>
-<strong>
-كل شي بتحبّه
-<em>بمكان واحد.</em>
-</strong>
-<div class="mini-button">تصفّح المنتجات</div>
-</div>
-<div class="mini-olive">
-<svg viewBox="0 0 100 60">
-<path d="M5 52C30 35 57 25 95 5"
-stroke="#244f3e"
-stroke-width="2"
-fill="none"/>
-<ellipse cx="28" cy="37" rx="10" ry="3" transform="rotate(35 28 37)" fill="#527b61"/>
-<ellipse cx="42" cy="29" rx="10" ry="3" transform="rotate(35 42 29)" fill="#527b61"/>
-<ellipse cx="57" cy="21" rx="10" ry="3" transform="rotate(35 57 21)" fill="#527b61"/>
-<ellipse cx="72" cy="14" rx="10" ry="3" transform="rotate(35 72 14)" fill="#527b61"/>
-</svg>
-</div>
-<div class="mini-laptop-products">
-<div class="mini-product">
-<div class="mini-product-img">☕</div>
-نجار
-</div>
-<div class="mini-product">
-<div class="mini-product-img">🧀</div>
-جبنة
-</div>
-<div class="mini-product">
-<div class="mini-product-img">🥛</div>
-يوغرت
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="laptop-base"></div>
-</div>
-<div class="hero-stamp">
+
+<!-- seal -->
+<div class="hero-seal">
 تِكرَم<br>
 🌿<br>
 من بيتنا<br>
 لبيتك
 </div>
+
 </div>
 </section>
+
 <section id="offersSection">
 <div class="offer-title">
 <div>
@@ -1306,6 +1221,7 @@ fill="none"/>
 </div>
 <div id="offerGrid" class="offer-grid"></div>
 </section>
+
 <section class="section" id="products">
 <div class="title">
 <div class="line"></div>
@@ -1315,7 +1231,9 @@ fill="none"/>
 <div id="cats" class="categories"></div>
 <div id="grid" class="grid"></div>
 </section>
+
 </main>
+
 <section id="productPage">
 <div class="detail">
 <div id="dimg" class="detail-img"></div>
@@ -1328,16 +1246,14 @@ fill="none"/>
 <div id="doldprice" class="detail-old-price"></div>
 <div id="dprice" class="detail-price"></div>
 <div id="ddesc" class="detail-desc"></div>
-<button class="detail-add" onclick="addSelected()">
-🛒 أضف للسلة
-</button>
-<button class="back" onclick="home()">
-← العودة
-</button>
+<button class="detail-add" onclick="addSelected()">🛒 أضف للسلة</button>
+<button class="back" onclick="home()">← العودة</button>
 </div>
 </div>
 </section>
+
 <div id="overlay" class="overlay" onclick="closePanels()"></div>
+
 <div id="optionModal" class="option-modal"
 onclick="if(event.target===this)closeOptionPicker()">
 <div class="option-box">
@@ -1347,6 +1263,7 @@ onclick="if(event.target===this)closeOptionPicker()">
 <div id="optionChoices" class="option-choices"></div>
 </div>
 </div>
+
 <div id="menuPanel" class="menu-panel">
 <div class="menu-head">
 <div class="menu-brand">
@@ -1355,29 +1272,37 @@ TEKRAM
 </div>
 <button class="menu-close" onclick="closePanels()">×</button>
 </div>
+
 <div class="menu-body">
 <button class="menu-btn" onclick="menuHome()">
 <span class="menu-icon">🏠</span>الرئيسية
 </button>
+
 <button class="menu-btn" onclick="menuProducts()">
 <span class="menu-icon">🛍️</span>المنتجات
 </button>
+
 <button class="menu-btn" onclick="menuOffers()">
 <span class="menu-icon">🔥</span>العروض
 </button>
+
 <button class="menu-btn" onclick="menuFavorites()">
 <span class="menu-icon">❤️</span>المفضلة
 </button>
+
 <button class="menu-btn" onclick="menuCart()">
 <span class="menu-icon">🛒</span>سلة المشتريات
 </button>
+
 <div class="menu-divider"></div>
+
 <div class="menu-note">
 تِكرَم 🤍<br>
 من بيتنا لبيتك
 </div>
 </div>
 </div>
+
 <div id="cartPanel" class="panel">
 <div class="panel-head">
 <h2>🛒 السلة</h2>
@@ -1389,25 +1314,28 @@ TEKRAM
 <span>المجموع</span>
 <span id="total">$0.00</span>
 </div>
-<button class="checkout" onclick="checkout()">
-إتمام الطلب
-</button>
+<button class="checkout" onclick="checkout()">إتمام الطلب</button>
 </div>
 </div>
+
 <div id="checkoutPanel" class="panel">
 <div class="panel-head">
 <h2>📦 إتمام الطلب</h2>
 <button class="close" onclick="closePanels()">×</button>
 </div>
+
 <div class="panel-body">
+
 <div class="form">
 <label>الاسم</label>
 <input id="name" class="input" placeholder="اكتب اسمك">
 </div>
+
 <div class="form">
 <label>رقم الهاتف</label>
 <input id="phone" class="input" placeholder="03 123 456">
 </div>
+
 <div class="form">
 <label>المنطقة</label>
 <select id="area" class="input">
@@ -1421,28 +1349,28 @@ TEKRAM
 <option>البازورية</option>
 </select>
 </div>
+
 <div class="form">
 <label>العنوان</label>
-<textarea
-id="address"
-class="input area"
-placeholder="اكتب العنوان"></textarea>
+<textarea id="address" class="input area" placeholder="اكتب العنوان"></textarea>
 </div>
+
 <div class="form">
 <label>ملاحظات</label>
-<textarea
-id="notes"
-class="input area"
-placeholder="اختياري"></textarea>
+<textarea id="notes" class="input area" placeholder="اختياري"></textarea>
 </div>
+
 <div id="summary" class="summary"></div>
+
 </div>
+
 <div class="panel-foot">
 <button id="send" class="checkout" onclick="sendOrder()">
 تأكيد الطلب ✓
 </button>
 </div>
 </div>
+
 <div class="bottom-nav">
 <button onclick="home()" class="active">
 <span>⌂</span>الرئيسية
@@ -1457,13 +1385,16 @@ placeholder="اختياري"></textarea>
 <span>🛒</span>السلة
 </button>
 </div>
+
 <footer>
 <div class="footer-logo">تِكرَم</div>
 <p>من بيتنا لبيتك 🤍</p>
 </footer>
+
 <script>
 const KEY="9edc6eae-83a6-4858-a452-12860503dcfa",
 DELIVERY=2;
+
 const cats=[
 "الكل",
 "مشروبات",
@@ -1473,6 +1404,7 @@ const cats=[
 "بلاستيك",
 "عناية شخصية"
 ];
+
 const products=[
 {id:"coffee-no",cat:"مشروبات",name:"قهوة نجار دون هال",en:"Najjar Coffee No Cardamom",price:3.35,weight:"180 غ / 450 غ",img:"./najjar-coffee-no-cardamom-180g.JPG",options:[
 ["180 غ",3.35,"./najjar-coffee-no-cardamom-180g.JPG"],
@@ -1569,76 +1501,77 @@ const products=[
 {id:"freshdays-long-72pcs",cat:"عناية شخصية",name:"فريش دايز طويل",en:"Freshdays Long",price:4.45,weight:"72 حبة",img:"./freshdays-long-72pcs.JPG"},
 {id:"upm-light-fork-50pcs",cat:"بلاستيك",name:"شوك بلاستيك UPM Light",en:"UPM Light Forks",price:.55,weight:"50 حبة",img:"./upm-light-fork-50pcs.JPG"}
 ];
+
 let cart=JSON.parse(localStorage.getItem("tekramCart")||"[]"),
 fav=JSON.parse(localStorage.getItem("tekramFavorites")||"[]"),
 category="الكل",
 onlyFav=false,
 selected=null;
+
 let tekramBackPosition=null;
+
 const $=id=>document.getElementById(id);
+
 function save(){
 localStorage.setItem("tekramCart",JSON.stringify(cart));
 localStorage.setItem("tekramFavorites",JSON.stringify(fav))
 }
+
 function focusSearch(){
 $("search").focus()
 }
+
 function nav(n){
 document.querySelectorAll(".bottom-nav button")
 .forEach((x,i)=>x.classList.toggle("active",i===n))
 }
+
 function categoriesHTML(){
 $("cats").innerHTML=cats.map(x=>
 `<button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">${x}</button>`
 ).join("")
 }
+
 function discountPercent(a,b){
 return Math.round((1-b/a)*100)
 }
+
 function priceHTML(p){
 return p.oldPrice
 ?`<span class="old-price">$${p.oldPrice.toFixed(2)}</span><span class="new-price">$${p.price.toFixed(2)}</span><span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>`
 :`<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`
 }
+
 function card(p){
 let f=fav.includes(p.id);
 return `
 <div class="card" onclick="detail('${p.id}')">
-<button class="fav ${f?"on":""}"
-onclick="toggleFav(event,'${p.id}')">
+<button class="fav ${f?"on":""}" onclick="toggleFav(event,'${p.id}')">
 ${f?"♥":"♡"}
 </button>
 <div class="pic">
-${p.img
-?`<img src="${p.img}" alt="${p.name}">`
-:p.icon||"🛒"}
+${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
 </div>
 <div class="info">
 <span class="badge">${p.cat}</span>
-${p.oldPrice
-?`<span class="offer-badge">🔥 عرض</span>`
-:""}
+${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}
 <div class="name">${p.name}</div>
 <div class="en">${p.en}</div>
 <div class="weight">${p.weight}</div>
 <div class="bottom">
 <div>${priceHTML(p)}</div>
-<button class="add"
-onclick="quick(event,'${p.id}')">
-+
-</button>
+<button class="add" onclick="quick(event,'${p.id}')">+</button>
 </div>
 </div>
 </div>`
 }
+
 function offerCard(p){
 return `
 <div class="offer-card" onclick="detail('${p.id}')">
 <div class="offer-label">🔥 عرض</div>
 <div class="pic">
-${p.img
-?`<img src="${p.img}" alt="${p.name}">`
-:p.icon||"🛒"}
+${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
 </div>
 <div class="info">
 <div class="name">${p.name}</div>
@@ -1646,46 +1579,44 @@ ${p.img
 <div class="weight">${p.weight}</div>
 <div class="bottom">
 <div>${priceHTML(p)}</div>
-<button class="add"
-onclick="quick(event,'${p.id}')">
-+
-</button>
+<button class="add" onclick="quick(event,'${p.id}')">+</button>
 </div>
 </div>
 </div>`
 }
+
 function renderOffers(){
 let o=products.filter(p=>p.oldPrice);
 $("offersSection").style.display=o.length?"block":"none";
-if(o.length)
-$("offerGrid").innerHTML=o.map(offerCard).join("")
+if(o.length)$("offerGrid").innerHTML=o.map(offerCard).join("")
 }
+
 function render(){
 let q=$("search").value.trim().toLowerCase();
+
 let list=products.filter(p=>
 (!onlyFav||fav.includes(p.id))&&
 (category==="الكل"||p.cat===category)&&
 (!q||(p.name+" "+p.en).toLowerCase().includes(q))
 );
+
 $("title").textContent=
-onlyFav
-?"المفضلة"
-:q
-?"نتائج البحث"
-:category==="الكل"
-?"منتجاتنا"
-:category;
+onlyFav?"المفضلة":
+q?"نتائج البحث":
+category==="الكل"?"منتجاتنا":category;
+
 $("sub").textContent=
-onlyFav
-?"المنتجات التي حفظتها ❤️"
-:"اختيارات من تِكرَم";
+onlyFav?"المنتجات التي حفظتها ❤️":"اختيارات من تِكرَم";
+
 $("grid").innerHTML=list.length
 ?list.map(card).join("")
 :`<div class="empty">ما لقينا منتجات مطابقة ❤️</div>`;
+
 categoriesHTML();
 renderOffers();
 updateCart()
 }
+
 function choose(x){
 category=x;
 onlyFav=false;
@@ -1693,12 +1624,14 @@ render();
 scrollProducts();
 nav(1)
 }
+
 function categoriesPage(){
 closePanels();
 home();
 nav(1);
 setTimeout(scrollProducts,50)
 }
+
 function favoritesPage(){
 category="الكل";
 onlyFav=true;
@@ -1708,6 +1641,7 @@ render();
 nav(2);
 scrollProducts()
 }
+
 function toggleFav(e,id){
 e.stopPropagation();
 fav=fav.includes(id)
@@ -1716,9 +1650,11 @@ fav=fav.includes(id)
 save();
 render()
 }
+
 function quick(e,id){
 e.stopPropagation();
 let p=products.find(x=>x.id===id);
+
 if(!p.options){
 add({
 name:p.name,
@@ -1728,46 +1664,55 @@ price:p.price
 openCart();
 return
 }
+
 openOptionPicker(p)
 }
+
 function openOptionPicker(p){
 $("optionTitle").textContent=p.name;
+
 $("optionChoices").innerHTML=p.options.map((o,i)=>
-`<button class="pick-option"
-onclick="pickOption('${p.id}',${i})">
+`<button class="pick-option" onclick="pickOption('${p.id}',${i})">
 ${o[0]}
 <small>$${o[1].toFixed(2)}</small>
 </button>`
 ).join("");
+
 $("optionModal").style.display="flex"
 }
+
 function pickOption(id,i){
 let p=products.find(x=>x.id===id),
 o=p.options[i];
+
 add({
 name:p.name,
 option:o[0],
 price:o[1]
 });
+
 closeOptionPicker();
 openCart()
 }
+
 function closeOptionPicker(){
 $("optionModal").style.display="none"
 }
+
 function detail(id,opt=0){
 let p=products.find(x=>x.id===id),
-o=p.options
-?p.options[opt]
-:[p.weight,p.price,p.img||p.icon||""];
+o=p.options?p.options[opt]:[p.weight,p.price,p.img||p.icon||""];
+
 if(tekramBackPosition===null)
 tekramBackPosition=window.scrollY;
+
 selected={
 name:p.name,
 option:o[0],
 price:o[1],
 oldPrice:p.oldPrice||null
 };
+
 $("dcat").textContent=p.cat;
 $("dname").textContent=p.name;
 $("den").textContent=p.en;
@@ -1775,39 +1720,42 @@ $("dweight").textContent=o[0];
 $("dprice").textContent="$"+o[1].toFixed(2);
 $("doldprice").textContent=p.oldPrice?"$"+p.oldPrice.toFixed(2):"";
 $("ddesc").textContent=p.name+", "+o[0];
+
 $("dimg").innerHTML=
 typeof o[2]==="string"&&o[2].startsWith(".")
 ?`<img src="${o[2]}" alt="${p.name}">`
 :`<span>${o[2]||p.icon||"🛒"}</span>`;
+
 $("options").innerHTML=p.options
 ?p.options.map((x,i)=>
-`<button class="option ${i===opt?"sel":""}"
-onclick="detail('${p.id}',${i})">
+`<button class="option ${i===opt?"sel":""}" onclick="detail('${p.id}',${i})">
 ${x[0]}
 </button>`
 ).join("")
 :"";
+
 $("homePage").style.display="none";
 $("productPage").style.display="block";
 window.scrollTo(0,0)
 }
+
 function add(x){
-let o=cart.find(i=>
-i.name===x.name&&i.option===x.option
-);
-o
-?o.qty++
-:cart.push({...x,qty:1});
+let o=cart.find(i=>i.name===x.name&&i.option===x.option);
+
+o?o.qty++:cart.push({...x,qty:1});
+
 save();
 updateCart()
 }
+
 function addSelected(){
 add(selected);
 openCart()
 }
+
 function updateCart(){
-$("count").textContent=
-cart.reduce((a,x)=>a+x.qty,0);
+$("count").textContent=cart.reduce((a,x)=>a+x.qty,0);
+
 if(!cart.length){
 $("cartBody").innerHTML=
 `<div class="cart-empty">
@@ -1815,9 +1763,11 @@ $("cartBody").innerHTML=
 السلة فارغة
 <small>أضف منتجاتك المفضلة من تِكرَم 🤍</small>
 </div>`;
+
 $("total").textContent="$0.00";
 return
 }
+
 $("cartBody").innerHTML=cart.map((x,i)=>
 `<div class="cart-item">
 <div class="cart-row">
@@ -1825,126 +1775,148 @@ $("cartBody").innerHTML=cart.map((x,i)=>
 <div class="cart-name">${x.name}</div>
 <span class="cart-option">${x.option}</span>
 </div>
-<b class="cart-price">
-$${(x.price*x.qty).toFixed(2)}
-</b>
+<b class="cart-price">$${(x.price*x.qty).toFixed(2)}</b>
 </div>
+
 <div class="controls">
-<button class="qty"
-onclick="qty(${i},-1)">−</button>
+<button class="qty" onclick="qty(${i},-1)">−</button>
 <b class="qty-number">${x.qty}</b>
-<button class="qty"
-onclick="qty(${i},1)">+</button>
-<button class="remove"
-onclick="removeItem(${i})">
-حذف
-</button>
+<button class="qty" onclick="qty(${i},1)">+</button>
+<button class="remove" onclick="removeItem(${i})">حذف</button>
 </div>
 </div>`
 ).join("");
+
 $("total").textContent="$"+
 cart.reduce((a,x)=>a+x.price*x.qty,0).toFixed(2)
 }
+
 function qty(i,n){
 cart[i].qty+=n;
+
 if(cart[i].qty<1)
 cart.splice(i,1);
+
 save();
 updateCart()
 }
+
 function removeItem(i){
 cart.splice(i,1);
 save();
 updateCart()
 }
+
 function openCart(){
 closePanels();
 $("cartPanel").style.right="0";
 $("overlay").style.display="block";
 nav(3)
 }
+
 function checkout(){
 if(!cart.length)
 return alert("السلة فارغة");
+
 closePanels();
+
 $("checkoutPanel").style.right="0";
 $("overlay").style.display="block";
+
 let s=cart.reduce((a,x)=>a+x.price*x.qty,0);
+
 $("summary").innerHTML=
 cart.map(x=>
 `<div class="summary-row">
-<span>
-${x.name}<br>
-<small>${x.option} × ${x.qty}</small>
-</span>
+<span>${x.name}<br><small>${x.option} × ${x.qty}</small></span>
 <b>$${(x.price*x.qty).toFixed(2)}</b>
 </div>`
 ).join("")+
+
 `<div class="summary-row">
 <b>المجموع الفرعي</b>
 <b>$${s.toFixed(2)}</b>
 </div>
+
 <div class="summary-row">
 <b>التوصيل</b>
 <b>$${DELIVERY.toFixed(2)}</b>
 </div>
+
 <div class="summary-row final">
 <b>المجموع النهائي</b>
 <b>$${(s+DELIVERY).toFixed(2)}</b>
 </div>`
 }
+
 function closePanels(){
 $("cartPanel").style.right="-430px";
 $("checkoutPanel").style.right="-430px";
 $("menuPanel").style.left="-430px";
 $("overlay").style.display="none"
 }
+
 function openMenu(){
 closePanels();
 $("menuPanel").style.left="0";
 $("overlay").style.display="block"
 }
+
 function menuHome(){
 closePanels();
 home()
 }
+
 function menuProducts(){
 closePanels();
 home();
 setTimeout(scrollProducts,100)
 }
+
 function menuOffers(){
 closePanels();
 home();
+
 setTimeout(()=>{
 let s=$("offersSection");
+
 s.style.display!=="none"
 ?s.scrollIntoView({behavior:"smooth"})
 :alert("ما في عروض مضافة حاليًا 🔥")
 },100)
 }
+
 function menuFavorites(){
 closePanels();
 favoritesPage()
 }
+
 function menuCart(){
 closePanels();
 openCart()
 }
+
 async function sendOrder(){
+
 let n=$("name").value.trim(),
 ph=$("phone").value.trim(),
 ar=$("area").value,
 ad=$("address").value.trim();
+
 if(!n||!ph||!ar||!ad)
 return alert("يرجى تعبئة الاسم والهاتف والمنطقة والعنوان");
-let sub=cart.reduce((a,x)=>a+x.price*x.qty,0),
-order=cart.map(x=>
+
+let sub=cart.reduce((a,x)=>a+x.price*x.qty,0);
+
+let order=cart.map(x=>
 `• ${x.name} | ${x.option} | ×${x.qty} | $${(x.price*x.qty).toFixed(2)}`
 ).join("\n");
+
 $("send").disabled=true;
 $("send").textContent="جاري الإرسال...";
+
 try{
+
 let r=await fetch(
 "https://api.web3forms.com/submit",
 {
@@ -1967,57 +1939,78 @@ delivery:"$"+DELIVERY.toFixed(2),
 total:"$"+(sub+DELIVERY).toFixed(2)
 })
 });
+
 let data=await r.json();
+
 if(data.success){
+
 alert("تم إرسال طلبك بنجاح ❤️");
+
 cart=[];
 save();
 updateCart();
 closePanels();
+
 $("name").value="";
 $("phone").value="";
 $("area").value="";
 $("address").value="";
 $("notes").value="";
+
 }else{
 alert("تعذر إرسال الطلب.")
 }
+
 }catch(e){
 alert("تعذر إرسال الطلب حالياً.")
 }
+
 $("send").disabled=false;
 $("send").textContent="تأكيد الطلب ✓"
 }
+
 function home(){
+
 $("productPage").style.display="none";
 $("homePage").style.display="block";
+
 category="الكل";
 onlyFav=false;
+
 render();
 nav(0);
+
 if(tekramBackPosition!==null){
+
 let y=tekramBackPosition;
 tekramBackPosition=null;
+
 setTimeout(()=>{
 window.scrollTo({
 top:y,
 behavior:"smooth"
 });
 },50);
+
 }else{
+
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
+
 }
 }
+
 function scrollProducts(){
 $("products").scrollIntoView({
 behavior:"smooth"
 })
 }
+
 categoriesHTML();
 render();
 </script>
+
 </body>
 </html>
