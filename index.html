@@ -57,13 +57,35 @@ transform:translateX(-50%);
 text-align:center;
 color:var(--g);
 font-weight:bold;
-line-height:1
+line-height:1;
+display:flex;
+flex-direction:column;
+align-items:center
 }
 
-.logo-wrap img{
-width:110px;
-height:55px;
-object-fit:contain
+.logo-main{
+display:flex;
+align-items:center;
+gap:4px;
+font-size:18px;
+font-weight:900;
+letter-spacing:1px;
+color:var(--g)
+}
+
+.logo-main svg{
+width:16px;
+height:16px;
+fill:var(--g);
+margin-top:-2px
+}
+
+.logo-sub{
+font-size:10px;
+letter-spacing:3px;
+color:var(--g);
+margin-top:2px;
+font-weight:600
 }
 
 .nav-icons{
@@ -122,55 +144,46 @@ font-size:13px
 .hero-banner{
 max-width:1250px;
 margin:20px auto;
-padding:30px;
+padding:35px 40px;
 background:var(--c);
-border-radius:12px;
+border-radius:14px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-min-height:230px
+min-height:250px;
+position:relative;
+overflow:hidden
 }
 
 .hero-text h1{
-font-size:clamp(22px,3.5vw,34px);
-line-height:1.3;
+font-size:clamp(22px,3vw,32px);
+line-height:1.4;
 color:var(--g);
-margin-bottom:15px;
+margin-bottom:20px;
 font-weight:800
 }
 
 .hero-image-container{
-width:320px;
+width:280px;
 height:180px;
 display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
-background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><path d="M10 10h80v80H10z"/></svg>');
-border-radius:10px
+align-items:flex-end;
+justify-content:flex-end;
+position:relative
 }
 
-.hero-bag-mock{
-width:150px;
-height:140px;
-background:#f7f3ed;
-border:2px dashed var(--g);
-border-radius:10px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:10px;
-font-size:11px;
-color:var(--g);
-box-shadow:0 8px 20px rgba(0,0,0,0.08)
+.hero-olive-tree{
+width:100%;
+height:100%;
+object-fit:contain;
+opacity:0.9;
+filter:drop-shadow(0 5px 10px rgba(0,0,0,0.06))
 }
 
 .btn{
 background:var(--g);
 color:#fff;
-padding:9px 22px;
+padding:10px 24px;
 border:0;
 border-radius:20px;
 font-size:13px;
@@ -179,6 +192,57 @@ transition:0.2s
 }
 .btn:hover{background:var(--g2)}
 
+.home-cats-grid{
+max-width:1250px;
+margin:25px auto 10px;
+padding:0 30px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px
+}
+
+.home-cat-card{
+background:#fff;
+border:1px solid #e2ded8;
+border-radius:12px;
+overflow:hidden;
+text-align:center;
+cursor:pointer;
+transition:.2s;
+display:flex;
+flex-direction:column
+}
+
+.home-cat-card:hover{
+transform:translateY(-3px);
+box-shadow:0 6px 18px rgba(0,0,0,0.06);
+border-color:var(--g)
+}
+
+.home-cat-img{
+width:100%;
+height:110px;
+background:#faf8f5;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:10px
+}
+
+.home-cat-img img{
+width:100%;
+height:100%;
+object-fit:contain
+}
+
+.home-cat-name{
+padding:10px;
+font-size:13px;
+font-weight:bold;
+color:var(--g);
+background:#fff
+}
+
 .section{
 max-width:1250px;
 margin:auto;
@@ -186,7 +250,7 @@ padding:15px 30px 120px
 }
 
 .title{
-margin:15px 0 15px
+margin:20px 0 15px
 }
 
 .title h2{
@@ -651,7 +715,7 @@ justify-content:space-between
 }
 
 .menu-brand{
-font:900 25px Georgia
+font:900 22px Georgia
 }
 
 .menu-brand small{
@@ -887,16 +951,13 @@ color:#fff
 
 @media(max-width:900px){
 .grid,.offer-grid{grid-template-columns:repeat(3,1fr)}
+.home-cats-grid{grid-template-columns:repeat(3,1fr)}
 }
 
 @media(max-width:650px){
 header{
 height:70px;
 padding:10px 15px
-}
-.logo-wrap img{
-width:95px;
-height:48px
 }
 .nav-icons{
 gap:2px
@@ -918,7 +979,15 @@ min-height:210px
 font-size:22px
 }
 .hero-image-container{
-width:120px
+width:110px
+}
+.home-cats-grid{
+grid-template-columns:repeat(2,1fr);
+padding:0 15px;
+gap:8px
+}
+.home-cat-img{
+height:95px
 }
 .section{
 padding:10px 15px 110px
@@ -966,7 +1035,11 @@ width:310px
 </div>
 
 <a href="#" onclick="home();return false" class="logo-wrap">
-<img src="./tekram-logo.JPG" alt="تِكرَم">
+<div class="logo-main">
+  <svg viewBox="0 0 24 24"><path d="M17.5,3C15.8,3 14.3,4.1 13.7,5.6C12.3,5.2 10.7,5.6 9.7,6.8C8.5,8.1 8.5,10 9.4,11.5L4.7,16.2C4.3,16.6 4.3,17.2 4.7,17.6C5.1,18 5.7,18 6.1,17.6L10.8,12.9C12.3,13.8 14.2,13.8 15.5,12.6C16.7,11.6 17.1,10 16.7,8.6C18.2,8 19.3,6.5 19.3,4.8C19.3,3.8 18.5,3 17.5,3M14.8,11.2C13.9,12.1 12.5,12.1 11.6,11.2C10.7,10.3 10.7,8.9 11.6,8C12.5,7.1 13.9,7.1 14.8,8C15.7,8.9 15.7,10.3 14.8,11.2Z"/></svg>
+  TEKRAM
+</div>
+<span class="logo-sub">تِكرَم</span>
 </a>
 
 <div class="nav-icons">
@@ -993,12 +1066,38 @@ width:310px
 </div>
 
 <div class="hero-image-container">
-<div class="hero-bag-mock">
-<span>🛍️ <b>TEKRAM</b></span>
-<small style="margin-top:5px; color:#555;">من بيتنا لبيتك</small>
-</div>
+<!-- غصن الزيتون الواقعي في البانر -->
+<img src="./olive-branch.png" alt="غصن الزيتون" class="hero-olive-tree">
 </div>
 </section>
+
+<!-- الأقسام المصغرة تماماً مثل الصورة -->
+<div class="home-cats-grid">
+<div class="home-cat-card" onclick="choose('بقالة')">
+<div class="home-cat-img"><img src="./cat-grocery.JPG" alt="البقالة"></div>
+<div class="home-cat-name">البقالة</div>
+</div>
+
+<div class="home-cat-card" onclick="choose('سناكس')">
+<div class="home-cat-img"><img src="./cat-snacks.JPG" alt="الوجبات الخفيفة"></div>
+<div class="home-cat-name">الوجبات الخفيفة</div>
+</div>
+
+<div class="home-cat-card" onclick="choose('ألبان')">
+<div class="home-cat-img"><img src="./cat-dairy.JPG" alt="الألبان"></div>
+<div class="home-cat-name">الألبان</div>
+</div>
+
+<div class="home-cat-card" onclick="choose('مشروبات')">
+<div class="home-cat-img"><img src="./cat-drinks.JPG" alt="المشروبات"></div>
+<div class="home-cat-name">المشروبات</div>
+</div>
+
+<div class="home-cat-card" onclick="choose('منظفات')">
+<div class="home-cat-img"><img src="./cat-household.JPG" alt="المنزلية"></div>
+<div class="home-cat-name">المنزلية</div>
+</div>
+</div>
 
 <section id="offersSection">
 <div class="offer-title">
