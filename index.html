@@ -94,87 +94,127 @@ box-shadow:0 2px 8px #0001;
 background:var(--c);
 }
 
-/* SEARCH */
-.search-wrap{
-background:#f8f3ea;
-padding:0 5% 10px;
-display:none; /* يمكن إظهاره عند الحاجة */
-}
-
-/* HERO (مطابق للصورة تماماً) */
-.hero-wrap{
-padding:20px 5%;
-}
-
-.hero{
+/* HERO SECTION (مطابق للصورة الجديدة تماماً) */
+.hero-section{
 max-width:1250px;
-margin:auto;
-min-height:380px;
-background:#f4eee1; /* لون الخلفية البيج المريح */
-border-radius:24px;
-color:var(--g);
-position:relative;
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-border:1px solid #ebdcc5;
-box-shadow:var(--shadow);
+margin: 20px auto;
+padding: 0 5%;
 }
 
-/* صورة غصن الزيتون على الجانب الأيمن من الخلفية */
-.hero::before {
+.hero-banner {
+width: 100%;
+background: #f4eee1; /* لون الخلفية البيج المريح */
+border-radius: 24px;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+border: 1px solid #ebdcc5;
+box-shadow: var(--shadow);
+padding: 60px 20px;
+}
+
+/* صورة الخلفية وغصن الشجر على اليمين تماماً كما في صورتك */
+.hero-banner::before {
 content: "";
 position: absolute;
-right: 0;
-top: 0;
-bottom: 0;
-width: 35%;
-background: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=600&auto=format&fit=crop') no-repeat center center;
+inset: 0;
+background: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop') no-repeat right center;
 background-size: cover;
-opacity: 0.25;
+opacity: 0.28;
 pointer-events: none;
 }
 
-.hero-text{
-padding:40px 20px;
-max-width:700px;
-position:relative;
-z-index:2;
-margin:auto;
+.hero-content {
+position: relative;
+z-index: 2;
+max-width: 650px;
+margin: auto;
 }
 
-.hero h1{
-font-size:clamp(30px, 4.5vw, 48px);
-line-height:1.3;
-margin:0 0 24px;
-font-weight:700;
-color:#1a382c;
+.hero-content h1 {
+font-size: clamp(26px, 4vw, 42px);
+line-height: 1.4;
+margin-bottom: 24px;
+font-weight: 700;
+color: #1c3d30;
 }
 
-.hero button{
-border:0;
-background:var(--g); /* لون خلفية زر تسوق الآن الأخضر الغامق */
-color:#fff;
-padding:12px 32px;
-border-radius:30px;
-font-weight:bold;
-font-size:15px;
-box-shadow:0 4px 12px #234b3a20;
-transition:all 0.2s ease;
+.hero-btn {
+border: 0;
+background: #234b3a; /* لون الزر الأخضر الغامق المطابق للصورة */
+color: #fff;
+padding: 12px 35px;
+border-radius: 30px;
+font-weight: bold;
+font-size: 15px;
+box-shadow: 0 4px 15px #234b3a25;
+transition: all 0.2s ease;
 }
 
-.hero button:hover{
-background:var(--g2);
-transform:translateY(-2px);
+.hero-btn:hover {
+background: var(--g2);
+transform: translateY(-2px);
+}
+
+/* CATEGORIES ROW (الأقسام تحت الهيرو مباشرة مثل الصورة) */
+.categories-slider {
+max-width: 1250px;
+margin: 20px auto 30px;
+padding: 0 5%;
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 15px;
+}
+
+.cat-box {
+background: var(--w);
+border: 1px solid #e4d9c8;
+border-radius: 18px;
+padding: 12px;
+text-align: center;
+cursor: pointer;
+transition: all 0.2s ease;
+box-shadow: 0 4px 12px #234b3a06;
+}
+
+.cat-box:hover {
+transform: translateY(-3px);
+border-color: var(--g);
+}
+
+.cat-img {
+width: 100%;
+aspect-ratio: 1.2;
+background: #f1e8da;
+border-radius: 12px;
+overflow: hidden;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.cat-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+mix-blend-mode: multiply;
+}
+
+.cat-title {
+font-size: 14px;
+font-weight: bold;
+color: #234b3a;
 }
 
 /* SECTIONS */
 .section{
 max-width:1250px;
 margin:auto;
-padding:25px 5% 120px;
+padding:15px 5% 120px;
 }
 
 .title{
@@ -198,35 +238,6 @@ letter-spacing:-.3px;
 color:var(--m);
 font-size:13px;
 margin-top:2px;
-}
-
-/* CATEGORIES */
-.categories{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-bottom:22px;
-}
-
-.categories button{
-border:1px solid var(--b);
-background:#fffdf9;
-color:var(--g);
-padding:8px 15px;
-border-radius:12px;
-font-size:11px;
-font-weight:bold;
-transition:.2s;
-}
-
-.categories button:hover{
-border-color:var(--g);
-}
-
-.categories .active{
-background:var(--g);
-color:#fff;
-border-color:var(--g);
 }
 
 /* PRODUCTS */
@@ -925,9 +936,12 @@ font:28px Georgia;
 color:var(--gold);
 }
 
-/* MOBILE */
+/* MOBILE RESPONSIVE */
 @media(max-width:900px){
 .grid,.offer-grid{
+grid-template-columns:repeat(3,1fr);
+}
+.categories-slider{
 grid-template-columns:repeat(3,1fr);
 }
 }
@@ -936,52 +950,54 @@ grid-template-columns:repeat(3,1fr);
 .site-logo{
 max-height:50px;
 }
-
-.hero{
-min-height:280px;
+.hero-banner{
+padding:40px 15px;
+border-radius:16px;
 }
-
-.hero h1{
-font-size:24px;
+.hero-content h1{
+font-size:22px;
+margin-bottom:18px;
 }
-
-.hero button{
+.hero-btn{
 padding:10px 24px;
 font-size:13px;
 }
-
+.categories-slider{
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+}
+.cat-box{
+padding:8px;
+border-radius:12px;
+}
+.cat-title{
+font-size:11px;
+}
 .grid,.offer-grid{
 grid-template-columns:repeat(2,1fr);
 gap:10px;
 }
-
 .card,.offer-card{
 border-radius:15px;
 }
-
 .pic{
 margin:7px;
 border-radius:11px;
 }
-
 .info{
 padding:6px 9px 12px;
 }
-
 .name{
 font-size:12px;
 }
-
 .price,.new-price{
 font-size:15px;
 }
-
 .add{
 width:31px;
 height:31px;
 font-size:17px;
 }
-
 .fav{
 top:11px;
 left:11px;
@@ -989,33 +1005,26 @@ width:31px;
 height:31px;
 font-size:17px;
 }
-
 .detail{
 grid-template-columns:1fr;
 border-radius:20px;
 }
-
 .detail-img,.detail-img img{
 min-height:290px;
 }
-
 .detail-info{
 padding:25px;
 }
-
 .detail-name{
 font-size:28px;
 }
-
 .menu-panel{
 width:330px;
 }
-
 .bottom-nav{
 bottom:10px;
 padding:6px 10px;
 }
-
 .bottom-nav button{
 padding:2px 7px;
 }
@@ -1027,7 +1036,6 @@ padding:2px 7px;
 
 <header>
 <div class="head">
-
 <div class="icons">
 <button class="icon cart-top" onclick="openCart()">
 🛒<b id="count" class="count">0</b>
@@ -1040,20 +1048,44 @@ padding:2px 7px;
 <div class="icons">
 <button class="icon" onclick="openMenu()">☰</button>
 </div>
-
 </div>
 </header>
 
 <main id="homePage">
 
-<section class="hero-wrap">
-<div class="hero">
-<div class="hero-text">
+<!-- قسم الـ Hero المطابق للصورة تماماً -->
+<section class="hero-section">
+<div class="hero-banner">
+<div class="hero-content">
 <h1>كل ما تحتاجه لبيتك<br>في مكان واحد</h1>
-<button onclick="scrollProducts()">تسوق الآن</button>
+<button class="hero-btn" onclick="scrollProducts()">تسوق الآن</button>
 </div>
 </div>
 </section>
+
+<!-- الأقسام تحت الهيرو تماماً مثل الصورة -->
+<div class="categories-slider">
+<div class="cat-box" onclick="choose('مواد تنظيف')">
+<div class="cat-img"><img src="./Oxi-dishwashing-liquid-apple-600ml.JPG" alt="المنزلية"></div>
+<div class="cat-title">المنزلية</div>
+</div>
+<div class="cat-box" onclick="choose('مشروبات')">
+<div class="cat-img"><img src="./najjar-coffee-no-cardamom-180g.JPG" alt="المشروبات"></div>
+<div class="cat-title">المشروبات</div>
+</div>
+<div class="cat-box" onclick="choose('ألبان وأجبان')">
+<div class="cat-img"><img src="./Ghazal-cheese-370g.png" alt="الألبان"></div>
+<div class="cat-title">الألبان</div>
+</div>
+<div class="cat-box" onclick="choose('مواد غذائية')">
+<div class="cat-img"><img src="./Nutella-750g.JPG" alt="الوجبات الخفيفة"></div>
+<div class="cat-title">الوجبات الخفيفة</div>
+</div>
+<div class="cat-box" onclick="choose('بلاستيك')">
+<div class="cat-img"><img src="./novin-plastic-spoons-50pcs.JPG" alt="البقالة"></div>
+<div class="cat-title">البقالة</div>
+</div>
+</div>
 
 <section id="offersSection">
 <div class="offer-title">
@@ -1073,7 +1105,6 @@ padding:2px 7px;
 <p id="sub">اختيارات من تِكرَم</p>
 </div>
 
-<div id="cats" class="categories"></div>
 <div id="grid" class="grid"></div>
 </section>
 
@@ -1260,10 +1291,6 @@ function nav(n){
 document.querySelectorAll(".bottom-nav button").forEach((x,i)=>x.classList.toggle("active",i===n));
 }
 
-function categoriesHTML(){
-$("cats").innerHTML=cats.map(x=>`<button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">${x}</button>`).join("");
-}
-
 function discountPercent(a,b){return Math.round((1-b/a)*100);}
 
 function priceHTML(p){
@@ -1312,12 +1339,10 @@ if(o.length) $("offerGrid").innerHTML=o.map(offerCard).join("");
 }
 
 function render(){
-let q="";
 let list=products.filter(p=>(!onlyFav||fav.includes(p.id))&&(category==="الكل"||p.cat===category));
 $("title").textContent=onlyFav?"المفضلة":category==="الكل"?"منتجاتنا":category;
 $("sub").textContent=onlyFav?"المنتجات التي حفظتها ❤️":"اختيارات من تِكرَم";
 $("grid").innerHTML=list.length?list.map(card).join(""):`<div class="empty">ما لقينا منتجات مطابقة ❤️</div>`;
-categoriesHTML();
 renderOffers();
 updateCart();
 }
@@ -1397,7 +1422,7 @@ category="الكل"; onlyFav=false; render(); nav(0);
 if(tekramBackPosition!==null){let y=tekramBackPosition; tekramBackPosition=null; setTimeout(()=>window.scrollTo({top:y,behavior:"smooth"}),50);}else{window.scrollTo({top:0,behavior:"smooth"});}
 }
 function scrollProducts(){ $("products").scrollIntoView({behavior:"smooth"}); }
-categoriesHTML(); render();
+render();
 </script>
 
 </body>
