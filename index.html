@@ -148,35 +148,26 @@ left:-145px;
 bottom:-190px
 }
 
-/* large olive branch */
+/* olive branch image */
 .olive-art{
 position:absolute;
 left:2%;
-bottom:-5px;
-width:58%;
-max-width:650px;
-height:430px;
+bottom:-10px;
+width:45%;
+max-width:450px;
+height:440px;
 z-index:1;
-pointer-events:none
+pointer-events:none;
+display:flex;
+align-items:flex-end;
+justify-content:center;
 }
 
-.olive-art svg{
+.olive-art img{
 width:100%;
 height:100%;
-overflow:visible
-}
-
-/* little olive leaves decoration */
-.olive-leaf{
-fill:#527b61
-}
-.olive-branch-line{
-stroke:#244f3e;
-stroke-linecap:round;
-fill:none
-}
-.olive-fruit{
-fill:#9a7940
+object-fit:contain;
+filter: drop-shadow(0 10px 15px rgba(24, 61, 48, 0.15));
 }
 
 /* hero content */
@@ -933,9 +924,9 @@ grid-template-columns:repeat(3,1fr)
 min-height:500px
 }
 .olive-art{
-width:62%;
+width:50%;
 height:380px;
-left:-4%
+left:1%
 }
 .hero-content{
 width:58%;
@@ -1007,11 +998,11 @@ font-size:10px
 }
 
 .olive-art{
-width:125%;
+width:75%;
 height:310px;
-left:-18%;
-bottom:-65px;
-opacity:.82
+left:12%;
+bottom:-20px;
+opacity:.95
 }
 
 .hero-seal{
@@ -1095,79 +1086,9 @@ width:330px
 <section class="hero-wrap">
 <div class="hero">
 
-<!-- غصن الزيتون الكبير -->
+<!-- صورة غصن الزيتون -->
 <div class="olive-art">
-<svg viewBox="0 0 650 430" fill="none">
-
-<!-- main branches -->
-<path class="olive-branch-line"
-d="M15 400 C120 315 190 265 295 225 C400 185 505 130 625 30"
-stroke-width="5"/>
-
-<path class="olive-branch-line"
-d="M155 315 C130 270 105 235 62 215"
-stroke-width="3"/>
-
-<path class="olive-branch-line"
-d="M205 282 C190 230 170 190 130 155"
-stroke-width="3"/>
-
-<path class="olive-branch-line"
-d="M265 245 C260 195 245 150 215 112"
-stroke-width="3"/>
-
-<path class="olive-branch-line"
-d="M335 215 C345 165 345 120 325 78"
-stroke-width="3"/>
-
-<path class="olive-branch-line"
-d="M405 180 C425 135 435 98 425 58"
-stroke-width="3"/>
-
-<path class="olive-branch-line"
-d="M480 140 C510 105 525 70 525 35"
-stroke-width="3"/>
-
-<!-- upper leaves -->
-<ellipse class="olive-leaf" cx="63" cy="214" rx="34" ry="11" transform="rotate(28 63 214)"/>
-<ellipse class="olive-leaf" cx="91" cy="238" rx="34" ry="11" transform="rotate(-25 91 238)"/>
-
-<ellipse class="olive-leaf" cx="130" cy="155" rx="34" ry="11" transform="rotate(35 130 155)"/>
-<ellipse class="olive-leaf" cx="157" cy="190" rx="34" ry="11" transform="rotate(-28 157 190)"/>
-
-<ellipse class="olive-leaf" cx="215" cy="112" rx="34" ry="11" transform="rotate(42 215 112)"/>
-<ellipse class="olive-leaf" cx="240" cy="153" rx="34" ry="11" transform="rotate(-25 240 153)"/>
-
-<ellipse class="olive-leaf" cx="325" cy="78" rx="34" ry="11" transform="rotate(55 325 78)"/>
-<ellipse class="olive-leaf" cx="345" cy="120" rx="34" ry="11" transform="rotate(-20 345 120)"/>
-
-<ellipse class="olive-leaf" cx="425" cy="58" rx="34" ry="11" transform="rotate(58 425 58)"/>
-<ellipse class="olive-leaf" cx="435" cy="98" rx="34" ry="11" transform="rotate(-20 435 98)"/>
-
-<ellipse class="olive-leaf" cx="525" cy="35" rx="34" ry="11" transform="rotate(55 525 35)"/>
-<ellipse class="olive-leaf" cx="510" cy="78" rx="34" ry="11" transform="rotate(-25 510 78)"/>
-
-<!-- lower leaves -->
-<ellipse class="olive-leaf" cx="120" cy="332" rx="35" ry="11" transform="rotate(-25 120 332)"/>
-<ellipse class="olive-leaf" cx="170" cy="295" rx="35" ry="11" transform="rotate(25 170 295)"/>
-
-<ellipse class="olive-leaf" cx="215" cy="270" rx="35" ry="11" transform="rotate(-28 215 270)"/>
-<ellipse class="olive-leaf" cx="275" cy="235" rx="35" ry="11" transform="rotate(25 275 235)"/>
-
-<ellipse class="olive-leaf" cx="315" cy="220" rx="35" ry="11" transform="rotate(-25 315 220)"/>
-<ellipse class="olive-leaf" cx="375" cy="190" rx="35" ry="11" transform="rotate(25 375 190)"/>
-
-<ellipse class="olive-leaf" cx="405" cy="175" rx="35" ry="11" transform="rotate(-25 405 175)"/>
-<ellipse class="olive-leaf" cx="470" cy="145" rx="35" ry="11" transform="rotate(25 470 145)"/>
-
-<!-- olives -->
-<circle class="olive-fruit" cx="105" cy="305" r="8"/>
-<circle class="olive-fruit" cx="185" cy="265" r="8"/>
-<circle class="olive-fruit" cx="290" cy="215" r="8"/>
-<circle class="olive-fruit" cx="390" cy="168" r="8"/>
-<circle class="olive-fruit" cx="500" cy="105" r="8"/>
-
-</svg>
+<img src="image_9.png" alt="غصن زيتون">
 </div>
 
 <!-- content -->
