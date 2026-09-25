@@ -4,209 +4,893 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>تِكرَم | Tekram</title>
+
 <style>
-:root{--g:#183d30;--g2:#244f3e;--c:#f7f0e4;--c2:#eee4d3;--o:#df5035;--gold:#e5aa45;--w:#fffdf8;--m:#77786f;--b:#e5dac8}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Tahoma,Arial,sans-serif;background:var(--c);color:var(--g);line-height:1.6}button,input,textarea,select{font-family:inherit}button{cursor:pointer}
-
-header{background:var(--g);padding:10px 5%;position:sticky;top:0;z-index:20}.head{max-width:1250px;margin:auto;display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:12px}.icons{display:flex;gap:8px}.icons:last-child{justify-content:flex-start}.site-logo{width:100%;max-width:280px;height:70px;margin:auto;display:block;object-fit:contain}.icon{width:45px;height:45px;border:0;border-radius:50%;background:var(--w);color:var(--g);font-size:20px}.cart-top{position:relative}.count{position:absolute;top:-4px;right:-3px;background:var(--o);color:#fff;border-radius:20px;padding:1px 6px;font-size:10px}
-
-.search-wrap{background:var(--g);padding:0 5% 20px}.search{max-width:1250px;margin:auto;background:var(--w);height:50px;border-radius:30px;display:flex;align-items:center;padding:0 18px;gap:8px}.search input{width:100%;border:0;outline:0;background:none;font-size:14px}
-
-.hero-wrap,.section{padding:25px 5%}.hero{max-width:1250px;margin:auto;min-height:350px;background:var(--g);border-radius:30px;color:#fff;position:relative;overflow:hidden;display:flex;align-items:center}.hero:before{content:"";position:absolute;width:400px;height:400px;border:50px solid #244a3a;border-radius:50%;right:-100px;top:-240px}.hero-text{padding:40px 6%;max-width:650px;position:relative;z-index:2}.hero-small{color:var(--gold);font-weight:bold}.hero h1{font-size:clamp(38px,6vw,62px);line-height:1.1;margin:10px 0 18px}.hero h1 span{color:#f4b04b}.hero p{color:#eee;margin-bottom:22px;font-size:14px}.hero button{border:0;background:var(--o);color:#fff;padding:13px 22px;border-radius:25px;font-weight:bold}.basket{position:absolute;left:8%;bottom:35px;width:270px;height:150px;background:#35634e;border-radius:25px 25px 55px 55px;border:8px solid #2c5644}.basket i{position:absolute;width:65px;height:75px;border-radius:10px;background:#fff;box-shadow:0 6px 12px #0003}.i1{background:#d93627!important;left:25px;top:-50px}.i2{background:#e8a936!important;right:25px;top:-65px}.i3{left:105px;top:-80px}
-
-.section{max-width:1250px;margin:auto;padding-bottom:120px}.title{margin-bottom:20px}.line{width:45px;height:3px;background:var(--g);margin-bottom:10px}.title h2{font-size:30px}.title p{color:var(--m);font-size:13px}.categories{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}.categories button{border:1px solid var(--b);background:var(--w);color:var(--g);padding:8px 14px;border-radius:20px;font-size:11px;font-weight:bold}.categories .active{background:var(--g);color:#fff}
-
-.grid,.offer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card,.offer-card{position:relative;background:var(--w);border:1px solid var(--b);border-radius:20px;overflow:hidden;cursor:pointer}.card{transition:.2s}.card:hover{transform:translateY(-4px)}.pic{margin:9px;aspect-ratio:1;background:#eee5d6;border-radius:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:65px}.pic img{width:100%;height:100%;object-fit:contain}.info{padding:7px 12px 14px}.badge{display:inline-block;background:#f3c97d;color:#5c3f17;padding:3px 8px;border-radius:15px;font-size:9px;font-weight:bold}.offer-badge,.offer-label{background:var(--o);color:#fff;padding:3px 8px;border-radius:15px;font-size:9px;font-weight:bold}.offer-badge{margin-right:4px}.offer-label{position:absolute;top:15px;right:15px;padding:5px 10px;z-index:2}.name{font-size:14px;font-weight:bold;margin-top:5px}.en{font-size:9px;color:var(--m)}.weight{font-size:10px;color:#555;margin-top:3px}.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:10px}.price{font-size:18px;font-weight:bold;direction:ltr}.old-price{font-size:11px;color:#999;text-decoration:line-through;margin-left:5px;direction:ltr}.new-price{font-size:18px;font-weight:bold;color:var(--o);direction:ltr}.discount{font-size:9px;font-weight:bold;color:var(--o);margin-right:5px}.add{width:35px;height:35px;border:0;border-radius:50%;background:var(--g);color:#fff}.fav{position:absolute;top:15px;left:15px;z-index:3;width:34px;height:34px;border:0;border-radius:50%;background:#fffdf8ee;color:var(--g);font-size:19px;box-shadow:0 2px 8px #0002}.fav.on{color:var(--o)}.empty{grid-column:1/-1;text-align:center;padding:50px;color:var(--m)}#offersSection{display:none;max-width:1250px;margin:auto;padding:0 5% 20px}.offer-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.offer-title h2{font-size:26px}.offer-title span{font-size:12px;color:var(--m)}
-
-#productPage{display:none;padding:30px 5% 120px}.detail{max-width:1000px;margin:auto;background:var(--w);border-radius:25px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}.detail-img{min-height:430px;background:#eee5d6;display:flex;align-items:center;justify-content:center;font-size:130px}.detail-img img{width:100%;height:100%;min-height:430px;object-fit:contain}.detail-info{padding:40px;display:flex;flex-direction:column;justify-content:center}.detail-cat{color:var(--o);font-size:12px;font-weight:bold}.detail-name{font-size:32px;font-weight:bold}.detail-en{color:var(--m);font-size:12px}.options{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.option{border:1px solid var(--g);background:none;color:var(--g);padding:8px 13px;border-radius:10px;font-weight:bold}.option.sel{background:var(--g);color:#fff}.detail-price{font-size:30px;font-weight:bold;direction:ltr}.detail-old-price{font-size:15px;color:#999;text-decoration:line-through;direction:ltr}.detail-desc{font-size:13px;color:#59625b;margin:10px 0 18px}.detail-add,.back{border:0;padding:13px;border-radius:13px;font-weight:bold;font-size:15px}.detail-add{background:var(--o);color:#fff}.back{background:var(--g);color:#fff;margin-top:8px}
-
-.bottom-nav{position:fixed;z-index:50;bottom:14px;left:50%;transform:translateX(-50%);width:min(850px,94%);background:#fffdf8ee;backdrop-filter:blur(10px);border:1px solid var(--b);border-radius:30px;padding:8px 15px;display:flex;justify-content:space-around;box-shadow:0 8px 30px #0002}.bottom-nav button{border:0;background:none;color:var(--m);font-size:10px;font-weight:bold}.bottom-nav span{display:block;font-size:21px}.bottom-nav .active{color:var(--o)}
-
-.overlay{display:none;position:fixed;inset:0;background:#0006;z-index:100}.panel,.menu-panel{position:fixed;z-index:101;top:0;height:100vh;background:var(--w);transition:.3s;display:flex;flex-direction:column}.panel{right:-430px;width:410px;max-width:94%}.menu-panel{left:-430px;width:360px;max-width:90%;box-shadow:8px 0 30px #0002}.menu-head{padding:22px 18px;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:space-between}.menu-brand{font:900 25px Georgia}.menu-brand small{display:block;font:11px Tahoma;color:var(--gold);font-weight:normal}.menu-close{border:0;background:none;color:#fff;font-size:28px}.menu-body{padding:14px}.menu-btn{width:100%;border:0;background:none;display:flex;align-items:center;gap:13px;padding:15px 13px;border-radius:14px;color:var(--g);font-size:14px;font-weight:bold;text-align:right;margin-bottom:4px}.menu-btn:hover{background:var(--c)}.menu-icon{width:36px;height:36px;border-radius:11px;background:var(--c2);display:flex;align-items:center;justify-content:center;font-size:19px}.menu-divider{height:1px;background:var(--b);margin:10px 5px}.menu-note{padding:15px;margin-top:10px;background:var(--c);border-radius:15px;font-size:11px;color:var(--m);text-align:center}.panel-head{padding:18px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between}.close{border:0;background:var(--c2);border-radius:10px;width:36px;height:36px;font-size:20px}.panel-body{flex:1;overflow:auto;padding:18px}.cart-item{padding:15px 0;border-bottom:1px solid var(--b)}.cart-row{display:flex;justify-content:space-between;gap:12px}.cart-name{font-size:14px;font-weight:bold}.cart-option{display:block;color:var(--m);font-size:11px}.cart-price{color:var(--o);direction:ltr}.controls{display:flex;align-items:center;gap:10px;margin-top:10px}.qty{width:32px;height:32px;border:0;border-radius:9px;background:var(--g);color:#fff;font-size:18px}.qty-number{min-width:20px;text-align:center}.remove{border:0;background:none;color:var(--o);margin-right:auto;font-size:11px}.cart-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;text-align:center;color:var(--m)}.cart-empty span{font-size:50px}.panel-foot{padding:17px;border-top:1px solid var(--b);background:var(--w)}.total{display:flex;justify-content:space-between;font-size:19px;font-weight:bold;margin-bottom:12px}.checkout{width:100%;border:0;background:var(--o);color:#fff;padding:13px;border-radius:13px;font-weight:bold}.form{margin-bottom:12px}.form label{font-size:12px;font-weight:bold}.input{width:100%;border:1px solid var(--b);border-radius:10px;padding:10px;margin-top:4px;outline:0;background:#fff}.area{height:65px;resize:none}.summary{background:var(--c);padding:12px;border-radius:13px;margin-top:12px}.summary-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}.final{border-top:1px solid var(--b);padding-top:10px;font-weight:bold;font-size:17px}footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px 110px}.footer-logo{font:28px Georgia;color:var(--gold)}
-
-@media(max-width:900px){.grid,.offer-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:650px){header{padding:8px 4%}.head{grid-template-columns:auto 1fr auto}.site-logo{height:58px;max-width:210px}.icon{width:40px;height:40px}.hero{min-height:370px}.hero-text{padding:35px 7%}.hero h1{font-size:40px}.basket{display:none}.grid,.offer-grid{grid-template-columns:repeat(2,1fr);gap:10px}.name{font-size:12px}.price,.new-price{font-size:16px}.add{width:32px;height:32px}.detail{grid-template-columns:1fr}.detail-img,.detail-img img{min-height:300px}.detail-info{padding:25px}.detail-name{font-size:28px}.menu-panel{width:330px}.panel{width:390px}}
+:root{
+--g:#183d30;--g2:#244f3e;--c:#f7f0e4;--c2:#eee4d3;
+--o:#df5035;--gold:#e5aa45;--w:#fffdf8;--m:#77786f;--b:#e5dac8
+}
+*{box-sizing:border-box}
+body{
+margin:0;background:var(--c);color:#222;
+font-family:Arial,Tahoma,sans-serif
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+header{
+background:var(--g);
+position:sticky;
+top:0;
+z-index:30;
+padding:8px 4%;
+box-shadow:0 2px 12px #0002
+}
+.brand-home{
+display:block;
+width:100%;
+text-align:center
+}
+.brand-home img{
+width:100%;
+max-width:430px;
+height:72px;
+object-fit:contain;
+display:block;
+margin:auto
+}
+.head-actions{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:8px;
+margin-top:4px
+}
+.icon{
+border:0;
+background:#ffffff18;
+color:#fff;
+width:42px;
+height:38px;
+border-radius:12px;
+font-size:20px;
+position:relative
+}
+.count{
+position:absolute;
+top:-5px;
+right:-5px;
+background:var(--o);
+color:#fff;
+width:18px;
+height:18px;
+border-radius:50%;
+font-size:11px;
+display:grid;
+place-items:center
+}
+.search{
+padding:12px 5%;
+background:var(--w);
+border-bottom:1px solid var(--b)
+}
+.search input{
+width:100%;
+max-width:900px;
+display:block;
+margin:auto;
+padding:13px 18px;
+border:1px solid var(--b);
+border-radius:18px;
+outline:0;
+background:#fff
+}
+main{max-width:1250px;margin:auto;padding:18px 5% 90px}
+.hero{
+background:var(--g);
+color:white;
+border-radius:25px;
+padding:35px 25px;
+margin-bottom:25px;
+text-align:center;
+overflow:hidden
+}
+.hero h1{margin:0 0 10px;font-size:30px}
+.hero p{margin:0 0 20px;color:#e9eee9}
+.btn{
+border:0;
+background:var(--o);
+color:#fff;
+padding:12px 22px;
+border-radius:14px;
+font-weight:bold
+}
+.section-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:25px 0 14px
+}
+.section-title h2{margin:0;color:var(--g)}
+.categories{
+display:flex;
+gap:8px;
+overflow:auto;
+padding:3px 0 12px;
+scrollbar-width:none
+}
+.categories::-webkit-scrollbar{display:none}
+.cat{
+white-space:nowrap;
+border:1px solid var(--b);
+background:#fff;
+padding:9px 15px;
+border-radius:20px;
+color:var(--g)
+}
+.cat.active{
+background:var(--g);
+color:#fff
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px
+}
+.card{
+background:#fff;
+border:1px solid var(--b);
+border-radius:18px;
+overflow:hidden;
+position:relative;
+box-shadow:0 3px 12px #00000008
+}
+.pic{
+height:190px;
+background:#faf8f2;
+display:grid;
+place-items:center;
+overflow:hidden
+}
+.pic img{
+width:100%;
+height:100%;
+object-fit:contain
+}
+.pic .emoji{font-size:70px}
+.card-body{padding:13px}
+.card h3{margin:0 0 5px;font-size:17px;color:var(--g)}
+.en{font-size:11px;color:#999;direction:ltr;text-align:right}
+.weight{font-size:12px;color:var(--m);margin:7px 0}
+.price{
+font-weight:bold;
+font-size:19px;
+color:var(--o)
+}
+.card-actions{
+display:flex;
+gap:7px;
+margin-top:10px
+}
+.card-actions button{
+flex:1;
+border:0;
+border-radius:11px;
+padding:9px
+}
+.add{background:var(--g);color:white}
+.more{background:var(--c2);color:var(--g)}
+.fav{
+position:absolute;
+top:9px;
+left:9px;
+border:0;
+background:#fff;
+width:32px;
+height:32px;
+border-radius:50%;
+font-size:18px;
+z-index:2
+}
+.empty{
+text-align:center;
+padding:50px 10px;
+color:var(--m)
+}
+.offers{display:none}
+.detail{
+display:none;
+background:#fff;
+border-radius:22px;
+padding:20px;
+margin-top:15px
+}
+.detail.show{display:block}
+.detail-img{
+height:300px;
+display:grid;
+place-items:center;
+background:#faf8f2;
+border-radius:18px;
+overflow:hidden
+}
+.detail-img img{
+width:100%;
+height:100%;
+object-fit:contain
+}
+.detail h1{color:var(--g)}
+.options{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:15px 0
+}
+.opt{
+border:1px solid var(--b);
+background:#fff;
+padding:9px 13px;
+border-radius:12px
+}
+.opt.active{
+background:var(--g);
+color:white
+}
+.panel{
+position:fixed;
+inset:0;
+background:#0006;
+z-index:100;
+display:none
+}
+.panel.show{display:block}
+.sheet{
+position:absolute;
+right:0;
+top:0;
+height:100%;
+width:min(430px,94%);
+background:var(--w);
+padding:20px;
+overflow:auto
+}
+.sheet-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid var(--b);
+padding-bottom:12px
+}
+.close{
+border:0;
+background:var(--c2);
+border-radius:10px;
+width:38px;
+height:38px
+}
+.cart-item{
+display:flex;
+gap:10px;
+align-items:center;
+padding:13px 0;
+border-bottom:1px solid var(--b)
+}
+.cart-item img{
+width:65px;
+height:65px;
+object-fit:contain;
+background:#faf8f2;
+border-radius:10px
+}
+.cart-info{flex:1}
+.qty{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:6px
+}
+.qty button{
+border:0;
+background:var(--c2);
+width:27px;
+height:27px;
+border-radius:8px
+}
+.total{
+margin-top:18px;
+padding:15px;
+background:var(--c2);
+border-radius:15px
+}
+.total div{
+display:flex;
+justify-content:space-between;
+margin:7px 0
+}
+.form input,.form textarea{
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid var(--b);
+border-radius:12px;
+outline:0
+}
+.form textarea{min-height:80px;resize:vertical}
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:65px;
+background:#fff;
+border-top:1px solid var(--b);
+display:flex;
+justify-content:space-around;
+align-items:center;
+z-index:40
+}
+.bottom button{
+border:0;
+background:none;
+color:var(--m);
+font-size:12px
+}
+.bottom span{
+display:block;
+font-size:21px;
+margin-bottom:2px
+}
+.menu-list button{
+display:block;
+width:100%;
+border:0;
+background:none;
+padding:16px 5px;
+border-bottom:1px solid var(--b);
+text-align:right;
+color:var(--g)
+}
+footer{
+background:var(--g);
+color:#fff;
+text-align:center;
+padding:25px;
+margin-bottom:65px
+}
+@media(max-width:900px){
+.grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:650px){
+.brand-home img{height:65px;max-width:100%}
+.grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.pic{height:165px}
+.card h3{font-size:15px}
+.card-body{padding:10px}
+main{padding-left:4%;padding-right:4%}
+.hero h1{font-size:24px}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="head">
-<div class="icons"><button class="icon cart-top" onclick="openCart()">🛒<b id="count" class="count">0</b></button></div>
-<img src="./tekram-logo.png" alt="تِكرَم | Tekram" class="site-logo">
-<div class="icons"><button class="icon" onclick="focusSearch()">⌕</button><button class="icon" onclick="openMenu()">☰</button></div>
-</div>
+  <a class="brand-home" href="#" onclick="home();return false">
+    <img src="./tekram-logo.png" alt="تِكرَم | Tekram">
+  </a>
+
+  <div class="head-actions">
+    <button class="icon" onclick="focusSearch()">⌕</button>
+    <button class="icon" onclick="openMenu()">☰</button>
+    <button class="icon cart-top" onclick="openCart()">
+      🛒<b id="count" class="count">0</b>
+    </button>
+  </div>
 </header>
 
-<div class="search-wrap"><div class="search"><span>⌕</span><input id="search" placeholder="إبحث عن منتج..." oninput="render()"></div></div>
-
-<main id="homePage">
-<section class="hero-wrap"><div class="hero"><div class="hero-text">
-<div class="hero-small">✦ من بيتنا لبيتك</div>
-<h1>كل احتياجاتك اليومية<br><span>بمكان واحد.</span></h1>
-<p>منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.</p>
-<button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">تصفح المنتجات</button>
-</div><div class="basket"><i class="i1"></i><i class="i2"></i><i class="i3"></i></div></div></section>
-
-<section id="offersSection"><div class="offer-title"><div><div class="line"></div><h2>🔥 عروض تِكرَم</h2></div><span>وفّر أكتر مع تِكرَم</span></div><div id="offerGrid" class="offer-grid"></div></section>
-
-<section class="section" id="products"><div class="title"><div class="line"></div><h2 id="title">منتجاتنا</h2><p id="sub">اختيارات من تِكرَم</p></div><div id="cats" class="categories"></div><div id="grid" class="grid"></div></section>
-</main>
-
-<section id="productPage"><div class="detail"><div id="dimg" class="detail-img"></div><div class="detail-info">
-<div id="dcat" class="detail-cat"></div><div id="dname" class="detail-name"></div><div id="den" class="detail-en"></div><div id="options" class="options"></div><div id="dweight"></div><div id="doldprice" class="detail-old-price"></div><div id="dprice" class="detail-price"></div><div id="ddesc" class="detail-desc"></div>
-<button class="detail-add" onclick="addSelected()">🛒 أضف للسلة</button><button class="back" onclick="home()">← العودة</button>
-</div></div></section>
-
-<div id="overlay" class="overlay" onclick="closePanels()"></div>
-
-<div id="menuPanel" class="menu-panel"><div class="menu-head"><div class="menu-brand">TEKRAM<small>من بيتنا لبيتك</small></div><button class="menu-close" onclick="closePanels()">×</button></div>
-<div class="menu-body">
-<button class="menu-btn" onclick="menuHome()"><span class="menu-icon">🏠</span>الرئيسية</button>
-<button class="menu-btn" onclick="menuProducts()"><span class="menu-icon">🛍️</span>المنتجات</button>
-<button class="menu-btn" onclick="menuOffers()"><span class="menu-icon">🔥</span>العروض</button>
-<button class="menu-btn" onclick="menuFavorites()"><span class="menu-icon">❤️</span>المفضلة</button>
-<button class="menu-btn" onclick="menuCart()"><span class="menu-icon">🛒</span>سلة المشتريات</button>
-<div class="menu-divider"></div><div class="menu-note">تِكرَم 🤍<br>من بيتنا لبيتك</div>
-</div></div>
-
-<div id="cartPanel" class="panel"><div class="panel-head"><h2>🛒 السلة</h2><button class="close" onclick="closePanels()">×</button></div><div id="cartBody" class="panel-body"></div><div class="panel-foot"><div class="total"><span>المجموع</span><span id="total">$0.00</span></div><button class="checkout" onclick="checkout()">إتمام الطلب</button></div></div>
-
-<div id="checkoutPanel" class="panel"><div class="panel-head"><h2>📦 إتمام الطلب</h2><button class="close" onclick="closePanels()">×</button></div><div class="panel-body">
-<div class="form"><label>الاسم</label><input id="name" class="input" placeholder="اكتب اسمك"></div>
-<div class="form"><label>رقم الهاتف</label><input id="phone" class="input" placeholder="03 123 456"></div>
-<div class="form"><label>المنطقة</label><select id="area" class="input"><option value="">اختر منطقة التوصيل</option><option>صور</option><option>المعشوق</option><option>برج الشمالي</option><option>المساكن</option><option>الحوش</option><option>العباسية</option><option>البازورية</option></select></div>
-<div class="form"><label>العنوان</label><textarea id="address" class="input area" placeholder="اكتب العنوان"></textarea></div>
-<div class="form"><label>ملاحظات</label><textarea id="notes" class="input area" placeholder="اختياري"></textarea></div>
-<div id="summary" class="summary"></div></div><div class="panel-foot"><button id="send" class="checkout" onclick="sendOrder()">تأكيد الطلب ✓</button></div></div>
-
-<div class="bottom-nav">
-<button onclick="home()" class="active"><span>⌂</span>الرئيسية</button>
-<button onclick="categoriesPage()"><span>▦</span>الأقسام</button>
-<button onclick="favoritesPage()"><span>♡</span>المفضلة</button>
-<button onclick="openCart()"><span>🛒</span>السلة</button>
+<div class="search">
+  <input id="search" type="search" placeholder="شو عم تفتّش؟" oninput="render()">
 </div>
 
-<footer><div class="footer-logo">تِكرَم</div><p>من بيتنا لبيتك 🤍</p></footer>
+<main>
+
+<section id="homePage">
+
+<div class="hero">
+  <h1>كل احتياجاتك اليومية بمكان واحد.</h1>
+  <p>تِكرَم — من بيتنا لبيتك</p>
+  <button class="btn" onclick="scrollProducts()">تصفح المنتجات</button>
+</div>
+
+<div id="offers"></div>
+
+<div class="section-title">
+  <h2>المنتجات</h2>
+</div>
+
+<div id="categories" class="categories"></div>
+<div id="products" class="grid"></div>
+
+</section>
+
+<section id="detailPage" class="detail"></section>
+
+</main>
+
+<footer>
+  <b>تِكرَم | Tekram</b>
+  <div style="margin-top:6px;font-size:13px">من بيتنا لبيتك</div>
+</footer>
+
+<div id="cartPanel" class="panel">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>سلة المشتريات</h2>
+      <button class="close" onclick="closePanels()">×</button>
+    </div>
+    <div id="cartItems"></div>
+    <div id="cartTotal"></div>
+    <button class="btn" style="width:100%;margin-top:12px" onclick="checkout()">
+      إتمام الطلب
+    </button>
+  </div>
+</div>
+
+<div id="menuPanel" class="panel">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>القائمة</h2>
+      <button class="close" onclick="closePanels()">×</button>
+    </div>
+
+    <div class="menu-list">
+      <button onclick="menuHome()">🏠 الرئيسية</button>
+      <button onclick="menuProducts()">🛒 المنتجات</button>
+      <button onclick="menuOffers()">🏷️ العروض</button>
+      <button onclick="menuFavorites()">❤️ المفضلة</button>
+      <button onclick="menuCart()">🛍️ سلة المشتريات</button>
+    </div>
+  </div>
+</div>
+
+<div id="checkoutPanel" class="panel">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>إتمام الطلب</h2>
+      <button class="close" onclick="closePanels()">×</button>
+    </div>
+
+    <form class="form" onsubmit="sendOrder(event)">
+      <input id="customerName" required placeholder="الاسم">
+      <input id="customerPhone" required placeholder="رقم الهاتف">
+      <input id="customerArea" required placeholder="المنطقة">
+      <input id="customerAddress" required placeholder="العنوان">
+      <textarea id="customerNotes" placeholder="ملاحظات إضافية"></textarea>
+
+      <div id="checkoutTotal" class="total"></div>
+
+      <button class="btn" style="width:100%;margin-top:10px">
+        إرسال الطلب
+      </button>
+    </form>
+  </div>
+</div>
+
+<nav class="bottom">
+  <button onclick="home()"><span>🏠</span>الرئيسية</button>
+  <button onclick="menuProducts()"><span>🛒</span>الأقسام</button>
+  <button onclick="favoritesPage()"><span>❤️</span>المفضلة</button>
+  <button onclick="openCart()"><span>🛍️</span>السلة</button>
+</nav>
 
 <script>
-const KEY="9edc6eae-83a6-4858-a452-12860503dcfa",DELIVERY=2;
-const cats=["الكل","مشروبات","ألبان وأجبان","مواد غذائية","مواد تنظيف","بلاستيك"];
+const KEY="9edc6eae-83a6-4858-a452-12860503dcfa";
+const DELIVERY=2;
+let cart=JSON.parse(localStorage.getItem("tekramCart")||"[]");
+let favs=JSON.parse(localStorage.getItem("tekramFavorites")||"[]");
+let currentCat="الكل";
+let selectedProduct=null;
+let selectedOption=0;
+
+const cats=[
+"الكل","مشروبات","ألبان وأجبان","مواد غذائية","مواد تنظيف","بلاستيك"
+];
 
 const products=[
 {id:"coffee-no",cat:"مشروبات",name:"قهوة نجار دون هال",en:"Najjar Coffee No Cardamom",price:3.35,weight:"180 غ / 450 غ",img:"./najjar-coffee-no-cardamom-180g.JPG",options:[["180 غ",3.35,"./najjar-coffee-no-cardamom-180g.JPG"],["450 غ",6.85,"./najjar-coffee-no-cardamom-450g.JPG"]]},
+
 {id:"coffee-card",cat:"مشروبات",name:"قهوة نجار مع هال",en:"Najjar Coffee with Cardamom",price:3.55,weight:"180 غ / 450 غ",img:"./najjar-coffee-with-cardamom-180g.JPG",options:[["180 غ",3.55,"./najjar-coffee-with-cardamom-180g.JPG"],["450 غ",7.35,"./najjar-coffee-with-cardamom-450g.JPG"]]},
-{id:"coffeemate",cat:"مشروبات",name:"كريمر كوفي ميت",en:"Coffee Mate",price:2.5,weight:"450 غ / 1 كغ",img:"./coffee-mate-450g.JPG",options:[["450 غ",2.5,"./coffee-mate-450g.JPG"],["1 كغ",6,"./Coffee-mate-1kg.JPG"]]},
-{id:"ghazal",cat:"ألبان وأجبان",name:"جبنة الغزال",en:"Al Ghazal Cheese",price:3,weight:"370 غ / 1.5 كغ",img:"./Ghazal-cheese-370g.png",options:[["370 غ",3,"./Ghazal-cheese-370g.png"],["1.5 كغ",11.5,""]]},
-{id:"almarai",cat:"ألبان وأجبان",name:"جبنة المراعي",en:"Almarai Cheese",price:1.7,weight:"300 غ",icon:"🧀"},
+
+{id:"coffeemate",cat:"مشروبات",name:"كريمر كوفي ميت",en:"Coffee Mate",price:2.50,weight:"450 غ / 1 كغ",img:"./coffee-mate-450g.JPG",options:[["450 غ",2.50,"./coffee-mate-450g.JPG"],["1 كغ",6.00,"./Coffee-mate-1kg.JPG"]]},
+
+{id:"ghazal",cat:"ألبان وأجبان",name:"جبنة الغزال",en:"Al Ghazal Cheese",price:3.00,weight:"370 غ / 1.5 كغ",img:"./Ghazal-cheese-370g.png",options:[["370 غ",3.00,"./Ghazal-cheese-370g.png"],["1.5 كغ",11.50,""]]},
+
+{id:"almarai",cat:"ألبان وأجبان",name:"جبنة المراعي",en:"Almarai Cheese",price:1.70,weight:"300 غ",icon:"🧀"},
+
 {id:"greek",cat:"ألبان وأجبان",name:"يوغرت تعنايل غريك",en:"Taanayel Greek Yogurt",price:1.25,weight:"سادة / فريز / توت / دراق",img:"./Taanyel-greek-yogurt-strawberry.JPG",options:[["سادة",1.25,"🥛"],["فريز",1.25,"./Taanyel-greek-yogurt-strawberry.JPG"],["توت",1.25,"./Taanyel-greek-yogurt-bluberry.JPG"],["دراق",1.25,"🍑"]]},
+
 {id:"corn",cat:"مواد غذائية",name:"ذرة حلوة لا بيلا",en:"La Bella Sweet Corn",price:.85,weight:"340 غ",img:"./la-bella-sweet-corn-340g.JPG"},
-{id:"red",cat:"مشروبات",name:"نجار نسكافيه الأحمر",en:"Najjar Red",price:3,weight:"95 غ / 190 غ",img:"./najjar-red-95g.JPG",options:[["95 غ",3,"./najjar-red-95g.JPG"],["190 غ",4.9,"./najjar-red-190g.JPG"]]},
-{id:"picon",cat:"ألبان وأجبان",name:"بيكون جبنة",en:"Picon Cheese",price:2.5,weight:"×16 / ×24",img:"./Picon-cheese-*16.JPG",options:[["×16",2.5,"./Picon-cheese-*16.JPG"],["×24",3,"./Picon-cheese-*24.JPG"]]},
-{id:"picon8",cat:"ألبان وأجبان",name:"بيكون سِمبلي ×8",en:"Picon Cheese Simply ×8",price:.9,weight:"×8",img:"./Picon-cheese-simply-*8.JPG"},
+
+{id:"red",cat:"مشروبات",name:"نجار نسكافيه الأحمر",en:"Najjar Red",price:3,weight:"95 غ / 190 غ",img:"./najjar-red-95g.JPG",options:[["95 غ",3,"./najjar-red-95g.JPG"],["190 غ",4.90,"./najjar-red-190g.JPG"]]},
+
+{id:"picon",cat:"ألبان وأجبان",name:"بيكون جبنة",en:"Picon Cheese",price:2.50,weight:"×16 / ×24",img:"./Picon-cheese-*16.JPG",options:[["×16",2.50,"./Picon-cheese-*16.JPG"],["×24",3,"./Picon-cheese-*24.JPG"]]},
+
+{id:"picon8",cat:"ألبان وأجبان",name:"بيكون سِمبلي ×8",en:"Picon Cheese Simply ×8",price:.90,weight:"×8",img:"./Picon-cheese-simply-*8.JPG"},
+
 {id:"trobika",cat:"مشروبات",name:"تروبيكا كابتشينو",en:"Trobika Cappuccino 20+2",price:4.55,weight:"20 + 2",img:"./Trobika-Cappuccino-20+2.JPG"},
+
 {id:"nescafe",cat:"مشروبات",name:"نسكافيه كلاسيك 2 في 1",en:"Nescafé Classic 2 in 1",price:5.25,weight:"2 in 1",img:"./Nescafe-classic—2in1.JPG"},
+
 {id:"cream",cat:"ألبان وأجبان",name:"كريمة طبخ نيو بارك",en:"New Park Cooking Cream",price:1,weight:"160 مل / 1 لتر",img:"./New-park-cooking-cream -160ml.JPG",options:[["160 مل",1,"./New-park-cooking-cream -160ml.JPG"],["1 لتر",3,"./New-park-cooking-cream -1liter.JPG"]]},
+
 {id:"dollys-pomegranate",cat:"مواد غذائية",name:"دبس رمان دوليز",en:"Dollys Pomegranate Molasses",price:2.25,weight:"420 غ",img:"./Dollys-pomegranate-Molasses-420g.JPG"},
-{id:"dollys-ketchup",cat:"مواد غذائية",name:"كاتشب طماطم دوليز",en:"Dollys Tomato Ketchup",price:4.5,weight:"2 كغ / 4 كغ",img:"./Dollys-tomato-ketchup-2kg.JPG",options:[["2 كغ",4.5,"./Dollys-tomato-ketchup-2kg.JPG"],["4 كغ",7.7,"./Dollys-tomato-ketchup-4kg.JPG"]]},
+
+{id:"dollys-ketchup",cat:"مواد غذائية",name:"كاتشب طماطم دوليز",en:"Dollys Tomato Ketchup",price:4.50,weight:"2 كغ / 4 كغ",img:"./Dollys-tomato-ketchup-2kg.JPG",options:[["2 كغ",4.50,"./Dollys-tomato-ketchup-2kg.JPG"],["4 كغ",7.70,"./Dollys-tomato-ketchup-4kg.JPG"]]},
+
 {id:"labella-mushrooms",cat:"مواد غذائية",name:"فطر لا بيلا كامل",en:"La Bella Whole Mushrooms",price:1.25,weight:"300 غ",img:"./La-bella-whole-Mushrooms-300g.JPG"},
+
 {id:"larose-rice",cat:"مواد غذائية",name:"الوردة رز مصري",en:"La Rose Rouge Egyptian Rice",price:1.85,weight:"900 غ",img:"./La-Rose-rouge-EGYPTIAN-RICE-900g.JPG"},
-{id:"deroni-rice",cat:"مواد غذائية",name:"ديروني رز مصري",en:"Deroni Egyptian Rice",price:1,weight:"900 غ",img:"./Deroni-Egyptian-rice-900g.JPG"},
-{id:"nutella",cat:"مواد غذائية",name:"نوتيلا",en:"Nutella",price:7.5,weight:"750 غ",img:"./Nutella-750g.JPG"},
-{id:"uno-choco",cat:"مواد غذائية",name:"اونو شوكو سبريد",en:"Uno Choco Spread",price:2,weight:"350 غ",img:"./Uno-choco-spread-350g.JPG"},
+
+{id:"deroni-rice",cat:"مواد غذائية",name:"ديروني رز مصري",en:"Deroni Egyptian Rice",price:1.00,weight:"900 غ",img:"./Deroni-Egyptian-rice-900g.JPG"},
+
+{id:"nutella",cat:"مواد غذائية",name:"نوتيلا",en:"Nutella",price:7.50,weight:"750 غ",img:"./Nutella-750g.JPG"},
+
+{id:"uno-choco",cat:"مواد غذائية",name:"اونو شوكو سبريد",en:"Uno Choco Spread",price:2.00,weight:"350 غ",img:"./Uno-choco-spread-350g.JPG"},
+
 {id:"yamama-paste",cat:"مواد غذائية",name:"رب بندورة يمامة",en:"Yamama Tomato Paste",price:3.65,weight:"1325 غ",img:"./Yamama-tomato-paste-1325g.JPG"},
-{id:"zain-sugar",cat:"مواد غذائية",name:"سكر زين ابيض",en:"Zain White Sugar",price:.8,weight:"900 غ",img:"./Zain-WHITE -SUGAR-900g.JPG"},
-{id:"xtra-ketchup",cat:"مواد غذائية",name:"كاتشب Xtra",en:"Xtra Ketchup",price:7.8,weight:"4.2 كغ",img:"./Xtra-ketchup-4.2kg.JPG"},
-{id:"oxi",cat:"مواد تنظيف",name:"أوكسي سائل جلي",en:"Oxi Dishwashing Liquid",price:1.3,weight:"تفاح / ليمون",img:"./Oxi-dishwashing-liquid-apple-600ml.JPG",options:[["تفاح",1.3,"./Oxi-dishwashing-liquid-apple-600ml.JPG"],["ليمون",1.3,"./Oxi-dishwashing-liquid-lemon-600ml.JPG"]]},
-{id:"silkwave",cat:"مواد تنظيف",name:"سيلك ويف معطر غسيل",en:"Silkwave Fabric Softener",price:1.3,weight:"1 لتر",img:"./Silkwave-fabric-softener-blue-1liter.JPG",options:[["أزرق",1.3,"./Silkwave-fabric-softener-blue-1liter.JPG"],["أخضر",1.3,"./Silkwave-fabric-softener-green-1liter.JPG"],["زهري",1.3,"./Silkwave-fabric-softener-pink-1liter.JPG"],["أبيض",1.3,"./Silkwave-fabric-softener-white-1liter.JPG"],["أصفر",1.3,"./Silkwave-fabric-softener-yellow-1liter.JPG"]]},
-{id:"sunsilk",cat:"مواد تنظيف",name:"صانسيلك شامبو",en:"Sunsilk Shampoo",price:3.2,weight:"600 مل",img:"./Sunsilk-shampoo-pink-600ml.JPG",options:[["زهري",3.2,"./Sunsilk-shampoo-pink-600ml.JPG"],["أصفر",3.2,"./Sunsilk-shampoo-yellow-600ml.JPG"]]},
-{id:"my-tomato",cat:"مواد غذائية",name:"ماي توماتو مربى البندورة",en:"My Tomato",price:1,weight:"400 غ / 800 غ",img:"./My-tomato-400g.JPG",options:[["400 غ",1,"./My-tomato-400g.JPG"],["800 غ",1.9,"./My-tomato-800g.JPG"]]},
-{id:"noura-shampoo-18",cat:"مواد تنظيف",name:"شامبو نورا",en:"Noura Shampoo",price:3.1,weight:"زهري / أزرق - 1.8 لتر",img:"./Noura-shampoo-pink-1.8liter.JPG",options:[["زهري - 1.8 لتر",3.1,"./Noura-shampoo-pink-1.8liter.JPG"],["أزرق - 1.8 لتر",3.1,"./Noura-shampoo-blue-1.8liter.JPG"]]},
-{id:"spartan-flash",cat:"مواد تنظيف",name:"سبارتان فلاش",en:"Spartan Flash",price:2.7,weight:"1 لتر",img:"./Spartan-flash-1liter.JPG"},
+
+{id:"zain-sugar",cat:"مواد غذائية",name:"سكر زين ابيض",en:"Zain White Sugar",price:.80,weight:"900 غ",img:"./Zain-WHITE -SUGAR-900g.JPG"},
+
+{id:"xtra-ketchup",cat:"مواد غذائية",name:"كاتشب Xtra",en:"Xtra Ketchup",price:7.80,weight:"4.2 كغ",img:"./Xtra-ketchup-4.2kg.JPG"},
+
+{id:"oxi",cat:"مواد تنظيف",name:"أوكسي سائل جلي",en:"Oxi Dishwashing Liquid",price:1.30,weight:"تفاح / ليمون",img:"./Oxi-dishwashing-liquid-apple-600ml.JPG",options:[["تفاح",1.30,"./Oxi-dishwashing-liquid-apple-600ml.JPG"],["ليمون",1.30,"./Oxi-dishwashing-liquid-lemon-600ml.JPG"]]},
+
+{id:"silkwave",cat:"مواد تنظيف",name:"سيلك ويف معطر غسيل",en:"Silkwave Fabric Softener",price:1.30,weight:"1 لتر",img:"./Silkwave-fabric-softener-blue-1liter.JPG",options:[["أزرق",1.30,"./Silkwave-fabric-softener-blue-1liter.JPG"],["أخضر",1.30,"./Silkwave-fabric-softener-green-1liter.JPG"],["زهري",1.30,"./Silkwave-fabric-softener-pink-1liter.JPG"],["أبيض",1.30,"./Silkwave-fabric-softener-white-1liter.JPG"],["أصفر",1.30,"./Silkwave-fabric-softener-yellow-1liter.JPG"]]},
+
+{id:"sunsilk",cat:"مواد تنظيف",name:"صانسيلك شامبو",en:"Sunsilk Shampoo",price:3.20,weight:"600 مل",img:"./Sunsilk-shampoo-pink-600ml.JPG",options:[["زهري",3.20,"./Sunsilk-shampoo-pink-600ml.JPG"],["أصفر",3.20,"./Sunsilk-shampoo-yellow-600ml.JPG"]]},
+
+{id:"my-tomato",cat:"مواد غذائية",name:"ماي توماتو مربى البندورة",en:"My Tomato",price:1.00,weight:"400 غ / 800 غ",img:"./My-tomato-400g.JPG",options:[["400 غ",1.00,"./My-tomato-400g.JPG"],["800 غ",1.90,"./My-tomato-800g.JPG"]]},
+
+{id:"noura-shampoo-18",cat:"مواد تنظيف",name:"شامبو نورا",en:"Noura Shampoo",price:3.10,weight:"زهري / أزرق - 1.8 لتر",img:"./Noura-shampoo-pink-1.8liter.JPG",options:[["زهري - 1.8 لتر",3.10,"./Noura-shampoo-pink-1.8liter.JPG"],["أزرق - 1.8 لتر",3.10,"./Noura-shampoo-blue-1.8liter.JPG"]]},
+
+{id:"spartan-flash",cat:"مواد تنظيف",name:"سبارتان فلاش",en:"Spartan Flash",price:2.70,weight:"1 لتر",img:"./Spartan-flash-1liter.JPG"},
+
 {id:"dimex-javel",cat:"مواد تنظيف",name:"دايمكس جافيل",en:"Dimex Javel",price:.75,weight:"1 لتر",img:"./Dimex-javel-1liter.JPG"},
+
 {id:"carmel-javel",cat:"مواد تنظيف",name:"كارمل جافيل",en:"Carmel Javel",price:.85,weight:"1 لتر",img:"./Carmel-javel-1liter.JPG"},
-{id:"clorox",cat:"مواد تنظيف",name:"كلور جافيل كلوروكس",en:"Clorox",price:1.3,weight:"1 لتر",img:"./Clorox-1liter.JPG"},
-{id:"odex",cat:"مواد تنظيف",name:"أوديكس",en:"Odex",price:1.5,weight:"1 لتر",img:"./Odex-1liter.JPG"},
-{id:"carmel-cleaner",cat:"مواد تنظيف",name:"كارمل معطر ارض",en:"Carmel",price:1.2,weight:"ليمون / صنوبر / عود - 800 مل",img:"./Carmel-lemon-800ml.JPG",options:[["ليمون - 800 مل",1.2,"./Carmel-lemon-800ml.JPG"],["صنوبر - 800 مل",1.2,"./Carmel-pine-800ml.JPG"],["عود - 800 مل",1.2,"./Carmel-oud-800ml.JPG"]]},
-{id:"noura-shampoo-yellow",cat:"مواد تنظيف",name:"شامبو نورا",en:"Noura Shampoo",price:2.4,weight:"1.25 لتر",img:"./Noura-shampoo-yellow-1.25liter.JPG"}
+
+{id:"clorox",cat:"مواد تنظيف",name:"كلور جافيل كلوروكس",en:"Clorox",price:1.30,weight:"1 لتر",img:"./Clorox-1liter.JPG"},
+
+{id:"odex",cat:"مواد تنظيف",name:"أوديكس",en:"Odex",price:1.50,weight:"1 لتر",img:"./Odex-1liter.JPG"},
+
+{id:"carmel-cleaner",cat:"مواد تنظيف",name:"كارمل معطر ارض",en:"Carmel",price:1.20,weight:"ليمون / صنوبر / عود - 800 مل",img:"./Carmel-lemon-800ml.JPG",options:[["ليمون - 800 مل",1.20,"./Carmel-lemon-800ml.JPG"],["صنوبر - 800 مل",1.20,"./Carmel-pine-800ml.JPG"],["عود - 800 مل",1.20,"./Carmel-oud-800ml.JPG"]]},
+
+{id:"noura-shampoo-yellow",cat:"مواد تنظيف",name:"شامبو نورا",en:"Noura Shampoo",price:2.40,weight:"1.25 لتر",img:"./Noura-shampoo-yellow-1.25liter.JPG"}
 ];
 
-let cart=JSON.parse(localStorage.getItem("tekramCart")||"[]"),fav=JSON.parse(localStorage.getItem("tekramFavorites")||"[]"),category="الكل",onlyFav=false,selected=null;
-const $=id=>document.getElementById(id);
-const save=()=>{localStorage.setItem("tekramCart",JSON.stringify(cart));localStorage.setItem("tekramFavorites",JSON.stringify(fav))};
-function focusSearch(){$("search").focus()}
-function nav(n){document.querySelectorAll(".bottom-nav button").forEach((x,i)=>x.classList.toggle("active",i===n))}
-function categoriesHTML(){$("cats").innerHTML=cats.map(x=>`<button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">${x}</button>`).join("")}
-function discountPercent(a,b){return Math.round((1-b/a)*100)}
-function priceHTML(p){return p.oldPrice?`<span class="old-price">$${p.oldPrice.toFixed(2)}</span><span class="new-price">$${p.price.toFixed(2)}</span><span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>`:`<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`}
+function save(){
+localStorage.setItem("tekramCart",JSON.stringify(cart));
+localStorage.setItem("tekramFavorites",JSON.stringify(favs));
+updateCart()
+}
 
-function card(p){let f=fav.includes(p.id);return `<div class="card" onclick="detail('${p.id}')"><button class="fav ${f?"on":""}" onclick="toggleFav(event,'${p.id}')">${f?"♥":"♡"}</button><div class="pic">${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}</div><div class="info"><span class="badge">${p.cat}</span>${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}<div class="name">${p.name}</div><div class="en">${p.en}</div><div class="weight">${p.weight}</div><div class="bottom"><div>${priceHTML(p)}</div><button class="add" onclick="quick(event,'${p.id}')">+</button></div></div></div>`}
+function focusSearch(){
+document.getElementById("search").focus()
+}
 
-function offerCard(p){return `<div class="offer-card" onclick="detail('${p.id}')"><div class="offer-label">🔥 عرض</div><div class="pic">${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}</div><div class="info"><div class="name">${p.name}</div><div class="en">${p.en}</div><div class="weight">${p.weight}</div><div class="bottom"><div>${priceHTML(p)}</div><button class="add" onclick="quick(event,'${p.id}')">+</button></div></div></div>`}
-function renderOffers(){let o=products.filter(p=>p.oldPrice);$("offersSection").style.display=o.length?"block":"none";if(o.length)$("offerGrid").innerHTML=o.map(offerCard).join("")}
+function categoriesHTML(){
+document.getElementById("categories").innerHTML=cats.map(c=>
+`<button class="cat ${currentCat===c?"active":""}" onclick="choose('${c}')">${c}</button>`
+).join("")
+}
+
+function card(p){
+let liked=favs.includes(p.id);
+let image=p.img?
+`<img src="${p.img}" alt="${p.name}" onerror="this.style.display='none'">`:
+`<span class="emoji">${p.icon||"🛒"}</span>`;
+
+return `
+<article class="card">
+<button class="fav" onclick="toggleFav('${p.id}')">${liked?"❤️":"♡"}</button>
+<div class="pic">${image}</div>
+<div class="card-body">
+<h3>${p.name}</h3>
+<div class="en">${p.en}</div>
+<div class="weight">${p.weight}</div>
+<div class="price">$${p.price.toFixed(2)}</div>
+<div class="card-actions">
+<button class="more" onclick="detail('${p.id}')">التفاصيل</button>
+<button class="add" onclick="quick('${p.id}')">أضف للسلة</button>
+</div>
+</div>
+</article>`
+}
 
 function render(){
-let q=$("search").value.trim().toLowerCase(),list=products.filter(p=>(!onlyFav||fav.includes(p.id))&&(category==="الكل"||p.cat===category)&&(!q||(p.name+" "+p.en).toLowerCase().includes(q)));
-$("title").textContent=onlyFav?"المفضلة":q?"نتائج البحث":category==="الكل"?"منتجاتنا":category;
-$("sub").textContent=onlyFav?"المنتجات التي حفظتها ❤️":"اختيارات من تِكرَم";
-$("grid").innerHTML=list.length?list.map(card).join(""):`<div class="empty">ما لقينا منتجات مطابقة ❤️</div>`;
-categoriesHTML();renderOffers();updateCart()
-}
-function choose(x){category=x;onlyFav=false;render();scrollProducts();nav(1)}
-function categoriesPage(){closePanels();home();nav(1);setTimeout(scrollProducts,50)}
-function favoritesPage(){category="الكل";onlyFav=true;$("productPage").style.display="none";$("homePage").style.display="block";render();nav(2);scrollProducts()}
-function toggleFav(e,id){e.stopPropagation();fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];save();render()}
-function quick(e,id){e.stopPropagation();let p=products.find(x=>x.id===id),o=p.options?p.options[0]:[p.weight,p.price,p.img||p.icon||""];add({name:p.name,option:o[0],price:o[1]});openCart()}
+categoriesHTML();
+let q=document.getElementById("search").value.trim().toLowerCase();
 
-function detail(id,opt=0){
-let p=products.find(x=>x.id===id),o=p.options?p.options[opt]:[p.weight,p.price,p.img];
-selected={name:p.name,option:o[0],price:o[1],oldPrice:p.oldPrice||null};
-$("dcat").textContent=p.cat;$("dname").textContent=p.name;$("den").textContent=p.en;$("dweight").textContent=o[0];$("dprice").textContent="$"+o[1].toFixed(2);$("doldprice").textContent=p.oldPrice?"$"+p.oldPrice.toFixed(2):"";$("ddesc").textContent=p.name+", "+o[0];
-let im=o[2];$("dimg").innerHTML=im?(typeof im==="string"&&im.startsWith(".")?`<img src="${im}" alt="${p.name}">`:`<span>${im}</span>`):`<span>${p.icon||"🛒"}</span>`;
-$("options").innerHTML=p.options?p.options.map((x,i)=>`<button class="option ${i===opt?"sel":""}" onclick="detail('${p.id}',${i})">${x[0]}</button>`).join(""):"";
-$("homePage").style.display="none";$("productPage").style.display="block";window.scrollTo(0,0)
+let list=products.filter(p=>
+(currentCat==="الكل"||p.cat===currentCat)&&
+(!q||(p.name+" "+p.en).toLowerCase().includes(q))
+);
+
+document.getElementById("products").innerHTML=
+list.length?list.map(card).join(""):`<div class="empty">ما لقينا منتجات مطابقة.</div>`
 }
 
-function add(x){let old=cart.find(i=>i.name===x.name&&i.option===x.option);old?old.qty++:cart.push({...x,qty:1});save();updateCart()}
-function addSelected(){add(selected);openCart()}
+function choose(c){
+currentCat=c;
+document.getElementById("detailPage").classList.remove("show");
+document.getElementById("homePage").style.display="block";
+render();
+scrollProducts()
+}
+
+function scrollProducts(){
+document.getElementById("products").scrollIntoView({behavior:"smooth",block:"start"})
+}
+
+function toggleFav(id){
+favs.includes(id)?
+favs=favs.filter(x=>x!==id):
+favs.push(id);
+save();
+render()
+}
+
+function favoritesPage(){
+closePanels();
+document.getElementById("homePage").style.display="block";
+document.getElementById("detailPage").classList.remove("show");
+currentCat="الكل";
+
+let list=products.filter(p=>favs.includes(p.id));
+document.getElementById("products").innerHTML=
+list.length?list.map(card).join(""):`<div class="empty">ما عندك منتجات بالمفضلة ❤️</div>`;
+
+document.getElementById("categories").innerHTML="";
+window.scrollTo({top:0,behavior:"smooth"})
+}
+
+function quick(id){
+let p=products.find(x=>x.id===id);
+add(p,0)
+}
+
+function detail(id){
+let p=products.find(x=>x.id===id);
+if(!p)return;
+
+selectedProduct=p;
+selectedOption=0;
+
+document.getElementById("homePage").style.display="none";
+
+let img=p.img?
+`<img id="detailImg" src="${p.img}" alt="${p.name}">`:
+`<span class="emoji">${p.icon||"🛒"}</span>`;
+
+let opts=p.options?
+`<div class="options">${p.options.map((o,i)=>
+`<button class="opt ${i===0?"active":""}" onclick="selectOption(${i})">${o[0]} — $${o[1].toFixed(2)}</button>`
+).join("")}</div>`:"";
+
+document.getElementById("detailPage").innerHTML=`
+<button class="more" style="border:0;padding:9px 14px;border-radius:10px" onclick="home()">← رجوع</button>
+<div class="detail-img">${img}</div>
+<h1>${p.name}</h1>
+<div class="en">${p.en}</div>
+<p>${p.weight}</p>
+${opts}
+<div class="price" id="detailPrice">$${p.price.toFixed(2)}</div>
+<button class="btn" style="width:100%;margin-top:15px" onclick="addSelected()">أضف للسلة</button>
+`;
+
+document.getElementById("detailPage").classList.add("show");
+window.scrollTo({top:0,behavior:"smooth"})
+}
+
+function selectOption(i){
+selectedOption=i;
+let o=selectedProduct.options[i];
+document.querySelectorAll(".opt").forEach((x,n)=>x.classList.toggle("active",n===i));
+document.getElementById("detailPrice").textContent="$"+o[1].toFixed(2);
+let img=document.getElementById("detailImg");
+if(img&&o[2]&&!o[2].startsWith("🥛")&&!o[2].startsWith("🍑")){
+img.src=o[2]
+}
+}
+
+function addSelected(){
+add(selectedProduct,selectedOption)
+}
+
+function add(p,opt=0){
+let option=p.options?.[opt];
+let name=p.name+(option?" - "+option[0]:"");
+let price=option?option[1]:p.price;
+let img=option?.[2]||p.img||"";
+
+let found=cart.find(x=>x.id===p.id&&x.opt===opt);
+
+if(found)found.qty++;
+else cart.push({
+id:p.id,
+opt,
+name,
+price,
+img,
+qty:1
+});
+
+save();
+openCart()
+}
 
 function updateCart(){
-$("count").textContent=cart.reduce((a,x)=>a+x.qty,0);
-if(!cart.length){$("cartBody").innerHTML=`<div class="cart-empty"><span>🛒</span>السلة فارغة<small>أضف منتجاتك المفضلة من تِكرَم 🤍</small></div>`;$("total").textContent="$0.00";return}
-$("cartBody").innerHTML=cart.map((x,i)=>`<div class="cart-item"><div class="cart-row"><div><div class="cart-name">${x.name}</div><span class="cart-option">${x.option}</span></div><b class="cart-price">$${(x.price*x.qty).toFixed(2)}</b></div><div class="controls"><button class="qty" onclick="qty(${i},-1)">−</button><b class="qty-number">${x.qty}</b><button class="qty" onclick="qty(${i},1)">+</button><button class="remove" onclick="removeItem(${i})">حذف</button></div></div>`).join("");
-$("total").textContent="$"+cart.reduce((a,x)=>a+x.price*x.qty,0).toFixed(2)
+document.getElementById("count").textContent=
+cart.reduce((a,x)=>a+x.qty,0);
+
+let box=document.getElementById("cartItems");
+
+if(!cart.length){
+box.innerHTML=`<div class="empty">السلة فاضية 🛒</div>`;
+document.getElementById("cartTotal").innerHTML="";
+return
 }
-function qty(i,n){cart[i].qty+=n;if(cart[i].qty<1)cart.splice(i,1);save();updateCart()}
-function removeItem(i){cart.splice(i,1);save();updateCart()}
-function openCart(){closePanels();$("cartPanel").style.right="0";$("overlay").style.display="block";nav(3)}
+
+box.innerHTML=cart.map((x,i)=>`
+<div class="cart-item">
+${x.img?`<img src="${x.img}" onerror="this.style.display='none'">`:""}
+<div class="cart-info">
+<b>${x.name}</b>
+<div>$${x.price.toFixed(2)}</div>
+<div class="qty">
+<button onclick="qty(${i},-1)">−</button>
+<b>${x.qty}</b>
+<button onclick="qty(${i},1)">+</button>
+<button onclick="removeItem(${i})">🗑️</button>
+</div>
+</div>
+</div>
+`).join("");
+
+let sub=cart.reduce((a,x)=>a+x.price*x.qty,0);
+document.getElementById("cartTotal").innerHTML=`
+<div class="total">
+<div><span>المجموع</span><b>$${sub.toFixed(2)}</b></div>
+<div><span>التوصيل</span><b>$${DELIVERY.toFixed(2)}</b></div>
+<div><span>المجموع النهائي</span><b>$${(sub+DELIVERY).toFixed(2)}</b></div>
+</div>`
+}
+
+function qty(i,n){
+cart[i].qty+=n;
+if(cart[i].qty<=0)cart.splice(i,1);
+save()
+}
+
+function removeItem(i){
+cart.splice(i,1);
+save()
+}
+
+function openCart(){
+closePanels();
+document.getElementById("cartPanel").classList.add("show");
+updateCart()
+}
+
 function checkout(){
-if(!cart.length)return alert("السلة فارغة");closePanels();$("checkoutPanel").style.right="0";$("overlay").style.display="block";
-let s=cart.reduce((a,x)=>a+x.price*x.qty,0);
-$("summary").innerHTML=cart.map(x=>`<div class="summary-row"><span>${x.name}<br><small>${x.option} × ${x.qty}</small></span><b>$${(x.price*x.qty).toFixed(2)}</b></div>`).join("")+`<div class="summary-row"><b>المجموع الفرعي</b><b>$${s.toFixed(2)}</b></div><div class="summary-row"><b>التوصيل</b><b>$${DELIVERY.toFixed(2)}</b></div><div class="summary-row final"><b>المجموع النهائي</b><b>$${(s+DELIVERY).toFixed(2)}</b></div>`
-}
-function closePanels(){$("cartPanel").style.right="-430px";$("checkoutPanel").style.right="-430px";$("menuPanel").style.left="-430px";$("overlay").style.display="none"}
-function openMenu(){closePanels();$("menuPanel").style.left="0";$("overlay").style.display="block"}
-function menuHome(){closePanels();home()}
-function menuProducts(){closePanels();home();setTimeout(scrollProducts,100)}
-function menuOffers(){closePanels();home();setTimeout(()=>{let s=$("offersSection");s.style.display!=="none"?s.scrollIntoView({behavior:"smooth"}):alert("ما في عروض مضافة حاليًا 🔥")},100)}
-function menuFavorites(){closePanels();favoritesPage()}
-function menuCart(){closePanels();openCart()}
+if(!cart.length)return;
+closePanels();
 
-async function sendOrder(){
-let n=$("name").value.trim(),ph=$("phone").value.trim(),ar=$("area").value,ad=$("address").value.trim();
-if(!n||!ph||!ar||!ad)return alert("يرجى تعبئة الاسم والهاتف والمنطقة والعنوان");
-let sub=cart.reduce((a,x)=>a+x.price*x.qty,0),order=cart.map(x=>`• ${x.name} | ${x.option} | ×${x.qty} | $${(x.price*x.qty).toFixed(2)}`).join("\n");
-$("send").disabled=true;$("send").textContent="جاري الإرسال...";
-try{
-let r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({access_key:KEY,subject:"🛒 طلب جديد من تِكرَم",name:n,phone:ph,area:ar,address:ad,notes:$("notes").value,order,subtotal:"$"+sub.toFixed(2),delivery:"$"+DELIVERY.toFixed(2),total:"$"+(sub+DELIVERY).toFixed(2)})}),data=await r.json();
-if(data.success){alert("تم إرسال طلبك بنجاح ❤️");cart=[];save();updateCart();closePanels();["name","phone","address","notes"].forEach(x=>$(x).value="");$("area").value=""}else alert("تعذر إرسال الطلب.")
-}catch(e){alert("تعذر إرسال الطلب حالياً.")}
-$("send").disabled=false;$("send").textContent="تأكيد الطلب ✓"
+let sub=cart.reduce((a,x)=>a+x.price*x.qty,0);
+
+document.getElementById("checkoutTotal").innerHTML=`
+<div><span>المجموع</span><b>$${sub.toFixed(2)}</b></div>
+<div><span>التوصيل</span><b>$${DELIVERY.toFixed(2)}</b></div>
+<div><span>الإجمالي</span><b>$${(sub+DELIVERY).toFixed(2)}</b></div>
+`;
+
+document.getElementById("checkoutPanel").classList.add("show")
 }
 
-function home(){$("productPage").style.display="none";$("homePage").style.display="block";category="الكل";onlyFav=false;render();nav(0)}
-function scrollProducts(){$("products").scrollIntoView({behavior:"smooth"})}
-categoriesHTML();render();
+function closePanels(){
+document.querySelectorAll(".panel").forEach(x=>x.classList.remove("show"))
+}
+
+function openMenu(){
+closePanels();
+document.getElementById("menuPanel").classList.add("show")
+}
+
+function menuHome(){
+closePanels();
+home()
+}
+
+function menuProducts(){
+closePanels();
+home();
+scrollProducts()
+}
+
+function menuOffers(){
+closePanels();
+home();
+scrollProducts()
+}
+
+function menuFavorites(){
+favoritesPage()
+}
+
+function menuCart(){
+openCart()
+}
+
+function home(){
+closePanels();
+document.getElementById("homePage").style.display="block";
+document.getElementById("detailPage").classList.remove("show");
+document.getElementById("search").value="";
+currentCat="الكل";
+render();
+window.scrollTo({top:0,behavior:"smooth"})
+}
+
+function sendOrder(e){
+e.preventDefault();
+
+if(!cart.length)return;
+
+let order=cart.map(x=>
+`${x.name} × ${x.qty} = $${(x.price*x.qty).toFixed(2)}`
+).join("\n");
+
+let sub=cart.reduce((a,x)=>a+x.price*x.qty,0);
+let total=sub+DELIVERY;
+
+let data={
+access_key:KEY,
+subject:"طلب جديد من Tekram",
+name:document.getElementById("customerName").value,
+phone:document.getElementById("customerPhone").value,
+area:document.getElementById("customerArea").value,
+address:document.getElementById("customerAddress").value,
+notes:document.getElementById("customerNotes").value,
+order,
+subtotal:"$"+sub.toFixed(2),
+delivery:"$"+DELIVERY.toFixed(2),
+total:"$"+total.toFixed(2)
+};
+
+fetch("https://api.web3forms.com/submit",{
+method:"POST",
+headers:{"Content-Type":"application/json","Accept":"application/json"},
+body:JSON.stringify(data)
+})
+.then(r=>r.json())
+.then(r=>{
+if(r.success){
+alert("تم إرسال طلبك بنجاح ❤️");
+cart=[];
+save();
+document.querySelector("form").reset();
+closePanels();
+home()
+}else{
+alert("صار خطأ، جربي مرة ثانية.")
+}
+})
+.catch(()=>alert("تعذر إرسال الطلب."))
+}
+
+updateCart();
+render();
 </script>
+
 </body>
 </html>
