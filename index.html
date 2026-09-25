@@ -6,524 +6,478 @@
 <title>تِكرَم | Tekram</title>
 <style>
 :root{
---g:#183d30;
---g2:#244f3e;
---c:#f7f0e4;
---c2:#eee4d3;
---o:#df5035;
---gold:#e5aa45;
---w:#fffdf8;
---m:#77786f;
---b:#e5dac8
+--g:#234b3a;
+--g2:#2f604a;
+--c:#f5eee2;
+--c2:#ebe0cf;
+--o:#d95339;
+--gold:#dca64a;
+--w:#fffdf9;
+--m:#77766f;
+--b:#ded2bf;
+--shadow:0 8px 25px #234b3a14;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
 font-family:Tahoma,Arial,sans-serif;
-background:var(--c);
+background:#f8f3ea;
 color:var(--g);
-line-height:1.6
+line-height:1.6;
 }
 button,input,textarea,select{font-family:inherit}
 button{cursor:pointer}
-
+/* HEADER */
 header{
 background:var(--g);
 position:sticky;
 top:0;
 z-index:20;
-padding:0
+padding:0;
+box-shadow:0 3px 18px #0002;
 }
 .head{
 position:relative;
 width:100%;
 display:flex;
 justify-content:space-between;
-align-items:center
+align-items:center;
 }
 .site-logo{
 width:100%;
 height:auto;
-max-height:110px;
+max-height:105px;
 display:block;
-object-fit:contain
+object-fit:contain;
 }
 .logo-home{
 position:absolute;
 inset:0;
 z-index:1;
-display:block
+display:block;
 }
 .icons{
 display:flex;
 gap:8px;
 position:absolute;
 z-index:3;
-top:12px
+top:12px;
 }
 .icons:first-child{right:5%}
 .icons:last-child{left:5%}
 .icon{
-width:45px;
-height:45px;
-border:0;
+width:43px;
+height:43px;
+border:1px solid #ffffff35;
 border-radius:50%;
-background:var(--w);
+background:#fffaf2;
 color:var(--g);
-font-size:20px
+font-size:19px;
+box-shadow:0 4px 12px #0002;
 }
-.cart-top{position:relative}
-.count{
-position:absolute;
-top:-4px;
-right:-3px;
-background:var(--o);
-color:#fff;
-border-radius:20px;
-padding:1px 6px;
-font-size:10px
+.icon:hover{
+background:#fff;
+transform:translateY(-1px);
 }
+/* SEARCH */
 .search-wrap{
 background:var(--g);
-padding:0 5% 20px
+padding:0 5% 18px;
 }
 .search{
-max-width:1250px;
+max-width:1100px;
 margin:auto;
-background:var(--w);
-height:50px;
-border-radius:30px;
+background:#fffdf9;
+height:48px;
+border-radius:16px;
 display:flex;
 align-items:center;
-padding:0 18px;
-gap:8px
+padding:0 17px;
+gap:8px;
+box-shadow:0 5px 18px #00012;
+}
+.search span{
+font-size:21px;
+color:var(--g);
 }
 .search input{
 width:100%;
 border:0;
 outline:0;
 background:none;
-font-size:14px
+font-size:13px;
+color:var(--g);
 }
-
-/* ================= HERO ================= */
-
+/* HERO */
 .hero-wrap{
-padding:30px 5%
+padding:28px 5% 20px;
 }
-
 .hero{
 max-width:1250px;
 margin:auto;
-min-height:475px;
+min-height:360px;
+background:var(--g);
+border-radius:28px;
+color:#fff;
 position:relative;
 overflow:hidden;
-border-radius:34px;
-background:
-linear-gradient(115deg,#f1e6d5 0%,#faf5ec 48%,#f4eadb 100%);
-border:1px solid #e5dac8;
-box-shadow:0 18px 45px #183d3012;
 display:flex;
-align-items:center
+align-items:center;
+box-shadow:var(--shadow);
 }
-
-/* decorative circles */
 .hero:before{
 content:"";
 position:absolute;
-width:520px;
-height:520px;
-border:1px solid #244f3e18;
+width:450px;
+height:450px;
+border:55px solid #315b48;
 border-radius:50%;
-right:-210px;
-top:-285px
+right:-140px;
+top:-270px;
+opacity:.8;
 }
 .hero:after{
 content:"";
 position:absolute;
-width:320px;
-height:320px;
-border:1px solid #df503520;
+width:220px;
+height:220px;
+border:35px solid #2a5642;
 border-radius:50%;
-left:-145px;
-bottom:-190px
+left:-120px;
+bottom:-150px;
 }
-
-/* olive branch image */
-.olive-art{
-position:absolute;
-left:2%;
-bottom:-10px;
-width:45%;
-max-width:450px;
-height:440px;
-z-index:1;
-pointer-events:none;
-display:flex;
-align-items:flex-end;
-justify-content:center;
-}
-
-.olive-art img{
-width:100%;
-height:100%;
-object-fit:contain;
-filter: drop-shadow(0 10px 15px rgba(24, 61, 48, 0.15));
-}
-
-/* hero content */
-.hero-content{
+.hero-text{
+padding:45px 7%;
+max-width:700px;
 position:relative;
-z-index:4;
-width:54%;
-padding:55px 7% 55px 4%;
-margin-right:auto;
-text-align:right
+z-index:2;
 }
-
-.hero-kicker{
-display:flex;
-align-items:center;
-gap:9px;
+.hero-small{
+color:var(--gold);
+font-weight:bold;
 font-size:13px;
-font-weight:bold;
-color:var(--o);
-margin-bottom:15px
+letter-spacing:.2px;
 }
-
-.hero-kicker:before{
-content:"";
-width:28px;
-height:2px;
-background:var(--o);
-display:block
-}
-
 .hero h1{
-font-family:Georgia,Tahoma,serif;
-font-size:clamp(42px,5.5vw,68px);
-line-height:1.12;
-color:var(--g);
-margin-bottom:20px;
-letter-spacing:-1px
+font-size:clamp(38px,6vw,62px);
+line-height:1.1;
+margin:10px 0 18px;
+letter-spacing:-1px;
 }
-
-.hero h1 span{
-color:var(--o)
-}
-
+.hero h1 span{color:#f2b34e}
 .hero p{
-font-size:15px;
-line-height:2;
-color:#59625b;
-max-width:500px;
-margin-bottom:27px
+color:#eee;
+margin-bottom:24px;
+font-size:14px;
+max-width:520px;
 }
-
-.hero-btn{
-display:inline-flex;
-align-items:center;
-gap:9px;
+.hero button{
 border:0;
-background:var(--g);
+background:var(--o);
 color:#fff;
-padding:14px 25px;
-border-radius:25px;
+padding:13px 24px;
+border-radius:12px;
 font-weight:bold;
-box-shadow:0 9px 22px #183d3030;
-transition:.2s
+box-shadow:0 5px 15px #0002;
 }
-
-.hero-btn:hover{
-background:var(--g2);
-transform:translateY(-2px)
+.hero button:hover{
+transform:translateY(-2px);
 }
-
-.hero-note{
-display:flex;
-align-items:center;
-gap:8px;
-margin-top:20px;
-font-size:11px;
-color:var(--m)
-}
-
-.hero-note b{
-color:var(--g)
-}
-
-/* small brand seal */
-.hero-seal{
+/* BASKET */
+.basket{
 position:absolute;
-right:6%;
-bottom:42px;
-width:90px;
-height:90px;
-border:1px solid #244f3e55;
-border-radius:50%;
-z-index:3;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-font-family:Georgia,serif;
-font-size:11px;
-line-height:1.35;
-color:var(--g);
-background:#f7f0e4cc;
-transform:rotate(-8deg)
+left:8%;
+bottom:35px;
+width:270px;
+height:150px;
+background:#35634e;
+border-radius:25px 25px 55px 55px;
+border:8px solid #2c5644;
+z-index:1;
 }
-
-.hero-seal:before{
-content:"";
+.basket i{
 position:absolute;
-inset:6px;
-border:1px dashed #244f3e55;
-border-radius:50%
+width:65px;
+height:75px;
+border-radius:10px;
+background:#fff;
+box-shadow:0 6px 12px #0003;
 }
-
-/* ================= SECTIONS ================= */
-
+.i1{background:#d93627!important;left:25px;top:-50px}
+.i2{background:#e8a936!important;right:25px;top:-65px}
+.i3{left:105px;top:-80px}
+/* SECTIONS */
 .section{
 max-width:1250px;
 margin:auto;
-padding:25px 5% 120px
+padding:25px 5% 120px;
 }
-.title{margin-bottom:20px}
+.title{
+margin-bottom:22px;
+}
 .line{
-width:45px;
+width:42px;
 height:3px;
-background:var(--g);
-margin-bottom:10px
+background:var(--o);
+margin-bottom:9px;
+border-radius:5px;
 }
-.title h2{font-size:30px}
+.title h2{
+font-size:29px;
+letter-spacing:-.3px;
+}
 .title p{
 color:var(--m);
-font-size:13px
+font-size:13px;
+margin-top:2px;
 }
+/* CATEGORIES */
 .categories{
 display:flex;
 flex-wrap:wrap;
-gap:7px;
-margin-bottom:20px
+gap:8px;
+margin-bottom:22px;
 }
 .categories button{
 border:1px solid var(--b);
-background:var(--w);
+background:#fffdf9;
 color:var(--g);
-padding:8px 14px;
-border-radius:20px;
+padding:8px 15px;
+border-radius:12px;
 font-size:11px;
-font-weight:bold
+font-weight:bold;
+transition:.2s;
+}
+.categories button:hover{
+border-color:var(--g);
 }
 .categories .active{
 background:var(--g);
-color:#fff
+color:#fff;
+border-color:var(--g);
 }
+/* PRODUCTS */
 .grid,.offer-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:14px
+gap:16px;
 }
 .card,.offer-card{
 position:relative;
-background:#fffdf8;
-border:1px solid var(--b);
-border-radius:20px;
+background:#fffdf9;
+border:1px solid #e4d9c8;
+border-radius:18px;
 overflow:hidden;
-cursor:pointer
+cursor:pointer;
+box-shadow:0 4px 16px #234b3a08;
+transition:.22s;
 }
-.card:hover{transform:translateY(-4px)}
+.card:hover,.offer-card:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px #234b3a18;
+}
 .pic{
 margin:9px;
 aspect-ratio:1;
-background:#eee5d6;
-border-radius:15px;
+background:#f1e8da;
+border-radius:13px;
 display:flex;
 align-items:center;
 justify-content:center;
 overflow:hidden;
-font-size:65px
+font-size:65px;
 }
 .pic img{
 width:100%;
 height:100%;
-object-fit:contain
+object-fit:contain;
+mix-blend-mode:multiply;
 }
-.info{padding:7px 12px 14px}
+.info{
+padding:7px 12px 15px;
+}
 .badge,.offer-badge{
 display:inline-block;
 padding:3px 8px;
-border-radius:15px;
-font-size:9px;
-font-weight:bold
+border-radius:10px;
+font-size:8px;
+font-weight:bold;
 }
 .badge{
-background:#f3c97d;
-color:#5c3f17
+background:#f1e2c5;
+color:#66502c;
 }
 .offer-badge{
 background:var(--o);
 color:#fff;
-margin-right:4px
+margin-right:4px;
 }
 .name{
 font-size:14px;
 font-weight:bold;
-margin-top:5px
+margin-top:6px;
+color:#294b3d;
 }
 .en{
 font-size:9px;
-color:var(--m)
+color:var(--m);
 }
 .weight{
 font-size:10px;
-color:#555;
-margin-top:3px
+color:#65655f;
+margin-top:3px;
 }
 .bottom{
 display:flex;
 align-items:center;
 justify-content:space-between;
-margin-top:10px
+margin-top:11px;
 }
 .price{
-font-size:18px;
+font-size:17px;
 font-weight:bold;
-direction:ltr
+direction:ltr;
 }
 .old-price{
-font-size:11px;
+font-size:10px;
 color:#999;
 text-decoration:line-through;
 margin-left:5px;
-direction:ltr
+direction:ltr;
 }
 .new-price{
-font-size:18px;
+font-size:17px;
 font-weight:bold;
 color:var(--o);
-direction:ltr
+direction:ltr;
 }
 .discount{
 font-size:9px;
 font-weight:bold;
 color:var(--o);
-margin-right:5px
+margin-right:5px;
 }
 .add{
-width:35px;
-height:35px;
+width:34px;
+height:34px;
 border:0;
-border-radius:50%;
+border-radius:10px;
 background:var(--g);
-color:#fff
+color:#fff;
+font-size:19px;
+font-weight:bold;
+}
+.add:hover{
+background:var(--o);
 }
 .fav{
 position:absolute;
-top:15px;
-left:15px;
+top:14px;
+left:14px;
 z-index:3;
-width:34px;
-height:34px;
+width:33px;
+height:33px;
 border:0;
 border-radius:50%;
 background:#fffdf8ee;
 color:var(--g);
-font-size:19px;
-box-shadow:0 2px 8px #0002
+font-size:18px;
+box-shadow:0 2px 8px #0002;
 }
 .fav.on{color:var(--o)}
 .empty{
 grid-column:1/-1;
 text-align:center;
 padding:50px;
-color:var(--m)
+color:var(--m);
 }
+/* OFFERS */
 #offersSection{
 display:none;
 max-width:1250px;
 margin:auto;
-padding:0 5% 20px
+padding:0 5% 25px;
 }
 .offer-title{
 display:flex;
 align-items:center;
 justify-content:space-between;
-margin-bottom:15px
+margin-bottom:15px;
 }
-.offer-title h2{font-size:26px}
+.offer-title h2{
+font-size:26px;
+}
 .offer-title span{
 font-size:12px;
-color:var(--m)
+color:var(--m);
 }
 .offer-card .pic{margin:9px}
 .offer-card .info{padding:7px 12px 15px}
 .offer-label{
 position:absolute;
-top:15px;
-right:15px;
+top:14px;
+right:14px;
 background:var(--o);
 color:#fff;
 padding:5px 10px;
-border-radius:20px;
-font-size:10px;
+border-radius:12px;
+font-size:9px;
 font-weight:bold;
-z-index:2
+z-index:2;
 }
-
 /* PRODUCT PAGE */
-
 #productPage{
 display:none;
-padding:30px 5% 120px
+padding:30px 5% 120px;
 }
 .detail{
 max-width:1000px;
 margin:auto;
 background:var(--w);
-border-radius:25px;
+border-radius:24px;
 overflow:hidden;
 display:grid;
-grid-template-columns:1fr 1fr
+grid-template-columns:1fr 1fr;
+box-shadow:var(--shadow);
+border:1px solid var(--b);
 }
 .detail-img{
 min-height:430px;
-background:#eee5d6;
+background:#f1e8da;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:130px
+font-size:130px;
 }
 .detail-img img{
 width:100%;
 height:100%;
 min-height:430px;
-object-fit:contain
+object-fit:contain;
 }
 .detail-info{
 padding:40px;
 display:flex;
 flex-direction:column;
-justify-content:center
+justify-content:center;
 }
 .detail-cat{
 color:var(--o);
 font-size:12px;
-font-weight:bold
+font-weight:bold;
 }
 .detail-name{
 font-size:32px;
-font-weight:bold
+font-weight:bold;
 }
 .detail-en{
 color:var(--m);
-font-size:12px
+font-size:12px;
 }
 .options{
 display:flex;
 gap:7px;
 flex-wrap:wrap;
-margin:18px 0
+margin:18px 0;
 }
 .option{
 border:1px solid var(--g);
@@ -531,48 +485,46 @@ background:none;
 color:var(--g);
 padding:8px 13px;
 border-radius:10px;
-font-weight:bold
+font-weight:bold;
 }
 .option.sel{
 background:var(--g);
-color:#fff
+color:#fff;
 }
 .detail-price{
 font-size:30px;
 font-weight:bold;
-direction:ltr
+direction:ltr;
 }
 .detail-old-price{
 font-size:15px;
 color:#999;
 text-decoration:line-through;
 direction:ltr;
-margin-bottom:2px
+margin-bottom:2px;
 }
 .detail-desc{
 font-size:13px;
 color:#59625b;
-margin:10px 0 18px
+margin:10px 0 18px;
 }
 .detail-add,.back{
 border:0;
 padding:13px;
-border-radius:13px;
+border-radius:12px;
 font-weight:bold;
-font-size:15px
+font-size:15px;
 }
 .detail-add{
 background:var(--o);
-color:#fff
+color:#fff;
 }
 .back{
 background:var(--g);
 color:#fff;
-margin-top:8px
+margin-top:8px;
 }
-
-/* NAV */
-
+/* BOTTOM NAV */
 .bottom-nav{
 position:fixed;
 z-index:50;
@@ -580,34 +532,37 @@ bottom:14px;
 left:50%;
 transform:translateX(-50%);
 width:min(850px,94%);
-background:#fffdf8ee;
-backdrop-filter:blur(10px);
+background:#fffdf8ed;
+backdrop-filter:blur(12px);
 border:1px solid var(--b);
-border-radius:30px;
-padding:8px 15px;
+border-radius:22px;
+padding:7px 15px;
 display:flex;
 justify-content:space-around;
-box-shadow:0 8px 30px #0002
+box-shadow:0 8px 30px #0002;
 }
 .bottom-nav button{
 border:0;
 background:none;
 color:var(--m);
 font-size:10px;
-font-weight:bold
+font-weight:bold;
+padding:2px 10px;
 }
 .bottom-nav span{
 display:block;
-font-size:21px
+font-size:21px;
 }
-.bottom-nav .active{color:var(--o)}
-
+.bottom-nav .active{
+color:var(--o);
+}
+/* OVERLAYS / PANELS */
 .overlay{
 display:none;
 position:fixed;
 inset:0;
 background:#0006;
-z-index:100
+z-index:100;
 }
 .panel,.menu-panel{
 position:fixed;
@@ -617,22 +572,20 @@ height:100vh;
 background:var(--w);
 transition:.3s;
 display:flex;
-flex-direction:column
+flex-direction:column;
 }
 .panel{
 right:-430px;
 width:410px;
-max-width:94%
+max-width:94%;
 }
 .menu-panel{
 left:-430px;
 width:360px;
 max-width:90%;
-box-shadow:8px 0 30px #0002
+box-shadow:8px 0 30px #0002;
 }
-
 /* OPTION MODAL */
-
 .option-modal{
 display:none;
 position:fixed;
@@ -641,15 +594,15 @@ background:#0006;
 z-index:200;
 align-items:center;
 justify-content:center;
-padding:20px
+padding:20px;
 }
 .option-box{
 width:min(420px,100%);
 background:var(--w);
-border-radius:22px;
+border-radius:20px;
 padding:25px 20px;
 position:relative;
-box-shadow:0 15px 50px #0004
+box-shadow:0 15px 50px #0004;
 }
 .option-close{
 position:absolute;
@@ -661,22 +614,22 @@ border:0;
 border-radius:10px;
 background:var(--c2);
 color:var(--g);
-font-size:21px
+font-size:21px;
 }
 .option-box h3{
 font-size:20px;
 margin-bottom:3px;
-padding-left:45px
+padding-left:45px;
 }
 .option-box p{
 font-size:12px;
 color:var(--m);
-margin-bottom:16px
+margin-bottom:16px;
 }
 .option-choices{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:9px
+gap:9px;
 }
 .pick-option{
 border:1px solid var(--b);
@@ -684,45 +637,45 @@ background:var(--c);
 color:var(--g);
 padding:12px 8px;
 border-radius:12px;
-font-weight:bold
+font-weight:bold;
 }
 .pick-option small{
 display:block;
 color:var(--o);
 font-size:11px;
-margin-top:2px
+margin-top:2px;
 }
 .pick-option:active{
 background:var(--g);
-color:#fff
+color:#fff;
 }
-
 /* MENU */
-
 .menu-head{
 padding:22px 18px;
 background:var(--g);
 color:#fff;
 display:flex;
 align-items:center;
-justify-content:space-between
+justify-content:space-between;
 }
 .menu-brand{
-font:900 25px Georgia
+font:900 25px Georgia;
 }
 .menu-brand small{
 display:block;
 font:11px Tahoma;
 color:var(--gold);
-font-weight:normal
+font-weight:normal;
 }
 .menu-close{
 border:0;
 background:none;
 color:#fff;
-font-size:30px
+font-size:30px;
 }
-.menu-body{padding:14px}
+.menu-body{
+padding:14px;
+}
 .menu-btn{
 width:100%;
 border:0;
@@ -731,46 +684,46 @@ display:flex;
 align-items:center;
 gap:13px;
 padding:15px 13px;
-border-radius:14px;
+border-radius:13px;
 color:var(--g);
 font-size:14px;
 font-weight:bold;
 text-align:right;
-margin-bottom:4px
+margin-bottom:4px;
 }
-.menu-btn:hover{background:var(--c)}
+.menu-btn:hover{
+background:var(--c);
+}
 .menu-icon{
 width:36px;
 height:36px;
-border-radius:11px;
+border-radius:10px;
 background:var(--c2);
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:19px
+font-size:19px;
 }
 .menu-divider{
 height:1px;
 background:var(--b);
-margin:10px 5px
+margin:10px 5px;
 }
 .menu-note{
 padding:15px;
 margin-top:10px;
 background:var(--c);
-border-radius:15px;
+border-radius:14px;
 font-size:11px;
 color:var(--m);
-text-align:center
+text-align:center;
 }
-
-/* PANELS */
-
+/* CART / CHECKOUT */
 .panel-head{
 padding:18px;
 border-bottom:1px solid var(--b);
 display:flex;
-justify-content:space-between
+justify-content:space-between;
 }
 .close{
 border:0;
@@ -778,42 +731,42 @@ background:var(--c2);
 border-radius:10px;
 width:36px;
 height:36px;
-font-size:20px
+font-size:20px;
 }
 .panel-body{
 flex:1;
 overflow:auto;
-padding:18px
+padding:18px;
 }
 .cart-item{
 padding:15px 0;
-border-bottom:1px solid var(--b)
+border-bottom:1px solid var(--b);
 }
 .cart-row{
 display:flex;
 justify-content:space-between;
 align-items:flex-start;
-gap:12px
+gap:12px;
 }
 .cart-name{
 font-size:14px;
-font-weight:bold
+font-weight:bold;
 }
 .cart-option{
 display:block;
 color:var(--m);
-font-size:11px
+font-size:11px;
 }
 .cart-price{
 color:var(--o);
 direction:ltr;
-font-size:15px
+font-size:15px;
 }
 .controls{
 display:flex;
 align-items:center;
 gap:10px;
-margin-top:10px
+margin-top:10px;
 }
 .qty{
 width:32px;
@@ -822,11 +775,11 @@ border:0;
 border-radius:9px;
 background:var(--g);
 color:#fff;
-font-size:18px
+font-size:18px;
 }
 .qty-number{
 min-width:20px;
-text-align:center
+text-align:center;
 }
 .remove{
 border:0;
@@ -834,7 +787,7 @@ background:none;
 color:var(--o);
 margin-right:auto;
 font-size:11px;
-padding:7px
+padding:7px;
 }
 .cart-empty{
 display:flex;
@@ -843,20 +796,20 @@ align-items:center;
 justify-content:center;
 min-height:300px;
 text-align:center;
-color:var(--m)
+color:var(--m);
 }
 .cart-empty span{font-size:50px}
 .panel-foot{
 padding:17px;
 border-top:1px solid var(--b);
-background:var(--w)
+background:var(--w);
 }
 .total{
 display:flex;
 justify-content:space-between;
 font-size:19px;
 font-weight:bold;
-margin-bottom:12px
+margin-bottom:12px;
 }
 .checkout{
 width:100%;
@@ -864,13 +817,15 @@ border:0;
 background:var(--o);
 color:#fff;
 padding:13px;
-border-radius:13px;
-font-weight:bold
+border-radius:12px;
+font-weight:bold;
 }
-.form{margin-bottom:12px}
+.form{
+margin-bottom:12px;
+}
 .form label{
 font-size:12px;
-font-weight:bold
+font-weight:bold;
 }
 .input{
 width:100%;
@@ -879,259 +834,178 @@ border-radius:10px;
 padding:10px;
 margin-top:4px;
 outline:0;
-background:#fff
+background:#fff;
 }
 .area{
 height:65px;
-resize:none
+resize:none;
 }
 .summary{
 background:var(--c);
 padding:12px;
 border-radius:13px;
-margin-top:12px
+margin-top:12px;
 }
 .summary-row{
 display:flex;
 justify-content:space-between;
 font-size:12px;
-margin-bottom:8px
+margin-bottom:8px;
 }
 .final{
 border-top:1px solid var(--b);
 padding-top:10px;
 font-weight:bold;
-font-size:17px
+font-size:17px;
 }
+/* FOOTER */
 footer{
 background:var(--g);
 color:#fff;
 text-align:center;
-padding:40px 20px 110px
+padding:40px 20px 110px;
 }
 .footer-logo{
 font:28px Georgia;
-color:var(--gold)
+color:var(--gold);
 }
-
 /* MOBILE */
-
 @media(max-width:900px){
 .grid,.offer-grid{
-grid-template-columns:repeat(3,1fr)
-}
-.hero{
-min-height:500px
-}
-.olive-art{
-width:50%;
-height:380px;
-left:1%
-}
-.hero-content{
-width:58%;
-padding-right:5%;
-}
-.hero-seal{
-right:5%;
-bottom:30px
+grid-template-columns:repeat(3,1fr);
 }
 }
-
 @media(max-width:650px){
-
-.site-logo{max-height:85px}
-
-.icons{top:8px}
-
+.site-logo{
+max-height:82px;
+}
+.icons{
+top:7px;
+}
 .icon{
-width:40px;
-height:40px
+width:39px;
+height:39px;
+font-size:18px;
 }
-
+.search-wrap{
+padding-bottom:14px;
+}
+.search{
+height:45px;
+border-radius:14px;
+}
 .hero-wrap{
-padding:18px 4%
+padding:18px 4% 15px;
 }
-
 .hero{
-min-height:590px;
-display:block;
-padding:0;
-border-radius:28px
+min-height:355px;
+border-radius:22px;
 }
-
-.hero-content{
-width:100%;
-padding:70px 8% 0;
-text-align:center;
-margin:0
+.hero-text{
+padding:32px 7%;
 }
-
-.hero-kicker{
-justify-content:center;
-font-size:11px
-}
-
-.hero-kicker:before{
-display:none
-}
-
 .hero h1{
-font-size:42px;
-line-height:1.15;
-margin-bottom:15px
+font-size:39px;
 }
-
 .hero p{
 font-size:13px;
-line-height:1.9;
-margin:0 auto 22px
 }
-
-.hero-btn{
-padding:13px 23px
+.basket{
+display:none;
 }
-
-.hero-note{
-justify-content:center;
-font-size:10px
+.section{
+padding:22px 4% 120px;
 }
-
-.olive-art{
-width:75%;
-height:310px;
-left:12%;
-bottom:-20px;
-opacity:.95
-}
-
-.hero-seal{
-width:72px;
-height:72px;
-font-size:9px;
-right:7%;
-bottom:28px
-}
-
 .grid,.offer-grid{
 grid-template-columns:repeat(2,1fr);
-gap:10px
+gap:10px;
 }
-
-.name{font-size:12px}
-
+.card,.offer-card{
+border-radius:15px;
+}
+.pic{
+margin:7px;
+border-radius:11px;
+}
+.info{
+padding:6px 9px 12px;
+}
+.name{
+font-size:12px;
+}
 .price,.new-price{
-font-size:16px
+font-size:15px;
 }
-
 .add{
-width:32px;
-height:32px
+width:31px;
+height:31px;
+font-size:17px;
 }
-
+.fav{
+top:11px;
+left:11px;
+width:31px;
+height:31px;
+font-size:17px;
+}
 .detail{
-grid-template-columns:1fr
+grid-template-columns:1fr;
+border-radius:20px;
 }
-
 .detail-img,.detail-img img{
-min-height:300px
+min-height:290px;
 }
-
 .detail-info{
-padding:25px
+padding:25px;
 }
-
 .detail-name{
-font-size:28px
+font-size:28px;
 }
-
 .menu-panel{
-width:330px
+width:330px;
+}
+.bottom-nav{
+bottom:10px;
+padding:6px 10px;
+}
+.bottom-nav button{
+padding:2px 7px;
 }
 }
 </style>
 </head>
-
 <body>
-
 <header>
 <div class="head">
 <a class="logo-home" href="#" onclick="home();return false"></a>
 <img src="./tekram-logo.JPG" alt="تِكرَم | Tekram" class="site-logo">
-
 <div class="icons">
-<button class="icon cart-top" onclick="openCart()">
-🛒<b id="count" class="count">0</b>
-</button>
+<button class="icon cart-top" onclick="openCart()">🛒<b id="count" class="count">0</b></button>
 </div>
-
 <div class="icons">
 <button class="icon" onclick="focusSearch()">⌕</button>
 <button class="icon" onclick="openMenu()">☰</button>
 </div>
 </div>
 </header>
-
 <div class="search-wrap">
 <div class="search">
 <span>⌕</span>
 <input id="search" placeholder="إبحث عن منتج..." oninput="render()">
 </div>
 </div>
-
 <main id="homePage">
-
-<!-- ================= HERO ================= -->
-
 <section class="hero-wrap">
 <div class="hero">
-
-<!-- صورة غصن الزيتون -->
-<div class="olive-art">
-<img src="image_9.png" alt="غصن زيتون">
+<div class="hero-text">
+<div class="hero-small">✦ من بيتنا لبيتك</div>
+<h1>كل احتياجاتك اليومية<br><span>بمكان واحد.</span></h1>
+<p>منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.</p>
+<button onclick="scrollProducts()">تصفح المنتجات</button>
 </div>
-
-<!-- content -->
-<div class="hero-content">
-
-<div class="hero-kicker">
-من بيتنا لبيتك
-</div>
-
-<h1>
-كل شي بتحبّه<br>
-<span>بمكان واحد.</span>
-</h1>
-
-<p>
-منتجاتك اليومية، مختارة بعناية وبأسعار واضحة،
-من تِكرَم لبيتك.
-</p>
-
-<button class="hero-btn" onclick="scrollProducts()">
-تصفّح المنتجات
-<span>←</span>
-</button>
-
-<div class="hero-note">
-<span>🌿</span>
-<b>اختيارات يومية</b>
-<span>من تِكرَم</span>
-</div>
-
-</div>
-
-<!-- seal -->
-<div class="hero-seal">
-تِكرَم<br>
-🌿<br>
-من بيتنا<br>
-لبيتك
-</div>
-
+<div class="basket"><i class="i1"></i><i class="i2"></i><i class="i3"></i></div>
 </div>
 </section>
-
 <section id="offersSection">
 <div class="offer-title">
 <div>
@@ -1142,7 +1016,6 @@ width:330px
 </div>
 <div id="offerGrid" class="offer-grid"></div>
 </section>
-
 <section class="section" id="products">
 <div class="title">
 <div class="line"></div>
@@ -1152,9 +1025,7 @@ width:330px
 <div id="cats" class="categories"></div>
 <div id="grid" class="grid"></div>
 </section>
-
 </main>
-
 <section id="productPage">
 <div class="detail">
 <div id="dimg" class="detail-img"></div>
@@ -1172,11 +1043,8 @@ width:330px
 </div>
 </div>
 </section>
-
 <div id="overlay" class="overlay" onclick="closePanels()"></div>
-
-<div id="optionModal" class="option-modal"
-onclick="if(event.target===this)closeOptionPicker()">
+<div id="optionModal" class="option-modal" onclick="if(event.target===this)closeOptionPicker()">
 <div class="option-box">
 <button class="option-close" onclick="closeOptionPicker()">×</button>
 <h3 id="optionTitle">اختاري النوع</h3>
@@ -1184,46 +1052,24 @@ onclick="if(event.target===this)closeOptionPicker()">
 <div id="optionChoices" class="option-choices"></div>
 </div>
 </div>
-
 <div id="menuPanel" class="menu-panel">
 <div class="menu-head">
-<div class="menu-brand">
-TEKRAM
-<small>من بيتنا لبيتك</small>
-</div>
+<div class="menu-brand">TEKRAM<small>من بيتنا لبيتك</small></div>
 <button class="menu-close" onclick="closePanels()">×</button>
 </div>
-
 <div class="menu-body">
-<button class="menu-btn" onclick="menuHome()">
-<span class="menu-icon">🏠</span>الرئيسية
-</button>
-
-<button class="menu-btn" onclick="menuProducts()">
-<span class="menu-icon">🛍️</span>المنتجات
-</button>
-
-<button class="menu-btn" onclick="menuOffers()">
-<span class="menu-icon">🔥</span>العروض
-</button>
-
-<button class="menu-btn" onclick="menuFavorites()">
-<span class="menu-icon">❤️</span>المفضلة
-</button>
-
-<button class="menu-btn" onclick="menuCart()">
-<span class="menu-icon">🛒</span>سلة المشتريات
-</button>
-
+<button class="menu-btn" onclick="menuHome()"><span class="menu-icon">🏠</span>الرئيسية</button>
+<button class="menu-btn" onclick="menuProducts()"><span class="menu-icon">🛍️</span>المنتجات</button>
+<button class="menu-btn" onclick="menuOffers()"><span class="menu-icon">🔥</span>العروض</button>
+<button class="menu-btn" onclick="menuFavorites()"><span class="menu-icon">❤️</span>المفضلة</button>
+<button class="menu-btn" onclick="menuCart()"><span class="menu-icon">🛒</span>سلة المشتريات</button>
 <div class="menu-divider"></div>
-
 <div class="menu-note">
 تِكرَم 🤍<br>
 من بيتنا لبيتك
 </div>
 </div>
 </div>
-
 <div id="cartPanel" class="panel">
 <div class="panel-head">
 <h2>🛒 السلة</h2>
@@ -1238,25 +1084,20 @@ TEKRAM
 <button class="checkout" onclick="checkout()">إتمام الطلب</button>
 </div>
 </div>
-
 <div id="checkoutPanel" class="panel">
 <div class="panel-head">
 <h2>📦 إتمام الطلب</h2>
 <button class="close" onclick="closePanels()">×</button>
 </div>
-
 <div class="panel-body">
-
 <div class="form">
 <label>الاسم</label>
 <input id="name" class="input" placeholder="اكتب اسمك">
 </div>
-
 <div class="form">
 <label>رقم الهاتف</label>
 <input id="phone" class="input" placeholder="03 123 456">
 </div>
-
 <div class="form">
 <label>المنطقة</label>
 <select id="area" class="input">
@@ -1270,52 +1111,33 @@ TEKRAM
 <option>البازورية</option>
 </select>
 </div>
-
 <div class="form">
 <label>العنوان</label>
 <textarea id="address" class="input area" placeholder="اكتب العنوان"></textarea>
 </div>
-
 <div class="form">
 <label>ملاحظات</label>
 <textarea id="notes" class="input area" placeholder="اختياري"></textarea>
 </div>
-
 <div id="summary" class="summary"></div>
-
 </div>
-
 <div class="panel-foot">
-<button id="send" class="checkout" onclick="sendOrder()">
-تأكيد الطلب ✓
-</button>
+<button id="send" class="checkout" onclick="sendOrder()">تأكيد الطلب ✓</button>
 </div>
 </div>
-
 <div class="bottom-nav">
-<button onclick="home()" class="active">
-<span>⌂</span>الرئيسية
-</button>
-<button onclick="categoriesPage()">
-<span>▦</span>الأقسام
-</button>
-<button onclick="favoritesPage()">
-<span>♡</span>المفضلة
-</button>
-<button onclick="openCart()">
-<span>🛒</span>السلة
-</button>
+<button onclick="home()" class="active"><span>⌂</span>الرئيسية</button>
+<button onclick="categoriesPage()"><span>▦</span>الأقسام</button>
+<button onclick="favoritesPage()"><span>♡</span>المفضلة</button>
+<button onclick="openCart()"><span>🛒</span>السلة</button>
 </div>
-
 <footer>
 <div class="footer-logo">تِكرَم</div>
 <p>من بيتنا لبيتك 🤍</p>
 </footer>
-
 <script>
 const KEY="9edc6eae-83a6-4858-a452-12860503dcfa",
 DELIVERY=2;
-
 const cats=[
 "الكل",
 "مشروبات",
@@ -1325,7 +1147,6 @@ const cats=[
 "بلاستيك",
 "عناية شخصية"
 ];
-
 const products=[
 {id:"coffee-no",cat:"مشروبات",name:"قهوة نجار دون هال",en:"Najjar Coffee No Cardamom",price:3.35,weight:"180 غ / 450 غ",img:"./najjar-coffee-no-cardamom-180g.JPG",options:[
 ["180 غ",3.35,"./najjar-coffee-no-cardamom-180g.JPG"],
@@ -1422,57 +1243,39 @@ const products=[
 {id:"freshdays-long-72pcs",cat:"عناية شخصية",name:"فريش دايز طويل",en:"Freshdays Long",price:4.45,weight:"72 حبة",img:"./freshdays-long-72pcs.JPG"},
 {id:"upm-light-fork-50pcs",cat:"بلاستيك",name:"شوك بلاستيك UPM Light",en:"UPM Light Forks",price:.55,weight:"50 حبة",img:"./upm-light-fork-50pcs.JPG"}
 ];
-
 let cart=JSON.parse(localStorage.getItem("tekramCart")||"[]"),
 fav=JSON.parse(localStorage.getItem("tekramFavorites")||"[]"),
 category="الكل",
 onlyFav=false,
 selected=null;
-
 let tekramBackPosition=null;
-
 const $=id=>document.getElementById(id);
-
 function save(){
 localStorage.setItem("tekramCart",JSON.stringify(cart));
 localStorage.setItem("tekramFavorites",JSON.stringify(fav))
 }
-
 function focusSearch(){
 $("search").focus()
 }
-
 function nav(n){
-document.querySelectorAll(".bottom-nav button")
-.forEach((x,i)=>x.classList.toggle("active",i===n))
+document.querySelectorAll(".bottom-nav button").forEach((x,i)=>x.classList.toggle("active",i===n))
 }
-
 function categoriesHTML(){
-$("cats").innerHTML=cats.map(x=>
-`<button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">${x}</button>`
-).join("")
+$("cats").innerHTML=cats.map(x=>`<button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">${x}</button>`).join("")
 }
-
 function discountPercent(a,b){
 return Math.round((1-b/a)*100)
 }
-
 function priceHTML(p){
 return p.oldPrice
 ?`<span class="old-price">$${p.oldPrice.toFixed(2)}</span><span class="new-price">$${p.price.toFixed(2)}</span><span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>`
 :`<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`
 }
-
 function card(p){
 let f=fav.includes(p.id);
-return `
-<div class="card" onclick="detail('${p.id}')">
-<button class="fav ${f?"on":""}" onclick="toggleFav(event,'${p.id}')">
-${f?"♥":"♡"}
-</button>
-<div class="pic">
-${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
-</div>
+return `<div class="card" onclick="detail('${p.id}')">
+<button class="fav ${f?"on":""}" onclick="toggleFav(event,'${p.id}')">${f?"♥":"♡"}</button>
+<div class="pic">${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}</div>
 <div class="info">
 <span class="badge">${p.cat}</span>
 ${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}
@@ -1486,14 +1289,10 @@ ${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}
 </div>
 </div>`
 }
-
 function offerCard(p){
-return `
-<div class="offer-card" onclick="detail('${p.id}')">
+return `<div class="offer-card" onclick="detail('${p.id}')">
 <div class="offer-label">🔥 عرض</div>
-<div class="pic">
-${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
-</div>
+<div class="pic">${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}</div>
 <div class="info">
 <div class="name">${p.name}</div>
 <div class="en">${p.en}</div>
@@ -1505,39 +1304,29 @@ ${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
 </div>
 </div>`
 }
-
 function renderOffers(){
 let o=products.filter(p=>p.oldPrice);
 $("offersSection").style.display=o.length?"block":"none";
 if(o.length)$("offerGrid").innerHTML=o.map(offerCard).join("")
 }
-
 function render(){
 let q=$("search").value.trim().toLowerCase();
-
 let list=products.filter(p=>
 (!onlyFav||fav.includes(p.id))&&
 (category==="الكل"||p.cat===category)&&
 (!q||(p.name+" "+p.en).toLowerCase().includes(q))
 );
-
-$("title").textContent=
-onlyFav?"المفضلة":
-q?"نتائج البحث":
-category==="الكل"?"منتجاتنا":category;
-
-$("sub").textContent=
-onlyFav?"المنتجات التي حفظتها ❤️":"اختيارات من تِكرَم";
-
+$("title").textContent=onlyFav?"المفضلة":q?"نتائج البحث":category==="الكل"?"منتجاتنا":category;
+$("sub").textContent=onlyFav
+?"المنتجات التي حفظتها ❤️"
+:"اختيارات من تِكرَم";
 $("grid").innerHTML=list.length
 ?list.map(card).join("")
 :`<div class="empty">ما لقينا منتجات مطابقة ❤️</div>`;
-
 categoriesHTML();
 renderOffers();
 updateCart()
 }
-
 function choose(x){
 category=x;
 onlyFav=false;
@@ -1545,14 +1334,12 @@ render();
 scrollProducts();
 nav(1)
 }
-
 function categoriesPage(){
 closePanels();
 home();
 nav(1);
 setTimeout(scrollProducts,50)
 }
-
 function favoritesPage(){
 category="الكل";
 onlyFav=true;
@@ -1562,20 +1349,15 @@ render();
 nav(2);
 scrollProducts()
 }
-
 function toggleFav(e,id){
 e.stopPropagation();
-fav=fav.includes(id)
-?fav.filter(x=>x!==id)
-:[...fav,id];
+fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];
 save();
 render()
 }
-
 function quick(e,id){
 e.stopPropagation();
 let p=products.find(x=>x.id===id);
-
 if(!p.options){
 add({
 name:p.name,
@@ -1585,55 +1367,44 @@ price:p.price
 openCart();
 return
 }
-
 openOptionPicker(p)
 }
-
 function openOptionPicker(p){
 $("optionTitle").textContent=p.name;
-
 $("optionChoices").innerHTML=p.options.map((o,i)=>
 `<button class="pick-option" onclick="pickOption('${p.id}',${i})">
 ${o[0]}
 <small>$${o[1].toFixed(2)}</small>
 </button>`
 ).join("");
-
 $("optionModal").style.display="flex"
 }
-
 function pickOption(id,i){
 let p=products.find(x=>x.id===id),
 o=p.options[i];
-
 add({
 name:p.name,
 option:o[0],
 price:o[1]
 });
-
 closeOptionPicker();
 openCart()
 }
-
 function closeOptionPicker(){
 $("optionModal").style.display="none"
 }
-
 function detail(id,opt=0){
 let p=products.find(x=>x.id===id),
 o=p.options?p.options[opt]:[p.weight,p.price,p.img||p.icon||""];
-
-if(tekramBackPosition===null)
+if(tekramBackPosition===null){
 tekramBackPosition=window.scrollY;
-
+}
 selected={
 name:p.name,
 option:o[0],
 price:o[1],
 oldPrice:p.oldPrice||null
 };
-
 $("dcat").textContent=p.cat;
 $("dname").textContent=p.name;
 $("den").textContent=p.en;
@@ -1641,54 +1412,36 @@ $("dweight").textContent=o[0];
 $("dprice").textContent="$"+o[1].toFixed(2);
 $("doldprice").textContent=p.oldPrice?"$"+p.oldPrice.toFixed(2):"";
 $("ddesc").textContent=p.name+", "+o[0];
-
 $("dimg").innerHTML=
 typeof o[2]==="string"&&o[2].startsWith(".")
 ?`<img src="${o[2]}" alt="${p.name}">`
 :`<span>${o[2]||p.icon||"🛒"}</span>`;
-
 $("options").innerHTML=p.options
 ?p.options.map((x,i)=>
-`<button class="option ${i===opt?"sel":""}" onclick="detail('${p.id}',${i})">
-${x[0]}
-</button>`
+`<button class="option ${i===opt?"sel":""}" onclick="detail('${p.id}',${i})">${x[0]}</button>`
 ).join("")
 :"";
-
 $("homePage").style.display="none";
 $("productPage").style.display="block";
 window.scrollTo(0,0)
 }
-
 function add(x){
 let o=cart.find(i=>i.name===x.name&&i.option===x.option);
-
 o?o.qty++:cart.push({...x,qty:1});
-
 save();
 updateCart()
 }
-
 function addSelected(){
 add(selected);
 openCart()
 }
-
 function updateCart(){
 $("count").textContent=cart.reduce((a,x)=>a+x.qty,0);
-
 if(!cart.length){
-$("cartBody").innerHTML=
-`<div class="cart-empty">
-<span>🛒</span>
-السلة فارغة
-<small>أضف منتجاتك المفضلة من تِكرَم 🤍</small>
-</div>`;
-
+$("cartBody").innerHTML=`<div class="cart-empty"><span>🛒</span>السلة فارغة<small>أضف منتجاتك المفضلة من تِكرَم 🤍</small></div>`;
 $("total").textContent="$0.00";
 return
 }
-
 $("cartBody").innerHTML=cart.map((x,i)=>
 `<div class="cart-item">
 <div class="cart-row">
@@ -1698,7 +1451,6 @@ $("cartBody").innerHTML=cart.map((x,i)=>
 </div>
 <b class="cart-price">$${(x.price*x.qty).toFixed(2)}</b>
 </div>
-
 <div class="controls">
 <button class="qty" onclick="qty(${i},-1)">−</button>
 <b class="qty-number">${x.qty}</b>
@@ -1707,45 +1459,32 @@ $("cartBody").innerHTML=cart.map((x,i)=>
 </div>
 </div>`
 ).join("");
-
 $("total").textContent="$"+
 cart.reduce((a,x)=>a+x.price*x.qty,0).toFixed(2)
 }
-
 function qty(i,n){
 cart[i].qty+=n;
-
-if(cart[i].qty<1)
-cart.splice(i,1);
-
+if(cart[i].qty<1)cart.splice(i,1);
 save();
 updateCart()
 }
-
 function removeItem(i){
 cart.splice(i,1);
 save();
 updateCart()
 }
-
 function openCart(){
 closePanels();
 $("cartPanel").style.right="0";
 $("overlay").style.display="block";
 nav(3)
 }
-
 function checkout(){
-if(!cart.length)
-return alert("السلة فارغة");
-
+if(!cart.length)return alert("السلة فارغة");
 closePanels();
-
 $("checkoutPanel").style.right="0";
 $("overlay").style.display="block";
-
 let s=cart.reduce((a,x)=>a+x.price*x.qty,0);
-
 $("summary").innerHTML=
 cart.map(x=>
 `<div class="summary-row">
@@ -1753,94 +1492,63 @@ cart.map(x=>
 <b>$${(x.price*x.qty).toFixed(2)}</b>
 </div>`
 ).join("")+
-
-`<div class="summary-row">
-<b>المجموع الفرعي</b>
-<b>$${s.toFixed(2)}</b>
-</div>
-
-<div class="summary-row">
-<b>التوصيل</b>
-<b>$${DELIVERY.toFixed(2)}</b>
-</div>
-
-<div class="summary-row final">
-<b>المجموع النهائي</b>
-<b>$${(s+DELIVERY).toFixed(2)}</b>
-</div>`
+`<div class="summary-row"><b>المجموع الفرعي</b><b>$${s.toFixed(2)}</b></div>
+<div class="summary-row"><b>التوصيل</b><b>$${DELIVERY.toFixed(2)}</b></div>
+<div class="summary-row final"><b>المجموع النهائي</b><b>$${(s+DELIVERY).toFixed(2)}</b></div>`
 }
-
 function closePanels(){
 $("cartPanel").style.right="-430px";
 $("checkoutPanel").style.right="-430px";
 $("menuPanel").style.left="-430px";
 $("overlay").style.display="none"
 }
-
 function openMenu(){
 closePanels();
 $("menuPanel").style.left="0";
 $("overlay").style.display="block"
 }
-
 function menuHome(){
 closePanels();
 home()
 }
-
 function menuProducts(){
 closePanels();
 home();
 setTimeout(scrollProducts,100)
 }
-
 function menuOffers(){
 closePanels();
 home();
-
 setTimeout(()=>{
 let s=$("offersSection");
-
 s.style.display!=="none"
 ?s.scrollIntoView({behavior:"smooth"})
 :alert("ما في عروض مضافة حاليًا 🔥")
 },100)
 }
-
 function menuFavorites(){
 closePanels();
 favoritesPage()
 }
-
 function menuCart(){
 closePanels();
 openCart()
 }
-
 async function sendOrder(){
-
 let n=$("name").value.trim(),
 ph=$("phone").value.trim(),
 ar=$("area").value,
 ad=$("address").value.trim();
-
 if(!n||!ph||!ar||!ad)
 return alert("يرجى تعبئة الاسم والهاتف والمنطقة والعنوان");
-
-let sub=cart.reduce((a,x)=>a+x.price*x.qty,0);
-
-let order=cart.map(x=>
+let sub=cart.reduce((a,x)=>a+x.price*x.qty,0),
+order=cart.map(x=>
 `• ${x.name} | ${x.option} | ×${x.qty} | $${(x.price*x.qty).toFixed(2)}`
 ).join("\n");
-
 $("send").disabled=true;
 $("send").textContent="جاري الإرسال...";
-
 try{
-
-let r=await fetch(
-"https://api.web3forms.com/submit",
-{
+let r=await fetch("https://api.web3forms.com/submit",{
 method:"POST",
 headers:{
 "Content-Type":"application/json",
@@ -1860,78 +1568,55 @@ delivery:"$"+DELIVERY.toFixed(2),
 total:"$"+(sub+DELIVERY).toFixed(2)
 })
 });
-
 let data=await r.json();
-
 if(data.success){
-
 alert("تم إرسال طلبك بنجاح ❤️");
-
 cart=[];
 save();
 updateCart();
 closePanels();
-
 $("name").value="";
 $("phone").value="";
 $("area").value="";
 $("address").value="";
 $("notes").value="";
-
 }else{
 alert("تعذر إرسال الطلب.")
 }
-
 }catch(e){
 alert("تعذر إرسال الطلب حالياً.")
 }
-
 $("send").disabled=false;
 $("send").textContent="تأكيد الطلب ✓"
 }
-
 function home(){
-
 $("productPage").style.display="none";
 $("homePage").style.display="block";
-
 category="الكل";
 onlyFav=false;
-
 render();
 nav(0);
-
 if(tekramBackPosition!==null){
-
 let y=tekramBackPosition;
 tekramBackPosition=null;
-
 setTimeout(()=>{
 window.scrollTo({
 top:y,
 behavior:"smooth"
 });
 },50);
-
 }else{
-
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
-
 }
 }
-
 function scrollProducts(){
-$("products").scrollIntoView({
-behavior:"smooth"
-})
+$("products").scrollIntoView({behavior:"smooth"})
 }
-
 categoriesHTML();
 render();
 </script>
-
 </body>
 </html>
